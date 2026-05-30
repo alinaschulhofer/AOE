@@ -182,6 +182,9 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  padding-inline: clamp(1.5rem, 4vw, 4rem) !important;
   gap: 0;
 }
 
