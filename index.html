@@ -6,13 +6,12 @@
   <title>Dr. Alina Schulhofer — Architecture of Excellence™</title>
   <meta name="description" content="Licensed psychologist, executive coach, and high-performance consultant. Founder of the Architecture of Excellence™ framework." />
 
-  <!-- Flash prevention: apply saved theme before paint -->
   <script>
     (function(){
       var d = localStorage.getItem('aoe-direction') || 'ivory';
-      var a = localStorage.getItem('aoe-accent') || '#A8824E';
       document.documentElement.setAttribute('data-theme', d);
-      document.documentElement.style.setProperty('--accent', a);
+      /* reset any accidental accent override */
+      localStorage.removeItem('aoe-accent');
     })();
   </script>
 
@@ -44,7 +43,7 @@
       </li>
     </ul>
 
-    <a href="#contact" class="nav-cta">Work Together</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
 
     <button class="nav-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -70,7 +69,7 @@
   <div class="container hero-text">
 
     <p class="t-eyebrow reveal" style="margin-bottom:1.5rem;">
-      Licensed Psychologist &nbsp;·&nbsp; Executive Coach &nbsp;·&nbsp; High-Performance Consultant
+      Licensed Psychologist &nbsp;·&nbsp; High-Performance Consultant
     </p>
 
     <h1 class="hero-headline reveal" data-delay="1" style="font-size:clamp(2.2rem,4.5vw,5rem);">
@@ -102,10 +101,8 @@
 <!-- ── STATEMENT BAND ─────────────────────────────────── -->
 <section class="statement-band reveal">
   <div class="container">
-    <p>
-      High performance is a form of <em>art.</em>
-      <span class="brand-mark">❊ Our inner architecture serves as the foundation for how we lead, perform, connect, and create.</span>
-    </p>
+    <span class="statement-main">High performance is a form of <em>art.</em></span>
+    <span class="statement-sub">❊ &nbsp; Our inner architecture serves as the foundation for how we lead, perform, connect, and create.</span>
   </div>
 </section>
 

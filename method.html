@@ -9,9 +9,8 @@
   <script>
     (function(){
       var d = localStorage.getItem('aoe-direction') || 'ivory';
-      var a = localStorage.getItem('aoe-accent') || '#A8824E';
       document.documentElement.setAttribute('data-theme', d);
-      document.documentElement.style.setProperty('--accent', a);
+      localStorage.removeItem('aoe-accent');
     })();
   </script>
 
@@ -38,7 +37,7 @@
         </div>
       </li>
     </ul>
-    <a href="index.html#contact" class="nav-cta">Work Together</a>
+    <a href="index.html#contact" class="nav-cta">Get Started</a>
     <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -47,7 +46,7 @@
   <a href="method.html">Method</a><hr class="rule" />
   <a href="philosophy.html">Philosophy</a><hr class="rule" />
   <a href="services.html">Services</a><hr class="rule" />
-  <a href="index.html#contact">Work Together</a>
+  <a href="index.html#contact">Get Started</a>
 </div>
 
 <!-- ── PAGE HERO ─────────────────────────────────────── -->
