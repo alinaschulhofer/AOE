@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1067" width="800" height="1067">
+  <rect width="800" height="1067" fill="#E8E2D8"/>
+  <line x1="400" y1="200" x2="400" y2="460" stroke="#A8824E" stroke-width="1" opacity="0.5"/>
+  <text x="400" y="520" font-family="Georgia, serif" font-size="56" fill="#A8824E" text-anchor="middle" opacity="0.5">❊</text>
+  <text x="400" y="600" font-family="Georgia, serif" font-size="16" fill="#6A6258" text-anchor="middle" letter-spacing="5">DR. ALINA SCHULHOFER</text>
+  <line x1="310" y1="628" x2="490" y2="628" stroke="#A8824E" stroke-width="0.5" opacity="0.4"/>
+  <text x="400" y="660" font-family="Georgia, serif" font-size="11" fill="#9A9288" text-anchor="middle" letter-spacing="3" font-style="italic">Add portrait.jpg to assets/</text>
+</svg>
