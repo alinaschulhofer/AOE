@@ -353,7 +353,7 @@ ul { list-style: none; }
 }
 
 .hero-text {
-  padding-block: clamp(4rem, 8vw, 8rem);
+  padding-block: clamp(5rem, 10vw, 10rem);
   z-index: 1;
 }
 
@@ -378,11 +378,10 @@ ul { list-style: none; }
 }
 
 .hero-sub {
-  max-width: 440px;
+  max-width: 420px;
   color: var(--ink2);
-  font-size: 1rem;
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
+  font-size: .95rem;
+  line-height: 1.85;
 }
 
 .hero-actions {
