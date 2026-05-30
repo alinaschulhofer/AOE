@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Alina Schulhofer — Architecture of Excellence™</title>
+  <meta name="description" content="Licensed psychologist, executive coach, and high-performance consultant. Founder of the Architecture of Excellence™ framework." />
+
+  <!-- Flash prevention: apply saved theme before paint -->
+  <script>
+    (function(){
+      var d = localStorage.getItem('aoe-direction') || 'ivory';
+      var a = localStorage.getItem('aoe-accent') || '#A8824E';
+      document.documentElement.setAttribute('data-theme', d);
+      document.documentElement.style.setProperty('--accent', a);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-wordmark" data-active="true">
+      Dr. Alina Schulhofer
+      <span>Architecture of Excellence™</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="method.html">Method</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li class="nav-dd">
+        <button class="nav-dd-trigger" aria-expanded="false" aria-haspopup="true">
+          Services ↓
+        </button>
+        <div class="nav-dd-menu" role="menu">
+          <a href="services.html#executive-coaching" role="menuitem">Executive Coaching</a>
+          <a href="services.html#organizational-consulting" role="menuitem">Organizational Consulting</a>
+          <a href="services.html#education" role="menuitem">Education</a>
+          <a href="services.html#concierge-therapy" role="menuitem">Concierge Therapy</a>
+        </div>
+      </li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Work Together</a>
+
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" role="dialog" aria-label="Navigation">
+  <a href="about.html">About</a>
+  <hr class="rule" />
+  <a href="method.html">Method</a>
+  <hr class="rule" />
+  <a href="philosophy.html">Philosophy</a>
+  <hr class="rule" />
+  <a href="services.html">Services</a>
+  <hr class="rule" />
+  <a href="#contact">Work Together</a>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container hero-text">
+    <div class="hero-eyebrow">
+      <span class="t-eyebrow">Licensed Psychologist · Executive Coach</span>
+    </div>
+
+    <h1 class="hero-headline reveal">
+      To create the life<br />
+      of your dreams, you<br />
+      must first <em>build yourself.</em>
+    </h1>
+
+    <p class="hero-sub reveal" data-delay="2">
+      Transformative work for high performers, executives, and leaders
+      ready to align their inner world with the life they are building.
+    </p>
+
+    <div class="hero-actions reveal" data-delay="3">
+      <a href="#contact" class="btn btn-primary">Begin the Conversation</a>
+      <a href="philosophy.html" class="btn btn-ghost">My Philosophy</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/portrait.jpg" alt="Dr. Alina Schulhofer" loading="eager" />
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── STATEMENT BAND ─────────────────────────────────── -->
+<section class="statement-band reveal">
+  <div class="container">
+    <p>
+      High performance is a form of <em>art.</em>
+      <span class="brand-mark">❊ Architecture of Excellence™</span>
+    </p>
+  </div>
+</section>
+
+<!-- ── PREMISE ────────────────────────────────────────── -->
+<section class="premise">
+  <div class="container">
+    <div class="premise-inner">
+      <div class="premise-accent reveal">
+        High performers don't struggle<br />
+        on the level of skill —<br />
+        <strong>they struggle within.</strong>
+      </div>
+      <div class="premise-body reveal" data-delay="2">
+        <hr class="rule--accent" />
+        <p>
+          We often mistakenly believe in the ability to improve our inner experience
+          by changing our external world — that happiness will come with the next title,
+          the next milestone, the next achievement.
+        </p>
+        <p>
+          On my own path, and in working with world class individuals across industries,
+          I've learned that these misconceptions profoundly limit not only our inner contentment,
+          but also put a ceiling on what we're able to achieve externally.
+        </p>
+        <p>
+          If our achievements are to be sustainable — both externally successful and internally
+          satisfying — it is our responsibility to tend to our internal world above all.
+        </p>
+        <br />
+        <a href="philosophy.html" class="btn btn-ghost">Read My Philosophy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE ─────────────────────────────────────── -->
+<section class="pull-quote reveal">
+  <div class="container">
+    <blockquote>
+      Lack of authenticity blocks both personal fulfillment and professional success.
+    </blockquote>
+    <cite>— Dr. Alina Schulhofer</cite>
+  </div>
+</section>
+
+<!-- ── TEASERS ────────────────────────────────────────── -->
+<section class="teasers">
+  <div class="container">
+    <div class="teasers-header reveal">
+      <div>
+        <p class="t-eyebrow">Explore</p>
+        <h2 class="t-h2" style="margin-top:.5rem">Where to begin</h2>
+      </div>
+      <a href="about.html" class="btn btn-ghost" style="flex-shrink:0">Learn More</a>
+    </div>
+
+    <div class="teaser-grid">
+      <a href="about.html" class="teaser-card reveal" data-delay="1">
+        <div class="teaser-num">01</div>
+        <div class="teaser-title">About Dr. Schulhofer</div>
+        <p class="teaser-body">
+          Psychologist, coach, former competitive athlete, and founder —
+          her work is shaped by lived experience as much as clinical expertise.
+        </p>
+        <span class="teaser-link">Learn More</span>
+      </a>
+
+      <a href="method.html" class="teaser-card reveal" data-delay="2">
+        <div class="teaser-num">02</div>
+        <div class="teaser-title">The Method</div>
+        <p class="teaser-body">
+          The Architecture of Excellence™ — a proprietary framework
+          integrating psychology, performance science, and lived experience.
+        </p>
+        <span class="teaser-link">Explore</span>
+      </a>
+
+      <a href="philosophy.html" class="teaser-card reveal" data-delay="3">
+        <div class="teaser-num">03</div>
+        <div class="teaser-title">Philosophy</div>
+        <p class="teaser-body">
+          The full manifesto: what it means to build yourself from within,
+          and why inner architecture precedes all lasting achievement.
+        </p>
+        <span class="teaser-link">Read</span>
+      </a>
+
+      <a href="services.html" class="teaser-card reveal" data-delay="4">
+        <div class="teaser-num">04</div>
+        <div class="teaser-title">Work Together</div>
+        <p class="teaser-body">
+          Executive coaching, organizational consulting, education,
+          and private concierge therapy — tailored to exceptional individuals.
+        </p>
+        <span class="teaser-link">Services</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container contact-inner">
+    <p class="t-eyebrow reveal">Begin Here</p>
+    <h2 class="contact-headline reveal" data-delay="1">
+      Dare to look <em>within.</em>
+    </h2>
+    <p class="reveal" data-delay="2" style="max-width:520px;color:var(--ink2);line-height:1.75;">
+      If you're curious about what might be possible — begin with a private conversation
+      to discover ways of working together.
+    </p>
+    <a href="mailto:alina@architectureofexcellence.com" class="contact-email reveal" data-delay="3">
+      alina@architectureofexcellence.com
+    </a>
+    <a href="mailto:alina@architectureofexcellence.com" class="btn btn-primary reveal" data-delay="4">
+      Begin the Conversation
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="container foot-inner">
+    <span class="foot-brand">Dr. Alina Schulhofer</span>
+    <nav class="foot-links" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="method.html">Method</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <span class="foot-copy">© 2026 Dr. Alina Schulhofer. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS ────────────────────────────────────────── -->
+<script src="site.js"></script>
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.27.1/babel.min.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
+<div id="tweaks-root"></div>
+
+</body>
+</html>
