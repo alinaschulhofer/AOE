@@ -169,7 +169,7 @@ ul { list-style: none; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: background .4s var(--ease), box-shadow .4s var(--ease), backdrop-filter .4s;
+  transition: background .4s var(--ease), box-shadow .4s var(--ease);
 }
 
 #nav.scrolled {
@@ -181,15 +181,24 @@ ul { list-style: none; }
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+  gap: 0;
+}
+
+.nav-inner .nav-links {
+  margin-left: auto;
+  margin-right: 3rem;
+}
+
+.nav-inner .nav-cta {
+  flex-shrink: 0;
 }
 
 .nav-wordmark {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 400;
+  font-style: italic;
   letter-spacing: .02em;
   line-height: 1.2;
   white-space: nowrap;
@@ -204,9 +213,9 @@ ul { list-style: none; }
 
 .nav-links a, .nav-dd-trigger {
   font-family: 'Jost', sans-serif;
-  font-size: .8rem;
+  font-size: .72rem;
   font-weight: 400;
-  letter-spacing: .1em;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink2);
   transition: color .25s;
@@ -216,7 +225,6 @@ ul { list-style: none; }
   padding: 0;
 }
 .nav-links a:hover,
-.nav-links a[data-active],
 .nav-dd-trigger:hover { color: var(--ink); }
 .nav-links a[data-active] { color: var(--accent); }
 
@@ -231,25 +239,14 @@ ul { list-style: none; }
   background: var(--bg);
   border: 1px solid var(--rule);
   padding: 1.25rem 1.75rem;
-  min-width: 220px;
+  min-width: 230px;
   display: flex;
   flex-direction: column;
   gap: .75rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity .25s var(--ease), transform .25s var(--ease);
-  box-shadow: 0 12px 40px rgba(0,0,0,.10);
-}
-.nav-dd-menu::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 9px; height: 9px;
-  background: var(--bg);
-  border-left: 1px solid var(--rule);
-  border-top: 1px solid var(--rule);
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
 }
 
 .nav-dd.open .nav-dd-menu {
@@ -295,6 +292,7 @@ ul { list-style: none; }
   padding: .4rem;
   flex-direction: column;
   gap: 5px;
+  margin-left: auto;
 }
 .nav-toggle span {
   display: block;
