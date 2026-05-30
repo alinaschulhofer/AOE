@@ -181,14 +181,13 @@ ul { list-style: none; }
 .nav-inner {
   display: flex;
   align-items: center;
-  flex: 1;
-  padding-inline: clamp(1.5rem, 4vw, 4rem);
-  gap: 0;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .nav-inner .nav-links {
   margin-left: auto;
-  margin-right: 3rem;
+  margin-right: 2.5rem;
 }
 
 .nav-inner .nav-cta {
