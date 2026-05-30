@@ -183,6 +183,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 2rem;
 }
 
 .nav-wordmark {
@@ -364,13 +365,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 2rem; height: 1px;
-  background: var(--accent);
+  margin-bottom: 1.5rem;
 }
 
 .hero-headline {
