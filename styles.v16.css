@@ -974,13 +974,33 @@ ul { list-style: none; }
 .about-portrait {
   position: sticky;
   top: calc(var(--nav-h) + 2rem);
+  overflow: hidden;
 }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 2/3;
+  aspect-ratio: 3/5;
   object-fit: cover;
   object-position: center top;
-  filter: var(--photo-filter);
+  filter: saturate(0.82) var(--photo-filter);
+  display: block;
+}
+.about-portrait::before,
+.about-portrait::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+.about-portrait::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+}
+.about-portrait::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
 }
 
 .about-circle-hero {
