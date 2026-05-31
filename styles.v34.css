@@ -3,9 +3,7 @@
    Complete Design System
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
@@ -203,6 +201,7 @@ ul { list-style: none; }
   max-width: var(--max-w);
   margin-inline: auto;
   padding-inline: clamp(1.5rem, 5vw, 5rem);
+  padding-top: 8px;
 }
 
 .nav-wordmark { flex-shrink: 0; }
@@ -212,11 +211,11 @@ ul { list-style: none; }
 .nav-cta { flex-shrink: 0; }
 
 .nav-wordmark {
-  font-family: 'Pinyon Script', cursive;
-  font-size: 2rem;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
   font-style: normal;
-  letter-spacing: .01em;
+  letter-spacing: .03em;
   line-height: 1.2;
   white-space: nowrap;
   color: var(--accent);
