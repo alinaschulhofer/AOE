@@ -982,7 +982,9 @@ ul { list-style: none; }
 .svc-feature {
   display: flex;
   gap: 1rem;
-  font-size: .92rem;
+  font-size: .82rem;
+  line-height: 1.7;
+  color: var(--ink2);
 }
 .svc-feature::before {
   content: '—';
