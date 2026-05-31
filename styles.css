@@ -337,7 +337,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait.jpg') center top / cover no-repeat;
+  background: url('assets/portrait.jpg') 20% top / cover no-repeat;
 }
 
 /* Gradient fades: left (for text readability), top, bottom */
