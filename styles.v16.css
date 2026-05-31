@@ -836,7 +836,7 @@ ul { list-style: none; }
   font-style: italic;
   letter-spacing: .01em;
   text-transform: none;
-  color: var(--ink);
+  color: var(--accent);
   line-height: 1.2;
 }
 .cred-value {
