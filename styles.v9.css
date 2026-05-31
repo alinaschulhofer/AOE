@@ -193,10 +193,10 @@ ul { list-style: none; }
 
 .nav-wordmark {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: .06em;
+  font-size: 1.35rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: .09em;
   line-height: 1.2;
   white-space: nowrap;
   color: var(--ink);
@@ -364,8 +364,8 @@ ul { list-style: none; }
     linear-gradient(to bottom, #F3EFE6 0%, #F3EFE6 6%, rgba(243,239,230,0.65) 16%, transparent 26%),
     /* Bottom — solid band then fade, seamless into next section */
     linear-gradient(to top, #F3EFE6 0%, #F3EFE6 8%, rgba(243,239,230,0.65) 20%, transparent 30%),
-    /* Overall wash: tints white photo bg to match page ivory */
-    rgba(243,239,230,0.52);
+    /* Overall wash: tints white photo bg to ivory — reduced for more presence */
+    rgba(243,239,230,0.20);
 }
 
 /* Text sits above both the image and the gradient overlay */
