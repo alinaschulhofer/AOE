@@ -356,7 +356,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait-about.jpg') right 5% top 8% / auto 90% no-repeat #F3EFE6;
+  background: url('assets/portrait-about.jpg') right 0% top 8% / auto 90% no-repeat #F3EFE6;
 }
 
 /* Deep dreamy ivory blend — exact site color #F3EFE6 = rgba(243,239,230) */
