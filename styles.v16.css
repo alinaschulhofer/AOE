@@ -984,13 +984,14 @@ ul { list-style: none; }
 }
 
 .about-circle-hero {
-  width: 100px;
-  height: 100px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 10%;
   border: 2px solid var(--accent);
   display: block;
+  flex-shrink: 0;
 }
 .about-portrait-placeholder {
   width: 100%;
