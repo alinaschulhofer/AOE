@@ -354,8 +354,6 @@ ul { list-style: none; }
 
 .hero-text {
   padding-block: clamp(5rem, 10vw, 10rem);
-  padding-inline-start: max(clamp(1.5rem, 5vw, 5rem), calc((100vw - var(--max-w)) / 2 + clamp(1.5rem, 5vw, 5rem)));
-  padding-inline-end: clamp(1rem, 2vw, 2rem);
   z-index: 1;
 }
 
@@ -536,9 +534,9 @@ ul { list-style: none; }
 }
 .premise-inner {
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: 7fr 5fr;
   gap: clamp(4rem, 8vw, 10rem);
-  align-items: center;
+  align-items: start;
 }
 .premise-accent {
   font-family: 'Cormorant Garamond', serif;
@@ -548,6 +546,8 @@ ul { list-style: none; }
   line-height: 1.4;
   letter-spacing: -.01em;
   color: var(--ink2);
+  align-self: start;
+  padding-top: 2rem;
 }
 .premise-gold {
   font-style: italic;
