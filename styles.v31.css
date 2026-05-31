@@ -916,14 +916,17 @@ ul { list-style: none; }
   gap: clamp(3rem, 7vw, 8rem);
   align-items: start;
 }
-.svc-sidebar { position: sticky; top: calc(var(--nav-h) + 3rem); }
+.svc-sidebar { position: sticky; top: calc(var(--nav-h) + 3rem); padding-top: 3.75rem; }
 .svc-sidebar-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
   font-weight: 300;
   color: var(--rule-strong);
   line-height: 1;
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
 }
 .svc-sidebar-title {
   font-family: 'Cormorant Garamond', serif;
