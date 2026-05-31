@@ -968,44 +968,18 @@ ul { list-style: none; }
   color: var(--accent);
   flex-shrink: 0;
 }
-.series-cards {
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.series-card {
-  position: relative;
-  border: 1px solid var(--rule);
-  border-top: 2px solid var(--accent);
-  padding: 2rem 2.25rem 2.25rem;
-  background: var(--bg2, transparent);
-  transition: border-color .3s var(--ease-out), transform .3s var(--ease-out);
-}
-.series-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-.series-card-label {
-  display: inline-block;
-  font-family: 'Jost', sans-serif;
-  font-size: .62rem;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: .9rem;
-}
-.series-card-title {
+.svc-content h3.series-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-style: italic;
-  color: var(--ink);
+  font-weight: 400;
+  color: var(--accent);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  padding-bottom: .9rem;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(168,130,78,0.28);
 }
-.series-card p { font-size: .95rem; line-height: 1.75; margin: 0; }
 
 .svc-inquire {
   display: inline-block;
