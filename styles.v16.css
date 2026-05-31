@@ -968,8 +968,15 @@ ul { list-style: none; }
   padding-block: var(--section);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 7vw, 8rem);
+  gap: 0;
   align-items: start;
+}
+.about-portrait {
+  padding-right: clamp(3rem, 6vw, 7rem);
+}
+.about-split .prose {
+  padding-left: clamp(3rem, 6vw, 7rem);
+  border-left: 1px solid var(--accent);
 }
 .about-portrait {
   position: sticky;
