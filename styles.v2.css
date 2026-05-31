@@ -365,8 +365,8 @@ ul { list-style: none; }
     linear-gradient(to bottom, #f7f4ef 0%, rgba(247,244,239,0.6) 10%, transparent 22%),
     /* Bottom fade */
     linear-gradient(to top, #f7f4ef 0%, rgba(247,244,239,0.5) 12%, transparent 24%),
-    /* Overall warm ivory wash over photo for the dreamy/ethereal quality */
-    rgba(247,244,239,0.22);
+    /* Overall ivory wash to match site background and kill the white photo bg */
+    rgba(247,244,239,0.48);
 }
 
 /* Text sits above both the image and the gradient overlay */
