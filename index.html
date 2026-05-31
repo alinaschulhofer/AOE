@@ -210,22 +210,27 @@
       Your journey towards <em>sustainable excellence</em> begins here.
     </h2>
 
-    <!-- Formspree contact form — replace REPLACE_FORMSPREE_ID with your form ID -->
+    <div data-fs-success class="cf-success">Thank you — I will be in touch shortly.</div>
+    <div data-fs-error class="cf-error"></div>
+
     <form
       id="contact-form"
-      action="https://formspree.io/f/REPLACE_FORMSPREE_ID"
-      method="POST"
       class="contact-form reveal"
       data-delay="2"
     >
       <div class="cf-row">
-        <input class="cf-input" type="text" name="name" placeholder="Your name" required />
-        <input class="cf-input" type="email" name="email" placeholder="Email address" required />
+        <div class="cf-field">
+          <input class="cf-input" type="text" id="cf-name" name="name" placeholder="Your name" required data-fs-field />
+          <span data-fs-error="name" class="cf-field-error"></span>
+        </div>
+        <div class="cf-field">
+          <input class="cf-input" type="email" id="cf-email" name="email" placeholder="Email address" required data-fs-field />
+          <span data-fs-error="email" class="cf-field-error"></span>
+        </div>
       </div>
-      <input class="cf-input" type="text" name="subject" placeholder="Subject / area of interest" />
-      <textarea class="cf-input cf-textarea" name="message" placeholder="Tell me a little about you and what you're looking for…" rows="5"></textarea>
-      <button type="submit" class="btn btn-primary cf-submit">Send Message</button>
-      <p class="cf-note" id="cf-status"></p>
+      <input class="cf-input" type="text" name="subject" placeholder="Subject / area of interest" data-fs-field />
+      <textarea class="cf-input cf-textarea" name="message" placeholder="Tell me a little about you and what you're looking for…" rows="5" data-fs-field></textarea>
+      <button type="submit" class="btn btn-primary cf-submit" data-fs-submit-btn>Send Message</button>
     </form>
 
     <p class="contact-alt reveal" data-delay="3">
@@ -252,33 +257,10 @@
 <script src="site.js"></script>
 <script src="lead-magnet.js"></script>
 <script>
-(function () {
-  var form = document.getElementById('contact-form');
-  var status = document.getElementById('cf-status');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    var action = form.getAttribute('action');
-    if (action.indexOf('REPLACE_FORMSPREE_ID') > -1) return; // let normal submit if not configured
-    e.preventDefault();
-    var data = new FormData(form);
-    fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(function (r) { return r.json(); })
-      .then(function (res) {
-        if (res.ok) {
-          form.style.display = 'none';
-          status.textContent = 'Thank you — I will be in touch shortly.';
-          status.style.color = 'var(--accent)';
-          status.style.fontFamily = "'Cormorant Garamond', serif";
-          status.style.fontSize = '1.2rem';
-          status.style.fontStyle = 'italic';
-        } else {
-          status.textContent = 'Something went wrong. Please email directly.';
-        }
-      })
-      .catch(function () { status.textContent = 'Something went wrong. Please email directly.'; });
-  });
-})();
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xzdwqnvk' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.27.1/babel.min.js"></script>

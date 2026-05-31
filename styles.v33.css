@@ -1547,3 +1547,27 @@ ul { list-style: none; }
   .cf-row { grid-template-columns: 1fr; }
   .cf-submit { width: 100%; justify-content: center; }
 }
+
+/* ── FORMSPREE STATES ────────────────────────────────── */
+.cf-success {
+  display: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+  margin-top: 2rem;
+  line-height: 1.5;
+}
+[data-fs-success]:not([hidden]) { display: block; }
+.cf-error {
+  display: none;
+  font-size: .82rem;
+  color: #b94040;
+  margin-top: .75rem;
+}
+[data-fs-error]:not([hidden]):not(:empty) { display: block; }
+.cf-field { display: flex; flex-direction: column; }
+.cf-field-error { font-size: .75rem; color: #b94040; margin-top: .25rem; min-height: 1em; }
+.cf-input[aria-invalid="true"] { border-color: #b94040; }
+[data-fs-submit-btn]:disabled { opacity: .55; cursor: not-allowed; }
