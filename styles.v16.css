@@ -819,27 +819,28 @@ ul { list-style: none; }
 }
 .cred-item {
   background: var(--bg);
-  padding: 2.5rem 2rem;
+  padding: 3.5rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 1.1rem;
 }
 .cred-icon {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
+  font-size: 2.6rem;
   color: var(--accent);
 }
 .cred-label {
-  font-size: .7rem;
-  letter-spacing: .15em;
+  font-size: .72rem;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--ink3);
+  color: var(--accent);
 }
 .cred-value {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.3;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink);
 }
 
 /* ── PILLARS ─────────────────────────────────────────── */
