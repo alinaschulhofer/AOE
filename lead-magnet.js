@@ -29,7 +29,7 @@
             'The Inner Alignment Guide for<br /><em style="color:var(--accent);font-style:italic;">High Performers</em>',
           '</h2>',
           '<p class="lm-body">',
-            'A complimentary guide from Dr. Alina Schulhofer — get started on exploring the inner foundations of sustainable excellence.',
+            'A complimentary guide from Dr. Alina Schulhofer — begin exploring the inner foundations of sustainable excellence.',
           '</p>',
           '<form class="lm-form" id="lm-guide-form" novalidate>',
             '<input class="lm-input" type="text" name="name" placeholder="First name" />',
