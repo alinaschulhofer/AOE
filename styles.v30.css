@@ -968,6 +968,29 @@ ul { list-style: none; }
   color: var(--accent);
   flex-shrink: 0;
 }
+.svc-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.25rem, 4vw, 3.25rem) clamp(2.5rem, 5vw, 4rem);
+  margin-top: 2.5rem;
+}
+.svc-group-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1.25;
+  padding-top: 1.35rem;
+  margin-bottom: 1.25rem;
+  border-top: 1px solid rgba(168,130,78,0.3);
+}
+.svc-group .svc-features { margin-top: 0; gap: .65rem; }
+.svc-group .svc-feature { font-size: .88rem; }
+@media (max-width: 768px) {
+  .svc-groups { grid-template-columns: 1fr; gap: 2.25rem; }
+}
+
 .svc-inquire {
   display: inline-block;
   margin-top: 3.5rem;
