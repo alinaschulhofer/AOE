@@ -724,8 +724,8 @@ ul { list-style: none; }
 
 /* ── PAGE HERO ───────────────────────────────────────── */
 .page-hero {
-  padding-top: calc(var(--nav-h) + clamp(3rem, 7vw, 7rem));
-  padding-bottom: clamp(3rem, 7vw, 7rem);
+  padding-top: calc(var(--nav-h) + clamp(2rem, 4vw, 4rem));
+  padding-bottom: clamp(2rem, 4vw, 4rem);
   border-bottom: 1px solid var(--rule);
   position: relative;
   overflow: hidden;
@@ -740,7 +740,7 @@ ul { list-style: none; }
 .page-hero-inner {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: end;
+  align-items: center;
   gap: var(--gap);
 }
 .page-hero-text { position: relative; z-index: 1; }
