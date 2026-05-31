@@ -970,16 +970,17 @@ ul { list-style: none; }
 }
 .svc-content h3.series-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
-  line-height: 1.2;
-  padding-bottom: .9rem;
-  margin-top: 3rem;
-  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  padding-bottom: .8rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1.1rem;
   border-bottom: 1px solid rgba(168,130,78,0.28);
 }
+.svc-content h3.series-heading + p { font-size: .9rem; line-height: 1.7; }
 
 .svc-inquire {
   display: inline-block;
