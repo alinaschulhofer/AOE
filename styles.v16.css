@@ -596,7 +596,7 @@ ul { list-style: none; }
   font-style: italic;
   color: var(--accent);
 }
-.premise-body { color: var(--ink2); font-size: .92rem; line-height: 1.75; }
+.premise-body { color: var(--ink2); font-size: 1rem; line-height: 1.75; }
 .premise-body p + p { margin-top: 1em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
 
@@ -976,10 +976,10 @@ ul { list-style: none; }
   align-items: start;
 }
 .about-portrait {
-  padding-right: clamp(3rem, 6vw, 7rem);
+  padding-right: clamp(1.5rem, 3vw, 3rem);
 }
 .about-split .prose {
-  padding-left: clamp(3rem, 6vw, 7rem);
+  padding-left: clamp(1.5rem, 3vw, 3rem);
 }
 .about-portrait {
   position: sticky;
