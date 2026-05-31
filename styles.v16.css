@@ -977,10 +977,23 @@ ul { list-style: none; }
 }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
   object-fit: cover;
   object-position: center top;
   filter: var(--photo-filter);
+}
+
+.about-circle-wrap {
+  margin-bottom: 2rem;
+}
+.about-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--accent);
+  display: block;
 }
 .about-portrait-placeholder {
   width: 100%;
