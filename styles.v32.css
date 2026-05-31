@@ -1004,7 +1004,79 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .svc-detail-inner { grid-template-columns: 1fr; }
-  .svc-sidebar { position: static; }
+  .svc-sidebar { position: static; padding-top: 0; }
+  .svc-sidebar-num { position: static; margin-bottom: 1rem; }
+}
+
+/* ===== Hero headline: word-by-word reveal ===== */
+.hero-headline .word-mask,
+.page-hero-text h1 .word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.hero-headline .word-inner,
+.page-hero-text h1 .word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 1s var(--ease-out), opacity 1s var(--ease-out);
+  will-change: transform;
+}
+.hero-headline.words-in .word-inner,
+.page-hero-text h1.words-in .word-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== Image reveal mask (gated on js-anim so images never hide without JS) ===== */
+.js-anim .about-circle-hero,
+.js-anim .about-portrait-inner img {
+  clip-path: inset(0 0 100% 0);
+  transform: scale(1.06);
+  transition: clip-path 1.3s var(--ease-out), transform 1.6s var(--ease-out);
+}
+.js-anim .about-circle-hero.is-visible,
+.js-anim .about-portrait.is-visible .about-portrait-inner img {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+/* ===== Button fill sweep ===== */
+.btn-primary::before,
+.btn-ghost::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .45s var(--ease-out);
+  z-index: -1;
+}
+.btn-ghost::before { background: var(--ink); }
+.btn-primary:hover::before,
+.btn-ghost:hover::before { transform: scaleX(1); }
+
+/* ===== Inquire arrow nudge ===== */
+.svc-inquire::after {
+  display: inline-block;
+  transition: transform .3s var(--ease-out);
+}
+.svc-inquire:hover::after { transform: translateX(5px); }
+
+/* ===== Teaser arrow nudge ===== */
+.teaser-link::after {
+  display: inline-block;
+  transition: transform .3s var(--ease-out);
+}
+.teaser-card:hover .teaser-link::after { transform: translateX(5px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline .word-inner,
+  .page-hero-text h1 .word-inner { transform: none; opacity: 1; transition: none; }
+  .about-circle-hero,
+  .about-portrait-inner img { clip-path: none; transform: none; }
 }
 
 /* ── ABOUT PAGE ──────────────────────────────────────── */
