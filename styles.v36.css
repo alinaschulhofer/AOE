@@ -1658,30 +1658,23 @@ ul { list-style: none; }
   opacity: 1;
 }
 
-/* ── Dramatic heading variant ────────────────────────── */
+/* ── Heading sizes — keep original t-h2, no drama override */
 .t-h2--drama {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 3.8vw, 4rem);
+  font-size: var(--h2);
   font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: .035em;
+  line-height: 1.2;
+  letter-spacing: -.01em;
 }
 
-/* ── Premise accent — vertical gold rule on left ─────── */
-.premise-accent {
-  border-left: 1.5px solid rgba(168,130,78,.55);
-  padding-left: 2rem;
-}
-@media (max-width: 768px) {
-  .premise-accent { border-left: none; padding-left: 0; }
-}
+/* ── Premise accent — no vertical border ────────────── */
 
-/* ── More generous section spacing ──────────────────── */
+/* ── Tighter section spacing ─────────────────────────── */
 .premise {
-  padding-block: calc(var(--section) * 1.2);
+  padding-block: var(--section);
 }
 .pillars-section {
-  padding-block: calc(var(--section) * 1.2);
+  padding-block: var(--section);
 }
 
 /* ── Gold ornament section divider ───────────────────── */
@@ -1690,7 +1683,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 1.4rem;
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: clamp(1rem, 2vw, 1.5rem);
   position: relative;
 }
 .gold-ornament::before,
@@ -1713,24 +1706,12 @@ ul { list-style: none; }
   box-shadow: 0 0 0 2px rgba(168,130,78,.18);
 }
 
-/* ── Method dim — staggered slide + left line draw ───── */
+/* ── Method dim — staggered slide only, no left line ─── */
 .method-dim {
   position: relative;
 }
 .method-dim::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1.5px;
-  background: var(--accent);
-  transform: scaleY(0);
-  transform-origin: top center;
-  transition: transform .45s var(--ease-out);
-}
-.method-dim.in::before {
-  transform: scaleY(1);
+  display: none;
 }
 
 /* ── Method seal — confidentiality ornament ──────────── */
