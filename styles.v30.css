@@ -968,6 +968,22 @@ ul { list-style: none; }
   color: var(--accent);
   flex-shrink: 0;
 }
+.svc-inquire {
+  display: inline-block;
+  margin-top: 3.5rem;
+  font-family: 'Jost', sans-serif;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(168,130,78,0.4);
+  transition: color .25s var(--ease-out), border-color .25s var(--ease-out);
+}
+.svc-inquire::after { content: ' →'; }
+.svc-inquire:hover { color: var(--ink); border-color: var(--ink); }
 
 @media (max-width: 768px) {
   .svc-detail-inner { grid-template-columns: 1fr; }
