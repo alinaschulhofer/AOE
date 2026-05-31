@@ -596,7 +596,7 @@ ul { list-style: none; }
   font-style: italic;
   color: var(--accent);
 }
-.premise-body { color: var(--ink2); font-size: 1rem; line-height: 1.75; }
+.premise-body { color: var(--ink2); font-size: 1.15rem; line-height: 1.8; }
 .premise-body p + p { margin-top: 1em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
 
