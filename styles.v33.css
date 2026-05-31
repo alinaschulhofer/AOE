@@ -1549,7 +1549,8 @@ ul { list-style: none; }
 }
 
 /* ── FORMSPREE STATES ────────────────────────────────── */
-.cf-success {
+.cf-success,
+[data-fs-success] {
   display: none;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
@@ -1558,6 +1559,11 @@ ul { list-style: none; }
   color: var(--accent);
   margin-top: 2rem;
   line-height: 1.5;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 [data-fs-success]:not([hidden]) { display: block; }
 .cf-error {
