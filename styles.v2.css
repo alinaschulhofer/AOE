@@ -337,10 +337,10 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait.jpg') right top / cover no-repeat #f7f4ef;
+  background: url('assets/portrait.jpg') right top / cover no-repeat #F3EFE6;
 }
 
-/* Match reference: deep ivory bleed, wide dreamy fade, warm tint over whole photo */
+/* Deep dreamy ivory blend — exact site color #F3EFE6 = rgba(243,239,230) */
 .hero::before {
   content: '';
   position: absolute;
@@ -348,24 +348,24 @@ ul { list-style: none; }
   z-index: 1;
   pointer-events: none;
   background:
-    /* Left solid ivory → very gradual fade across full width */
+    /* Left: solid ivory, very wide gradual fade */
     linear-gradient(to right,
-      #f7f4ef 0%,
-      #f7f4ef 34%,
-      rgba(247,244,239,0.90) 44%,
-      rgba(247,244,239,0.70) 54%,
-      rgba(247,244,239,0.45) 64%,
-      rgba(247,244,239,0.20) 75%,
-      rgba(247,244,239,0.08) 84%,
-      transparent 92%),
-    /* Right edge fade */
-    linear-gradient(to right, transparent 86%, rgba(247,244,239,0.75) 100%),
-    /* Top fade — solid ivory blending into photo */
-    linear-gradient(to bottom, #f7f4ef 0%, #f7f4ef 6%, rgba(247,244,239,0.7) 14%, transparent 24%),
-    /* Bottom fade — fully solid at very bottom to match page background */
-    linear-gradient(to top, #f7f4ef 0%, #f7f4ef 8%, rgba(247,244,239,0.7) 18%, transparent 28%),
-    /* Overall ivory wash to match site background and kill the white photo bg */
-    rgba(247,244,239,0.48);
+      #F3EFE6 0%,
+      #F3EFE6 34%,
+      rgba(243,239,230,0.92) 44%,
+      rgba(243,239,230,0.72) 54%,
+      rgba(243,239,230,0.46) 65%,
+      rgba(243,239,230,0.20) 76%,
+      rgba(243,239,230,0.06) 86%,
+      transparent 93%),
+    /* Right edge */
+    linear-gradient(to right, transparent 86%, rgba(243,239,230,0.80) 100%),
+    /* Top — solid band then fade */
+    linear-gradient(to bottom, #F3EFE6 0%, #F3EFE6 6%, rgba(243,239,230,0.65) 16%, transparent 26%),
+    /* Bottom — solid band then fade, seamless into next section */
+    linear-gradient(to top, #F3EFE6 0%, #F3EFE6 8%, rgba(243,239,230,0.65) 20%, transparent 30%),
+    /* Overall wash: tints white photo bg to ivory, adds ethereal quality */
+    rgba(243,239,230,0.55);
 }
 
 /* Text sits above both the image and the gradient overlay */
