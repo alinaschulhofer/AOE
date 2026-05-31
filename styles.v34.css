@@ -1596,3 +1596,34 @@ ul { list-style: none; }
 .cf-field-error { font-size: .75rem; color: #b94040; margin-top: .25rem; min-height: 1em; }
 .cf-input[aria-invalid="true"] { border-color: #b94040; }
 [data-fs-submit-btn]:disabled { opacity: .55; cursor: not-allowed; }
+
+/* ── METHOD LOGO HERO ────────────────────────────────── */
+.method-hero {
+  background: var(--ink);
+  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-top: calc(var(--nav-h) + clamp(3rem, 6vw, 5rem));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.method-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.method-logo {
+  width: min(680px, 80vw);
+  height: auto;
+  display: block;
+}
+.method-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(243,239,230,0.6);
+  letter-spacing: .04em;
+  margin: 0;
+}
