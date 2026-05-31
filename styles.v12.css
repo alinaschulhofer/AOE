@@ -535,7 +535,8 @@ ul { list-style: none; }
   border-block: 1px solid var(--rule);
   text-align: center;
 }
-.statement-band p {
+.statement-quote { margin: 0; }
+.statement-band p, .statement-quote {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   font-weight: 300;
@@ -555,6 +556,17 @@ ul { list-style: none; }
   letter-spacing: .08em;
   margin-top: 1.25rem;
   color: var(--ink2);
+}
+.statement-cite {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(.72rem, .9vw, .82rem);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 1.75rem;
 }
 @media (max-width: 768px) {
   .statement-band .brand-mark { font-size: .82rem; }
