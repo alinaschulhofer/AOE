@@ -1,7 +1,9 @@
-/* lead-magnet.js — timed popup for free guide download */
+/* lead-magnet.js — timed popup, email captured via Formspree, instant PDF download */
 (function () {
   var STORAGE_KEY = 'aoe-lm-dismissed';
-  var DELAY_MS = 35000; // show after 35 seconds
+  var DELAY_MS = 35000;
+  var FORMSPREE_ID = 'xzdwqnvk'; // same account, submissions tagged by subject
+  var GUIDE_URL = 'assets/AOE_Free_Guide.pdf';
 
   function alreadyDismissed() {
     try { return !!localStorage.getItem(STORAGE_KEY); } catch (e) { return false; }
@@ -20,6 +22,7 @@
     overlay.innerHTML = [
       '<div class="lm-modal" role="dialog" aria-modal="true" aria-labelledby="lm-headline">',
         '<button class="lm-close" aria-label="Close">&times;</button>',
+
         '<div id="lm-form-wrap">',
           '<p class="lm-eyebrow">Free Guide</p>',
           '<h2 class="lm-headline" id="lm-headline">',
@@ -29,75 +32,74 @@
             'A complimentary guide from Dr. Alina Schulhofer — exploring the internal foundations',
             ' that separate sustainable excellence from performance that burns out.',
           '</p>',
-          '<form class="lm-form" id="lm-mc-form" novalidate>',
-            '<input class="lm-input" type="text" name="FNAME" placeholder="First name" required />',
-            '<input class="lm-input" type="email" name="EMAIL" placeholder="Email address" required />',
-            '<button type="submit" class="btn btn-primary lm-submit">Send Me the Guide</button>',
+          '<form class="lm-form" id="lm-guide-form" novalidate>',
+            '<input class="lm-input" type="text" name="name" placeholder="First name" />',
+            '<input class="lm-input" type="email" name="email" placeholder="Email address" required />',
+            '<input type="hidden" name="subject" value="Free Guide Download" />',
+            '<button type="submit" class="btn btn-primary lm-submit">Download the Guide</button>',
           '</form>',
           '<p class="lm-note">No spam. Unsubscribe at any time.</p>',
+          '<p class="lm-error" id="lm-error" style="display:none;font-size:.78rem;color:#b94040;margin-top:.5rem;"></p>',
         '</div>',
+
         '<div class="lm-success" id="lm-success">',
-          '<h3>Check your inbox.</h3>',
-          '<p>The guide is on its way. Thank you for your interest — and welcome.</p>',
+          '<h3>Your guide is ready.</h3>',
+          '<p>Thank you — click below to download your complimentary copy.</p>',
+          '<a href="' + GUIDE_URL + '" download class="btn btn-primary lm-submit" style="margin-top:1.5rem;text-align:center;justify-content:center;">',
+            'Download Now',
+          '</a>',
         '</div>',
       '</div>'
     ].join('');
+
     document.body.appendChild(overlay);
 
-    // Close on X
-    overlay.querySelector('.lm-close').addEventListener('click', function () {
-      dismiss(overlay);
-    });
-
-    // Close on overlay click
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) dismiss(overlay);
-    });
-
-    // Close on Escape
+    overlay.querySelector('.lm-close').addEventListener('click', function () { dismiss(overlay); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) dismiss(overlay); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && overlay.classList.contains('open')) dismiss(overlay);
     });
 
-    // Form submit — posts to Mailchimp via their hidden form URL
-    var form = overlay.querySelector('#lm-mc-form');
+    var form = overlay.querySelector('#lm-guide-form');
+    var errorEl = overlay.querySelector('#lm-error');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var fname = form.querySelector('[name="FNAME"]').value.trim();
-      var email = form.querySelector('[name="EMAIL"]').value.trim();
-      if (!email) return;
+      errorEl.style.display = 'none';
 
-      // ── MAILCHIMP: replace MC_ACTION_URL with your Mailchimp form action URL ──
-      var MC_ACTION_URL = 'REPLACE_WITH_MAILCHIMP_ACTION_URL';
-
-      if (MC_ACTION_URL === 'REPLACE_WITH_MAILCHIMP_ACTION_URL') {
-        // Preview mode — just show success
-        showSuccess(overlay);
+      var email = form.querySelector('[name="email"]').value.trim();
+      if (!email || !email.includes('@')) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        errorEl.style.display = 'block';
         return;
       }
 
-      var data = new FormData();
-      data.append('EMAIL', email);
-      data.append('FNAME', fname);
-      data.append('b_PLACEHOLDER', ''); // honeypot
+      var submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'One moment…';
 
-      // Mailchimp JSONP submit
-      var callbackName = 'mcCallback_' + Date.now();
-      var url = MC_ACTION_URL.replace('/post?', '/post-json?') + '&c=' + callbackName;
-      Object.keys(Object.fromEntries(data)).forEach(function (k) {
-        url += '&' + encodeURIComponent(k) + '=' + encodeURIComponent(data.get(k));
-      });
+      var data = new FormData(form);
 
-      window[callbackName] = function (res) {
-        delete window[callbackName];
-        document.body.removeChild(script);
-        if (res.result === 'success' || res.result === 'error' && res.msg.indexOf('already subscribed') > -1) {
+      fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.ok || (res.errors && res.errors.length === 0)) {
           showSuccess(overlay);
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Download the Guide';
+          errorEl.textContent = 'Something went wrong — please try again.';
+          errorEl.style.display = 'block';
         }
-      };
-      var script = document.createElement('script');
-      script.src = url;
-      document.body.appendChild(script);
+      })
+      .catch(function () {
+        // Network error — still show download so user isn't blocked
+        showSuccess(overlay);
+      });
     });
 
     return overlay;
@@ -108,7 +110,6 @@
     var success = overlay.querySelector('#lm-success');
     success.style.display = 'block';
     try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-    setTimeout(function () { dismiss(overlay); }, 4000);
   }
 
   function init() {
@@ -117,9 +118,7 @@
     setTimeout(function () {
       overlay.style.display = 'flex';
       requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          overlay.classList.add('open');
-        });
+        requestAnimationFrame(function () { overlay.classList.add('open'); });
       });
     }, DELAY_MS);
   }
