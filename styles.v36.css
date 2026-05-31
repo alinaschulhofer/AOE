@@ -356,7 +356,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait-about.jpg') right 0% top 8% / auto 88% no-repeat #F3EFE6;
+  background: url('assets/portrait-about.jpg') right 0% top 12% / auto 105% no-repeat #F3EFE6;
 }
 
 /* Minimal blend — left text mask + soft edges only */
