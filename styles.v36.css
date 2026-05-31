@@ -617,8 +617,8 @@ ul { list-style: none; }
   font-style: italic;
   color: var(--accent);
 }
-.premise-body { color: var(--ink2); font-size: .9rem; line-height: 1.8; }
-.premise-body p + p { margin-top: 1em; }
+.premise-body { color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 1.125rem; font-weight: 300; line-height: 1.85; }
+.premise-body p + p { margin-top: 1.4em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
 
 @media (max-width: 768px) {
@@ -982,9 +982,11 @@ ul { list-style: none; }
 .svc-feature {
   display: flex;
   gap: 1rem;
-  font-size: .9rem;
-  line-height: 1.7;
-  color: var(--ink2);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink);
 }
 .svc-feature::before {
   content: '—';
