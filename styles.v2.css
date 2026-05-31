@@ -341,7 +341,7 @@ ul { list-style: none; }
   background-color: var(--bg);
 }
 
-/* Soft ivory blend over photo — no color-mix, plain rgba for full browser support */
+/* Match reference: deep ivory bleed, wide dreamy fade, warm tint over whole photo */
 .hero::before {
   content: '';
   position: absolute;
@@ -349,16 +349,24 @@ ul { list-style: none; }
   z-index: 1;
   pointer-events: none;
   background:
+    /* Left solid ivory → very gradual fade across full width */
     linear-gradient(to right,
       #f7f4ef 0%,
-      #f7f4ef 36%,
-      rgba(247,244,239,0.82) 48%,
-      rgba(247,244,239,0.45) 60%,
-      rgba(247,244,239,0.12) 72%,
-      transparent 82%),
-    linear-gradient(to right, transparent 84%, rgba(247,244,239,0.7) 100%),
-    linear-gradient(to bottom, rgba(247,244,239,0.9) 0%, transparent 12%),
-    linear-gradient(to top,    rgba(247,244,239,0.9) 0%, transparent 18%);
+      #f7f4ef 34%,
+      rgba(247,244,239,0.90) 44%,
+      rgba(247,244,239,0.70) 54%,
+      rgba(247,244,239,0.45) 64%,
+      rgba(247,244,239,0.20) 75%,
+      rgba(247,244,239,0.08) 84%,
+      transparent 92%),
+    /* Right edge fade */
+    linear-gradient(to right, transparent 86%, rgba(247,244,239,0.75) 100%),
+    /* Top fade — strong, bleeds over head */
+    linear-gradient(to bottom, #f7f4ef 0%, rgba(247,244,239,0.6) 10%, transparent 22%),
+    /* Bottom fade */
+    linear-gradient(to top, #f7f4ef 0%, rgba(247,244,239,0.5) 12%, transparent 24%),
+    /* Overall warm ivory wash over photo for the dreamy/ethereal quality */
+    rgba(247,244,239,0.22);
 }
 
 /* Text sits above both the image and the gradient overlay */
