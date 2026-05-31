@@ -798,7 +798,7 @@ ul { list-style: none; }
   font-weight: 300;
   line-height: 1.85;
 }
-.prose p + p { margin-top: 2.8em; }
+.prose p + p { margin-top: 1.6em; }
 .prose h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
@@ -1107,7 +1107,7 @@ ul { list-style: none; }
 }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 3/5;
+  aspect-ratio: 3/4;
   object-fit: cover;
   object-position: center top;
   filter: saturate(0.82) var(--photo-filter);
