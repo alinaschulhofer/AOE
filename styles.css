@@ -193,10 +193,10 @@ ul { list-style: none; }
 
 .nav-wordmark {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 400;
-  font-style: italic;
-  letter-spacing: .02em;
+  font-style: normal;
+  letter-spacing: .06em;
   line-height: 1.2;
   white-space: nowrap;
   color: var(--ink);
@@ -348,7 +348,7 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 70% 50%, color-mix(in srgb, var(--accent) 8%, transparent), transparent);
+  background: var(--bg);
   pointer-events: none;
 }
 
@@ -427,7 +427,7 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
+  background: none;
 }
 .hero-image img {
   width: 100%; height: 100%;
@@ -534,7 +534,7 @@ ul { list-style: none; }
 }
 .premise-inner {
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: 7fr 5fr;
   gap: clamp(4rem, 8vw, 10rem);
   align-items: start;
 }
@@ -543,17 +543,15 @@ ul { list-style: none; }
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.3;
+  line-height: 1.4;
   letter-spacing: -.01em;
   color: var(--ink2);
+  align-self: start;
+  padding-top: 2rem;
 }
-.premise-accent strong {
-  font-weight: 400;
-  font-style: normal;
-  color: var(--ink);
-  display: block;
-  margin-top: .35em;
-  font-size: 1.05em;
+.premise-gold {
+  font-style: italic;
+  color: var(--accent);
 }
 .premise-body { color: var(--ink2); line-height: 1.8; }
 .premise-body p + p { margin-top: 1.25em; }
