@@ -337,8 +337,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait.jpg') right top / cover no-repeat;
-  background-color: var(--bg);
+  background: url('assets/portrait.jpg') right top / cover no-repeat #f7f4ef;
 }
 
 /* Match reference: deep ivory bleed, wide dreamy fade, warm tint over whole photo */
@@ -361,10 +360,10 @@ ul { list-style: none; }
       transparent 92%),
     /* Right edge fade */
     linear-gradient(to right, transparent 86%, rgba(247,244,239,0.75) 100%),
-    /* Top fade — strong, bleeds over head */
-    linear-gradient(to bottom, #f7f4ef 0%, rgba(247,244,239,0.6) 10%, transparent 22%),
-    /* Bottom fade */
-    linear-gradient(to top, #f7f4ef 0%, rgba(247,244,239,0.5) 12%, transparent 24%),
+    /* Top fade — solid ivory blending into photo */
+    linear-gradient(to bottom, #f7f4ef 0%, #f7f4ef 6%, rgba(247,244,239,0.7) 14%, transparent 24%),
+    /* Bottom fade — fully solid at very bottom to match page background */
+    linear-gradient(to top, #f7f4ef 0%, #f7f4ef 8%, rgba(247,244,239,0.7) 18%, transparent 28%),
     /* Overall ivory wash to match site background and kill the white photo bg */
     rgba(247,244,239,0.48);
 }
