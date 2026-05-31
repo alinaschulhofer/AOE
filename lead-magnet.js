@@ -1,7 +1,7 @@
 /* lead-magnet.js — timed popup, email captured via Formspree, instant PDF download */
 (function () {
   var STORAGE_KEY = 'aoe-lm-dismissed';
-  var DELAY_MS = 35000;
+  var DELAY_MS = 20000;
   var FORMSPREE_ID = 'xzdwqnvk'; // same account, submissions tagged by subject
   var GUIDE_URL = 'assets/AOE_Free_Guide.pdf';
 
