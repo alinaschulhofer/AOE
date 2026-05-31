@@ -356,7 +356,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait-about.jpg') right 12% top 22% / auto 118% no-repeat #F3EFE6;
+  background: url('assets/portrait-about.jpg') right 12% top 32% / auto 118% no-repeat #F3EFE6;
 }
 
 /* Minimal blend — left text mask + soft edges only */
@@ -374,8 +374,8 @@ ul { list-style: none; }
       rgba(243,239,230,0.80) 48%,
       rgba(243,239,230,0.30) 58%,
       transparent 68%),
-    /* Right edge — just enough to avoid hard cut */
-    linear-gradient(to right, transparent 88%, rgba(243,239,230,0.60) 100%),
+    /* Right edge — wide gradual fade, no hard line */
+    linear-gradient(to right, transparent 68%, rgba(243,239,230,0.25) 76%, rgba(243,239,230,0.65) 86%, rgba(243,239,230,0.92) 94%, #F3EFE6 100%),
     /* Top — thin band so head clears nav */
     linear-gradient(to bottom, #F3EFE6 0%, #F3EFE6 8%, rgba(243,239,230,0.50) 15%, transparent 24%),
     /* Bottom — waist crop */
