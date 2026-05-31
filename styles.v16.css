@@ -983,15 +983,12 @@ ul { list-style: none; }
   filter: var(--photo-filter);
 }
 
-.about-circle-wrap {
-  margin-bottom: 2rem;
-}
-.about-circle {
-  width: 96px;
-  height: 96px;
+.about-circle-hero {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   border: 2px solid var(--accent);
   display: block;
 }
