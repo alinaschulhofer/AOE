@@ -15,7 +15,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="styles.v32.css" />
+  <link rel="stylesheet" href="styles.v33.css" />
 </head>
 <body>
 
@@ -129,7 +129,7 @@
         <p>
           On my own path, and in working with world class individuals across industries,
           I've learned that these misconceptions profoundly limit not only our inner contentment,
-          but also put a ceiling on what we're able to achieve externally.
+          but also put a ceiling on what we're able to achieve.
         </p>
         <p>
           If our achievements are to be sustainable — both externally successful and internally
@@ -209,12 +209,28 @@
     <h2 class="contact-headline reveal" data-delay="1">
       Your journey towards <em>sustainable excellence</em> begins here.
     </h2>
-    <a href="mailto:alina@architectureofexcellence.com" class="contact-email reveal" data-delay="2">
-      alina@architectureofexcellence.com
-    </a>
-    <a href="mailto:alina@architectureofexcellence.com" class="btn btn-primary reveal" data-delay="3">
-      Book a Private Consultation
-    </a>
+
+    <!-- Formspree contact form — replace REPLACE_FORMSPREE_ID with your form ID -->
+    <form
+      id="contact-form"
+      action="https://formspree.io/f/REPLACE_FORMSPREE_ID"
+      method="POST"
+      class="contact-form reveal"
+      data-delay="2"
+    >
+      <div class="cf-row">
+        <input class="cf-input" type="text" name="name" placeholder="Your name" required />
+        <input class="cf-input" type="email" name="email" placeholder="Email address" required />
+      </div>
+      <input class="cf-input" type="text" name="subject" placeholder="Subject / area of interest" />
+      <textarea class="cf-input cf-textarea" name="message" placeholder="Tell me a little about you and what you're looking for…" rows="5"></textarea>
+      <button type="submit" class="btn btn-primary cf-submit">Send Message</button>
+      <p class="cf-note" id="cf-status"></p>
+    </form>
+
+    <p class="contact-alt reveal" data-delay="3">
+      Prefer email? <a href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a>
+    </p>
   </div>
 </section>
 
@@ -234,6 +250,35 @@
 
 <!-- ── SCRIPTS ────────────────────────────────────────── -->
 <script src="site.js"></script>
+<script src="lead-magnet.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('cf-status');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    var action = form.getAttribute('action');
+    if (action.indexOf('REPLACE_FORMSPREE_ID') > -1) return; // let normal submit if not configured
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          status.textContent = 'Thank you — I will be in touch shortly.';
+          status.style.color = 'var(--accent)';
+          status.style.fontFamily = "'Cormorant Garamond', serif";
+          status.style.fontSize = '1.2rem';
+          status.style.fontStyle = 'italic';
+        } else {
+          status.textContent = 'Something went wrong. Please email directly.';
+        }
+      })
+      .catch(function () { status.textContent = 'Something went wrong. Please email directly.'; });
+  });
+})();
+</script>
 <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.27.1/babel.min.js"></script>
