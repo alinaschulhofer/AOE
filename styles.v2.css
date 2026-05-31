@@ -337,10 +337,11 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait.jpg?v=2') right top / cover no-repeat var(--bg);
+  background: url('assets/portrait.jpg') right top / cover no-repeat;
+  background-color: var(--bg);
 }
 
-/* Soft ivory blend: solid on left (text area), gentle fade into photo on right */
+/* Soft ivory blend over photo — no color-mix, plain rgba for full browser support */
 .hero::before {
   content: '';
   position: absolute;
@@ -349,15 +350,15 @@ ul { list-style: none; }
   pointer-events: none;
   background:
     linear-gradient(to right,
-      var(--bg) 0%,
-      var(--bg) 36%,
-      color-mix(in srgb, var(--bg) 80%, transparent) 48%,
-      color-mix(in srgb, var(--bg) 40%, transparent) 60%,
-      color-mix(in srgb, var(--bg) 10%, transparent) 72%,
+      #f7f4ef 0%,
+      #f7f4ef 36%,
+      rgba(247,244,239,0.82) 48%,
+      rgba(247,244,239,0.45) 60%,
+      rgba(247,244,239,0.12) 72%,
       transparent 82%),
-    linear-gradient(to right, transparent 85%, var(--bg) 100%),
-    linear-gradient(to bottom, var(--bg) 0%, transparent 12%),
-    linear-gradient(to top,    var(--bg) 0%, transparent 18%);
+    linear-gradient(to right, transparent 84%, rgba(247,244,239,0.7) 100%),
+    linear-gradient(to bottom, rgba(247,244,239,0.9) 0%, transparent 12%),
+    linear-gradient(to top,    rgba(247,244,239,0.9) 0%, transparent 18%);
 }
 
 /* Text sits above both the image and the gradient overlay */
