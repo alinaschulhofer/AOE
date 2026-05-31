@@ -799,7 +799,7 @@ ul { list-style: none; }
 .prose em { font-style: italic; }
 .prose .pull {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-size: 1.15rem;
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
