@@ -980,7 +980,6 @@ ul { list-style: none; }
 }
 .about-split .prose {
   padding-left: clamp(3rem, 6vw, 7rem);
-  border-left: 1px solid var(--accent);
 }
 .about-portrait {
   position: sticky;
