@@ -349,19 +349,30 @@ ul { list-style: none; }
   z-index: 0;
   pointer-events: none;
   display: block;
-  /* Soft dissolve on all 4 edges directly on the image */
+  opacity: 0.92;
+  /* Soft dissolve: face emerges from ~55% of viewport, fades all edges */
   -webkit-mask-image:
-    linear-gradient(to right,  transparent 0%,  black 42%, black 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%,  black 8%,  black 88%, transparent 100%);
+    linear-gradient(to right,  transparent 0%, transparent 25%, rgba(0,0,0,0.2) 40%, black 62%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
   mask-image:
-    linear-gradient(to right,  transparent 0%,  black 42%, black 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%,  black 8%,  black 88%, transparent 100%);
+    linear-gradient(to right,  transparent 0%, transparent 25%, rgba(0,0,0,0.2) 40%, black 62%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
 }
 
-/* No ::before overlay needed — mask handles the blending */
-.hero::before { display: none; }
+/* Ivory fade covers left text area and softens edges */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to right, var(--bg) 0%, var(--bg) 42%, color-mix(in srgb, var(--bg) 60%, transparent) 56%, transparent 70%),
+    linear-gradient(to bottom, var(--bg) 0%, transparent 10%),
+    linear-gradient(to top,    var(--bg) 0%, transparent 16%);
+}
 
 /* Text sits above both the image and the gradient overlay */
 .hero-body {
