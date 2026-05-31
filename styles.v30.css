@@ -968,6 +968,17 @@ ul { list-style: none; }
   color: var(--accent);
   flex-shrink: 0;
 }
+.svc-lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+.svc-content h3 + .svc-features { margin-top: 1.5rem; }
+
 .svc-inquire {
   display: inline-block;
   margin-top: 3.5rem;
