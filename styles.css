@@ -337,7 +337,7 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: url('assets/portrait.jpg') 78% 15% / cover no-repeat;
+  background: url('assets/portrait.jpg') right 15% / cover no-repeat;
 }
 
 /* Gradient fades: left (for text readability), top, bottom */
@@ -366,15 +366,20 @@ ul { list-style: none; }
   padding-top: var(--nav-h);
   display: flex;
   align-items: center;
-  /* match nav-inner so text left-edge aligns with wordmark */
+}
+
+.hero-text {
+  /* match .container + nav-inner exactly so left edge aligns with wordmark */
   max-width: var(--max-w);
   margin-inline: auto;
   width: 100%;
   padding-inline: clamp(1.5rem, 5vw, 5rem);
+  padding-block: clamp(5rem, 10vw, 10rem);
+  /* limit how wide the actual text block is within the container */
+  box-sizing: border-box;
 }
 
-.hero-text {
-  padding-block: clamp(5rem, 10vw, 10rem);
+.hero-text > * {
   max-width: 560px;
 }
 
