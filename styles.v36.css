@@ -2320,7 +2320,7 @@ ul { list-style: none; }
 /* ── Featured Essay ──────────────────────────────────── */
 .featured-essay {
   padding-block: clamp(1.75rem, 2.5vw, 2.5rem);
-  background: var(--bg2);
+  background: var(--bg3);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
