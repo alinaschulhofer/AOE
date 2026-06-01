@@ -2483,6 +2483,7 @@ ul { list-style: none; }
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
 }
 .article-byline-name {
   font-family: 'Jost', sans-serif;
