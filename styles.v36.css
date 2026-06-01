@@ -2425,7 +2425,6 @@ ul { list-style: none; }
 .article-header {
   padding-top: clamp(3.5rem, 7vw, 6rem);
   padding-bottom: clamp(2rem, 4vw, 3.5rem);
-  border-bottom: 1px solid var(--rule);
 }
 .article-header-inner {
   max-width: 760px;
