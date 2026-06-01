@@ -1852,7 +1852,6 @@ ul { list-style: none; }
 /* ── Designed For ─────────────────────────────────────── */
 .designed-for {
   padding-block: var(--section);
-  border-top: 1px solid var(--rule);
 }
 .designed-for-header {
   display: flex;
@@ -2159,7 +2158,6 @@ ul { list-style: none; }
 .how-we-begin {
   padding-top: clamp(2rem, 4vw, 3rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
-  border-top: 1px solid var(--rule);
 }
 .hwb-eyebrow {
   display: block;
