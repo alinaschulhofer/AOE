@@ -1262,6 +1262,7 @@ ul { list-style: none; }
   font-size: 1.2rem;
   font-style: italic;
   color: var(--accent);
+  margin-top: 1.75rem;
   letter-spacing: .02em;
   border-bottom: 1px solid var(--accent);
   padding-bottom: .1em;
