@@ -2662,54 +2662,88 @@ ul { list-style: none; }
 }
 
 /* ── MOBILE GLOBAL FIXES ─────────────────────────────── */
-@media (max-width: 768px) {
-  /* Fix negative margin on premise-accent in single-column layout */
-  .premise-accent { margin-top: 0 !important; }
-
-  /* Footer: stack brand+nav on mobile, keep copyright centered */
-  .foot-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+@media (max-width: 900px) {
+  /* Mobile menu: push content below the nav bar so links don't overlap wordmark */
+  .mobile-menu {
+    padding-top: calc(var(--nav-h) + 2rem);
+    justify-content: flex-start;
   }
+}
+
+@media (max-width: 768px) {
+  /* ── HOMEPAGE HERO ── */
+  /* Hide background photo on mobile — clean ivory canvas, text only */
+  .hero-photo { display: none; }
+  .hero::before { display: none; }
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+  .hero-body {
+    width: 100%;
+    padding-top: calc(var(--nav-h) + 4rem);
+    padding-bottom: 5rem;
+    min-height: unset;
+  }
+  .hero-text > * { max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero-actions .btn { width: auto; }
+
+  /* ── PAGE HERO (about, philosophy, etc.) ── */
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-meta { display: none; }
+  .page-hero { padding-bottom: clamp(2rem, 4vw, 3rem); }
+
+  /* ── ABOUT SPLIT ── */
+  .about-split { grid-template-columns: 1fr; }
+  .about-portrait { display: none; } /* hide portrait on mobile — hero already introduces her */
+
+  /* ── PREMISE ── */
+  .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
+  .premise-inner { grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
+
+  /* ── FOOTER ── */
+  .foot-top { flex-direction: column; align-items: center; text-align: center; }
   .foot-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
   .foot-copy { text-align: center; }
 
-  /* Reduce article title size on narrow screens */
-  .article-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  /* ── TYPOGRAPHY ── */
+  .article-title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+  .contact-headline { font-size: clamp(1.5rem, 5vw, 2.4rem); }
+  .statement-band p, .statement-quote { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
+  .t-h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
+  .t-h2 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 
-  /* Contact headline — prevent overflow */
-  .contact-headline { font-size: clamp(1.6rem, 5vw, 2.8rem); }
-
-  /* Investment section stack */
+  /* ── SERVICES ── */
   .investment-inner { flex-direction: column; }
-
-  /* Services quick-nav wraps neatly */
   .svc-anchor-link { font-size: .7rem; }
 
-  /* Ensure hero CTA button doesn't overflow */
-  .hero-actions .btn { width: 100%; justify-content: center; }
-
-  /* Statement band font size */
-  .statement-band p, .statement-quote { font-size: clamp(1.6rem, 5vw, 2.2rem); }
-
-  /* Pull quote on philosophy page */
-  .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
+  /* ── INSIGHTS ── */
+  .insight-card { padding: 1.75rem 0; }
 }
 
 @media (max-width: 480px) {
   /* Tighten section padding on very small screens */
-  :root { --section: clamp(3rem, 8vw, 5rem); }
+  :root { --section: clamp(2.5rem, 8vw, 4rem); }
 
-  /* Buttons full-width on very small screens */
-  .btn { width: 100%; justify-content: center; text-align: center; }
-
-  /* Nav CTA hidden on very small — mobile menu handles it */
+  /* Nav CTA hidden — mobile menu handles it */
   .nav-cta { display: none; }
 
   /* Article byline wraps cleanly */
-  .article-byline { flex-wrap: wrap; }
+  .article-byline { flex-wrap: wrap; gap: .5rem; }
 
   /* Insights grid gap */
   .insights-grid { gap: 0; }
+
+  /* Designed-for circles smaller on phones */
+  .dfc-circle { width: 90px; height: 90px; }
+  .dfc-num { font-size: 1.1rem; }
+
+  /* FAQ answers more readable */
+  .faq-a-inner { font-size: .9rem; }
+
+  /* Services sidebar number smaller */
+  .svc-sidebar-num { font-size: clamp(3rem, 12vw, 5rem); }
 }
