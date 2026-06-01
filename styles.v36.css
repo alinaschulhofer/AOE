@@ -2292,6 +2292,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  align-items: flex-start;
 }
 .investment-content p {
   font-family: 'Jost', sans-serif;
