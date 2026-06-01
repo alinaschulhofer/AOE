@@ -1864,30 +1864,32 @@ ul { list-style: none; }
 .designed-for-list {
   display: flex;
   flex-direction: column;
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 .designed-for-item {
   display: flex;
-  align-items: baseline;
-  gap: 1.75rem;
-  padding-block: clamp(1.1rem, 2vw, 1.6rem);
+  align-items: center;
+  gap: 2rem;
+  padding-block: clamp(1rem, 1.8vw, 1.4rem);
   border-top: 1px solid var(--rule);
+  opacity: 1 !important;
+  transform: none !important;
 }
 .designed-for-item:last-child {
   border-bottom: 1px solid var(--rule);
 }
 .designed-for-item-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: .85rem;
+  font-size: .8rem;
   font-weight: 300;
   color: var(--ink3);
   font-style: italic;
   flex-shrink: 0;
-  width: 1.6rem;
+  min-width: 1.4rem;
 }
 .designed-for-item-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 2.8vw, 2.6rem);
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
   font-weight: 300;
   color: var(--ink);
   line-height: 1.1;
@@ -1897,7 +1899,7 @@ ul { list-style: none; }
   color: var(--accent);
 }
 @media (max-width: 560px) {
-  .designed-for-item-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+  .designed-for-item-title { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
 }
 
 /* ── Founder Note ─────────────────────────────────────── */
