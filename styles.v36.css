@@ -343,6 +343,9 @@ ul { list-style: none; }
   align-items: center;
   gap: 2rem;
   padding: 2rem;
+  padding-top: calc(var(--nav-h) + 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
