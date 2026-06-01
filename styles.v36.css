@@ -804,6 +804,7 @@ ul { list-style: none; }
   gap: var(--gap);
 }
 .page-hero-text { position: relative; z-index: 1; }
+.page-hero-text h1 { margin-bottom: 1.75rem; }
 .page-hero-meta {
   text-align: right;
   position: relative;
