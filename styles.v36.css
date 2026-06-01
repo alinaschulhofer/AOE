@@ -2394,9 +2394,10 @@ ul { list-style: none; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--ink);
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: .25rem;
   letter-spacing: -.01em;
 }
 .article-subtitle {
@@ -2406,7 +2407,7 @@ ul { list-style: none; }
   font-style: italic;
   color: var(--ink2);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .article-byline {
   display: flex;
