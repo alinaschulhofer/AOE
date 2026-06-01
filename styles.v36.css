@@ -2709,7 +2709,7 @@ ul { list-style: none; }
     width: 100%;
     padding-top: 0;
     margin-top: -2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
     min-height: unset;
   }
   .hero-text > * { max-width: 100%; }
