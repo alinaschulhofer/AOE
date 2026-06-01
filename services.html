@@ -25,6 +25,7 @@
     </a>
     <ul class="nav-links" role="list">
       <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
       <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="method.html">Method</a></li>
       <li class="nav-dd">
@@ -255,6 +256,71 @@
   </div>
 </section>
 
+<!-- ── FAQ ───────────────────────────────────────────── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-header reveal">
+      <p class="t-eyebrow" style="margin-bottom:.75rem;">Common Questions</p>
+      <h2 class="t-h2" style="max-width:560px;">Frequently Asked<br /><em style="font-style:italic;color:var(--accent)">Questions.</em></h2>
+    </div>
+
+    <div class="faq-list reveal" data-delay="1">
+
+      <div class="faq-item">
+        <button class="faq-q">What is the difference between psychotherapy and coaching or consulting?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Psychotherapy is a licensed clinical service focused on the assessment and treatment of mental health concerns, emotional difficulties, and psychological conditions. Coaching and consulting are non-clinical services designed to support personal development, leadership, performance, and the achievement of professional and personal goals. While both can lead to meaningful growth, they differ in scope, methodology, and purpose. Dr. Schulhofer offers both services — the nature of each engagement is determined collaboratively based on your presenting needs and goals.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What makes this work different from other executive coaching or performance approaches?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Dr. Schulhofer is a licensed clinical psychologist with deep training in psychoanalytic theory, trauma, and relational psychology — not a certified coach. Her work is grounded in the Architecture of Excellence™ framework, which integrates psychological depth with high-performance strategy. As a former elite competitive swimmer, she brings lived experience of what it means to perform under pressure. This combination — clinical rigor, lived experience, and a proprietary framework — creates a depth of engagement that most performance coaching cannot access.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Who is this work for?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">This work is designed for individuals who have already achieved a great deal — and who sense that something more is available to them, if they are willing to look within. Dr. Schulhofer works with senior executives, founders, professional athletes, physicians, scholars, artists, and leaders navigating the intersection of high performance and inner life. She also works with their teams and organizations.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How long do engagements last?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Coaching and consulting engagements are structured over a minimum of three months. The duration of the work depends on the nature and complexity of your goals. Most clients choose to continue beyond the initial engagement as the work deepens. Concierge therapy is structured according to your individual clinical needs and goals.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What is the investment?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Coaching and consulting engagements are retainer-based and structured to reflect the depth, continuity, and commitment required for meaningful transformation. Investment details are shared during an initial consultation. Single-session and fee-for-service arrangements are available for concierge therapy clients in certain circumstances.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Are single sessions available?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Single sessions are not offered for coaching or consulting. Meaningful transformation requires continuity, trust, and time. Concierge therapy clients may arrange fee-for-service sessions in some circumstances — details are available upon inquiry.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Are services available internationally?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Coaching and consulting engagements are available worldwide via virtual sessions. Concierge psychotherapy is available to clients in Florida and New York. International clients seeking psychological support will be directed to appropriate resources in their location.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How do I know if I am ready for this work?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Readiness is less about circumstances and more about willingness — the willingness to be honest with yourself and to engage with depth. If you sense that external achievement is no longer enough, or that something internal is limiting what you are able to create or sustain, this work may be exactly what you are looking for. The initial consultation is the right place to begin that conversation.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Does Dr. Schulhofer offer psychotherapy?<span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. As a licensed psychologist in Florida and New York, Dr. Schulhofer offers concierge psychotherapy for individuals, couples, and families via virtual sessions. This service is distinct from coaching and consulting, and is provided according to applicable professional and clinical standards.</div></div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer-note reveal" data-delay="2">
+      <strong>Clinical Notice</strong>
+      Coaching and consulting are non-clinical services focused on personal growth, leadership development, performance, and the achievement of professional or personal goals. They do not constitute psychotherapy, mental health treatment, diagnosis, or crisis services. If at any point therapeutic support appears more appropriate during a coaching or consulting engagement, referrals to qualified mental health professionals can be provided.
+    </div>
+
+  </div>
+</section>
+
 <!-- ── CONTACT ────────────────────────────────────────── -->
 <section id="contact">
   <div class="container contact-inner">
@@ -279,6 +345,16 @@
 </footer>
 
 <script src="site.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
 <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.27.1/babel.min.js"></script>

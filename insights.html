@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Dr. Alina Schulhofer</title>
+  <meta name="description" content="Essays and perspectives on high performance, psychology, leadership, and the inner life of excellence." />
+
+  <script>
+    (function(){
+      var d = localStorage.getItem('aoe-direction') || 'ivory';
+      document.documentElement.setAttribute('data-theme', d);
+      localStorage.removeItem('aoe-accent');
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.v36.css" />
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-wordmark">Dr. Alina Schulhofer</a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="method.html">Method</a></li>
+      <li class="nav-dd">
+        <button class="nav-dd-trigger">Services ↓</button>
+        <div class="nav-dd-menu" role="menu">
+          <a href="services.html#executive-coaching">Executive Coaching</a>
+          <a href="services.html#concierge-therapy">Concierge Therapy</a>
+          <a href="services.html#organizational-consulting">Organizational Consulting</a>
+          <a href="services.html#education">Education</a>
+        </div>
+      </li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Get Started</a>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog">
+  <a href="about.html">About</a><hr class="rule" />
+  <a href="philosophy.html">Philosophy</a><hr class="rule" />
+  <a href="method.html">Method</a><hr class="rule" />
+  <a href="services.html">Services</a><hr class="rule" />
+  <a href="insights.html" data-active="true">Insights</a><hr class="rule" />
+  <a href="index.html#contact">Get Started</a>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────── -->
+<header class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-text">
+      <p class="t-eyebrow reveal" style="margin-bottom:1.25rem;">Perspectives</p>
+      <h1 class="t-h1 reveal" data-delay="1" style="margin-top:0;max-width:640px;">
+        Insights on Performance,<br />
+        Psychology &amp; <em style="font-style:italic;color:var(--accent)">Inner Life.</em>
+      </h1>
+      <p class="reveal" data-delay="2" style="margin-top:1.5rem;max-width:480px;font-family:'Jost',sans-serif;font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.8;">
+        Essays and reflections on the inner architecture of excellence — published regularly on Substack and collected here.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- ── NEWSLETTER CAPTURE ─────────────────────────────── -->
+<div class="newsletter-band">
+  <div class="newsletter-band-inner reveal">
+    <h3>Receive future essays</h3>
+    <p>Perspectives on high performance, psychology, and the inner life of excellence — delivered directly to your inbox.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-primary" style="white-space:nowrap;padding-inline:1.5rem;">Subscribe</button>
+    </form>
+    <p class="newsletter-success" id="newsletter-success">You're subscribed. Thank you.</p>
+  </div>
+</div>
+
+<!-- ── ARTICLES GRID ──────────────────────────────────── -->
+<section style="padding-block:var(--section);">
+  <div class="container">
+
+    <div class="insights-grid">
+
+      <!-- Articles will be added here as content is provided -->
+      <a href="#" class="insight-card reveal" data-delay="1">
+        <div class="insight-meta">
+          <span class="insight-tag">Performance</span>
+          <span class="insight-date">Coming soon</span>
+        </div>
+        <h2 class="insight-title">Articles and essays will appear here as content is added.</h2>
+        <p class="insight-excerpt">Essays drawn from Dr. Schulhofer's Substack will be collected and published here, organized by theme.</p>
+        <span class="insight-read">Read on Substack ↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container contact-inner">
+    <p class="t-eyebrow reveal">Get Started</p>
+    <h2 class="contact-headline reveal" data-delay="1">Your journey towards <em>sustainable excellence</em> begins here.</h2>
+    <a href="mailto:alina@architectureofexcellence.com" class="contact-email reveal" data-delay="2">alina@architectureofexcellence.com</a>
+    <a href="mailto:alina@architectureofexcellence.com" class="btn btn-primary reveal" data-delay="3">Book a Private Consultation</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot-inner">
+    <span class="foot-brand">Dr. Alina Schulhofer</span>
+    <nav class="foot-links">
+      <a href="about.html">About</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="method.html">Method</a>
+      <a href="services.html">Services</a>
+      <a href="insights.html">Insights</a>
+    </nav>
+    <span class="foot-copy">© 2026 Dr. Alina Schulhofer. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  // Newsletter form — replace ACTION with your Formspree or Substack embed URL
+  const nf = document.getElementById('newsletter-form');
+  if (nf) {
+    nf.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = nf.querySelector('button');
+      btn.disabled = true;
+      try {
+        await fetch('https://formspree.io/f/xzdwqnvk', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(nf)
+        });
+        nf.style.display = 'none';
+        document.getElementById('newsletter-success').style.display = 'block';
+      } catch { btn.disabled = false; }
+    });
+  }
+</script>
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.27.1/babel.min.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
+<div id="tweaks-root"></div>
+
+</body>
+</html>
