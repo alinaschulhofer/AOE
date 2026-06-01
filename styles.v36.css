@@ -2704,13 +2704,14 @@ ul { list-style: none; }
   .hero-body {
     position: relative;
     width: 100%;
-    padding-top: 1.5rem;
+    padding-top: 0;
+    margin-top: -2rem;
     padding-bottom: 2rem;
     min-height: unset;
   }
   .hero-text > * { max-width: 100%; }
-  /* Tighten eyebrow letter-spacing on mobile */
-  .hero-text .t-eyebrow { letter-spacing: .14em; margin-bottom: 1.5rem !important; }
+  /* Tighten eyebrow on mobile — prevent wrapping */
+  .hero-text .t-eyebrow { letter-spacing: .07em; font-size: .72rem; margin-bottom: 1.5rem !important; }
   /* Larger, more commanding headline on mobile */
   .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 2rem !important; }
   /* More comfortable subtext */
@@ -2720,11 +2721,14 @@ ul { list-style: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .hero-actions .btn { width: auto; }
 
+  /* ── HIDE ON MOBILE ── */
+  .hide-mobile { display: none; }
+
   /* ── PAGE HERO (about, philosophy, etc.) ── */
   /* Single column: text full-width on top, circle below aligned to the right */
-  .page-hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  .page-hero-meta { display: flex; justify-content: flex-end; }
-  .page-hero { padding-bottom: clamp(3rem, 6vw, 5rem); border-bottom: none; }
+  .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
+  .page-hero-meta { display: flex; justify-content: flex-end; margin-top: -.5rem; }
+  .page-hero { padding-bottom: 2rem; border-bottom: none; }
   .about-circle-hero { width: 88px; height: 88px; opacity: 1 !important; transform: none !important; }
 
   /* ── ABOUT SPLIT ── */
