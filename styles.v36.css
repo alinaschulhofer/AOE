@@ -2714,7 +2714,7 @@ ul { list-style: none; }
   }
   .hero-text > * { max-width: 100%; }
   /* Tighten eyebrow on mobile — prevent wrapping with nowrap */
-  .hero-text .t-eyebrow { letter-spacing: .04em; font-size: .65rem; white-space: nowrap; margin-bottom: 1.25rem !important; }
+  .hero-text .t-eyebrow { letter-spacing: .02em; font-size: clamp(.48rem, 2.1vw, .65rem); white-space: nowrap; overflow: hidden; margin-bottom: 1.25rem !important; }
   /* Larger, more commanding headline on mobile */
   .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 1.25rem !important; }
   /* More comfortable subtext */
