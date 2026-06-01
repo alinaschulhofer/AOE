@@ -2741,6 +2741,7 @@ ul { list-style: none; }
   /* ── PAGE HERO (about, philosophy, etc.) ── */
   /* Single column: text full-width on top, circle below aligned to the right */
   .page-hero { padding-top: calc(var(--nav-h) + 1.25rem); }
+  .page-hero-text h1 + * { margin-top: 1rem !important; }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
   .page-hero { padding-bottom: 1.25rem; border-bottom: none; }
