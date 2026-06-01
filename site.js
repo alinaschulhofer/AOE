@@ -62,3 +62,13 @@
   }, { threshold: 0.5 });
   obs.observe(connector);
 })();
+
+// ── Process steps staggered reveal ───────────────────
+(function(){
+  const steps = document.querySelectorAll('.hwb-step--anim');
+  if (!steps.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  steps.forEach(s => obs.observe(s));
+})();
