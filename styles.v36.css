@@ -2459,7 +2459,7 @@ ul { list-style: none; }
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
   line-height: 1.15;
-  color: var(--ink);
+  color: var(--accent);
   margin-bottom: 2.5rem;
   padding-bottom: .25rem;
   letter-spacing: -.01em;
