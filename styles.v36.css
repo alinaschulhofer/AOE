@@ -1710,7 +1710,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 1.4rem;
-  padding-block: clamp(1rem, 2vw, 1.5rem);
+  padding-block: clamp(.75rem, 1.5vw, 1.25rem);
   position: relative;
 }
 .gold-ornament::before,
@@ -2280,8 +2280,8 @@ ul { list-style: none; }
   margin-block: clamp(2.5rem, 5vw, 4rem);
 }
 .article-author {
-  padding-block: clamp(2rem, 4vw, 3.5rem);
-  border-top: 1px solid var(--rule);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 .article-author-inner {
   max-width: 760px;
