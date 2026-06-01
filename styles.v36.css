@@ -2758,6 +2758,7 @@ ul { list-style: none; }
   .about-portrait { display: none; } /* hide portrait on mobile — hero already introduces her */
 
   /* ── PREMISE ── */
+  .premise { padding-top: 1.5rem; }
   .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
   .premise-inner { grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
 
