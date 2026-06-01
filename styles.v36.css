@@ -1863,45 +1863,49 @@ ul { list-style: none; }
 }
 .designed-for-circles {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: clamp(1rem, 2.5vw, 2rem);
+  gap: clamp(.75rem, 2vw, 1.5rem);
   margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 .dfc-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  flex: 1;
-}
-.dfc-item--anim {
-  opacity: 0;
-  transform: translateY(16px);
+  gap: 1.1rem;
+  flex: 1 1 0;
+  min-width: 0;
+  opacity: 1;
+  transform: none;
   transition: opacity .6s var(--ease), transform .6s var(--ease);
 }
-.dfc-item--anim.in { opacity: 1; transform: none; }
-.dfc-item--anim[data-dfc="2"] { transition-delay: .1s; }
-.dfc-item--anim[data-dfc="3"] { transition-delay: .2s; }
-.dfc-item--anim[data-dfc="4"] { transition-delay: .3s; }
-.dfc-item--anim[data-dfc="5"] { transition-delay: .4s; }
+.dfc-item.dfc-hidden {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.dfc-item[data-dfc="2"] { transition-delay: .1s; }
+.dfc-item[data-dfc="3"] { transition-delay: .2s; }
+.dfc-item[data-dfc="4"] { transition-delay: .3s; }
+.dfc-item[data-dfc="5"] { transition-delay: .4s; }
 .dfc-circle {
-  width: clamp(100px, 12vw, 160px);
-  height: clamp(100px, 12vw, 160px);
+  width: clamp(80px, 10vw, 145px);
+  height: clamp(80px, 10vw, 145px);
   border-radius: 50%;
-  border: 1px solid rgba(168,130,78,.45);
+  border: 1px solid rgba(168,130,78,.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: border-color .3s ease, transform .3s ease;
 }
 .dfc-item:hover .dfc-circle {
   border-color: var(--accent);
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 .dfc-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
   font-weight: 300;
   font-style: italic;
   color: var(--accent);
@@ -1909,7 +1913,7 @@ ul { list-style: none; }
 }
 .dfc-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(.85rem, 1.1vw, 1rem);
+  font-size: clamp(.78rem, .95vw, .95rem);
   font-weight: 400;
   color: var(--ink2);
   text-align: center;
@@ -1920,6 +1924,7 @@ ul { list-style: none; }
 @media (max-width: 640px) {
   .designed-for-circles { flex-wrap: wrap; justify-content: center; }
   .dfc-item { flex: 0 0 calc(50% - 1rem); }
+  .dfc-circle { width: 110px; height: 110px; }
 }
 
 /* ── Founder Note ─────────────────────────────────────── */

@@ -75,10 +75,11 @@
 
 // ── Who It's For circles staggered reveal ────────────
 (function(){
-  const items = document.querySelectorAll('.dfc-item--anim');
+  const items = document.querySelectorAll('.dfc-item[data-dfc]');
   if (!items.length) return;
+  items.forEach(i => i.classList.add('dfc-hidden'));
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.2 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('dfc-hidden'); obs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
   items.forEach(i => obs.observe(i));
 })();
