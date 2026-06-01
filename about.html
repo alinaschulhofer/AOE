@@ -20,7 +20,7 @@
   <meta property="og:image" content="assets/portrait-about.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="styles.v36.css?v=36" />
+  <link rel="stylesheet" href="styles.v36.css?v=37" />
   <link rel="canonical" href="https://alinaschulhofer.github.io/AOE/about.html" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4ZR2JQYWN"></script>
@@ -66,14 +66,16 @@
       <p class="reveal about-eyebrow-wrap" data-delay="2" style="font-family:'Jost',sans-serif;font-size:.78rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);">
         <span class="about-ticker-inner hide-desktop">Licensed Psychologist &nbsp;·&nbsp; High-Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™ &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; Licensed Psychologist &nbsp;·&nbsp; High-Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™ &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span><span class="hide-mobile">Licensed Psychologist &nbsp;·&nbsp; High Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™</span>
       </p>
-      <!-- Mobile-only circle -->
-      <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-mobile" style="width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid #b8975a;margin-top:1.25rem;margin-left:auto;" />
     </div>
     <div class="page-hero-meta hide-mobile">
       <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-hero" />
     </div>
   </div>
 </header>
+<!-- Mobile-only circle: outside page-hero so no overflow/grid clipping can hide it -->
+<div class="about-circle-mobile-wrap">
+  <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-mobile" />
+</div>
 
 <!-- ── ABOUT SPLIT: portrait + prose ──────────────────── -->
 <section class="about-split container">

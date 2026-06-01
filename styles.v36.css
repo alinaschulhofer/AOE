@@ -138,6 +138,7 @@ ul { list-style: none; }
 .d-br { display: inline; }
 .hide-desktop { display: none; }
 .about-circle-mobile { display: none; }
+.about-circle-mobile-wrap { display: none; }
 
 .rule--accent {
   border-top-color: var(--accent);
@@ -2747,8 +2748,9 @@ ul { list-style: none; }
   /* page-hero-meta: visible on mobile but circle sized down to 80px */
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1rem; }
   .about-circle-hero { width: 80px !important; height: 80px !important; clip-path: none !important; transform: scale(1) !important; opacity: 1 !important; transition: none !important; }
-  /* Show the mobile-specific circle on about page (desktop one is hidden via hide-mobile on that div) */
-  .about-circle-mobile { display: block !important; width: 80px !important; height: 80px !important; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); margin-top: 1rem; margin-left: auto; }
+  /* Show the mobile-specific circle on about page (outside header, no grid/overflow interference) */
+  .about-circle-mobile-wrap { display: flex; justify-content: flex-end; padding: .75rem var(--gutter) 0; }
+  .about-circle-mobile { display: block; width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
 
   /* ── ABOUT SPLIT ── */
