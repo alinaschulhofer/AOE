@@ -136,6 +136,7 @@ ul { list-style: none; }
 
 .mobile-br { display: none; }
 .d-br { display: inline; }
+.hide-desktop { display: none; }
 
 .rule--accent {
   border-top-color: var(--accent);
@@ -2717,11 +2718,13 @@ ul { list-style: none; }
   .hero-text .t-eyebrow { letter-spacing: .1em; font-size: .7rem; white-space: nowrap; margin-bottom: 2.25rem !important; }
   .hero-eyebrow-wrap { overflow: hidden; }
   .hero-ticker-inner { display: inline-block; white-space: nowrap; animation: ticker 14s linear infinite; }
+  .about-eyebrow-wrap { overflow: hidden; }
+  .about-ticker-inner { display: inline-block; white-space: nowrap; animation: ticker 16s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
   .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 1.25rem !important; }
   /* More comfortable subtext */
-  .hero-sub { font-size: 1rem; line-height: 2; margin-bottom: 1.75rem !important; }
+  .hero-sub { font-size: 1rem; line-height: 2; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
   .d-br { display: none; }
@@ -2732,6 +2735,7 @@ ul { list-style: none; }
 
   /* ── HIDE ON MOBILE / SHOW ON MOBILE ── */
   .hide-mobile { display: none; }
+  .hide-desktop { display: inline; }
   .mobile-br { display: inline; }
 
   /* ── PAGE HERO (about, philosophy, etc.) ── */
