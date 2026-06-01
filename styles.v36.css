@@ -823,7 +823,6 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .page-hero-inner { grid-template-columns: 1fr; }
-  .page-hero-meta { display: none; }
 }
 
 /* ── PROSE ───────────────────────────────────────────── */
@@ -2711,9 +2710,10 @@ ul { list-style: none; }
   .hero-actions .btn { width: auto; }
 
   /* ── PAGE HERO (about, philosophy, etc.) ── */
-  .page-hero-inner { grid-template-columns: 1fr; }
-  .page-hero-meta { display: none; }
+  .page-hero-inner { grid-template-columns: 1fr; row-gap: 2rem; }
+  .page-hero-meta { display: flex; justify-content: flex-start; }
   .page-hero { padding-bottom: clamp(3rem, 6vw, 5rem); }
+  .about-circle-hero { width: 120px; height: 120px; }
 
   /* ── ABOUT SPLIT ── */
   .about-split { grid-template-columns: 1fr; }
