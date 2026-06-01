@@ -2238,12 +2238,6 @@ ul { list-style: none; }
   align-items: center;
   gap: .875rem;
 }
-.article-byline-photo {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 .article-byline-name {
   font-family: 'Jost', sans-serif;
   font-size: .78rem;
@@ -2286,16 +2280,6 @@ ul { list-style: none; }
 .article-author-inner {
   max-width: 760px;
   margin-inline: auto;
-  display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-.article-author-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
 }
 .article-author-bio {
   font-family: 'Jost', sans-serif;
