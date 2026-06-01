@@ -2317,6 +2317,58 @@ ul { list-style: none; }
   .investment-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 
+/* ── Featured Essay ──────────────────────────────────── */
+.featured-essay {
+  padding-block: clamp(3rem, 5vw, 5rem);
+}
+.featured-essay-inner {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+.featured-essay-link {
+  display: block;
+  text-decoration: none;
+  margin-top: 1.5rem;
+}
+.featured-essay-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.featured-essay-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  transition: color .3s ease;
+}
+.featured-essay-link:hover .featured-essay-title { color: var(--accent); }
+.featured-essay-excerpt {
+  font-family: 'Jost', sans-serif;
+  font-size: .88rem;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.featured-essay-cta {
+  font-family: 'Jost', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: letter-spacing .3s ease;
+}
+.featured-essay-link:hover .featured-essay-cta { letter-spacing: .18em; }
+
 /* ── Newsletter capture ───────────────────────────────── */
 .newsletter-band {
   padding-block: clamp(3rem, 6vw, 5rem);
