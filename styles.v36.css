@@ -2715,8 +2715,8 @@ ul { list-style: none; }
   /* ── PAGE HERO (about, philosophy, etc.) ── */
   .page-hero-inner { grid-template-columns: 1fr; row-gap: 2rem; }
   .page-hero-meta { display: flex; justify-content: flex-start; }
-  .page-hero { padding-bottom: clamp(3rem, 6vw, 5rem); }
-  .about-circle-hero { width: 120px; height: 120px; }
+  .page-hero { padding-bottom: clamp(3rem, 6vw, 5rem); border-bottom: none; }
+  .about-circle-hero { width: 110px; height: 110px; opacity: 1 !important; transform: none !important; }
 
   /* ── ABOUT SPLIT ── */
   .about-split { grid-template-columns: 1fr; }
