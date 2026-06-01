@@ -2714,7 +2714,7 @@ ul { list-style: none; }
   }
   .hero-text > * { max-width: 100%; }
   /* Ticker animation for eyebrow on mobile */
-  .hero-text .t-eyebrow { letter-spacing: .1em; font-size: .7rem; white-space: nowrap; margin-bottom: 1.25rem !important; }
+  .hero-text .t-eyebrow { letter-spacing: .1em; font-size: .7rem; white-space: nowrap; margin-bottom: 2.25rem !important; }
   .hero-eyebrow-wrap { overflow: hidden; }
   .hero-ticker-inner { display: inline-block; white-space: nowrap; animation: ticker 14s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
