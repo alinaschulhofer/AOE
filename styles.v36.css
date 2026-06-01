@@ -2660,3 +2660,56 @@ ul { list-style: none; }
   #nav { animation: none; }
   .teaser-card:hover { transform: none; box-shadow: none; }
 }
+
+/* ── MOBILE GLOBAL FIXES ─────────────────────────────── */
+@media (max-width: 768px) {
+  /* Fix negative margin on premise-accent in single-column layout */
+  .premise-accent { margin-top: 0 !important; }
+
+  /* Footer: stack brand+nav on mobile, keep copyright centered */
+  .foot-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .foot-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
+  .foot-copy { text-align: center; }
+
+  /* Reduce article title size on narrow screens */
+  .article-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
+  /* Contact headline — prevent overflow */
+  .contact-headline { font-size: clamp(1.6rem, 5vw, 2.8rem); }
+
+  /* Investment section stack */
+  .investment-inner { flex-direction: column; }
+
+  /* Services quick-nav wraps neatly */
+  .svc-anchor-link { font-size: .7rem; }
+
+  /* Ensure hero CTA button doesn't overflow */
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Statement band font size */
+  .statement-band p, .statement-quote { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+  /* Pull quote on philosophy page */
+  .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  /* Tighten section padding on very small screens */
+  :root { --section: clamp(3rem, 8vw, 5rem); }
+
+  /* Buttons full-width on very small screens */
+  .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* Nav CTA hidden on very small — mobile menu handles it */
+  .nav-cta { display: none; }
+
+  /* Article byline wraps cleanly */
+  .article-byline { flex-wrap: wrap; }
+
+  /* Insights grid gap */
+  .insights-grid { gap: 0; }
+}
