@@ -2726,6 +2726,7 @@ ul { list-style: none; }
   .hero-sub { font-size: 1rem; line-height: 2; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
+  .about-h1 { font-size: 1.45rem !important; white-space: nowrap; }
   .d-br { display: none; }
   /* Hide scroll indicator — doesn't apply in stacked mobile layout */
   .hero-scroll { display: none; }
