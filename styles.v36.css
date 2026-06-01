@@ -1861,45 +1861,65 @@ ul { list-style: none; }
   gap: 2rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
-.designed-for-list {
+.designed-for-circles {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.dfc-item {
   display: flex;
   flex-direction: column;
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
 }
-.designed-for-item {
+.dfc-item--anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+.dfc-item--anim.in { opacity: 1; transform: none; }
+.dfc-item--anim[data-dfc="2"] { transition-delay: .1s; }
+.dfc-item--anim[data-dfc="3"] { transition-delay: .2s; }
+.dfc-item--anim[data-dfc="4"] { transition-delay: .3s; }
+.dfc-item--anim[data-dfc="5"] { transition-delay: .4s; }
+.dfc-circle {
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(100px, 12vw, 160px);
+  border-radius: 50%;
+  border: 1px solid rgba(168,130,78,.45);
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding-block: clamp(1rem, 1.8vw, 1.4rem);
-  border-top: 1px solid var(--rule);
-  opacity: 1 !important;
-  transform: none !important;
+  justify-content: center;
+  transition: border-color .3s ease, transform .3s ease;
 }
-.designed-for-item:last-child {
-  border-bottom: 1px solid var(--rule);
+.dfc-item:hover .dfc-circle {
+  border-color: var(--accent);
+  transform: scale(1.04);
 }
-.designed-for-item-num {
+.dfc-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: .8rem;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
   font-weight: 300;
-  color: var(--ink3);
   font-style: italic;
-  flex-shrink: 0;
-  min-width: 1.4rem;
-}
-.designed-for-item-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.1;
-  transition: color .25s ease;
-}
-.designed-for-item:hover .designed-for-item-title {
   color: var(--accent);
+  line-height: 1;
 }
-@media (max-width: 560px) {
-  .designed-for-item-title { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
+.dfc-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(.85rem, 1.1vw, 1rem);
+  font-weight: 400;
+  color: var(--ink2);
+  text-align: center;
+  line-height: 1.45;
+  transition: color .3s ease;
+}
+.dfc-item:hover .dfc-label { color: var(--ink); }
+@media (max-width: 640px) {
+  .designed-for-circles { flex-wrap: wrap; justify-content: center; }
+  .dfc-item { flex: 0 0 calc(50% - 1rem); }
 }
 
 /* ── Founder Note ─────────────────────────────────────── */

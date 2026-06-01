@@ -72,3 +72,13 @@
   }, { threshold: 0.3 });
   steps.forEach(s => obs.observe(s));
 })();
+
+// ── Who It's For circles staggered reveal ────────────
+(function(){
+  const items = document.querySelectorAll('.dfc-item--anim');
+  if (!items.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.2 });
+  items.forEach(i => obs.observe(i));
+})();
