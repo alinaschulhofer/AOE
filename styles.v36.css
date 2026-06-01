@@ -2726,7 +2726,7 @@ ul { list-style: none; }
   .hero-sub { font-size: 1rem; line-height: 2; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
-  .about-h1 { font-size: 1.45rem !important; white-space: nowrap; }
+  .about-h1 { font-size: 1.45rem !important; }
   .d-br { display: none; }
   /* Hide scroll indicator — doesn't apply in stacked mobile layout */
   .hero-scroll { display: none; }
@@ -2741,7 +2741,8 @@ ul { list-style: none; }
   /* ── PAGE HERO (about, philosophy, etc.) ── */
   /* Single column: text full-width on top, circle below aligned to the right */
   .page-hero { padding-top: calc(var(--nav-h) + 1.25rem); }
-  .page-hero-text h1 + * { margin-top: 1rem !important; }
+  .page-hero-text h1 + * { margin-top: 2rem !important; }
+  .about-circle-mobile { display: block; width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); margin-top: 1.5rem; margin-left: auto; }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
   .page-hero { padding-bottom: 1.25rem; border-bottom: none; }
