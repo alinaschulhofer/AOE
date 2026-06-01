@@ -1827,6 +1827,7 @@ ul { list-style: none; }
   font-weight: 400;
   color: var(--ink);
   line-height: 1.35;
+  text-align: center;
 }
 .dim-card-body {
   font-family: 'Jost', sans-serif;
@@ -2133,6 +2134,91 @@ ul { list-style: none; }
 @media (max-width: 560px) {
   .insights-grid { grid-template-columns: 1fr; }
   .insight-card { border-right: none; }
+}
+
+/* ── How We Begin ────────────────────────────────────── */
+.how-we-begin {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid var(--rule);
+}
+.hwb-header {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+.hwb-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+}
+.hwb-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 2.5rem;
+  padding-block: clamp(2rem, 3.5vw, 2.75rem);
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.hwb-step:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.hwb-step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  padding-top: .15rem;
+}
+.hwb-step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: .6rem;
+  line-height: 1.25;
+}
+.hwb-step-body {
+  font-family: 'Jost', sans-serif;
+  font-size: .82rem;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.85;
+}
+.hwb-cta {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+}
+@media (max-width: 560px) {
+  .hwb-step { grid-template-columns: 56px 1fr; gap: 0 1.25rem; }
+}
+
+/* ── Investment ───────────────────────────────────────── */
+.investment-section {
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg2);
+}
+.investment-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  max-width: 960px;
+}
+.investment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.investment-content p {
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.9;
+}
+@media (max-width: 700px) {
+  .investment-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 /* ── Newsletter capture ───────────────────────────────── */
