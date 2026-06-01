@@ -2696,19 +2696,19 @@ ul { list-style: none; }
     order: -1;
   }
   .hero-photo img {
-    object-position: 50% 0%;
+    object-position: 50% 10%;
   }
   .hero-photo::after {
     background: linear-gradient(to bottom,
-      transparent 60%,
-      rgba(243,239,230,0.7) 82%,
+      transparent 50%,
+      rgba(243,239,230,0.6) 75%,
       #F3EFE6 100%);
   }
   .hero-body {
     position: relative;
     width: 100%;
-    padding-top: 1.5rem;
-    margin-top: 0;
+    padding-top: 0;
+    margin-top: -2rem;
     padding-bottom: 3rem;
     min-height: unset;
   }
