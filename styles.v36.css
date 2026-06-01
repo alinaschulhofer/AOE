@@ -2713,8 +2713,11 @@ ul { list-style: none; }
     min-height: unset;
   }
   .hero-text > * { max-width: 100%; }
-  /* Tighten eyebrow on mobile — prevent wrapping with nowrap */
-  .hero-text .t-eyebrow { letter-spacing: .02em; font-size: clamp(.48rem, 2.1vw, .65rem); white-space: nowrap; overflow: hidden; margin-bottom: 1.25rem !important; }
+  /* Ticker animation for eyebrow on mobile */
+  .hero-text .t-eyebrow { letter-spacing: .1em; font-size: .7rem; white-space: nowrap; margin-bottom: 1.25rem !important; }
+  .hero-eyebrow-wrap { overflow: hidden; }
+  .hero-ticker-inner { display: inline-block; white-space: nowrap; animation: ticker 14s linear infinite; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
   .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 1.25rem !important; }
   /* More comfortable subtext */
