@@ -2673,18 +2673,37 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   /* ── HOMEPAGE HERO ── */
-  /* Hide background photo on mobile — clean ivory canvas, text only */
-  .hero-photo { display: none; }
-  .hero::before { display: none; }
+  /* Stack photo above text on mobile — portrait visible, no overlap */
   .hero {
-    min-height: 100svh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    min-height: unset;
+    padding-top: var(--nav-h);
+    position: relative;
+  }
+  .hero::before { display: none; }
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    height: 72vw;
+    top: unset; right: unset; bottom: unset;
+    order: -1;
+  }
+  .hero-photo img {
+    object-position: 50% 12%;
+  }
+  .hero-photo::after {
+    /* fade bottom of photo into ivory so it blends into text section */
+    background: linear-gradient(to bottom,
+      transparent 50%,
+      rgba(243,239,230,0.6) 75%,
+      #F3EFE6 100%);
   }
   .hero-body {
+    position: relative;
     width: 100%;
-    padding-top: calc(var(--nav-h) + 4rem);
-    padding-bottom: 5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
     min-height: unset;
   }
   .hero-text > * { max-width: 100%; }
