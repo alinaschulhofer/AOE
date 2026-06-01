@@ -140,24 +140,35 @@ ul { list-style: none; }
 }
 
 /* ── SCROLL REVEAL ───────────────────────────────────── */
+/* ── Reveal system ───────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out);
+  transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(0,.55,.45,1), transform .9s cubic-bezier(0,.55,.45,1);
 }
 .reveal.in {
   opacity: 1;
   transform: none;
 }
-.reveal[data-delay="1"] { transition-delay: .15s; }
-.reveal[data-delay="2"] { transition-delay: .3s; }
-.reveal[data-delay="3"] { transition-delay: .45s; }
-.reveal[data-delay="4"] { transition-delay: .6s; }
-.reveal[data-delay="5"] { transition-delay: .75s; }
-.reveal[data-delay="6"] { transition-delay: .9s; }
+/* Heading variant — larger drift, slightly slower */
+.reveal.reveal--heading {
+  transform: translateY(40px);
+  transition: opacity 1.1s cubic-bezier(0,.55,.45,1), transform 1.1s cubic-bezier(0,.55,.45,1);
+}
+/* Fade-only variant for subtle elements */
+.reveal.reveal--fade {
+  transform: none;
+  transition: opacity 1.2s ease;
+}
+.reveal[data-delay="1"] { transition-delay: .2s; }
+.reveal[data-delay="2"] { transition-delay: .42s; }
+.reveal[data-delay="3"] { transition-delay: .62s; }
+.reveal[data-delay="4"] { transition-delay: .82s; }
+.reveal[data-delay="5"] { transition-delay: 1s; }
+.reveal[data-delay="6"] { transition-delay: 1.2s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal.reveal--heading, .reveal.reveal--fade { opacity: 1; transform: none; transition: none; }
 }
 
 /* ── NAV ─────────────────────────────────────────────── */
@@ -2168,8 +2179,6 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
 .hwb-step {
   padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
@@ -2495,4 +2504,81 @@ ul { list-style: none; }
 }
 @media (max-width: 480px) {
   .newsletter-form { flex-direction: column; }
+}
+
+/* ════════════════════════════════════════════════════════
+   ANIMATION & INTERACTION ENHANCEMENTS
+   ════════════════════════════════════════════════════════ */
+
+/* ── 1. Nav entrance on page load ─────────────────────── */
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: none; }
+}
+#nav {
+  animation: navSlideDown .7s cubic-bezier(0,.55,.45,1) both;
+}
+
+/* ── 2. Hero text — more cinematic cascade ────────────── */
+.hero .reveal[data-delay="1"] { transition-delay: .35s; }
+.hero .reveal[data-delay="2"] { transition-delay: .65s; }
+.hero .reveal[data-delay="3"] { transition-delay: .95s; }
+.hero .t-eyebrow.reveal        { transition-delay: .1s; }
+
+/* ── 3. Page hero headings — heading variant auto-applied */
+.page-hero .t-h1.reveal,
+.article-title.reveal,
+.contact-headline.reveal,
+.t-h2.reveal {
+  transform: translateY(36px);
+  transition: opacity 1.1s cubic-bezier(0,.55,.45,1), transform 1.1s cubic-bezier(0,.55,.45,1);
+}
+
+/* ── 4. Teaser cards — hover lift ─────────────────────── */
+.teaser-card {
+  transition: background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease) !important;
+}
+.teaser-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(28,25,22,.07);
+}
+
+/* ── 5. Service section inquire links — hover lift ────── */
+.svc-inquire {
+  transition: color .25s ease, letter-spacing .25s ease !important;
+}
+.svc-inquire:hover { letter-spacing: .18em; }
+
+/* ── 6. Statement band quote — fade only ──────────────── */
+.statement-band.reveal {
+  transform: none;
+  transition: opacity 1.4s ease !important;
+}
+
+/* ── 7. Gold ornament — fade in on scroll ─────────────── */
+.gold-ornament {
+  opacity: 0;
+  transition: opacity 1s ease .2s;
+}
+.gold-ornament.in { opacity: 1; }
+
+/* ── 8. Premise accent — slightly slower ──────────────── */
+.premise-accent.reveal {
+  transform: translateY(32px);
+  transition: opacity 1.2s cubic-bezier(0,.55,.45,1), transform 1.2s cubic-bezier(0,.55,.45,1);
+}
+
+/* ── 9. Article prose — gentle, unhurried ─────────────── */
+.article-prose.reveal {
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0,.55,.45,1), transform 1s cubic-bezier(0,.55,.45,1);
+}
+.article-pull.reveal {
+  transform: translateY(16px);
+  transition: opacity 1.1s cubic-bezier(0,.55,.45,1) .15s, transform 1.1s cubic-bezier(0,.55,.45,1) .15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #nav { animation: none; }
+  .teaser-card:hover { transform: none; box-shadow: none; }
 }
