@@ -47,3 +47,18 @@
     });
   }
 })();
+
+// ── Process connector line animation ─────────────────
+(function(){
+  const connector = document.querySelector('.hwb-connector');
+  if (!connector) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        connector.classList.add('animate');
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  obs.observe(connector);
+})();

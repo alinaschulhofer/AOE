@@ -2186,14 +2186,39 @@ ul { list-style: none; }
   line-height: 1.85;
 }
 .hwb-cta { display: none; }
-.hwb-note {
-  margin-top: 1.25rem;
-  font-family: 'Jost', sans-serif;
-  font-size: .74rem;
-  font-weight: 300;
-  color: var(--ink3);
-  letter-spacing: .04em;
+
+/* ── Process connector animation ─────────────────────── */
+.hwb-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+  overflow: hidden;
 }
+.hwb-connector-line {
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transition: width 1s cubic-bezier(.4,0,.2,1) .3s;
+  align-self: stretch;
+}
+.hwb-connector-drop {
+  width: 1px;
+  height: 0px;
+  background: linear-gradient(180deg, var(--accent), rgba(168,130,78,.3));
+  transition: height .7s cubic-bezier(.4,0,.2,1) 1.2s;
+}
+.hwb-connector-diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  transform: rotate(45deg) scale(0);
+  transition: transform .3s ease 1.85s;
+  flex-shrink: 0;
+}
+.hwb-connector.animate .hwb-connector-line { width: 100%; }
+.hwb-connector.animate .hwb-connector-drop { height: 48px; }
+.hwb-connector.animate .hwb-connector-diamond { transform: rotate(45deg) scale(1); }
 @media (max-width: 640px) {
   .hwb-header { flex-direction: column; gap: .25rem; }
   .hwb-steps { grid-template-columns: 1fr; }
