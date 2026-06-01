@@ -625,9 +625,7 @@ ul { list-style: none; }
   line-height: 1.4;
   letter-spacing: -.01em;
   color: var(--ink2);
-  align-self: stretch;
-  display: flex;
-  align-items: center;
+  align-self: center;
 }
 .premise-gold {
   font-style: italic;
@@ -2085,6 +2083,24 @@ ul { list-style: none; }
   max-width: 520px;
   margin-inline: auto;
 }
+.newsletter-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: .75rem;
+}
+.newsletter-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: .82rem;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  max-width: 480px;
+  margin-inline: auto;
+}
 .newsletter-band h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
@@ -2101,6 +2117,7 @@ ul { list-style: none; }
   line-height: 1.75;
   margin-bottom: 1.75rem;
 }
+.insight-card--coming { cursor: default; pointer-events: none; }
 .newsletter-form {
   display: flex;
   gap: .75rem;
