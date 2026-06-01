@@ -2186,6 +2186,14 @@ ul { list-style: none; }
   line-height: 1.85;
 }
 .hwb-cta { display: none; }
+.hwb-note {
+  margin-top: 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-size: .74rem;
+  font-weight: 300;
+  color: var(--ink3);
+  letter-spacing: .04em;
+}
 @media (max-width: 640px) {
   .hwb-header { flex-direction: column; gap: .25rem; }
   .hwb-steps { grid-template-columns: 1fr; }
