@@ -2806,8 +2806,9 @@ ul { list-style: none; }
   .dfc-circle { width: 90px; height: 90px; }
   .dfc-num { font-size: 1.1rem; }
 
-  /* FAQ answers more readable */
-  .faq-a-inner { font-size: .9rem; }
+  /* FAQ: question larger than answer on mobile */
+  .faq-q { font-size: 1rem; }
+  .faq-a-inner { font-size: .82rem; }
 
   /* Services sidebar number smaller */
   .svc-sidebar-num { font-size: clamp(3rem, 12vw, 5rem); }
