@@ -2744,6 +2744,9 @@ ul { list-style: none; }
   /* Disable translateY animation on page-hero h1 — prevents overlap with elements below */
   .page-hero .t-h1.reveal { transform: none !important; }
   .page-hero-text h1 + * { margin-top: 1rem !important; }
+  /* Hide all page-hero-meta (desktop circle container) on mobile */
+  .page-hero-meta { display: none !important; }
+  /* Show the mobile-specific circle on about page */
   .about-circle-mobile { display: block !important; width: 88px !important; height: 88px !important; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); margin-top: 1.25rem; margin-left: auto; }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
 
