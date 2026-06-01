@@ -1793,6 +1793,55 @@ ul { list-style: none; }
   letter-spacing: .015em;
 }
 
+/* ── Transformation Dimension Cards ──────────────────── */
+.dim-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+.dim-card {
+  padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.25rem, 1.8vw, 2rem);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background .25s;
+}
+.dim-card:hover { background: var(--bg2); }
+.dim-card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  font-style: italic;
+}
+.dim-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(.95rem, 1.2vw, 1.1rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.dim-card-body {
+  font-family: 'Jost', sans-serif;
+  font-size: .78rem;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.85;
+  flex: 1;
+}
+@media (max-width: 900px) {
+  .dim-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .dim-cards { grid-template-columns: 1fr; }
+}
+
 
 /* ═══════════════════════════════════════════════════════
    NEW SECTIONS — v36 additions
