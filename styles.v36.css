@@ -2735,7 +2735,7 @@ ul { list-style: none; }
 
   /* ── HIDE ON MOBILE / SHOW ON MOBILE ── */
   .hide-mobile { display: none; }
-  .hide-desktop { display: inline; }
+  .hide-desktop { display: block; }
   .mobile-br { display: inline; }
 
   /* ── PAGE HERO (about, philosophy, etc.) ── */
