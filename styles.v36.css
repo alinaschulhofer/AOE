@@ -137,6 +137,7 @@ ul { list-style: none; }
 .mobile-br { display: none; }
 .d-br { display: inline; }
 .hide-desktop { display: none; }
+.about-circle-mobile { display: none; }
 
 .rule--accent {
   border-top-color: var(--accent);
@@ -2741,11 +2742,11 @@ ul { list-style: none; }
   /* ── PAGE HERO (about, philosophy, etc.) ── */
   /* Single column: text full-width on top, circle below aligned to the right */
   .page-hero { padding-top: calc(var(--nav-h) + 1.25rem); }
-  .page-hero-text h1 + * { margin-top: 2rem !important; }
-  .about-circle-mobile { display: block; width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); margin-top: 1.25rem; margin-left: auto; }
+  .page-hero-text h1 + * { margin-top: 1.25rem !important; }
+  .about-circle-mobile { display: block !important; width: 88px !important; height: 88px !important; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); margin-top: 1.25rem; margin-left: auto; }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
-  .page-hero { padding-bottom: 2.5rem; border-bottom: none; }
+  .page-hero { padding-bottom: 1.5rem; border-bottom: none; }
   .about-circle-hero,
   .js-anim .about-circle-hero,
   html .about-circle-hero { width: 100px; height: 100px; opacity: 1 !important; transform: scale(1) !important; clip-path: inset(0 0 0 0) !important; transition: none !important; visibility: visible !important; }
