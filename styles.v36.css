@@ -2741,15 +2741,15 @@ ul { list-style: none; }
   .mobile-br { display: inline; }
 
   /* ── PAGE HERO (about, philosophy, etc.) ── */
-  .page-hero { padding-top: calc(var(--nav-h) + 1.25rem); padding-bottom: 1.5rem; border-bottom: none; overflow: visible; }
+  .page-hero { padding-top: calc(var(--nav-h) + 1.25rem); padding-bottom: .75rem; border-bottom: none; overflow: visible; }
   /* Disable translateY animation on page-hero h1 — prevents overlap with elements below */
   .page-hero .t-h1.reveal { transform: none !important; }
   .page-hero-text h1 + * { margin-top: 1rem !important; }
   /* page-hero-meta: visible on mobile but circle sized down to 80px */
-  .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1rem; }
+  .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 0; }
   .about-circle-hero { width: 100px !important; height: 100px !important; clip-path: none !important; transform: scale(1) !important; opacity: 1 !important; transition: none !important; }
   /* Show the mobile-specific circle on about page (outside header, no grid/overflow interference) */
-  .about-circle-mobile-wrap { display: flex; justify-content: flex-end; padding-top: .75rem; }
+  .about-circle-mobile-wrap { display: flex; justify-content: flex-end; padding: .75rem clamp(1.5rem, 5vw, 5rem) 0; }
   .about-circle-mobile { display: block; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
 
@@ -2758,7 +2758,7 @@ ul { list-style: none; }
   .about-portrait { display: none; } /* hide portrait on mobile — hero already introduces her */
 
   /* ── PREMISE ── */
-  .premise { padding-top: 0; }
+  .premise { padding-top: 0 !important; }
   .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
   .premise-inner { grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
 
