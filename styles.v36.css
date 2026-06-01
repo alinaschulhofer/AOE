@@ -964,6 +964,13 @@ ul { list-style: none; }
 }
 
 /* ── SERVICE SECTIONS ────────────────────────────────── */
+.svc-anchor-link {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color .2s;
+}
+.svc-anchor-link:hover { color: var(--ink); }
+
 .svc-detail {
   padding-block: var(--section);
   border-bottom: 1px solid var(--rule);
