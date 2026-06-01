@@ -2075,7 +2075,8 @@ ul { list-style: none; }
   line-height: 1.85;
   max-width: 680px;
 }
-.faq-item.open .faq-a { max-height: 600px; }
+.faq-a-inner p + p { margin-top: 1rem; }
+.faq-item.open .faq-a { max-height: 900px; }
 
 /* ── Disclaimer ───────────────────────────────────────── */
 .disclaimer-note {
