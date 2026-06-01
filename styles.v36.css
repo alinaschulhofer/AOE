@@ -2744,7 +2744,8 @@ ul { list-style: none; }
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
   .page-hero { padding-bottom: 1.25rem; border-bottom: none; }
   .about-circle-hero,
-  .js-anim .about-circle-hero { width: 88px; height: 88px; opacity: 1 !important; transform: none !important; clip-path: inset(0 0 0% 0) !important; transition: none !important; }
+  .js-anim .about-circle-hero,
+  html .about-circle-hero { width: 100px; height: 100px; opacity: 1 !important; transform: scale(1) !important; clip-path: inset(0 0 0 0) !important; transition: none !important; visibility: visible !important; }
 
   /* ── ABOUT SPLIT ── */
   .about-split { grid-template-columns: 1fr; }
