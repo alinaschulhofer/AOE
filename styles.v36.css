@@ -2744,7 +2744,7 @@ ul { list-style: none; }
   .page-hero-inner { grid-template-columns: 1fr; gap: .75rem; }
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
   .page-hero { padding-bottom: 1.25rem; border-bottom: none; }
-  .about-circle-hero { width: 88px; height: 88px; opacity: 1 !important; transform: none !important; }
+  .about-circle-hero { width: 88px; height: 88px; opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
 
   /* ── ABOUT SPLIT ── */
   .about-split { grid-template-columns: 1fr; }
