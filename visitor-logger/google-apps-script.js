@@ -6,16 +6,19 @@ function doGet(e) {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Timestamp', 'Page', 'Referrer', 'User Agent']);
-      sheet.getRange(1, 1, 1, 4).setFontWeight('bold');
+      sheet.appendRow(['Timestamp', 'IP Address', 'Country', 'City', 'Page', 'Referrer', 'User Agent']);
+      sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
     }
 
-    var page = e.parameter.page || '/';
-    var ref  = e.parameter.ref  || '';
-    var ua   = e.parameter.ua   || '';
-    var ts   = new Date().toISOString();
-
-    sheet.appendRow([ts, page, ref, ua]);
+    sheet.appendRow([
+      e.parameter.ts      || new Date().toISOString(),
+      e.parameter.ip      || 'unknown',
+      e.parameter.country || '',
+      e.parameter.city    || '',
+      e.parameter.page    || '/',
+      e.parameter.ref     || '',
+      e.parameter.ua      || ''
+    ]);
   } catch (err) {
     Logger.log('Error: ' + err.message);
   }
