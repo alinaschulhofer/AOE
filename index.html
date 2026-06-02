@@ -273,7 +273,7 @@
         <div class="hwb-step-num">02</div>
         <div class="hwb-step-content">
           <h3 class="hwb-step-title">Initial Consultation</h3>
-          <p class="hwb-step-body">A complimentary 20min call to explore where you are, what you're building, and the specific obstacles shaping your experience.</p>
+          <p class="hwb-step-body">A complimentary 20-minute call to explore where you are, what you're building, and the specific obstacles shaping your experience.</p>
         </div>
       </div>
 
@@ -369,5 +369,13 @@
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
+  <script>
+    (function(){
+      var w = "https://script.google.com/macros/s/AKfycbzdooBq2ILLgExlceHjdW-H38P0JHDl2QnMKrlEthUFr0mufRYfwRWggg2C3j5wMAet/exec";
+      var p = encodeURIComponent(location.pathname);
+      var r = encodeURIComponent(document.referrer);
+      fetch(w + "?page=" + p + "&ref=" + r, {method:"GET", mode:"no-cors"}).catch(function(){});
+    })();
+  </script>
 </body>
 </html>

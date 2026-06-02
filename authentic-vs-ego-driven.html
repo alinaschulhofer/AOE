@@ -177,5 +177,13 @@
   }
 </script>
 
+  <script>
+    (function(){
+      var w = "https://script.google.com/macros/s/AKfycbzdooBq2ILLgExlceHjdW-H38P0JHDl2QnMKrlEthUFr0mufRYfwRWggg2C3j5wMAet/exec";
+      var p = encodeURIComponent(location.pathname);
+      var r = encodeURIComponent(document.referrer);
+      fetch(w + "?page=" + p + "&ref=" + r, {method:"GET", mode:"no-cors"}).catch(function(){});
+    })();
+  </script>
 </body>
 </html>

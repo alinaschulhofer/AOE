@@ -126,5 +126,13 @@
 </footer>
 <script src="site.js"></script>
 <script>const nf=document.getElementById('newsletter-form');if(nf){nf.addEventListener('submit',async e=>{e.preventDefault();const btn=nf.querySelector('button');btn.disabled=true;try{await fetch('https://formspree.io/f/xzdwqnvk',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(nf)});nf.style.display='none';document.getElementById('newsletter-success').style.display='block';}catch{btn.disabled=false;}});}</script>
+  <script>
+    (function(){
+      var w = "https://script.google.com/macros/s/AKfycbzdooBq2ILLgExlceHjdW-H38P0JHDl2QnMKrlEthUFr0mufRYfwRWggg2C3j5wMAet/exec";
+      var p = encodeURIComponent(location.pathname);
+      var r = encodeURIComponent(document.referrer);
+      fetch(w + "?page=" + p + "&ref=" + r, {method:"GET", mode:"no-cors"}).catch(function(){});
+    })();
+  </script>
 </body>
 </html>
