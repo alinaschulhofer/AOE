@@ -145,7 +145,7 @@
 </script>
   <script>
     (function(){
-      var w = "https://YOUR-WORKER-SUBDOMAIN.workers.dev/log";
+      var w = "https://aoe-visitor-logger.alina-schulhofer.workers.dev/log";
       var p = encodeURIComponent(location.pathname);
       var r = encodeURIComponent(document.referrer);
       fetch(w + "?page=" + p + "&ref=" + r).catch(function(){});
