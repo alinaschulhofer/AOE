@@ -369,5 +369,13 @@
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
+  <script>
+    (function(){
+      var w = "https://YOUR-WORKER-SUBDOMAIN.workers.dev/log";
+      var p = encodeURIComponent(location.pathname);
+      var r = encodeURIComponent(document.referrer);
+      fetch(w + "?page=" + p + "&ref=" + r).catch(function(){});
+    })();
+  </script>
 </body>
 </html>
