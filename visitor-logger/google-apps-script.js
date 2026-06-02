@@ -1,12 +1,33 @@
 // Google Apps Script — paste this into script.google.com
 // Linked to your Google Sheet. See SETUP.md for instructions.
 
+function doGet(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(['Timestamp', 'Page', 'Referrer', 'User Agent']);
+      sheet.getRange(1, 1, 1, 4).setFontWeight('bold');
+    }
+
+    var page = e.parameter.page || '/';
+    var ref  = e.parameter.ref  || '';
+    var ua   = e.parameter.ua   || '';
+    var ts   = new Date().toISOString();
+
+    sheet.appendRow([ts, page, ref, ua]);
+  } catch (err) {
+    Logger.log('Error: ' + err.message);
+  }
+
+  return ContentService.createTextOutput('ok');
+}
+
 function doPost(e) {
   try {
     var data  = JSON.parse(e.postData.contents);
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
-    // Write header row on first use
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(['Timestamp', 'IP Address', 'Country', 'City', 'Page', 'Referrer', 'User Agent']);
       sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
@@ -22,7 +43,6 @@ function doPost(e) {
       data.ua,
     ]);
   } catch (err) {
-    // Log errors to the script's execution log, not to the sheet
     Logger.log('Error: ' + err.message);
   }
 
