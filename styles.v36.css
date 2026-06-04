@@ -2524,7 +2524,7 @@ ul { list-style: none; }
 .article-prose p + p { margin-top: 1.4em; }
 .article-prose strong { font-weight: 500; }
 .article-prose em { font-style: italic; }
-.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; }
+.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: inherit; font-weight: 600; font-family: inherit; }
 .article-pull {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
