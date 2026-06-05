@@ -303,7 +303,7 @@
       <p class="newsletter-sub reveal" data-delay="2">Subscribe to receive future reflections on psychology, performance, leadership, relationships, and the pursuit of excellence.</p>
       <form class="newsletter-form reveal" data-delay="3" id="newsletter-form">
         <input type="hidden" name="_subject" value="Newsletter Subscription — AOE Insights" />
-        <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required />
+        <input class="newsletter-input" type="email" name="email_address" placeholder="Your email address" required />
         <button type="submit" class="btn btn-primary" style="white-space:nowrap;padding-inline:1.75rem;">Subscribe</button>
       </form>
       <p class="newsletter-success" id="newsletter-success" style="display:none;">Thank you. You will receive future essays directly in your inbox.</p>
@@ -335,7 +335,7 @@
       const btn = nf.querySelector('button');
       btn.disabled = true;
       try {
-        await fetch('https://formspree.io/f/xzdwqnvk', {
+        await fetch('https://app.kit.com/forms/9526283/subscriptions', {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: new FormData(nf)

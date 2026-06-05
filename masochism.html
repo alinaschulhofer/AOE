@@ -117,7 +117,7 @@
       <h2 class="newsletter-heading">Receive Future Essays</h2>
       <p class="newsletter-sub">Subscribe to receive future reflections on psychology, performance, leadership, relationships, and the pursuit of excellence.</p>
       <form class="newsletter-form" id="newsletter-form">
-        <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required />
+        <input class="newsletter-input" type="email" name="email_address" placeholder="Your email address" required />
         <button type="submit" class="btn btn-primary" style="white-space:nowrap;padding-inline:1.75rem;">Subscribe</button>
       </form>
       <p id="newsletter-success" style="display:none;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);margin-top:.75rem;">Thank you. You will receive future essays directly in your inbox.</p>
@@ -132,7 +132,7 @@
   </div>
 </footer>
 <script src="site.js"></script>
-<script>const nf=document.getElementById('newsletter-form');if(nf){nf.addEventListener('submit',async e=>{e.preventDefault();const btn=nf.querySelector('button');btn.disabled=true;try{await fetch('https://formspree.io/f/xzdwqnvk',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(nf)});nf.style.display='none';document.getElementById('newsletter-success').style.display='block';}catch{btn.disabled=false;}});}</script>
+<script>const nf=document.getElementById('newsletter-form');if(nf){nf.addEventListener('submit',async e=>{e.preventDefault();const btn=nf.querySelector('button');btn.disabled=true;try{await fetch('https://app.kit.com/forms/9526283/subscriptions',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(nf)});nf.style.display='none';document.getElementById('newsletter-success').style.display='block';}catch{btn.disabled=false;}});}</script>
   <script>
     (function(){
       var w = "https://aoe-visitor-logger.alina-schulhofer.workers.dev/log";
