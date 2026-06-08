@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;display=swap');
+    </style>
+    <!-- Arc paths for textPath labels at r=325, all clockwise (sweep=1) -->
+    <!-- Boundaries at r=325 at each of the 7 segment division angles -->
+    <path id="arc-truth"      d="M 358.9,207.2 A 325,325 0 0,1 641.1,207.2"/>
+    <path id="arc-connection" d="M 641.1,207.2 A 325,325 0 0,1 816.9,427.7"/>
+    <path id="arc-being"      d="M 816.9,427.7 A 325,325 0 0,1 754.1,702.6"/>
+    <path id="arc-vision"     d="M 754.1,702.6 A 325,325 0 0,1 500,825"/>
+    <path id="arc-meaning"    d="M 500,825 A 325,325 0 0,1 245.9,702.6"/>
+    <path id="arc-creation"   d="M 245.9,702.6 A 325,325 0 0,1 183.1,427.7"/>
+    <path id="arc-excellence" d="M 183.1,427.7 A 325,325 0 0,1 358.9,207.2"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#F7F3EC"/>
+
+  <!-- Top Title -->
+  <text x="500" y="68" text-anchor="middle"
+        font-family="Cardo, Georgia, serif"
+        font-size="15" letter-spacing="6" fill="#B8952A"
+        text-decoration="underline">THE 7-PILLAR FRAMEWORK</text>
+
+  <!-- ═══════════════════════════════════════════
+       SEGMENT FILLS  (r 80 → 300)
+       Center (500,500)  |  segment angle 51.4286°
+       Pillar 0 (TRUTH) centred at top (−90°)
+  ═══════════════════════════════════════════ -->
+
+  <!-- S0 TRUTH -->
+  <path d="M 465.3,427.9 L 369.8,229.7 A 300,300 0 0,1 624.7,227.1 L 533.3,427.2 A 80,80 0 0,0 465.3,427.9 Z" fill="#EDE8DF"/>
+  <!-- S1 CONNECTION -->
+  <path d="M 533.3,427.2 L 624.7,227.1 A 300,300 0 0,1 792.5,433.2 L 578.0,482.2 A 80,80 0 0,0 533.3,427.2 Z" fill="#F2EDE4"/>
+  <!-- S2 BEING -->
+  <path d="M 578.0,482.2 L 792.5,433.2 A 300,300 0 0,1 734.5,687.1 L 562.5,549.9 A 80,80 0 0,0 578.0,482.2 Z" fill="#EDE8DF"/>
+  <!-- S3 VISION -->
+  <path d="M 562.5,549.9 L 734.5,687.1 A 300,300 0 0,1 500,800 L 500,580 A 80,80 0 0,0 562.5,549.9 Z" fill="#F2EDE4"/>
+  <!-- S4 MEANING -->
+  <path d="M 500,580 L 500,800 A 300,300 0 0,1 265.5,687.1 L 437.5,549.9 A 80,80 0 0,0 500,580 Z" fill="#EDE8DF"/>
+  <!-- S5 CREATION -->
+  <path d="M 437.5,549.9 L 265.5,687.1 A 300,300 0 0,1 207.5,433.2 L 422.0,482.2 A 80,80 0 0,0 437.5,549.9 Z" fill="#F2EDE4"/>
+  <!-- S6 EXCELLENCE -->
+  <path d="M 422.0,482.2 L 207.5,433.2 A 300,300 0 0,1 369.8,229.7 L 465.3,427.9 A 80,80 0 0,0 422.0,482.2 Z" fill="#EDE8DF"/>
+
+  <!-- ═══════════════════════════════════════════
+       LABEL BAND FILLS  (r 300 → 350)
+       Slightly warmer cream to distinguish band
+  ═══════════════════════════════════════════ -->
+
+  <!-- Band 0 TRUTH -->
+  <path d="M 369.8,229.7 L 348.1,184.7 A 350,350 0 0,1 645.5,181.6 L 624.7,227.1 A 300,300 0 0,0 369.8,229.7 Z" fill="#E6DFD2"/>
+  <!-- Band 1 CONNECTION -->
+  <path d="M 624.7,227.1 L 645.5,181.6 A 350,350 0 0,1 841.2,422.1 L 792.5,433.2 A 300,300 0 0,0 624.7,227.1 Z" fill="#EBE4D7"/>
+  <!-- Band 2 BEING -->
+  <path d="M 792.5,433.2 L 841.2,422.1 A 350,350 0 0,1 773.6,718.2 L 734.5,687.1 A 300,300 0 0,0 792.5,433.2 Z" fill="#E6DFD2"/>
+  <!-- Band 3 VISION -->
+  <path d="M 734.5,687.1 L 773.6,718.2 A 350,350 0 0,1 500,850 L 500,800 A 300,300 0 0,0 734.5,687.1 Z" fill="#EBE4D7"/>
+  <!-- Band 4 MEANING -->
+  <path d="M 500,800 L 500,850 A 350,350 0 0,1 226.4,718.2 L 265.5,687.1 A 300,300 0 0,0 500,800 Z" fill="#E6DFD2"/>
+  <!-- Band 5 CREATION -->
+  <path d="M 265.5,687.1 L 226.4,718.2 A 350,350 0 0,1 158.8,422.1 L 207.5,433.2 A 300,300 0 0,0 265.5,687.1 Z" fill="#EBE4D7"/>
+  <!-- Band 6 EXCELLENCE -->
+  <path d="M 207.5,433.2 L 158.8,422.1 A 350,350 0 0,1 348.1,184.7 L 369.8,229.7 A 300,300 0 0,0 207.5,433.2 Z" fill="#E6DFD2"/>
+
+  <!-- scoring rings removed -->
+
+  <!-- ═══════════════════════════════════════════
+       DIVIDING LINES — gold, inner_r → outer band (r 350)
+  ═══════════════════════════════════════════ -->
+  <line x1="465.3" y1="427.9" x2="348.1" y2="184.7" stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="533.3" y1="427.2" x2="645.5" y2="181.6" stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="578.0" y1="482.2" x2="841.2" y2="422.1" stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="562.5" y1="549.9" x2="773.6" y2="718.2" stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="500"   y1="580"   x2="500"   y2="850"   stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="437.5" y1="549.9" x2="226.4" y2="718.2" stroke="#B8952A" stroke-width="1.3"/>
+  <line x1="422.0" y1="482.2" x2="158.8" y2="422.1" stroke="#B8952A" stroke-width="1.3"/>
+
+  <!-- ═══════════════════════════════════════════
+       CIRCLES — outer band, inner separator, inner hole
+  ═══════════════════════════════════════════ -->
+  <circle cx="500" cy="500" r="350" fill="none" stroke="#B8952A" stroke-width="2.0"/>
+  <circle cx="500" cy="500" r="300" fill="none" stroke="#B8952A" stroke-width="1.4"/>
+  <circle cx="500" cy="500" r="80"  fill="#F7F3EC" stroke="#B8952A" stroke-width="1.8"/>
+
+  <!-- PILLAR LABELS — curved along arc paths at r=325 -->
+  <text font-family="Cardo, Georgia, serif" font-size="13" letter-spacing="4" fill="#2C2C2C">
+    <textPath href="#arc-truth" startOffset="50%" text-anchor="middle">TRUTH</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="12" letter-spacing="3" fill="#2C2C2C">
+    <textPath href="#arc-connection" startOffset="50%" text-anchor="middle">CONNECTION</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="13" letter-spacing="4" fill="#2C2C2C">
+    <textPath href="#arc-being" startOffset="50%" text-anchor="middle">BEING</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="13" letter-spacing="4" fill="#2C2C2C">
+    <textPath href="#arc-vision" startOffset="50%" text-anchor="middle">VISION</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="13" letter-spacing="4" fill="#2C2C2C">
+    <textPath href="#arc-meaning" startOffset="50%" text-anchor="middle">MEANING</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="13" letter-spacing="4" fill="#2C2C2C">
+    <textPath href="#arc-creation" startOffset="50%" text-anchor="middle">CREATION</textPath>
+  </text>
+  <text font-family="Cardo, Georgia, serif" font-size="12" letter-spacing="3" fill="#2C2C2C">
+    <textPath href="#arc-excellence" startOffset="50%" text-anchor="middle">EXCELLENCE</textPath>
+  </text>
+
+  <!-- CENTER: AoE LOGO MARK -->
+  <path fill-rule="evenodd" fill="#3B3835"
+        d="M 500,456 L 465,518 L 535,518 Z
+           M 500,466 L 478,520 L 522,520 Z"/>
+  <rect x="458" y="519" width="84" height="10" rx="0" fill="#3B3835"/>
+
+  <!-- BOTTOM COPYRIGHT -->
+  <text x="500" y="945"
+        text-anchor="middle"
+        font-family="Cardo, Georgia, serif"
+        font-size="9" letter-spacing="2" fill="#9A8A72">© 2026 Dr. Alina K. Schulhofer. All rights reserved.</text>
+
+</svg>
