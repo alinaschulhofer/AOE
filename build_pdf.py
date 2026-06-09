@@ -34,7 +34,6 @@ CLOSING = (
 
 LOGO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "aoe-logo.png")
 
-# Each question is (question_text, scale_descriptor)
 PILLARS = [
     ("TRUTH — The Foundation: Confronting Reality", [
         ("How honest are you with yourself about where you truly are — in your performance, your relationships, and your inner life?",
@@ -196,9 +195,44 @@ def build():
             block.append(Spacer(1, 3))
             block.append(scale_row())
             block.append(Spacer(1, 6))
+
+        block.append(Paragraph(
+            "<i>Pillar Score:</i>  _____ / 30",
+            ParagraphStyle("ps", fontName="Times-Italic", fontSize=7.5,
+                           textColor=MID, spaceBefore=2, spaceAfter=6)
+        ))
+
         elements.append(KeepTogether(block[:5]))
         for item in block[5:]:
             elements.append(item)
+
+    # Score summary table
+    elements.append(Spacer(1, 8))
+    elements.append(HRFlowable(width="100%", thickness=0.5, color=GOLD, spaceAfter=6))
+    elements.append(Paragraph("Score Summary", ParagraphStyle(
+        "SumH", fontName="Times-Bold", fontSize=9, textColor=GOLD, spaceAfter=4)))
+
+    cq = ParagraphStyle("cq", fontName="Times-Roman", fontSize=8, textColor=DARK)
+    cm = ParagraphStyle("cm", fontName="Times-Italic", fontSize=8, textColor=MID)
+    cg = ParagraphStyle("cg", fontName="Times-Bold", fontSize=8, textColor=GOLD)
+
+    pillar_names = [p[0].split(" —")[0] for p in PILLARS]
+    sum_data = []
+    for name in pillar_names:
+        sum_data.append([Paragraph(name, cq), Paragraph("_____", cq), Paragraph("/ 30", cm)])
+    sum_data.append([Paragraph("TOTAL", cg), Paragraph("_____", cg), Paragraph("/ 210", cg)])
+
+    sum_table = Table(sum_data, colWidths=[120, 55, 40], rowHeights=[15] * len(sum_data))
+    sum_table.setStyle(TableStyle([
+        ("ALIGN",         (0, 0), (-1, -1), "LEFT"),
+        ("ALIGN",         (1, 0), (1, -1), "CENTER"),
+        ("VALIGN",        (0, 0), (-1, -1), "MIDDLE"),
+        ("TOPPADDING",    (0, 0), (-1, -1), 2),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+        ("LINEABOVE",     (0, -1), (-1, -1), 0.5, GOLD),
+        ("BACKGROUND",    (0, -1), (-1, -1), HexColor("#FAF7F2")),
+    ]))
+    elements.append(sum_table)
 
     elements.append(HRFlowable(width="100%", thickness=0.5, color=GOLD, spaceBefore=12, spaceAfter=0))
     elements.append(Paragraph(CLOSING, closing_style))
