@@ -40,7 +40,6 @@ def build():
         topMargin=54, bottomMargin=52,
     )
 
-    # Styles
     header_name = ParagraphStyle("hn", fontName="Helvetica", fontSize=11,
                                  textColor=DARK, spaceAfter=1)
     header_title = ParagraphStyle("ht", fontName="Helvetica", fontSize=11,
@@ -293,7 +292,7 @@ def build():
     quarter_w = full_w * 0.25
 
     def sig_row(label, width=full_w):
-        return Table(
+        t = Table(
             [[Paragraph("", spacer_style)],
              [Paragraph(label, line_style)]],
             colWidths=[width],
@@ -306,6 +305,8 @@ def build():
                 ("RIGHTPADDING",  (0, 0), (-1, -1), 0),
             ])
         )
+        t.hAlign = "LEFT"
+        return t
 
     sig_block = [
         Spacer(1, 8),
