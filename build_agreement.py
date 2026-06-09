@@ -282,7 +282,6 @@ def build():
         "for reimbursement. However, it is you and not your insurance company who is responsible "
         "for the full payment of my fee.", body))
 
-    # SIGNATURE BLOCK — kept together on one page
     line_style = ParagraphStyle("ls", fontName="Helvetica", fontSize=9,
                                 textColor=MID, spaceAfter=0)
     spacer_style = ParagraphStyle("sp", fontName="Helvetica", fontSize=10,
