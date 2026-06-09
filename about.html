@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Dr. Alina Schulhofer</title>
-  <meta name="description" content="Dr. Alina Schulhofer is a licensed psychologist (FL & NY), former elite athlete, and founder of Architecture of Excellence™. A clinically-grounded approach to high performance." />
+  <meta name="description" content="Dr. Alina Schulhofer is a licensed psychologist (FL &amp; NY), former elite athlete, and founder of Architecture of Excellence™. A clinically-grounded approach to high performance." />
 
   <script>
     (function(){
@@ -43,168 +43,151 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="insights.html">Insights</a></li>
     </ul>
-    <a href="index.html#contact" class="nav-cta">Get Started</a>
-    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon"></span>
+      </button>
+      <a href="index.html#contact" class="nav-cta">Work Together</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-<div class="mobile-menu" role="dialog">
-  <a href="about.html">About</a><hr class="rule" />
-  <a href="philosophy.html">Philosophy</a><hr class="rule" />
-  <a href="method.html">Method</a><hr class="rule" />
-  <a href="services.html">Services</a><hr class="rule" />
-  <a href="insights.html">Insights</a><hr class="rule" />
-  <a href="index.html#contact">Get Started</a>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul role="list">
+    <li><a href="about.html">About</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="method.html">Method</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="insights.html">Insights</a></li>
+    <li><a href="index.html#contact">Work Together</a></li>
+  </ul>
 </div>
 
-<!-- ── PAGE HERO ─────────────────────────────────────── -->
-<header class="page-hero">
-  <div class="container page-hero-inner">
-    <div class="page-hero-text">
-      <h1 class="t-h1 reveal about-h1" style="margin-top:0;">
-        Redefining <em style="font-style:italic;color:var(--accent)">High Performance.</em>
-      </h1>
-      <p class="reveal about-eyebrow-wrap" data-delay="2" style="font-family:'Jost',sans-serif;font-size:.78rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);">
-        <span class="about-ticker-inner hide-desktop">Licensed Psychologist &nbsp;·&nbsp; High-Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™ &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; Licensed Psychologist &nbsp;·&nbsp; High-Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™ &nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span><span class="hide-mobile">Licensed Psychologist &nbsp;·&nbsp; High Performance Consultant &nbsp;·&nbsp; Founder, Architecture of Excellence™</span>
+<main>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-hero-img">
+        <img src="assets/portrait-about.jpg" alt="Dr. Alina Schulhofer" />
+      </div>
+      <div class="about-hero-text">
+        <p class="eyebrow">About</p>
+        <h1>Alina Schulhofer,&nbsp;PsyD</h1>
+        <p class="about-tagline">Licensed Psychologist &middot; Executive Coach &middot; Former Elite Athlete</p>
+        <p>
+          I am a licensed psychologist in Florida and New York, an executive coach, and the
+          founder of Architecture of Excellence™ — a framework for high-performance living
+          built at the intersection of depth psychology, neuroscience, and embodied practice.
+        </p>
+        <p>
+          My clinical work is psychoanalytically informed, meaning I work with the full
+          complexity of the human being — not just symptoms or surface behaviors, but the
+          underlying structures that shape how you think, relate, perform, and experience
+          your life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-rule"></div>
+
+  <!-- BACKGROUND -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <h2>Background</h2>
+      <p>
+        I completed my doctoral training in clinical psychology at the Chicago School of
+        Professional Psychology and have since worked across clinical, organizational, and
+        coaching contexts. My background spans psychodynamic psychotherapy, trauma
+        treatment, executive coaching, sports psychology consultation, and applied
+        neuroscience.
+      </p>
+      <p>
+        Before entering psychology, I was a competitive athlete — an experience that
+        shaped my understanding of performance, pressure, and the inner architecture that
+        either limits or unlocks a person’s potential. That lived understanding now
+        informs everything I do clinically and professionally.
+      </p>
+      <p>
+        I work with high-performing individuals — executives, founders, physicians,
+        athletes, and driven professionals — who are successful by conventional standards
+        but sense that something deeper is available to them. My work is not about fixing
+        what is broken; it is about building what is possible.
       </p>
     </div>
-    <div class="page-hero-meta hide-mobile">
-      <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-hero" />
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- APPROACH -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <h2>Approach</h2>
+      <p>
+        I do not offer a scripted protocol or a productivity system. I offer a rigorous,
+        individualized process of inquiry — one that takes seriously both the conscious
+        and unconscious dimensions of human experience.
+      </p>
+      <p>
+        My approach integrates psychoanalytic depth, cognitive and behavioral science,
+        somatic and nervous system work, and evidence-based coaching methodology. The
+        result is a process that is intellectually serious, practically oriented, and
+        attentive to the whole person.
+      </p>
+      <p>
+        I believe transformation is not an event. It is an architecture — built
+        deliberately, layer by layer, through honest engagement with what is actually
+        happening inside you.
+      </p>
     </div>
-  </div>
-</header>
-<!-- Mobile-only circle: outside page-hero so no overflow/grid clipping can hide it -->
-<div class="about-circle-mobile-wrap">
-  <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-mobile" />
-</div>
+  </section>
 
-<!-- ── ABOUT SPLIT: portrait + prose ──────────────────── -->
-<section class="about-split container">
+  <div class="section-rule"></div>
 
-  <div class="about-portrait reveal">
-    <div class="about-portrait-inner">
-      <picture>
-        <source srcset="assets/portrait-about.jpg" type="image/jpeg">
-        <img src="assets/portrait-about.jpg" alt="Dr. Alina Schulhofer" />
-      </picture>
+  <!-- CREDENTIALS -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <h2>Credentials &amp; Training</h2>
+      <ul class="about-credentials">
+        <li>Doctor of Psychology (PsyD), Clinical Psychology — The Chicago School of Professional Psychology</li>
+        <li>Licensed Psychologist — Florida (#PY12365) &amp; New York (#027009)</li>
+        <li>Executive &amp; Leadership Coach — trained in evidence-based coaching methodology</li>
+        <li>Applied Neuroscience — advanced coursework in neuroscience of behavior and performance</li>
+        <li>Psychoanalytic &amp; Psychodynamic Training — long-term clinical supervision and advanced seminars</li>
+        <li>Former Competitive Athlete — personal experience in elite performance environments</li>
+      </ul>
     </div>
-  </div>
+  </section>
 
-  <div class="prose reveal" data-delay="2">
+  <div class="section-rule"></div>
 
-    <p class="t-eyebrow" style="margin-bottom:1.75rem;">Dr. Alina Schulhofer</p>
-
-    <p>
-      My own quest for excellence began early in life and has taken me from Austria to Miami, New York, and Lisbon — each city shaping my perspective in distinct ways and deepening my understanding of what it means to build a life across cultures. As a former Olympic hopeful devoted to my craft of competitive swimming, I understand from the inside what it means to pursue greatness — the discipline, the sacrifice, and the particular weight that comes with striving at the highest level.
-    </p>
-
-    <p>
-      My journey led me to pursue a doctorate in clinical psychology, which
-      has since allowed me to work with many remarkable individuals across industries —
-      professional athletes, entrepreneurs, C-suite executives, scholars, and other
-      leaders. Many were at the height of their careers; just as many described a sense
-      of being lost, inadequate, unfulfilled — not living up to their true potential.
-    </p>
-
-    <div class="pull">
-      I learned that few ever dared to openly speak of their fears and doubts — often
-      out of fear of judgment, or because they didn't feel they had a right to feel
-      what they felt. After all, by ordinary standards, they had it all.
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="about-cta-inner">
+      <p class="eyebrow">Work Together</p>
+      <h2>Ready to begin?</h2>
+      <p>Engagements are individualized, confidential, and designed for those who are serious about the work.</p>
+      <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
     </div>
+  </section>
 
-    <p>
-      Having been confronted with these experiences firsthand, I bring an understanding
-      and ability to work with the issues unique to high performance that go far beyond
-      clinical or academic training. I integrate lived experience with my professional
-      background in working with individuals, couples, families, teams, and organizations.
-    </p>
+</main>
 
-    <p>
-      My proprietary framework, <strong>Architecture of Excellence™</strong> — a
-      science-based approach that integrates psychoanalytic insight, neuroscience, and
-      high-performance psychology — guides all of my work. It represents the emotional,
-      psychological, and relational foundations that, in my experience, make up a
-      world-class individual.
-    </p>
-
-    <p>
-      My work is grounded in the understanding that mental health is not separate from
-      high performance, but is the foundation of sustainable excellence. While I
-      specialize in supporting elite professionals and organizations, I work with a
-      range of individuals, couples, and families.
-    </p>
-
-    <a href="method.html" class="btn btn-ghost" style="margin-top:2.5rem;display:inline-block;">Discover the Method</a>
-
-  </div>
-</section>
-
-<!-- ── CREDENTIALS ────────────────────────────────────── -->
-<section class="container">
-  <div class="creds reveal">
-    <div class="cred-item">
-      <div class="cred-label">Degree</div>
-      <div class="cred-value">PsyD — Doctor of Clinical Psychology</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-label">Licensure</div>
-      <div class="cred-value">Licensed Psychologist — Florida &amp; New York</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-label">Clinical Specialties</div>
-      <div class="cred-value">Trauma · Personality · Relationship Issues</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOUNDER NOTE ────────────────────────────────────── -->
-<section class="founder-note">
-  <div class="container">
-    <div class="founder-note-inner">
-
-      <div class="founder-note-label reveal">
-        <span class="founder-note-eyebrow">Note from the Founder</span>
-        <h2 class="founder-note-heading">The Story.</h2>
-        <hr class="founder-note-rule" />
-      </div>
-
-      <div class="founder-prose reveal" data-delay="2">
-        <p>My personal and professional journey led me to create Architecture of Excellence™ — inspired by having witnessed and experienced a common pattern among high performers: outward achievement masking deep internal struggles.</p>
-        <p>As a licensed psychologist and former elite athlete, I came to understand that traditional mental performance and executive coaching tends to focus on tools that rarely address the deeper dynamics that block true fulfillment and sustainable success. Without resolving these core issues, patterns of self-sabotage and unhealthy coping strategies inevitably resurface. Potential remains unfulfilled.</p>
-        <p>I developed my approach to bridge that gap — to create transformation that is not only effective but enduring. Real success is not simply a matter of external milestones; it requires the cultivation of a profound sense of personal meaning, authenticity, resilience, and inner alignment.</p>
-        <p>Architecture of Excellence™ was founded out of a deliberate commitment to grounding high-performance work in psychological depth, clinical insight, and principles drawn from evidence-based practice — designed to meet the lived realities of elite performance.</p>
-        <span class="founder-sig">— Dr. Alina Schulhofer</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ────────────────────────────────────────── -->
-<section id="contact">
-  <div class="container contact-inner">
-    <p class="t-eyebrow reveal">Get Started</p>
-    <h2 class="contact-headline reveal" data-delay="1">Your journey towards <em>sustainable excellence</em> begins here.</h2>
-    <a href="mailto:alina@architectureofexcellence.com" class="contact-email reveal" data-delay="2">alina@architectureofexcellence.com</a>
-    <a href="index.html#contact" class="btn btn-primary reveal" data-delay="3">Book a Private Consultation</a>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="container foot-inner">
-    <div class="foot-top"><span class="foot-brand">Dr. Alina Schulhofer</span>
-    <nav class="foot-links">
-      <a href="about.html">About</a>
-      <a href="philosophy.html">Philosophy</a>
-      <a href="method.html">Method</a>
-      <a href="services.html">Services</a>
-      <a href="insights.html">Insights</a>
-    </nav></div>
-    <span class="foot-copy">© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Dr. Alina K. Schulhofer. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
   </div>
 </footer>
 
-<script src="site.js"></script>
-
+<script src="nav.v5.js"></script>
 
 <!-- Floating Calendly Button -->
 <a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
