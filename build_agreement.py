@@ -4,7 +4,7 @@ Build Psychotherapist-Patient Services Agreement PDF (template).
 
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, HRFlowable
+    SimpleDocTemplate, Paragraph, Spacer, HRFlowable, Table, TableStyle
 )
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY
@@ -43,7 +43,7 @@ def build():
     header_name = ParagraphStyle("hn", fontName="Helvetica", fontSize=11,
                                  textColor=DARK, spaceAfter=1)
     header_title = ParagraphStyle("ht", fontName="Helvetica", fontSize=11,
-                                  textColor=DARK, spaceAfter=8)
+                                  textColor=DARK, spaceAfter=20)
     doc_title = ParagraphStyle("dt", fontName="Helvetica-Bold", fontSize=11,
                                textColor=DARK, spaceAfter=12, alignment=TA_LEFT)
     body = ParagraphStyle("body", fontName="Helvetica", fontSize=10, leading=15,
@@ -118,7 +118,7 @@ def build():
     e.append(Paragraph(
         "My fee for a 50-minute individual psychotherapy session is $300, and my fee for a 50-minute "
         "couples therapy session is $350, unless we have already discussed alternative fee "
-        "arrangements based on individual circumstances. Fees includes time you arrive late. In "
+        "arrangements based on individual circumstances. Fees includes time you arrive late In "
         "addition to appointments, I charge this hourly amount for other professional services you "
         "may need, including but not limited to reviewing medical records, collateral meetings or "
         "phone calls longer than 15 minutes. I will break down the hourly cost for periods of less than "
@@ -130,7 +130,7 @@ def build():
     e.append(Paragraph(
         "Psychological evaluations are billed at my hourly rate, including assessment, scoring and "
         "interpretation of testing. When scheduling assessments, we will discuss the likely time and "
-        "costs required to the best of my abilities. However, some individuals may take longer to "
+        "costs required to the best of my abilities.  However, some individuals may take longer to "
         "complete the same assessment than others, and unforeseen issues may arise. I will inform "
         "you of any substantial changes in our estimates.", body))
     e.append(Paragraph(
@@ -158,60 +158,60 @@ def build():
         "signature on this Agreement provides consent for the following activities and those provided "
         "in the attached Notice:", body))
     e.append(Paragraph(
-        "·    We may occasionally find it helpful to consult other health and mental health "
+        "·       We may occasionally find it helpful to consult other health and mental health "
         "professionals about a case. During a consultation, we make every effort to avoid revealing "
         "the identity of our patients. The other professionals are also legally bound to keep the "
-        "information confidential. If you don’t object, we will not tell you about these consultations "
-        "unless we feel that it is important to our work together. I will note all consultations in your "
+        "information confidential.  If you don’t object, we will not tell you about these consultations "
+        "unless we feel that it is important to our work together.  I will note all consultations in your "
         "Clinical Record (which is called “PHI” in my Notice of Psychologist’s Policies and Practices to "
         "Protect the Privacy of Your Health Information).", bullet))
     e.append(Paragraph(
-        "·    Disclosures required by health insurers or to collect overdue fees are discussed "
+        "·       Disclosures required by health insurers or to collect overdue fees are discussed "
         "elsewhere in this Agreement.", bullet))
     e.append(Paragraph(
         "There are some situations where we are permitted or required to disclose information "
         "without either your consent or Authorization:", bold_body))
     e.append(Paragraph(
-        "·    If you are involved in a court proceeding and a request is made for information "
+        "·       If you are involved in a court proceeding and a request is made for information "
         "concerning your diagnosis and treatment, such information is protected by the psychologist-"
-        "patient privilege law. We cannot provide any information without your (or your legal "
+        "patient privilege law.  We cannot provide any information without your (or your legal "
         "representative’s) written authorization, or a court order, or if we receive a subpoena of "
         "which you have been properly notified and you have failed to inform me that you oppose "
-        "the subpoena. If you are involved in or contemplating litigation, you should consult with "
+        "the subpoena.  If you are involved in or contemplating litigation, you should consult with "
         "your attorney to determine whether a court would be likely to order me to disclose "
         "information.", bullet))
     e.append(Paragraph(
-        "·    If a government agency is requesting the information for health oversight activities, "
+        "·       If a government agency is requesting the information for health oversight activities, "
         "within its appropriate legal authority, we may be required to provide it for them.", bullet))
     e.append(Paragraph(
         "If a patient files a complaint or lawsuit against us, we may disclose relevant information "
         "regarding that patient in order to defend ourselves.", body))
     e.append(Paragraph(
-        "·    If a patient files a worker’s compensation claim, and we are providing necessary "
+        "·       If a patient files a worker’s compensation claim, and we are providing necessary "
         "treatment related to that claim, we must, upon appropriate request, submit treatment "
         "reports to the appropriate parties, including the patient’s employer, the insurance carrier or "
-        "an authorized qualified rehabilitation provider. HIPAA rules also do not protect your "
+        "an authorized qualified rehabilitation provider.  HIPAA rules also do not protect your "
         "information when applying for governmental or private disability, or when you are covered "
         "by automobile insurance.", bullet))
     e.append(Paragraph(
         "There are some situations in which we are legally obligated to take actions, which we "
         "believe are necessary to attempt to protect others from harm and we may have to reveal "
-        "some information about a patient’s treatment. If such situations arise, we will make a "
+        "some information about a patient’s treatment.  If such situations arise, we will make a "
         "reasonable effort to fully discuss it with you before taking any action and we will limit my "
         "disclosure to what is necessary.", bold_body))
     e.append(Paragraph(
-        "§    If we know, or have reason to suspect, that a child under 18 is abused, abandoned, or "
+        "§      If we know, or have reason to suspect, that a child under 18 is abused, abandoned, or "
         "neglected by a parent, legal custodian, caregiver, or any other person responsible for the "
         "child’s welfare, the law requires that we file a report with the Department of Child and "
         "Family Services. Once such a report is filed, we may be required to provide additional "
         "information.", bullet))
     e.append(Paragraph(
-        "§    If we know or have reasonable cause to suspect, that a vulnerable adult has been or is "
+        "§      If we know or have reasonable cause to suspect, that a vulnerable adult has been or is "
         "being abused, neglected, or exploited, the law requires that we file a report with the central "
-        "abuse hotline. Once such a report is filed, we may be required to provide additional "
+        "abuse hotline.  Once such a report is filed, we may be required to provide additional "
         "information.", bullet))
     e.append(Paragraph(
-        "§    If we believe that there is a clear and immediate probability of physical harm to the "
+        "§      If we believe that there is a clear and immediate probability of physical harm to the "
         "patient, to other individuals, or to society, we may be required to disclose information to "
         "take protective action, including communicating the information to the potential victim, "
         "and/or appropriate family member, and/or the police or seeking hospitalization of the "
@@ -231,11 +231,11 @@ def build():
         "health care provider) and we believe that access is reasonably likely to cause substantial "
         "harm to such other person, you may examine and/or receive a copy of your Clinical Record, "
         "if you request it in writing. Because these are professional records, they can be "
-        "misinterpreted and/or upsetting to untrained readers. For this reason, we recommend that "
+        "misinterpreted and/or upsetting to untrained readers.  For this reason, we recommend that "
         "you initially review them in our presence or have them forwarded to another mental health "
-        "professional so you can discuss the contents. In most circumstances, we are allowed to "
+        "professional so you can discuss the contents.  In most circumstances, we are allowed to "
         "charge a copying fee as well as postage or other costs including time spent associated with "
-        "furnishing you these records. We may withhold copies of your records until payment of the "
+        "furnishing you these records.  We may withhold copies of your records until payment of the "
         "copying fees has been made. If we refuse your request for access to your records, you have "
         "a right of review, which we will discuss with you upon request.", body))
 
@@ -255,8 +255,9 @@ def build():
     e.append(Paragraph(
         "Depositions, court appearances, attorney conferences, including preparation for "
         "such, are charged as discussed above. Should deposition and/or expert testimony be "
-        "required, an estimation of the fee (retainer) will be provided and must be paid 10 business "
-        "days in advance of the hearing date or the scheduled time may be released by me.", body))
+        "required, an estimation of the fee(retainer) will be provided "
+        "and must be paid 10 business days in advance of the hearing date or the scheduled time "
+        "may be released by me.", body))
     e.append(Paragraph(
         "Any cancellations or postponement of these services must be made within 3 business days’ "
         "notice of appearance, or the fees are nonrefundable. The person subpoenaing me to appear "
@@ -270,9 +271,9 @@ def build():
         "only information we release regarding a patient’s treatment is his/her name, personal "
         "identifying information, payment history, information about any agreements or "
         "authorizations made regarding payment or responsibility for services, the nature of services "
-        "provided, and the amount due. If such legal action is necessary, its costs will be included by "
-        "us or our attorney in the claim. By signing this agreement, you understand that you are "
-        "responsible for reasonable attorney and legal fees for accounts that go to collections. We "
+        "provided, and the amount due.  If such legal action is necessary, its costs will be included by "
+        "us or our attorney in the claim.  By signing this agreement, you understand that you are "
+        "responsible for reasonable attorney and legal fees for accounts that go to collections.  We "
         "will also release information necessary to file an adverse credit report with Equifax or other "
         "such agency.", body))
 
@@ -283,6 +284,7 @@ def build():
         "for reimbursement. However, it is you and not your insurance company who is responsible "
         "for the full payment of my fee.", body))
 
+    # SIGNATURE BLOCK
     e.append(Spacer(1, 8))
     e.append(Paragraph(
         "YOUR SIGNATURE BELOW INDICATES THAT YOU HAVE READ THIS AGREEMENT, AGREE TO "
@@ -291,15 +293,36 @@ def build():
         closing_caps))
 
     e.append(Paragraph("Client", sig_label))
-    e.append(Spacer(1, 36))
-    e.append(HRFlowable(width="60%", thickness=0.5, color=DARK, spaceAfter=4))
-    e.append(Paragraph("Signature", sig_line))
-    e.append(Spacer(1, 20))
-    e.append(HRFlowable(width="60%", thickness=0.5, color=DARK, spaceAfter=4))
-    e.append(Paragraph("Printed Name", sig_line))
-    e.append(Spacer(1, 20))
-    e.append(HRFlowable(width="40%", thickness=0.5, color=DARK, spaceAfter=4))
-    e.append(Paragraph("Date", sig_line))
+    e.append(Spacer(1, 10))
+
+    line_style = ParagraphStyle("ls", fontName="Helvetica", fontSize=9,
+                                textColor=MID, spaceAfter=0)
+    spacer_style = ParagraphStyle("sp", fontName="Helvetica", fontSize=10,
+                                  spaceAfter=0)
+
+    sig_col_w = 300
+    date_col_w = 180
+
+    def sig_row(label, col_w):
+        return Table(
+            [[Paragraph("", spacer_style)],
+             [Paragraph(label, line_style)]],
+            colWidths=[col_w],
+            rowHeights=[28, 16],
+            style=TableStyle([
+                ("LINEBELOW",    (0, 0), (0, 0), 0.5, DARK),
+                ("TOPPADDING",   (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING",(0, 0), (-1, -1), 0),
+                ("LEFTPADDING",  (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+            ])
+        )
+
+    e.append(sig_row("Signature", sig_col_w))
+    e.append(Spacer(1, 16))
+    e.append(sig_row("Printed Name", sig_col_w))
+    e.append(Spacer(1, 16))
+    e.append(sig_row("Date", date_col_w))
 
     doc.build(e, onFirstPage=on_every_page, onLaterPages=on_every_page)
     print(f"PDF written to: {out_path}")
