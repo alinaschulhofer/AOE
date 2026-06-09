@@ -4,7 +4,7 @@ Build Psychotherapist-Patient Services Agreement PDF (template).
 
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, HRFlowable, Table, TableStyle
+    SimpleDocTemplate, Paragraph, Spacer, HRFlowable, Table, TableStyle, KeepTogether
 )
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY
@@ -57,8 +57,6 @@ def build():
                                textColor=DARK, spaceAfter=10, alignment=TA_JUSTIFY)
     sig_label = ParagraphStyle("sl", fontName="Helvetica-Bold", fontSize=10,
                                textColor=DARK, spaceBefore=16, spaceAfter=4)
-    sig_line  = ParagraphStyle("sln", fontName="Helvetica", fontSize=10,
-                               textColor=DARK, spaceAfter=2)
     closing_caps = ParagraphStyle("cc", fontName="Helvetica-Bold", fontSize=10,
                                   leading=15, textColor=DARK, spaceAfter=14,
                                   alignment=TA_JUSTIFY)
@@ -256,7 +254,7 @@ def build():
         "Depositions, court appearances, attorney conferences, including preparation for "
         "such, are charged as discussed above. Should deposition and/or expert testimony be "
         "required, an estimation of the fee(retainer) will be provided "
-        "and must be paid 10 business days in advance of the hearing date or the scheduled time "
+        "and must be paid 10 business days in advance of  the hearing date or the scheduled time "
         "may be released by me.", body))
     e.append(Paragraph(
         "Any cancellations or postponement of these services must be made within 3 business days’ "
@@ -284,45 +282,45 @@ def build():
         "for reimbursement. However, it is you and not your insurance company who is responsible "
         "for the full payment of my fee.", body))
 
-    # SIGNATURE BLOCK
-    e.append(Spacer(1, 8))
-    e.append(Paragraph(
-        "YOUR SIGNATURE BELOW INDICATES THAT YOU HAVE READ THIS AGREEMENT, AGREE TO "
-        "ITS TERMS, AND CONSENT TO TREATMENT. IT ALSO SERVES AS AN ACKNOWLEDGEMENT "
-        "THAT YOU HAVE RECEIVED THE HIPAA NOTICE FORM DESCRIBED ABOVE.",
-        closing_caps))
-
-    e.append(Paragraph("Client", sig_label))
-    e.append(Spacer(1, 10))
-
+    # SIGNATURE BLOCK — kept together on one page
     line_style = ParagraphStyle("ls", fontName="Helvetica", fontSize=9,
                                 textColor=MID, spaceAfter=0)
     spacer_style = ParagraphStyle("sp", fontName="Helvetica", fontSize=10,
                                   spaceAfter=0)
 
-    sig_col_w = 300
-    date_col_w = 180
+    full_w = W - 2 * margin
 
-    def sig_row(label, col_w):
+    def sig_row(label):
         return Table(
             [[Paragraph("", spacer_style)],
              [Paragraph(label, line_style)]],
-            colWidths=[col_w],
+            colWidths=[full_w],
             rowHeights=[28, 16],
             style=TableStyle([
-                ("LINEBELOW",    (0, 0), (0, 0), 0.5, DARK),
-                ("TOPPADDING",   (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING",(0, 0), (-1, -1), 0),
-                ("LEFTPADDING",  (0, 0), (-1, -1), 0),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("LINEBELOW",     (0, 0), (0, 0), 0.5, DARK),
+                ("TOPPADDING",    (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+                ("LEFTPADDING",   (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING",  (0, 0), (-1, -1), 0),
             ])
         )
 
-    e.append(sig_row("Signature", sig_col_w))
-    e.append(Spacer(1, 16))
-    e.append(sig_row("Printed Name", sig_col_w))
-    e.append(Spacer(1, 16))
-    e.append(sig_row("Date", date_col_w))
+    sig_block = [
+        Spacer(1, 8),
+        Paragraph(
+            "YOUR SIGNATURE BELOW INDICATES THAT YOU HAVE READ THIS AGREEMENT, AGREE TO "
+            "ITS TERMS, AND CONSENT TO TREATMENT. IT ALSO SERVES AS AN ACKNOWLEDGEMENT "
+            "THAT YOU HAVE RECEIVED THE HIPAA NOTICE FORM DESCRIBED ABOVE.",
+            closing_caps),
+        Paragraph("Client", sig_label),
+        Spacer(1, 10),
+        sig_row("Signature"),
+        Spacer(1, 16),
+        sig_row("Printed Name"),
+        Spacer(1, 16),
+        sig_row("Date"),
+    ]
+    e.append(KeepTogether(sig_block))
 
     doc.build(e, onFirstPage=on_every_page, onLaterPages=on_every_page)
     print(f"PDF written to: {out_path}")
