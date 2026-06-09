@@ -40,12 +40,13 @@ def build():
         topMargin=54, bottomMargin=52,
     )
 
+    # Styles
     header_name = ParagraphStyle("hn", fontName="Helvetica", fontSize=11,
                                  textColor=DARK, spaceAfter=1)
     header_title = ParagraphStyle("ht", fontName="Helvetica", fontSize=11,
                                   textColor=DARK, spaceAfter=20)
     doc_title = ParagraphStyle("dt", fontName="Helvetica-Bold", fontSize=11,
-                               textColor=DARK, spaceAfter=12, alignment=TA_LEFT)
+                               textColor=DARK, spaceAfter=12, alignment=TA_CENTER)
     body = ParagraphStyle("body", fontName="Helvetica", fontSize=10, leading=15,
                           textColor=DARK, spaceAfter=10, alignment=TA_JUSTIFY)
     section = ParagraphStyle("sec", fontName="Helvetica-Bold", fontSize=10,
@@ -128,7 +129,7 @@ def build():
     e.append(Paragraph(
         "Psychological evaluations are billed at my hourly rate, including assessment, scoring and "
         "interpretation of testing. When scheduling assessments, we will discuss the likely time and "
-        "costs required to the best of my abilities.  However, some individuals may take longer to "
+        "costs required to the best of my abilities. However, some individuals may take longer to "
         "complete the same assessment than others, and unforeseen issues may arise. I will inform "
         "you of any substantial changes in our estimates.", body))
     e.append(Paragraph(
@@ -289,12 +290,13 @@ def build():
                                   spaceAfter=0)
 
     full_w = W - 2 * margin
+    quarter_w = full_w * 0.25
 
-    def sig_row(label):
+    def sig_row(label, width=full_w):
         return Table(
             [[Paragraph("", spacer_style)],
              [Paragraph(label, line_style)]],
-            colWidths=[full_w],
+            colWidths=[width],
             rowHeights=[28, 16],
             style=TableStyle([
                 ("LINEBELOW",     (0, 0), (0, 0), 0.5, DARK),
@@ -314,11 +316,11 @@ def build():
             closing_caps),
         Paragraph("Client", sig_label),
         Spacer(1, 10),
-        sig_row("Signature"),
+        sig_row("Signature", quarter_w),
         Spacer(1, 16),
-        sig_row("Printed Name"),
+        sig_row("Printed Name", quarter_w),
         Spacer(1, 16),
-        sig_row("Date"),
+        sig_row("Date", quarter_w),
     ]
     e.append(KeepTogether(sig_block))
 
