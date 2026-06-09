@@ -92,46 +92,29 @@ def scale_row():
     return t
 
 
-def reflection_block(n_lines=4):
-    items = [Spacer(1, 6)]
-    for _ in range(n_lines):
-        items.append(HRFlowable(width="100%", thickness=0.3, color=RULE, spaceAfter=10))
-    return items
-
-
 def on_every_page(canvas, doc):
+    """Draw header and footer on every page."""
     canvas.saveState()
     page_w, page_h = W, H
     margin = 36
 
-    # Header
+    # ── HEADER — centered title, logo top-right if available ──
     canvas.setFillColor(GOLD)
-    canvas.setFont("Times-Roman", 16)
-    canvas.drawString(margin, page_h - 38, "AoE Self Assessment")
+    canvas.setFont("Times-Roman", 18)
+    canvas.drawCentredString(page_w / 2, page_h - 50, "AoE Self Assessment")
 
-    logo_x = page_w - margin - 60
-    logo_y = page_h - 50
+    logo_x = page_w - margin - 70
+    logo_y = page_h - 62
     if os.path.exists(LOGO_PATH):
-        canvas.drawImage(LOGO_PATH, logo_x, logo_y, width=60, height=30,
+        canvas.drawImage(LOGO_PATH, logo_x, logo_y, width=70, height=28,
                          preserveAspectRatio=True, mask="auto")
-    else:
-        canvas.setStrokeColor(GOLD)
-        canvas.setLineWidth(0.5)
-        canvas.rect(logo_x, logo_y, 60, 30, fill=0, stroke=1)
-        canvas.setFillColor(MID)
-        canvas.setFont("Times-Italic", 6)
-        canvas.drawCentredString(logo_x + 30, logo_y + 11, "logo")
 
-    canvas.setFillColor(MID)
-    canvas.setFont("Times-Roman", 8)
-    canvas.drawString(margin, page_h - 52,
-                      "Architecture of Excellence™  ·  Dr. Alina K. Schulhofer")
-
+    # Header rule
     canvas.setStrokeColor(GOLD)
     canvas.setLineWidth(0.5)
-    canvas.line(margin, page_h - 58, page_w - margin, page_h - 58)
+    canvas.line(margin, page_h - 66, page_w - margin, page_h - 66)
 
-    # Footer
+    # ── FOOTER ──
     canvas.setStrokeColor(RULE)
     canvas.setLineWidth(0.3)
     canvas.line(margin, 40, page_w - margin, 40)
@@ -153,7 +136,8 @@ def build():
     doc = SimpleDocTemplate(
         out_path, pagesize=letter,
         leftMargin=margin, rightMargin=margin,
-        topMargin=72, bottomMargin=52,
+        topMargin=80,   # room for header
+        bottomMargin=52,
     )
 
     pillar_style = ParagraphStyle(
@@ -167,10 +151,6 @@ def build():
     intro_style = ParagraphStyle(
         "Intro", fontName="Times-Roman", fontSize=7.5, leading=11,
         textColor=MID, alignment=TA_CENTER, spaceAfter=8,
-    )
-    reflection_label_style = ParagraphStyle(
-        "ReflLabel", fontName="Times-Italic", fontSize=7.5, leading=10,
-        textColor=MID, spaceBefore=6, spaceAfter=2,
     )
     closing_style = ParagraphStyle(
         "Closing", fontName="Times-Italic", fontSize=9, leading=14,
@@ -193,8 +173,6 @@ def build():
             block.append(Spacer(1, 3))
             block.append(scale_row())
             block.append(Spacer(1, 6))
-        block.append(Paragraph("Reflection:", reflection_label_style))
-        block.extend(reflection_block(4))
         elements.append(KeepTogether(block[:5]))
         for item in block[5:]:
             elements.append(item)
