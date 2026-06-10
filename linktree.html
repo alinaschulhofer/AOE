@@ -107,18 +107,10 @@
     }
 
     .lt-bio {
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: .06em;
+      font-size: 0.875rem;
+      color: var(--ink2);
+      letter-spacing: .04em;
       text-transform: uppercase;
-    }
-
-    .lt-founder {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--accent);
-      letter-spacing: .01em;
     }
 
     /* ── DIVIDER ── */
@@ -221,13 +213,12 @@
 <main class="lt-wrap">
 
   <div class="lt-avatar">
-    <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" />
+    <img src="assets/portrait-about.jpg" alt="Dr. Alina Schulhofer" />
   </div>
 
   <div class="lt-header">
     <h1 class="lt-name">Dr. Alina Schulhofer</h1>
-    <p class="lt-bio">Licensed Psychologist &nbsp;·&nbsp; Executive Coach &nbsp;·&nbsp; High Performance Consultant</p>
-    <p class="lt-founder">Founder, Architecture of Excellence™</p>
+    <p class="lt-bio">Psychologist &amp; Executive Coach</p>
   </div>
 
   <hr class="lt-rule" />
@@ -237,7 +228,7 @@
     <a class="lt-btn" href="https://alinaschulhofer.github.io/AOE/index.html#contact">
       <div class="lt-btn-icon" aria-hidden="true">✦</div>
       <div class="lt-btn-text">
-        <span class="lt-btn-label">Consultation</span>
+        <span class="lt-btn-label">Work together</span>
         <span class="lt-btn-title">Book a Consultation</span>
       </div>
       <span class="lt-btn-arrow" aria-hidden="true">→</span>
@@ -246,7 +237,7 @@
     <a class="lt-btn" href="https://alinaschulhofer.github.io/AOE/insights.html">
       <div class="lt-btn-icon" aria-hidden="true">◈</div>
       <div class="lt-btn-text">
-        <span class="lt-btn-label">Insights</span>
+        <span class="lt-btn-label">Ideas &amp; writing</span>
         <span class="lt-btn-title">Read the Blog</span>
       </div>
       <span class="lt-btn-arrow" aria-hidden="true">→</span>
@@ -255,17 +246,8 @@
     <a class="lt-btn" href="https://alinaschulhofer.github.io/AOE/fear-of-success.html">
       <div class="lt-btn-icon" aria-hidden="true">◇</div>
       <div class="lt-btn-text">
-        <span class="lt-btn-label">Featured Article</span>
+        <span class="lt-btn-label">Featured article</span>
         <span class="lt-btn-title">The Fear of Success</span>
-      </div>
-      <span class="lt-btn-arrow" aria-hidden="true">→</span>
-    </a>
-
-    <a class="lt-btn" href="https://alinaschulhofer.github.io/AOE/free-guide.html">
-      <div class="lt-btn-icon" aria-hidden="true">⬇</div>
-      <div class="lt-btn-text">
-        <span class="lt-btn-label">Free Guide</span>
-        <span class="lt-btn-title">The Inner Alignment Guide</span>
       </div>
       <span class="lt-btn-arrow" aria-hidden="true">→</span>
     </a>
@@ -273,10 +255,50 @@
   </nav>
 
   <p class="lt-footer">
-    <a href="https://www.dralinaschulhofer.com/">dralinaschulhofer.com</a>
+    <a href="https://alinaschulhofer.github.io/AOE/">alinaschulhofer.com</a>
   </p>
 
 </main>
 
+
+<!-- Floating Calendly Button -->
+<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
+  <span class="calendly-float-icon">&#10022;</span>
+  <span class="calendly-float-text">Book a Consultation</span>
+</a>
+<style>
+.calendly-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #B8952A;
+  color: #F7F3EC;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(184,149,42,.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.calendly-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,149,42,.45);
+  background: #A8852A;
+}
+.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
+@media (max-width: 480px) {
+  .calendly-float { padding: 11px 14px; }
+  .calendly-float-text { display: none; }
+  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
+}
+</style>
 </body>
 </html>
