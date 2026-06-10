@@ -59,7 +59,7 @@
   <a href="index.html#contact">Get Started</a>
 </div>
 
-<!-- ── PAGE HERO ─────────────────────────────────────── -->
+<!-- ── PAGE HERO ───────────────────────────────────── -->
 <header class="page-hero">
   <div class="container page-hero-inner">
     <div class="page-hero-text">
@@ -76,7 +76,7 @@
   </div>
 </header>
 
-<!-- ── SERVICE QUICK NAV ──────────────────────────────── -->
+<!-- ── SERVICE QUICK NAV ────────────────────────────────────── -->
 <div style="border-bottom:1px solid var(--rule);padding-block:1.25rem;">
   <div class="container svc-anchor-bar" style="display:flex;gap:2rem;flex-wrap:wrap;">
     <a href="#executive-coaching" class="t-eyebrow svc-anchor-link">01 Executive Coaching</a>
@@ -86,7 +86,7 @@
   </div>
 </div>
 
-<!-- ── 01 EXECUTIVE COACHING ──────────────────────────── -->
+<!-- ── 01 EXECUTIVE COACHING ─────────────────────────────────── -->
 <section id="executive-coaching" class="svc-detail">
   <div class="container svc-detail-inner">
     <div class="svc-sidebar reveal">
@@ -96,7 +96,7 @@
     </div>
     <div class="svc-content reveal" data-delay="2">
       <p>
-        Private, one-on-one coaching for those operating at the highest levels of their field — executives, founders, athletes, creatives, and other ambitious professionals committed to closing the gap between where they are and what they're truly capable of.
+        Private, one-on-one coaching for those operating at the highest levels of their field — executives, founders, athletes, creatives, and other ambitious professionals committed to closing the gap between where they are and what they’re truly capable of.
       </p>
       <p>
         Grounded in the Architecture of Excellence™ framework, this engagement goes far beyond
@@ -130,7 +130,7 @@
   </div>
 </section>
 
-<!-- ── 02 CONCIERGE THERAPY ───────────────────────────── -->
+<!-- ── 02 CONCIERGE THERAPY ─────────────────────────────────── -->
 <section id="concierge-therapy" class="svc-detail">
   <div class="container svc-detail-inner">
     <div class="svc-sidebar reveal">
@@ -172,7 +172,7 @@
   </div>
 </section>
 
-<!-- ── 03 ORGANIZATIONAL CONSULTING ──────────────────── -->
+<!-- ── 03 ORGANIZATIONAL CONSULTING ───────────────────────────── -->
 <section id="organizational-consulting" class="svc-detail">
   <div class="container svc-detail-inner">
     <div class="svc-sidebar reveal">
@@ -183,8 +183,8 @@
     <div class="svc-content reveal" data-delay="2">
       <p>
         In high-performance settings, success is often defined by metrics — but what truly
-        sustains excellence is far more complex: it's the invisible architecture of a team
-        or organization's emotional and relational life.
+        sustains excellence is far more complex: it’s the invisible architecture of a team
+        or organization’s emotional and relational life.
       </p>
       <p>
         I partner with organizations, businesses, teams, and other mission-driven ventures
@@ -208,7 +208,7 @@
   </div>
 </section>
 
-<!-- ── 04 EDUCATION ───────────────────────────────────── -->
+<!-- ── 04 EDUCATION ─────────────────────────────────────────── -->
 <section id="education" class="svc-detail">
   <div class="container svc-detail-inner">
     <div class="svc-sidebar reveal">
@@ -250,7 +250,7 @@
   </div>
 </section>
 
-<!-- ── INVESTMENT ─────────────────────────────────────── -->
+<!-- ── INVESTMENT ───────────────────────────────────────────────── -->
 <section class="investment-section">
   <div class="container">
     <div class="investment-inner reveal">
@@ -268,7 +268,7 @@
   </div>
 </section>
 
-<!-- ── FAQ ───────────────────────────────────────────── -->
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
 <section class="faq-section">
   <div class="container">
     <div class="faq-header reveal" style="text-align:center;">
@@ -322,7 +322,7 @@
   </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────── -->
+<!-- ── CONTACT ──────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="container contact-inner">
     <p class="t-eyebrow reveal">Get Started</p>
@@ -358,5 +358,45 @@
   });
 </script>
 
+
+<!-- Floating Calendly Button -->
+<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
+  <span class="calendly-float-icon">&#10022;</span>
+  <span class="calendly-float-text">Book a Consultation</span>
+</a>
+<style>
+.calendly-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #B8952A;
+  color: #F7F3EC;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(184,149,42,.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.calendly-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,149,42,.45);
+  background: #A8852A;
+}
+.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
+@media (max-width: 480px) {
+  .calendly-float { padding: 11px 14px; }
+  .calendly-float-text { display: none; }
+  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
+}
+</style>
 </body>
 </html>

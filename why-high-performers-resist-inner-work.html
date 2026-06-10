@@ -72,28 +72,28 @@
 <article class="article-body">
   <div class="container article-body-inner">
     <div class="article-prose reveal">
-      <p>You've done everything right. You train hard, prepare meticulously. And yet — when the stakes are highest, something happens. Somehow, the performance isn't there when it matters the most.</p>
-      <p>You wonder what goes wrong. Why you hesitate or second-guess yourself under pressure, after you've done all the work and know you're prepared. You wonder why you seem to make the same mistakes over and over again, even though you know better.</p>
-      <p>You might be an athlete performing your best in training, but during competitions you're emotionally elsewhere — worried about disappointing someone watching, replaying a past mistake, or unconsciously reacting to dynamics that have nothing to do with the game but everything to do with your personal story. Or maybe you're a high-level executive, and no matter how well you prepare, something within you freezes during the pitch that could land the deal — and you walk away wondering: what just happened?</p>
-      <p>You look for the problem in your game or your strategy. Yet maybe it's not because you lack skill or preparation — but because something deeper is running the show during the moments that make it or break it. Something within you. Unresolved emotions, unconscious beliefs and patterns that seem to sabotage true success. And you might not even realize it.</p>
+      <p>You’ve done everything right. You train hard, prepare meticulously. And yet — when the stakes are highest, something happens. Somehow, the performance isn’t there when it matters the most.</p>
+      <p>You wonder what goes wrong. Why you hesitate or second-guess yourself under pressure, after you’ve done all the work and know you’re prepared. You wonder why you seem to make the same mistakes over and over again, even though you know better.</p>
+      <p>You might be an athlete performing your best in training, but during competitions you’re emotionally elsewhere — worried about disappointing someone watching, replaying a past mistake, or unconsciously reacting to dynamics that have nothing to do with the game but everything to do with your personal story. Or maybe you’re a high-level executive, and no matter how well you prepare, something within you freezes during the pitch that could land the deal — and you walk away wondering: what just happened?</p>
+      <p>You look for the problem in your game or your strategy. Yet maybe it’s not because you lack skill or preparation — but because something deeper is running the show during the moments that make it or break it. Something within you. Unresolved emotions, unconscious beliefs and patterns that seem to sabotage true success. And you might not even realize it.</p>
     </div>
 
     <blockquote class="article-pull reveal">
-      "If I go there, I'll fall apart." — the belief that keeps high performers from the work that would set them free.
+      “If I go there, I’ll fall apart.” — the belief that keeps high performers from the work that would set them free.
     </blockquote>
 
     <div class="article-prose reveal">
-      <p>In my work with high performers — specifically elite athletes — I've found that many resist doing deep emotional work: therapy, introspection, insight. For a similar reason: <em>"If I go there, I'll fall apart."</em></p>
-      <p>They often share a belief that becoming more in touch with their emotional world is dangerous. They fear that their performance will suffer if they slow down, feel too much, or examine the past. So instead, they continue to push, compartmentalize, and avoid. Yet this avoidance may be exactly what is hindering them from reaching their greatest potential. Even though they have gained "tools" and visualized their performances perfectly time and time again — during moments of pressure, it seems as though they never learned any of it.</p>
+      <p>In my work with high performers — specifically elite athletes — I’ve found that many resist doing deep emotional work: therapy, introspection, insight. For a similar reason: <em>“If I go there, I’ll fall apart.”</em></p>
+      <p>They often share a belief that becoming more in touch with their emotional world is dangerous. They fear that their performance will suffer if they slow down, feel too much, or examine the past. So instead, they continue to push, compartmentalize, and avoid. Yet this avoidance may be exactly what is hindering them from reaching their greatest potential. Even though they have gained “tools” and visualized their performances perfectly time and time again — during moments of pressure, it seems as though they never learned any of it.</p>
       <p>Our emotional world and unconscious beliefs are powerful. They can override our intellectual or physical capacities when it matters most. Becoming more conscious of our innermost thoughts and feelings may make us feel as though we are falling apart — yet only temporarily, because we are entering uncharted territory. In the end, doing the inner work actually gives us greater control over our actions, as we become more aware and intentional in our behaviors and decisions. As Carl Jung famously said:</p>
     </div>
 
     <blockquote class="article-pull reveal">
-      "Until you make the unconscious conscious, it will direct your life and you will call it fate." — Carl Jung
+      “Until you make the unconscious conscious, it will direct your life and you will call it fate.” — Carl Jung
     </blockquote>
 
     <div class="article-prose reveal">
-      <p>In working to confront their deepest fears, my therapy and coaching clients gradually become more acquainted — and therefore more comfortable — with their "shadow": those aspects of the personality that we choose to repress. We reject the behaviors, feelings, and thoughts that we find dangerous. Yet they don't disappear; they continue to impact us in ways we are not aware of.</p>
+      <p>In working to confront their deepest fears, my therapy and coaching clients gradually become more acquainted — and therefore more comfortable — with their “shadow”: those aspects of the personality that we choose to repress. We reject the behaviors, feelings, and thoughts that we find dangerous. Yet they don’t disappear; they continue to impact us in ways we are not aware of.</p>
       <p>While it may feel destabilizing to get to know those parts of yourself that seem dangerous, in the long run, getting to know yourself more deeply helps you become more stable, grounded, and honest — with yourself and others. It allows you to become more aware of when and how you may self-sabotage, and why you may actually fear success, even if on the surface you believe you want nothing more than to win.</p>
       <p style="color:var(--ink3);font-size:.85rem;margin-top:2rem;font-style:italic;">Reference: Jung, C. G. (1951). <em>Aion: Researches into the Phenomenology of the Self.</em></p>
     </div>
@@ -146,5 +146,45 @@
   const nf = document.getElementById('newsletter-form');
   if (nf) { nf.addEventListener('submit', async e => { e.preventDefault(); const btn = nf.querySelector('button'); btn.disabled = true; try { await fetch('https://formspree.io/f/xzdwqnvk', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(nf) }); nf.style.display = 'none'; document.getElementById('newsletter-success').style.display = 'block'; } catch { btn.disabled = false; } }); }
 </script>
+
+<!-- Floating Calendly Button -->
+<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
+  <span class="calendly-float-icon">&#10022;</span>
+  <span class="calendly-float-text">Book a Consultation</span>
+</a>
+<style>
+.calendly-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #B8952A;
+  color: #F7F3EC;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(184,149,42,.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.calendly-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,149,42,.45);
+  background: #A8852A;
+}
+.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
+@media (max-width: 480px) {
+  .calendly-float { padding: 11px 14px; }
+  .calendly-float-text { display: none; }
+  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
+}
+</style>
 </body>
 </html>

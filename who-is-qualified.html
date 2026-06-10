@@ -57,8 +57,8 @@
       <span class="insight-tag">Leadership</span>
       <span class="article-date">March 14, 2026</span>
     </div>
-    <h1 class="article-title reveal" data-delay="2">Everyone's a Coach or Consultant Now. Who Is Actually Qualified?</h1>
-    <p class="article-subtitle reveal" data-delay="3">How social media turned personal development into a popularity contest that rewards visibility over expertise — and what it's costing us.</p>
+    <h1 class="article-title reveal" data-delay="2">Everyone’s a Coach or Consultant Now. Who Is Actually Qualified?</h1>
+    <p class="article-subtitle reveal" data-delay="3">How social media turned personal development into a popularity contest that rewards visibility over expertise — and what it’s costing us.</p>
     <div class="article-byline reveal" data-delay="4">
       <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="article-byline-photo" />
       <span class="article-byline-name">Dr. Alina Schulhofer</span>
@@ -71,8 +71,8 @@
 <article class="article-body">
   <div class="container article-body-inner">
     <div class="article-prose reveal">
-      <p>In recent years, the coaching industry has exploded. Everywhere we look, someone is teaching mindset, resilience, emotional intelligence, high-performance habits, or mental toughness. Many of these offerings are well-intentioned. Some are helpful. But a growing number are built on charisma, aesthetic branding, or social media visibility rather than the rigorous expertise required to understand and guide a person's inner world.</p>
-      <p>Mental health and performance is not entertainment. It's not motivation. And it's not a collection of quick strategies that can be packaged into a viral carousel or 30-second clip. It is psychology. And psychology, when it's done well, is a discipline grounded in extensive training, ethical responsibility, and a nuanced understanding of the human mind that goes far beyond "mindset hacks."</p>
+      <p>In recent years, the coaching industry has exploded. Everywhere we look, someone is teaching mindset, resilience, emotional intelligence, high-performance habits, or mental toughness. Many of these offerings are well-intentioned. Some are helpful. But a growing number are built on charisma, aesthetic branding, or social media visibility rather than the rigorous expertise required to understand and guide a person’s inner world.</p>
+      <p>Mental health and performance is not entertainment. It’s not motivation. And it’s not a collection of quick strategies that can be packaged into a viral carousel or 30-second clip. It is psychology. And psychology, when it’s done well, is a discipline grounded in extensive training, ethical responsibility, and a nuanced understanding of the human mind that goes far beyond “mindset hacks.”</p>
       <p>The problem is not that coaching exists. Coaching has value and can be an important form of support. The problem is that the lines between services provided by trained clinicians and those offered by coaches without the same academic or clinical background have become increasingly blurred. Many people simply do not know the difference. As a result, they often rely on the most visible voice instead of the most qualified one.</p>
       <p>This distinction matters, because people do not struggle at the level of habits or motivation alone. At the core, they often struggle at the level of their internal structure: identity, emotion regulation, relationship patterns, self-concept, and unconscious defenses. Coaches without a formal background in psychology are typically not trained to diagnose, assess, or treat the complex systems that drive human behavior and performance.</p>
     </div>
@@ -126,5 +126,45 @@
 </footer>
 <script src="site.js"></script>
 <script>const nf=document.getElementById('newsletter-form');if(nf){nf.addEventListener('submit',async e=>{e.preventDefault();const btn=nf.querySelector('button');btn.disabled=true;try{await fetch('https://formspree.io/f/xzdwqnvk',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(nf)});nf.style.display='none';document.getElementById('newsletter-success').style.display='block';}catch{btn.disabled=false;}});}</script>
+
+<!-- Floating Calendly Button -->
+<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
+  <span class="calendly-float-icon">&#10022;</span>
+  <span class="calendly-float-text">Book a Consultation</span>
+</a>
+<style>
+.calendly-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #B8952A;
+  color: #F7F3EC;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(184,149,42,.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.calendly-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,149,42,.45);
+  background: #A8852A;
+}
+.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
+@media (max-width: 480px) {
+  .calendly-float { padding: 11px 14px; }
+  .calendly-float-text { display: none; }
+  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
+}
+</style>
 </body>
 </html>
