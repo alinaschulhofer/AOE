@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why "Mindset Hacks" Aren't Enough — Dr. Alina Schulhofer</title>
+  <title>Why “Mindset Hacks” Aren’t Enough — Dr. Alina Schulhofer</title>
   <meta name="description" content="True growth rarely comes from tips and techniques alone — it comes from understanding the deeper dynamics that guide our choices." />
   <script>
     (function(){ var d = localStorage.getItem('aoe-direction') || 'ivory'; document.documentElement.setAttribute('data-theme', d); localStorage.removeItem('aoe-accent'); })();
@@ -57,7 +57,7 @@
       <span class="insight-tag">Performance</span>
       <span class="article-date">March 10, 2026</span>
     </div>
-    <h1 class="article-title reveal" data-delay="2">Why "Mindset Hacks" Aren't Enough</h1>
+    <h1 class="article-title reveal" data-delay="2">Why “Mindset Hacks” Aren’t Enough</h1>
     <p class="article-subtitle reveal" data-delay="3">True growth rarely comes from mindset tips alone, but from understanding the deeper dynamics that guide our choices.</p>
     <div class="article-byline reveal" data-delay="4">
       <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="article-byline-photo" />
@@ -72,14 +72,14 @@
   <div class="container article-body-inner">
     <div class="article-prose reveal">
       <p>Everywhere you look, there is advice about how to perform better. Morning routines. Mental hacks. Visualization techniques. Five ways to stay motivated. Some of these tools can be genuinely useful — techniques like visualization, breathwork, and positive self-talk can absolutely help improve performance. I often recommend them myself.</p>
-      <p>But if mindset tips were all it took, why do so many capable, intelligent, high-performing people still find themselves repeating the same struggles despite knowing what they "should" do?</p>
+      <p>But if mindset tips were all it took, why do so many capable, intelligent, high-performing people still find themselves repeating the same struggles despite knowing what they “should” do?</p>
       <p>Why does someone who understands the importance of boundaries continue to overcommit? Why does someone who knows the value of rest still push themselves to burnout? Why do leaders who say they value collaboration still react poorly when challenged?</p>
       <p>The answer is rarely a lack of information or intellectual understanding. Most high performers are not short on knowledge. They have read the books, listened to the podcasts, and experimented with the techniques. What is often missing is something deeper: emotional insight into the psychological dynamics beneath the behavior.</p>
       <p>Much of human behavior is shaped by forces outside of conscious awareness. A person may consciously want greater work-life balance, but unconsciously equate rest with weakness. A leader may value feedback, yet feel a threat to their identity when even subtle criticism appears. An athlete may strive for excellence while carrying an internal narrative that says their worth depends entirely on winning.</p>
     </div>
 
     <blockquote class="article-pull reveal">
-      It's a bit like trying to renovate a house by changing the furniture while ignoring the foundation. If the deeper structure is unstable, the same issues tend to reappear in different forms.
+      It’s a bit like trying to renovate a house by changing the furniture while ignoring the foundation. If the deeper structure is unstable, the same issues tend to reappear in different forms.
     </blockquote>
 
     <div class="article-prose reveal">
@@ -127,5 +127,45 @@
 </footer>
 <script src="site.js"></script>
 <script>const nf=document.getElementById('newsletter-form');if(nf){nf.addEventListener('submit',async e=>{e.preventDefault();const btn=nf.querySelector('button');btn.disabled=true;try{await fetch('https://formspree.io/f/xzdwqnvk',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(nf)});nf.style.display='none';document.getElementById('newsletter-success').style.display='block';}catch{btn.disabled=false;}});}</script>
+
+<!-- Floating Calendly Button -->
+<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
+  <span class="calendly-float-icon">&#10022;</span>
+  <span class="calendly-float-text">Book a Consultation</span>
+</a>
+<style>
+.calendly-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #B8952A;
+  color: #F7F3EC;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(184,149,42,.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.calendly-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,149,42,.45);
+  background: #A8852A;
+}
+.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
+@media (max-width: 480px) {
+  .calendly-float { padding: 11px 14px; }
+  .calendly-float-text { display: none; }
+  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
+}
+</style>
 </body>
 </html>
