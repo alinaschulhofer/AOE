@@ -376,59 +376,29 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: #F3EFE6;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, #F8F5EE 0%, #F3EFE6 55%, #EAE4D6 100%);
 }
 
-/* System/architecture motif — right column, replaces portrait */
-.hero-motif {
-  position: absolute;
-  right: 0;
-  top: 72px;
-  bottom: 0;
-  width: 52%;
-  z-index: 0;
-  overflow: hidden;
-  opacity: .55;
-}
-.hero-motif svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Blend overlays — sit above photo, below text */
+/* Soft paper-like grain, very low opacity, sits above the gradient */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    /* Left mask — solid ivory for text, dissolves into photo */
-    linear-gradient(to right,
-      #F3EFE6 0%,
-      #F3EFE6 37%,
-      rgba(243,239,230,0.88) 46%,
-      rgba(243,239,230,0.40) 55%,
-      rgba(243,239,230,0.08) 63%,
-      transparent 70%),
-    /* Right edge — seamless fade */
-    linear-gradient(to right, transparent 78%, rgba(243,239,230,0.45) 88%, rgba(243,239,230,0.90) 96%, #F3EFE6 100%),
-    /* Top — thin nav clearance only */
-    linear-gradient(to bottom, #F3EFE6 0%, rgba(243,239,230,0.70) 7%, transparent 14%),
-    /* Bottom — waist fade */
-    linear-gradient(to top, #F3EFE6 0%, #F3EFE6 16%, rgba(243,239,230,0.65) 28%, transparent 42%);
+  opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Text sits above both the image and the gradient overlay */
 .hero-body {
   position: relative;
   z-index: 2;
   min-height: 100svh;
-  padding-top: var(--nav-h);
   display: flex;
-  align-items: flex-start;
-  padding-top: calc(var(--nav-h) + 8vh);
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--nav-h);
 }
 
 .hero-text {
@@ -446,11 +416,22 @@ ul { list-style: none; }
   max-width: 560px;
 }
 
+.hero-text--centered {
+  text-align: center;
+}
+.hero-text--centered > * {
+  margin-inline: auto;
+}
+
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+.hero-text--centered .hero-eyebrow,
+.hero-text--centered .t-eyebrow {
+  justify-content: center;
 }
 
 .hero-headline {
@@ -472,12 +453,18 @@ ul { list-style: none; }
   font-size: .95rem;
   line-height: 1.85;
 }
+.hero-sub--centered {
+  max-width: 620px;
+}
 
 .hero-actions {
   display: flex;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+}
+.hero-actions--centered {
+  justify-content: center;
 }
 
 .hero-scroll {
@@ -2667,28 +2654,15 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   /* ── HOMEPAGE HERO ── */
-  /* Stack photo above text on mobile — portrait visible, no overlap */
   .hero {
-    display: flex;
-    flex-direction: column;
     min-height: unset;
     padding-top: var(--nav-h);
     position: relative;
   }
-  .hero::before { display: none; }
-  .hero-motif {
-    position: relative;
-    width: 100%;
-    height: 60vw;
-    top: unset; right: unset; bottom: unset;
-    order: -1;
-    opacity: .4;
-  }
   .hero-body {
     position: relative;
     width: 100%;
-    padding-top: 0;
-    margin-top: -2rem;
+    padding-top: 2rem;
     padding-bottom: 1.5rem;
     min-height: unset;
   }
