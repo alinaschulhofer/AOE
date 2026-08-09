@@ -376,21 +376,30 @@ ul { list-style: none; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background-image: radial-gradient(ellipse 85% 65% at 45% 25%, #F8F5EE 0%, #F3EFE6 55%, #EAE4D6 100%);
-  background-size: 140% 140%;
-  background-position: 40% 20%;
-  animation: heroBreathe 24s ease-in-out infinite;
-}
-@keyframes heroBreathe {
-  0%, 100% { background-position: 40% 20%; }
-  50%      { background-position: 60% 35%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero { animation: none; }
+  background: #EFE9DA;
 }
 
-/* Soft paper-like grain, very low opacity, sits above the gradient */
+/* Soft warm glow that visibly drifts across the hero — the "ambient motion" layer */
 .hero::before {
+  content: '';
+  position: absolute;
+  inset: -15%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, #FBF8F0 0%, rgba(251,248,240,.55) 32%, rgba(251,248,240,0) 62%);
+  animation: heroGlowDrift 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes heroGlowDrift {
+  0%   { transform: translate(-10%, -8%) scale(1); }
+  100% { transform: translate(12%, 10%) scale(1.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
+}
+
+/* Soft paper-like grain, very low opacity, sits above the glow */
+.hero::after {
   content: '';
   position: absolute;
   inset: 0;
