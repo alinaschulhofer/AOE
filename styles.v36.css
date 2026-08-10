@@ -3,7 +3,7 @@
    Complete Design System
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap');
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
@@ -546,7 +546,7 @@ ul { list-style: none; }
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: var(--display);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.0;
   letter-spacing: -.025em;
   margin-bottom: 2rem;
@@ -1235,6 +1235,8 @@ ul { list-style: none; }
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
+  line-height: 1.28;
+  padding-bottom: .12em;
 }
 .hero-headline .word-inner,
 .page-hero-text h1 .word-inner {
