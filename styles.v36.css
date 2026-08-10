@@ -245,7 +245,7 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  height: 24px;
+  height: 30px;
   width: auto;
   display: block;
 }
@@ -254,7 +254,7 @@ ul { list-style: none; }
 #nav.nav-on-dark .nav-logo--dark { display: none; }
 #nav.nav-on-dark .nav-logo--light { display: block; }
 @media (max-width: 768px) {
-  .nav-logo { height: 21px; }
+  .nav-logo { height: 26px; }
 }
 
 .nav-links {
@@ -265,7 +265,7 @@ ul { list-style: none; }
 
 .nav-links a, .nav-dd-trigger {
   font-family: 'Jost', sans-serif;
-  font-size: .95rem;
+  font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: .01em;
   text-transform: none;
