@@ -2539,6 +2539,37 @@ ul { list-style: none; }
 .hwb-connector.animate .hwb-connector-line { width: 100%; }
 .hwb-connector.animate .hwb-connector-drop { height: 48px; }
 .hwb-connector.animate .hwb-connector-diamond { transform: rotate(45deg) scale(1); }
+
+/* ── Generic section connector (arrow between sections) ── */
+.section-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: clamp(1.25rem, 3vw, 2.25rem);
+}
+.section-connector-line {
+  width: 1px;
+  height: 0;
+  background: linear-gradient(180deg, var(--accent), rgba(168,130,78,.25));
+  transition: height .8s cubic-bezier(.4,0,.2,1);
+}
+.section-connector-arrow {
+  width: 9px;
+  height: 9px;
+  margin-top: -2px;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: transform .4s cubic-bezier(.4,0,.2,1) .5s, opacity .4s ease .5s;
+}
+.section-connector.animate .section-connector-line { height: 56px; }
+.section-connector.animate .section-connector-arrow { transform: rotate(45deg) scale(1); opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .section-connector-line, .section-connector-arrow { transition: none; }
+  .section-connector .section-connector-line { height: 56px; }
+  .section-connector .section-connector-arrow { transform: rotate(45deg) scale(1); opacity: 1; }
+}
 @media (max-width: 640px) {
   .hwb-header { flex-direction: column; gap: .25rem; }
   .hwb-steps { grid-template-columns: 1fr; }

@@ -83,6 +83,18 @@
   obs.observe(connector);
 })();
 
+// ── Generic section connector animation ──────────────
+(function(){
+  const connectors = document.querySelectorAll('.section-connector');
+  if (!connectors.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  connectors.forEach(c => obs.observe(c));
+})();
+
 // ── Process steps staggered reveal ───────────────────
 (function(){
   const steps = document.querySelectorAll('.hwb-step--anim');
