@@ -145,6 +145,12 @@ ul { list-style: none; }
   width: 3rem;
 }
 
+/* ── Full-width gold section divider ────────────────────── */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 55%, transparent) 50%, transparent);
+}
+
 /* ── SCROLL REVEAL ───────────────────────────────────── */
 /* ── Reveal system ───────────────────────────────────── */
 .reveal {
@@ -2195,7 +2201,8 @@ ul { list-style: none; }
   margin-inline: auto;
   border-radius: 50%;
   border: 2px solid var(--accent);
-  padding: 12px;
+  padding: 0;
+  overflow: hidden;
 }
 .founder-oval-inner {
   width: 100%;
@@ -2209,7 +2216,7 @@ ul { list-style: none; }
   object-fit: cover;
   object-position: center top;
   transform: scale(1.55);
-  transform-origin: center 22%;
+  transform-origin: center 30%;
   filter: saturate(0.88);
   display: block;
 }
@@ -2279,10 +2286,10 @@ ul { list-style: none; }
 
 /* ── Generic dark-tone section (homepage rhythm) ────────── */
 .tone-dark {
-  background: #121110;
-  --bg: #121110;
-  --bg2: #1A1917;
-  --bg3: #222120;
+  background: #1C1916;
+  --bg: #1C1916;
+  --bg2: #24211C;
+  --bg3: #2C2822;
   --ink: #EFE9DC;
   --ink2: #B8B0A4;
   --ink3: #7A7268;
