@@ -881,7 +881,7 @@ ul { list-style: none; }
   font-weight: 400;
   font-style: italic;
   line-height: 1.55;
-  color: var(--ink);
+  color: var(--accent);
   margin-bottom: 2rem;
 }
 .premise-centered .premise-body { max-width: 620px; margin-inline: auto; }
