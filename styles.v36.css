@@ -715,7 +715,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: clamp(4rem, 8vw, 10rem);
-  align-items: center;
+  align-items: start;
 }
 .premise-accent {
   font-family: 'Cormorant Garamond', serif;
