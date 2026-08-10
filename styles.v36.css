@@ -2917,6 +2917,16 @@ ul { list-style: none; }
   .about-split { grid-template-columns: 1fr; }
   .about-portrait { display: none; } /* hide portrait on mobile — hero already introduces her */
 
+  /* ── HOMEPAGE FOUNDER SECTION (no hero portrait to fall back on — keep the photo) ── */
+  .founder-note .about-split .about-portrait {
+    display: block;
+    position: static;
+    padding-right: 0;
+    margin-bottom: 2rem;
+    max-width: 260px;
+  }
+  .founder-note .about-split .prose { padding-left: 0; }
+
   /* ── PREMISE ── */
   .premise { padding-top: 0 !important; }
   .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
