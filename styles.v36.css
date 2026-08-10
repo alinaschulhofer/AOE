@@ -245,7 +245,7 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  height: 22px;
+  height: 24px;
   width: auto;
   display: block;
 }
@@ -254,7 +254,7 @@ ul { list-style: none; }
 #nav.nav-on-dark .nav-logo--dark { display: none; }
 #nav.nav-on-dark .nav-logo--light { display: block; }
 @media (max-width: 768px) {
-  .nav-logo { height: 19px; }
+  .nav-logo { height: 21px; }
 }
 
 .nav-links {
