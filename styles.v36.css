@@ -462,7 +462,8 @@ ul { list-style: none; }
   margin-inline: auto;
   width: 100%;
   padding-inline: clamp(1.5rem, 5vw, 5rem);
-  padding-block: clamp(5rem, 10vw, 10rem);
+  padding-top: clamp(8rem, 20vh, 14rem);
+  padding-bottom: clamp(4rem, 8vh, 7rem);
   /* limit how wide the actual text block is within the container */
   box-sizing: border-box;
 }
