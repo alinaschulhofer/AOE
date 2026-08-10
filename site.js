@@ -12,7 +12,13 @@
   document.querySelectorAll('.hero-headline, .page-hero-text h1').forEach(h => {
     if (h.querySelector('.word-mask')) {
       requestAnimationFrame(() => {
-        setTimeout(() => h.classList.add('words-in'), 150);
+        setTimeout(() => {
+          h.classList.add('words-in');
+          // Release each mask's overflow once the transition has fully
+          // finished (longest stagger delay + transition duration),
+          // so glyphs can never be clipped in the resting state.
+          setTimeout(() => h.classList.add('words-settled'), 1100);
+        }, 150);
       });
     }
   });

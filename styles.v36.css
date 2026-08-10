@@ -546,7 +546,7 @@ ul { list-style: none; }
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: var(--display);
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.0;
   letter-spacing: -.025em;
   margin-bottom: 2rem;
@@ -1236,7 +1236,15 @@ ul { list-style: none; }
   overflow: hidden;
   vertical-align: top;
   line-height: 1.28;
-  padding-bottom: .12em;
+  padding-block: .12em;
+}
+/* Masking is only needed while the word is still animating up from
+   below — once the reveal has fully settled (words-settled, added by
+   JS after the transition finishes), release overflow entirely so no
+   ascender/descender can ever be clipped in the resting state. */
+.hero-headline.words-settled .word-mask,
+.page-hero-text h1.words-settled .word-mask {
+  overflow: visible;
 }
 .hero-headline .word-inner,
 .page-hero-text h1 .word-inner {
