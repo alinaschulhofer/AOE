@@ -8,15 +8,6 @@
     onScroll();
   }
 
-  // ── Hero headline word-by-word reveal ─────────────────
-  document.querySelectorAll('.hero-headline, .page-hero-text h1').forEach(h => {
-    if (h.querySelector('.word-mask')) {
-      requestAnimationFrame(() => {
-        setTimeout(() => h.classList.add('words-in'), 150);
-      });
-    }
-  });
-
   // ── Nav dark-hero state — light nav while over a dark hero, dark once past it
   const darkHero = document.querySelector('.hero--dark');
   if (nav && darkHero) {
