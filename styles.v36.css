@@ -864,6 +864,28 @@ ul { list-style: none; }
 .premise-body p + p { margin-top: 1em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
 
+/* ── Premise, centered variant ───────────────────────── */
+.premise--centered { text-align: center; }
+.premise-centered { max-width: 700px; margin-inline: auto; }
+.premise-centered-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  margin-bottom: 1.75rem;
+}
+.premise-lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.premise-centered .premise-body { max-width: 620px; margin-inline: auto; }
+
 @media (max-width: 768px) {
   .premise-inner { grid-template-columns: 1fr; }
 }
