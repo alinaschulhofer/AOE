@@ -930,6 +930,18 @@ ul { list-style: none; }
   gap: 1.5px;
   background: var(--rule);
 }
+.teaser-grid--pair {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-inline: auto;
+}
+.teaser-grid--pair .teaser-card { padding: clamp(2.5rem, 5vw, 4rem); }
+.teaser-grid--pair .teaser-num { font-size: 3.6rem; }
+.teaser-grid--pair .teaser-title { font-size: 1.9rem; }
+.teaser-grid--pair .teaser-body { font-size: .98rem; }
+@media (max-width: 640px) {
+  .teaser-grid--pair { grid-template-columns: 1fr; }
+}
 .teaser-card {
   background: var(--bg);
   padding: clamp(1.75rem, 3vw, 2.75rem);
@@ -1358,9 +1370,9 @@ ul { list-style: none; }
 }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 14%;
   filter: saturate(0.82) var(--photo-filter);
   display: block;
 }
@@ -2221,6 +2233,29 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .founder-note-inner { grid-template-columns: 1fr; }
   .founder-note-label { position: static; }
+}
+
+/* ── Founder section, dark variant (homepage rhythm) ────── */
+.founder-note--dark {
+  background: #121110;
+  --bg: #121110;
+  --bg2: #1A1917;
+  --ink: #EFE9DC;
+  --ink2: #B8B0A4;
+  --ink3: #7A7268;
+  --rule: rgba(239,233,220,.12);
+  --rule-strong: rgba(239,233,220,.28);
+  --photo-filter: grayscale(15%) contrast(1.08);
+}
+.founder-note--dark .prose h2 { color: var(--ink); }
+.founder-note--dark .btn-ghost {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+}
+.founder-note--dark .btn-ghost:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
 /* ── Dark accent band (quote / mission statements) ──────── */
