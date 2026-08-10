@@ -236,6 +236,17 @@ ul { list-style: none; }
   line-height: 1.2;
   white-space: nowrap;
   color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .nav-logo { height: 22px; }
 }
 
 .nav-links {
@@ -379,26 +390,52 @@ ul { list-style: none; }
   background: #EDE8DD;
 }
 
-/* Soft ivory glow that visibly drifts across the hero — the "ambient motion" layer */
-.hero::before {
-  content: '';
+/* Mesh gradient — 3 soft blurred color blobs drifting independently */
+.hero-mesh {
   position: absolute;
-  inset: -35%;
+  inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(circle, #FFFFFB 0%, #FFFFFB 8%, rgba(255,255,251,.6) 26%, rgba(255,255,251,0) 50%);
-  animation: heroGlowDrift 14s ease-in-out infinite alternate;
+  overflow: hidden;
+  filter: blur(60px);
+}
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
   will-change: transform;
 }
-@keyframes heroGlowDrift {
-  0%   { transform: translate(-26%, -20%) scale(.9); }
-  100% { transform: translate(28%, 24%) scale(1.4); }
+.hero-blob-1 {
+  width: 55%;
+  height: 65%;
+  left: -10%;
+  top: -15%;
+  background: radial-gradient(circle, #FFFFFB 0%, rgba(255,255,251,0) 70%);
+  animation: blobDrift1 22s ease-in-out infinite alternate;
 }
+.hero-blob-2 {
+  width: 48%;
+  height: 58%;
+  right: -10%;
+  top: 8%;
+  background: radial-gradient(circle, rgba(168,130,78,.5) 0%, rgba(168,130,78,0) 70%);
+  animation: blobDrift2 26s ease-in-out infinite alternate;
+}
+.hero-blob-3 {
+  width: 52%;
+  height: 60%;
+  left: 18%;
+  bottom: -22%;
+  background: radial-gradient(circle, rgba(28,25,22,.14) 0%, rgba(28,25,22,0) 70%);
+  animation: blobDrift3 30s ease-in-out infinite alternate;
+}
+@keyframes blobDrift1 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(9%, 10%) scale(1.15); } }
+@keyframes blobDrift2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-11%, -7%) scale(1.1); } }
+@keyframes blobDrift3 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(6%, -9%) scale(1.2); } }
 @media (prefers-reduced-motion: reduce) {
-  .hero::before { animation: none; }
+  .hero-blob { animation: none; }
 }
 
-/* Soft paper-like grain, very low opacity, sits above the glow */
+/* Soft paper-like grain, very low opacity, sits above the mesh */
 .hero::after {
   content: '';
   position: absolute;
@@ -407,31 +444,6 @@ ul { list-style: none; }
   pointer-events: none;
   opacity: .5;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Architecture line-draw — sketches once on load, then settles and stays put */
-.hero-lines {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: .32;
-}
-.hero-lines svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.hero-lines .hl {
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
-  animation: heroLineDraw 1.4s ease-out forwards;
-}
-@keyframes heroLineDraw {
-  to { stroke-dashoffset: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-lines .hl { animation: none; stroke-dashoffset: 0; }
 }
 
 .hero-body {
