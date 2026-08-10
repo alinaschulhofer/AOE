@@ -2300,6 +2300,15 @@ ul { list-style: none; }
   border-color: var(--accent);
   color: var(--ink);
 }
+.dark-band .btn-ghost {
+  color: var(--bg);
+  border-color: rgba(243,239,230,.3);
+}
+.dark-band .btn-ghost:hover {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--bg);
+}
 
 /* ── FAQ Accordion ────────────────────────────────────── */
 .faq-section {
