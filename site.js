@@ -95,18 +95,6 @@
   connectors.forEach(c => obs.observe(c));
 })();
 
-// ── Framework rule draw-in animation ──────────────────
-(function(){
-  const rules = document.querySelectorAll('.framework-rule');
-  if (!rules.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.5 });
-  rules.forEach(r => obs.observe(r));
-})();
-
 // ── Process steps staggered reveal ───────────────────
 (function(){
   const steps = document.querySelectorAll('.hwb-step--anim');
