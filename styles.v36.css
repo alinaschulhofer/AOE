@@ -513,6 +513,15 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 
+/* One-line headline needs far more width than the generic 560px cap above —
+   override it explicitly, and fall back to a balanced wrap instead of
+   overflowing if it still doesn't fit at a given viewport width. */
+.hero-headline--oneline {
+  max-width: 1200px !important;
+  white-space: normal !important;
+  text-wrap: balance;
+}
+
 .hero-eyebrow {
   display: flex;
   align-items: center;
@@ -542,9 +551,6 @@ ul { list-style: none; }
 }
 .hero-headline--oneline em {
   font-style: italic;
-}
-@media (min-width: 900px) {
-  .hero-headline--oneline { white-space: nowrap; }
 }
 .hero-headline--dark {
   color: #F3EFE6;
