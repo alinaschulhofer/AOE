@@ -147,8 +147,8 @@ ul { list-style: none; }
 
 /* ── Full-width gold section divider ────────────────────── */
 .gold-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 55%, transparent) 50%, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 75%, transparent) 50%, transparent);
 }
 
 /* ── SCROLL REVEAL ───────────────────────────────────── */
