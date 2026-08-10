@@ -3,7 +3,7 @@
    Complete Design System
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
@@ -80,7 +80,7 @@ ul { list-style: none; }
 
 /* ── TYPOGRAPHY ──────────────────────────────────────── */
 .t-display {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--display);
   font-weight: 300;
   line-height: 1.05;
@@ -88,7 +88,7 @@ ul { list-style: none; }
 }
 
 .t-h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--h1);
   font-weight: 300;
   line-height: 1.1;
@@ -96,7 +96,7 @@ ul { list-style: none; }
 }
 
 .t-h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--h2);
   font-weight: 300;
   line-height: 1.2;
@@ -104,7 +104,7 @@ ul { list-style: none; }
 }
 
 .t-h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--h3);
   font-weight: 400;
   line-height: 1.3;
@@ -232,7 +232,7 @@ ul { list-style: none; }
 .nav-cta { flex-shrink: 0; justify-self: end; }
 
 .nav-wordmark {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.45rem;
   font-weight: 500;
   font-style: normal;
@@ -394,7 +394,7 @@ ul { list-style: none; }
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 300;
   letter-spacing: .02em;
@@ -534,7 +534,7 @@ ul { list-style: none; }
 }
 
 .hero-headline {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--display);
   font-weight: 300;
   line-height: 1.0;
@@ -666,7 +666,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   color: var(--ink3);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1.1rem;
 }
@@ -742,7 +742,7 @@ ul { list-style: none; }
 }
 .statement-quote { margin: 0; }
 .statement-band p, .statement-quote {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   font-weight: 300;
   font-style: italic;
@@ -788,7 +788,7 @@ ul { list-style: none; }
   align-items: start;
 }
 .premise-accent {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   font-weight: 300;
   font-style: italic;
@@ -826,10 +826,10 @@ ul { list-style: none; }
   transform: translate(-50%, -50%);
   pointer-events: none;
   color: var(--accent);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 .pull-quote blockquote {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 2.2vw, 2.0rem);
   font-weight: 300;
   font-style: italic;
@@ -893,7 +893,7 @@ ul { list-style: none; }
   border-color: var(--rule);
 }
 .teaser-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
   font-weight: 300;
   color: var(--accent);
@@ -902,7 +902,7 @@ ul { list-style: none; }
 }
 .teaser-card:hover .teaser-num { color: var(--accent); }
 .teaser-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -957,7 +957,7 @@ ul { list-style: none; }
   z-index: 1;
 }
 .page-hero-mark {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 9rem;
   font-weight: 300;
   color: var(--rule);
@@ -977,14 +977,14 @@ ul { list-style: none; }
 .prose {
   max-width: var(--prose-w);
   color: var(--ink);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.85;
 }
 .prose p + p { margin-top: 1.6em; }
 .prose h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-weight: 300;
   color: var(--ink);
@@ -993,7 +993,7 @@ ul { list-style: none; }
   letter-spacing: -.01em;
 }
 .prose h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--ink);
@@ -1004,7 +1004,7 @@ ul { list-style: none; }
 .prose strong { color: var(--ink); font-weight: 500; }
 .prose em { font-style: italic; }
 .prose .pull {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   font-weight: 300;
   font-style: italic;
@@ -1031,12 +1031,12 @@ ul { list-style: none; }
   gap: 1.1rem;
 }
 .cred-icon {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.6rem;
   color: var(--accent);
 }
 .cred-label {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.55rem;
   font-weight: 300;
   font-style: italic;
@@ -1078,7 +1078,7 @@ ul { list-style: none; }
   content: attr(data-num);
   position: absolute;
   top: -1rem; right: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 6rem;
   font-weight: 300;
   color: var(--rule);
@@ -1094,7 +1094,7 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 .pillar-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 400;
   line-height: 1.2;
@@ -1130,7 +1130,7 @@ ul { list-style: none; }
 }
 .svc-sidebar { position: sticky; top: calc(var(--nav-h) + 3rem); }
 .svc-sidebar-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
   font-weight: 300;
   color: var(--rule-strong);
@@ -1138,7 +1138,7 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 .svc-sidebar-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 300;
   line-height: 1.15;
@@ -1156,7 +1156,7 @@ ul { list-style: none; }
 .svc-content { color: var(--ink2); }
 .svc-content p + p { margin-top: 1.3em; line-height: 1.8; }
 .svc-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--ink);
@@ -1183,7 +1183,7 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 .svc-content h3.series-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-style: italic;
   font-weight: 400;
@@ -1343,7 +1343,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   color: var(--ink3);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
 }
 
@@ -1364,7 +1364,7 @@ ul { list-style: none; }
   padding: 0;
 }
 .about-cred-list li {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-weight: 300;
   line-height: 1.5;
@@ -1403,7 +1403,7 @@ ul { list-style: none; }
 }
 .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .contact-headline {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 300;
   line-height: 1.2;
@@ -1411,7 +1411,7 @@ ul { list-style: none; }
 }
 .contact-headline em { font-style: italic; color: var(--accent); }
 .contact-email {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   font-style: italic;
   color: var(--accent);
@@ -1443,7 +1443,7 @@ ul { list-style: none; }
   flex-wrap: wrap;
 }
 .foot-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
   font-weight: 400;
 }
@@ -1479,7 +1479,7 @@ ul { list-style: none; }
 
 /* Gold section markers — refined breathing room + hairline */
 .phil-marker {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
   font-weight: 300;
   line-height: 1.35;
@@ -1600,7 +1600,7 @@ ul { list-style: none; }
 }
 .method-dim:hover { background: var(--bg2); }
 .method-dim-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
   font-weight: 300;
   color: var(--accent);
@@ -1608,7 +1608,7 @@ ul { list-style: none; }
   padding-top: .2rem;
 }
 .method-dim-body h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 400;
   font-style: italic;
@@ -1670,7 +1670,7 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 .lm-headline {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 300;
   line-height: 1.2;
@@ -1708,7 +1708,7 @@ ul { list-style: none; }
 }
 .lm-success { display: none; text-align: center; }
 .lm-success h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 300;
   font-style: italic;
@@ -1773,7 +1773,7 @@ ul { list-style: none; }
 .cf-success,
 [data-fs-success] {
   display: none;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-style: italic;
   font-weight: 300;
@@ -1821,7 +1821,7 @@ ul { list-style: none; }
   display: block;
 }
 .method-hero-sub {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 1.6vw, 1.3rem);
   font-style: italic;
   font-weight: 300;
@@ -1859,7 +1859,7 @@ ul { list-style: none; }
 
 /* ── Heading sizes — keep original t-h2, no drama override */
 .t-h2--drama {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: var(--h2);
   font-weight: 300;
   line-height: 1.2;
@@ -1959,7 +1959,7 @@ ul { list-style: none; }
   transform: rotate(45deg);
 }
 .method-seal-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: .9rem;
   color: var(--ink3);
@@ -1987,7 +1987,7 @@ ul { list-style: none; }
 }
 .dim-card:hover { background: var(--bg2); }
 .dim-card-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
   font-weight: 300;
   color: var(--accent);
@@ -1996,7 +1996,7 @@ ul { list-style: none; }
   text-align: center;
 }
 .dim-card-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(.95rem, 1.2vw, 1.1rem);
   font-weight: 400;
   color: var(--ink);
@@ -2077,7 +2077,7 @@ ul { list-style: none; }
   transform: scale(1.05);
 }
 .dfc-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.1rem, 1.8vw, 1.7rem);
   font-weight: 300;
   font-style: italic;
@@ -2085,7 +2085,7 @@ ul { list-style: none; }
   line-height: 1;
 }
 .dfc-label {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(.78rem, .95vw, .95rem);
   font-weight: 400;
   color: var(--ink2);
@@ -2126,7 +2126,7 @@ ul { list-style: none; }
   display: block;
 }
 .founder-note-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
@@ -2141,7 +2141,7 @@ ul { list-style: none; }
   margin-bottom: 0;
 }
 .founder-prose {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
   font-weight: 300;
   color: var(--ink);
@@ -2188,7 +2188,7 @@ ul { list-style: none; }
   gap: 2rem;
   cursor: pointer;
   text-align: left;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(.9rem, 1.2vw, 1.05rem);
   font-weight: 400;
   color: var(--ink);
@@ -2296,7 +2296,7 @@ ul { list-style: none; }
   color: var(--ink3);
 }
 .insight-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   font-weight: 400;
   color: var(--ink);
@@ -2372,7 +2372,7 @@ ul { list-style: none; }
 .hwb-step--anim[data-hwb="2"] { transition-delay: .15s; }
 .hwb-step--anim[data-hwb="3"] { transition-delay: .3s; }
 .hwb-step-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem;
   font-weight: 300;
   color: var(--accent);
@@ -2380,7 +2380,7 @@ ul { list-style: none; }
   font-style: italic;
 }
 .hwb-step-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 1.3vw, 1.15rem);
   font-weight: 400;
   color: var(--ink);
@@ -2496,7 +2496,7 @@ ul { list-style: none; }
   margin-bottom: 1.25rem;
 }
 .featured-essay-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
   font-weight: 300;
   font-style: italic;
@@ -2537,7 +2537,7 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .newsletter-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 300;
   font-style: italic;
@@ -2555,7 +2555,7 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .newsletter-band h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 300;
   font-style: italic;
@@ -2606,7 +2606,7 @@ ul { list-style: none; }
   letter-spacing: .04em;
 }
 .article-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
   line-height: 1.15;
@@ -2616,7 +2616,7 @@ ul { list-style: none; }
   letter-spacing: -.01em;
 }
 .article-subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   font-weight: 300;
   font-style: italic;
@@ -2651,7 +2651,7 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .article-prose {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.05rem, 1.5vw, 1.2rem);
   font-weight: 300;
   line-height: 1.9;
@@ -2662,7 +2662,7 @@ ul { list-style: none; }
 .article-prose em { font-style: italic; }
 .article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: inherit; font-weight: 600; font-family: inherit; }
 .article-pull {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
   font-weight: 300;
   font-style: italic;
@@ -2688,7 +2688,7 @@ ul { list-style: none; }
   line-height: 1.8;
 }
 .article-author-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-weight: 400;
   color: var(--ink);
@@ -2719,7 +2719,7 @@ ul { list-style: none; }
 .newsletter-input:focus { border-color: var(--accent); }
 .newsletter-success {
   display: none;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--accent);
   font-size: 1rem;
