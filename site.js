@@ -8,6 +8,18 @@
     onScroll();
   }
 
+  // ── Nav dark-hero state — light nav while over a dark hero, dark once past it
+  const darkHero = document.querySelector('.hero--dark');
+  if (nav && darkHero) {
+    const onDarkHeroScroll = () => {
+      const threshold = darkHero.offsetHeight - (nav.offsetHeight || 76);
+      nav.classList.toggle('nav-on-dark', window.scrollY < threshold);
+    };
+    window.addEventListener('scroll', onDarkHeroScroll, { passive: true });
+    window.addEventListener('resize', onDarkHeroScroll);
+    onDarkHeroScroll();
+  }
+
   // ── Scroll reveal ─────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
