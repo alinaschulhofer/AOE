@@ -2247,15 +2247,6 @@ ul { list-style: none; }
   transition: color .3s ease;
 }
 .dfc-item:hover .dfc-label { color: var(--ink); }
-.dfc-sublabel {
-  font-family: 'Jost', sans-serif;
-  font-size: .68rem;
-  letter-spacing: .04em;
-  color: var(--ink3);
-  text-align: center;
-  line-height: 1.4;
-  margin-top: -.6rem;
-}
 @media (max-width: 640px) {
   .designed-for-circles { flex-wrap: wrap; justify-content: center; }
   .dfc-item { flex: 0 0 calc(50% - 1rem); }
