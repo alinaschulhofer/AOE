@@ -2902,6 +2902,23 @@ ul { list-style: none; }
 @media (max-width: 700px) {
   .investment-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
+.investment-section--dark {
+  background: var(--ink);
+  border-color: transparent;
+}
+.investment-section--dark .t-eyebrow { color: var(--accent); }
+.investment-section--dark .investment-label h2 { color: var(--bg); }
+.investment-section--dark .investment-content p { color: rgba(243,239,230,.75); }
+.investment-section--dark .btn-primary {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--bg);
+}
+.investment-section--dark .btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+}
 
 /* ── Featured Essay ──────────────────────────────────── */
 .featured-essay {
