@@ -151,6 +151,37 @@ ul { list-style: none; }
   background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 75%, transparent) 50%, transparent);
 }
 
+/* ── Framework eyebrow — animated ring badge ─────────── */
+.framework-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem 2.25rem;
+  margin: 0 auto 1.5rem;
+}
+.framework-badge-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.framework-badge-ring ellipse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 460;
+  stroke-dashoffset: 460;
+  transition: stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1);
+}
+.framework-badge.animate .framework-badge-ring ellipse {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .framework-badge-ring ellipse { stroke-dashoffset: 0; transition: none; }
+}
+
 /* ── SCROLL REVEAL ───────────────────────────────────── */
 /* ── Reveal system ───────────────────────────────────── */
 .reveal {

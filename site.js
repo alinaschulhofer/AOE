@@ -95,6 +95,18 @@
   connectors.forEach(c => obs.observe(c));
 })();
 
+// ── Framework badge ring draw-in ──────────────────────
+(function(){
+  const badges = document.querySelectorAll('.framework-badge');
+  if (!badges.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  badges.forEach(b => obs.observe(b));
+})();
+
 // ── Process steps staggered reveal ───────────────────
 (function(){
   const steps = document.querySelectorAll('.hwb-step--anim');
