@@ -2042,6 +2042,38 @@ ul { list-style: none; }
   opacity: 1;
 }
 
+/* ── Hidden costs — staggered gold-edge cards ────────── */
+.hidden-costs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.25rem;
+}
+.hidden-costs-item {
+  position: relative;
+  padding: .2rem 0 .2rem 1.35rem;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--ink2);
+}
+.hidden-costs-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .15rem;
+  bottom: .15rem;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform .9s var(--ease-out) .15s;
+}
+.hidden-costs-item.in::before {
+  transform: scaleY(1);
+}
+@media (max-width: 720px) {
+  .hidden-costs-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Heading sizes — keep original t-h2, no drama override */
 .t-h2--drama {
   font-family: 'Cormorant Garamond', serif;
