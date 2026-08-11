@@ -2042,33 +2042,28 @@ ul { list-style: none; }
   opacity: 1;
 }
 
-/* ── Hidden costs — staggered gold-edge cards ────────── */
+/* ── Hidden costs — staggered numbered list ──────────── */
 .hidden-costs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem 2.25rem;
 }
 .hidden-costs-item {
-  position: relative;
-  padding: .2rem 0 .2rem 1.35rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
   font-size: .9rem;
   line-height: 1.7;
   color: var(--ink2);
 }
-.hidden-costs-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: .15rem;
-  bottom: .15rem;
-  width: 2px;
-  background: var(--accent);
-  transform: scaleY(0);
-  transform-origin: top center;
-  transition: transform .9s var(--ease-out) .15s;
-}
-.hidden-costs-item.in::before {
-  transform: scaleY(1);
+.hidden-costs-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  flex-shrink: 0;
+  min-width: 1.7rem;
 }
 @media (max-width: 720px) {
   .hidden-costs-grid { grid-template-columns: 1fr; }
