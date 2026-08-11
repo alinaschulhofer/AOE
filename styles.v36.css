@@ -2413,6 +2413,13 @@ ul { list-style: none; }
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 .dark-band .container { max-width: 780px; margin-inline: auto; text-align: center; }
+.dark-band.tone-light {
+  background: var(--bg2);
+}
+.dark-band.tone-light .dark-band-body,
+.dark-band.tone-light .dark-band-quote {
+  color: var(--ink);
+}
 .dark-band-eyebrow {
   font-family: 'Jost', sans-serif;
   font-size: .72rem;
