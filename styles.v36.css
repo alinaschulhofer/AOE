@@ -1323,20 +1323,6 @@ ul { list-style: none; }
   line-height: 1;
   margin-bottom: 1rem;
 }
-.svc-sidebar-badge {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  border: 1px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-}
 .svc-sidebar-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -1372,14 +1358,19 @@ ul { list-style: none; }
 }
 .svc-feature {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
   font-size: .9rem;
   line-height: 1.7;
   color: var(--ink2);
 }
 .svc-feature::before {
-  content: '—';
-  color: var(--accent);
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-top: .6em;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
   flex-shrink: 0;
 }
 .svc-content h3.series-heading {
