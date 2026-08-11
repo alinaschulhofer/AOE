@@ -1323,6 +1323,20 @@ ul { list-style: none; }
   line-height: 1;
   margin-bottom: 1rem;
 }
+.svc-sidebar-badge {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
 .svc-sidebar-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
