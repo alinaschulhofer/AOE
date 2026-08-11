@@ -1356,6 +1356,25 @@ ul { list-style: none; }
   flex-direction: column;
   gap: .75rem;
 }
+.svc-series-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.svc-series-card strong {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .35rem;
+}
+.svc-series-card span {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--ink2);
+}
 .svc-feature {
   display: flex;
   align-items: flex-start;
