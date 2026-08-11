@@ -2224,6 +2224,13 @@ ul { list-style: none; }
 @media (max-width: 1100px) {
   .services-sub { white-space: normal; }
 }
+.method-hero-sub {
+  font-size: .85rem;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .method-hero-sub { white-space: normal; }
+}
 .designed-for-circles {
   display: flex;
   flex-wrap: nowrap;
