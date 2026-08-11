@@ -887,6 +887,18 @@ ul { list-style: none; }
   color: var(--ink2);
   align-self: center;
 }
+.pillar-marks {
+  display: flex;
+  gap: .6rem;
+  margin-top: 1.5rem;
+}
+.pillar-marks span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: block;
+}
 .premise-gold {
   font-style: italic;
   color: var(--accent);
@@ -2003,16 +2015,6 @@ ul { list-style: none; }
   height: auto;
   display: block;
 }
-.method-hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(243,239,230,0.6);
-  letter-spacing: .04em;
-  margin: 0;
-}
-
 
 /* ═══════════════════════════════════════════════════════
    PREMIUM UPGRADES — v36
@@ -2225,10 +2227,12 @@ ul { list-style: none; }
   .services-sub { white-space: normal; }
 }
 .method-hero-sub {
-  font-size: .85rem;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-size: .98rem;
   white-space: nowrap;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .method-hero-sub { white-space: normal; }
 }
 .designed-for-circles {
