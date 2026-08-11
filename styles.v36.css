@@ -2501,6 +2501,42 @@ ul { list-style: none; }
 .dark-band .btn-ghost:hover {
   background: var(--bg);
   color: var(--ink);
+}
+
+/* ── Dark band, elevated variant — glow, hairlines, quote mark ── */
+.dark-band--elevated {
+  position: relative;
+  background:
+    radial-gradient(ellipse 700px 480px at 50% 34%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 70%),
+    var(--ink);
+}
+.dark-band--elevated::before,
+.dark-band--elevated::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(140px, 40%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.dark-band--elevated::before { top: clamp(1.5rem, 3vw, 2.5rem); }
+.dark-band--elevated::after { bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.dark-band--elevated .container { position: relative; z-index: 1; }
+.dark-band--elevated .dark-band-quote { position: relative; }
+.dark-band--elevated .dark-band-quote::before {
+  content: '"';
+  position: absolute;
+  top: -2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-style: normal;
+  line-height: 1;
+  color: var(--accent);
+  opacity: .32;
+  pointer-events: none;
   border-color: var(--bg);
 }
 
