@@ -2055,20 +2055,19 @@ ul { list-style: none; }
 }
 .hidden-costs-item {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 1rem;
   font-size: .9rem;
   line-height: 1.7;
   color: var(--ink2);
 }
 .hidden-costs-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent);
+  width: 6px;
+  height: 6px;
+  margin-top: .6em;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
   flex-shrink: 0;
-  min-width: 1.7rem;
 }
 @media (max-width: 720px) {
   .hidden-costs-grid { grid-template-columns: 1fr; }
