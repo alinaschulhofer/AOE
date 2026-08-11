@@ -2186,6 +2186,13 @@ ul { list-style: none; }
   gap: 2rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
+.services-sub {
+  font-size: .78rem;
+  white-space: nowrap;
+}
+@media (max-width: 1100px) {
+  .services-sub { white-space: normal; }
+}
 .designed-for-circles {
   display: flex;
   flex-wrap: nowrap;
