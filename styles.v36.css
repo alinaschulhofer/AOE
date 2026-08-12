@@ -2793,12 +2793,9 @@ ul { list-style: none; }
 }
 @media (max-width: 900px) {
   .insights-grid { grid-template-columns: repeat(2, 1fr); }
-  .insight-card:nth-child(3n) { border-right: 1px solid var(--rule); }
-  .insight-card:nth-child(2n) { border-right: none; }
 }
 @media (max-width: 560px) {
   .insights-grid { grid-template-columns: 1fr; }
-  .insight-card { border-right: none; }
 }
 
 /* ── How We Begin ────────────────────────────────────── */
