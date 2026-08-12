@@ -11,12 +11,12 @@
   <meta property="og:title" content="Why Fear of Success — Not Failure — May Be Holding You Back — Dr. Alina Schulhofer" />
   <meta property="og:description" content="On the subtle, paradoxical ways fear of success shows up in high performers — and what to do about it." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://alinaschulhofer.github.io/AOE/assets/portrait-about.jpg" />
+  <meta property="og:image" content="https://www.architectureofexcellence.com/assets/portrait-about.jpg" />
   <meta property="article:author" content="Dr. Alina Schulhofer" />
   <meta property="article:published_time" content="2026-03-30" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.v36.css?v=43" />
-  <link rel="canonical" href="https://alinaschulhofer.github.io/AOE/fear-of-success.html" />
+  <link rel="stylesheet" href="styles.v36.css?v=89" />
+  <link rel="canonical" href="https://www.architectureofexcellence.com/fear-of-success.html" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4ZR2JQYWN"></script>
   <script>
@@ -29,12 +29,12 @@
 <body>
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-wordmark">Dr. Alina Schulhofer</a>
+    <a href="index.html" class="nav-wordmark"><img src="assets/logo-dark.png" alt="Architecture of Excellence™" class="nav-logo" /></a>
     <ul class="nav-links" role="list">
       <li><a href="about.html">About</a></li>
-      <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="method.html">Method</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="for-organizations.html">For Organizations</a></li>
+      <li><a href="for-individuals.html">For Individuals</a></li>
       <li><a href="insights.html" data-active="true">Insights</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Get Started</a>
@@ -43,9 +43,9 @@
 </nav>
 <div class="mobile-menu" role="dialog">
   <a href="about.html">About</a><hr class="rule" />
-  <a href="philosophy.html">Philosophy</a><hr class="rule" />
   <a href="method.html">Method</a><hr class="rule" />
-  <a href="services.html">Services</a><hr class="rule" />
+  <a href="for-organizations.html">For Organizations</a><hr class="rule" />
+  <a href="for-individuals.html">For Individuals</a><hr class="rule" />
   <a href="insights.html">Insights</a><hr class="rule" />
   <a href="index.html#contact">Get Started</a>
 </div>
@@ -127,62 +127,23 @@
 
 <footer class="foot">
   <div class="container foot-inner">
-    <div class="foot-top"><span class="foot-brand">Dr. Alina Schulhofer</span>
+    <div class="foot-top"><span class="foot-brand"><img src="assets/logo-dark.png" alt="Architecture of Excellence™" class="foot-logo" /></span>
     <nav class="foot-links">
       <a href="about.html">About</a>
-      <a href="philosophy.html">Philosophy</a>
       <a href="method.html">Method</a>
-      <a href="services.html">Services</a>
+      <a href="for-organizations.html">For Organizations</a>
+      <a href="for-individuals.html">For Individuals</a>
       <a href="insights.html">Insights</a>
     </nav></div>
-    <span class="foot-copy">© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
+    <span class="foot-copy">© 2026 Architecture of Excellence™. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
   </div>
 </footer>
-<script src="site.js"></script>
+<script src="site.js?v=8"></script>
 <script>
   const nf = document.getElementById('newsletter-form');
   if (nf) { nf.addEventListener('submit', async e => { e.preventDefault(); const btn = nf.querySelector('button'); btn.disabled = true; try { await fetch('https://formspree.io/f/xzdwqnvk', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(nf) }); nf.style.display = 'none'; document.getElementById('newsletter-success').style.display = 'block'; } catch { btn.disabled = false; } }); }
 </script>
 
-<!-- Floating Calendly Button -->
-<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
-  <span class="calendly-float-icon">&#10022;</span>
-  <span class="calendly-float-text">Book a Consultation</span>
-</a>
-<style>
-.calendly-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #B8952A;
-  color: #F7F3EC;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 3px;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 18px rgba(184,149,42,.35);
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.calendly-float:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(184,149,42,.45);
-  background: #A8852A;
-}
-.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
-@media (max-width: 480px) {
-  .calendly-float { padding: 11px 14px; }
-  .calendly-float-text { display: none; }
-  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
-}
-</style>
   <script>
     (function(){
       var w = "https://aoe-visitor-logger.alina-schulhofer.workers.dev/log";

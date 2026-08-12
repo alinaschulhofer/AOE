@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alinaschulhofer.github.io/AOE/sitemap.xml
+Sitemap: https://www.architectureofexcellence.com/sitemap.xml

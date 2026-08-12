@@ -17,11 +17,11 @@
   <meta property="og:title" content="Insights — Dr. Alina Schulhofer" />
   <meta property="og:description" content="Reflections on psychology, performance, leadership, relationships, and the pursuit of excellence." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/portrait-about.jpg" />
+  <meta property="og:image" content="https://www.architectureofexcellence.com/assets/portrait-about.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="styles.v36.css?v=43" />
-  <link rel="canonical" href="https://alinaschulhofer.github.io/AOE/insights.html" />
+  <link rel="stylesheet" href="styles.v36.css?v=89" />
+  <link rel="canonical" href="https://www.architectureofexcellence.com/insights.html" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4ZR2JQYWN"></script>
   <script>
@@ -35,13 +35,13 @@
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-wordmark">Dr. Alina Schulhofer</a>
+    <a href="index.html" class="nav-wordmark"><img src="assets/logo-dark.png" alt="Architecture of Excellence™" class="nav-logo" /></a>
     <ul class="nav-links" role="list">
       <li><a href="about.html">About</a></li>
-      <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="method.html">Method</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="insights.html">Insights</a></li>
+      <li><a href="for-organizations.html">For Organizations</a></li>
+      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="insights.html" data-active="true">Insights</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Get Started</a>
     <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -49,37 +49,42 @@
 </nav>
 <div class="mobile-menu" role="dialog">
   <a href="about.html">About</a><hr class="rule" />
-  <a href="philosophy.html">Philosophy</a><hr class="rule" />
   <a href="method.html">Method</a><hr class="rule" />
-  <a href="services.html">Services</a><hr class="rule" />
-  <a href="insights.html" data-active="true">Insights</a><hr class="rule" />
+  <a href="for-organizations.html">For Organizations</a><hr class="rule" />
+  <a href="for-individuals.html">For Individuals</a><hr class="rule" />
+  <a href="insights.html">Insights</a><hr class="rule" />
   <a href="index.html#contact">Get Started</a>
 </div>
 
 <!-- ── PAGE HERO ─────────────────────────────────────── -->
-<header class="page-hero" style="border-bottom:none;padding-bottom:clamp(1rem,2vw,2rem);">
-  <div class="container page-hero-inner">
+<header class="page-hero" style="border-bottom:none;padding-bottom:clamp(1rem,2vw,1.5rem);">
+  <div class="container page-hero-inner" style="grid-template-columns:1fr;text-align:center;">
     <div class="page-hero-text">
-      <h1 class="t-h1 reveal" data-delay="1" style="max-width:680px;">
-        Insights on Psychology<br />and <em style="font-style:italic;color:var(--accent)">High Performance.</em>
+      <h1 class="t-h1 reveal" data-delay="1" style="margin-top:0;color:var(--accent);">
+        Insights.
       </h1>
-      <p class="reveal" data-delay="2" style="margin-top:3rem;max-width:540px;font-family:'Jost',sans-serif;font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.8;">
+      <p class="reveal" data-delay="2" style="margin-top:3.5rem;max-width:540px;margin-inline:auto;font-family:'Jost',sans-serif;font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.8;">
         Reflections on psychology, performance, leadership, relationships, and the pursuit of excellence.
       </p>
-    </div>
-    <div class="page-hero-meta">
-      <img src="assets/portrait-circle.jpg" alt="Dr. Alina Schulhofer" class="about-circle-hero" />
     </div>
   </div>
 </header>
 
 <!-- ── ARTICLES GRID ──────────────────────────────────── -->
-<section style="padding-top:clamp(2rem,3vw,3rem);padding-bottom:var(--section);">
+<section style="padding-top:clamp(.5rem,1.5vw,1.25rem);padding-bottom:var(--section);">
   <div class="container">
+
+    <div class="insight-filter-bar reveal" role="tablist" aria-label="Filter essays by topic">
+      <button type="button" class="insight-filter-pill active" data-filter="all">All</button>
+      <button type="button" class="insight-filter-pill" data-filter="Leadership">Leadership</button>
+      <button type="button" class="insight-filter-pill" data-filter="Psychology">Psychology</button>
+      <button type="button" class="insight-filter-pill" data-filter="Performance">Performance</button>
+      <button type="button" class="insight-filter-pill" data-filter="Relationships">Relationships</button>
+    </div>
 
     <div class="insights-grid">
 
-      <a href="adaptability.html" class="insight-card reveal" data-delay="1">
+      <a href="adaptability.html" class="insight-card reveal" data-tag="Leadership" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">August 2, 2026</span>
@@ -89,7 +94,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="masochism.html" class="insight-card reveal" data-delay="1">
+      <a href="masochism.html" class="insight-card reveal" data-tag="Psychology" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">June 1, 2026</span>
@@ -99,7 +104,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="why-high-performers-resist-inner-work.html" class="insight-card reveal" data-delay="2">
+      <a href="why-high-performers-resist-inner-work.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">April 14, 2026</span>
@@ -109,7 +114,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="emotional-intelligence-sports.html" class="insight-card reveal" data-delay="3">
+      <a href="emotional-intelligence-sports.html" class="insight-card reveal" data-tag="Performance" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">February 18, 2026</span>
@@ -119,17 +124,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="desire-is-not-capacity.html" class="insight-card reveal" data-delay="1">
-        <div class="insight-meta">
-          <span class="insight-tag">Relationships</span>
-          <span class="insight-date">May 18, 2026</span>
-        </div>
-        <h2 class="insight-title">Desire Is Not Capacity</h2>
-        <p class="insight-excerpt">On longing, limitation, and the gap between what we consciously want and what we can actually sustain.</p>
-        <span class="insight-read">Read →</span>
-      </a>
-
-      <a href="liminal-spaces.html" class="insight-card reveal" data-delay="2">
+      <a href="liminal-spaces.html" class="insight-card reveal" data-tag="Psychology" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">May 12, 2026</span>
@@ -139,7 +134,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="cost-of-avoidance.html" class="insight-card reveal" data-delay="3">
+      <a href="cost-of-avoidance.html" class="insight-card reveal" data-tag="Leadership" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">April 29, 2026</span>
@@ -149,7 +144,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="authentic-vs-ego-driven.html" class="insight-card reveal" data-delay="1">
+      <a href="authentic-vs-ego-driven.html" class="insight-card reveal" data-tag="Performance" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">April 5, 2026</span>
@@ -159,7 +154,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="fear-of-success.html" class="insight-card reveal" data-delay="2">
+      <a href="fear-of-success.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">March 30, 2026</span>
@@ -169,7 +164,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="difficult-relationships.html" class="insight-card reveal" data-delay="3">
+      <a href="difficult-relationships.html" class="insight-card reveal" data-tag="Relationships" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Relationships</span>
           <span class="insight-date">March 15, 2026</span>
@@ -179,7 +174,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="who-is-qualified.html" class="insight-card reveal" data-delay="1">
+      <a href="who-is-qualified.html" class="insight-card reveal" data-tag="Leadership" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">March 14, 2026</span>
@@ -189,7 +184,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="mindset-hacks.html" class="insight-card reveal" data-delay="2">
+      <a href="mindset-hacks.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">March 10, 2026</span>
@@ -199,7 +194,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="alchemy.html" class="insight-card reveal" data-delay="3">
+      <a href="alchemy.html" class="insight-card reveal" data-tag="Psychology" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">November 16, 2025</span>
@@ -233,19 +228,37 @@
 
 <footer class="foot">
   <div class="container foot-inner">
-    <div class="foot-top"><span class="foot-brand">Dr. Alina Schulhofer</span>
+    <div class="foot-top"><span class="foot-brand"><img src="assets/logo-dark.png" alt="Architecture of Excellence™" class="foot-logo" /></span>
     <nav class="foot-links">
       <a href="about.html">About</a>
-      <a href="philosophy.html">Philosophy</a>
       <a href="method.html">Method</a>
-      <a href="services.html">Services</a>
+      <a href="for-organizations.html">For Organizations</a>
+      <a href="for-individuals.html">For Individuals</a>
       <a href="insights.html">Insights</a>
     </nav></div>
-    <span class="foot-copy">© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
+    <span class="foot-copy">© 2026 Architecture of Excellence™. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
   </div>
 </footer>
 
-<script src="site.js"></script>
+<script src="site.js?v=8"></script>
+<script>
+  // Insights filter bar
+  (function(){
+    const pills = document.querySelectorAll('.insight-filter-pill');
+    const cards = document.querySelectorAll('.insight-card');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.tag === filter;
+          card.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  })();
+</script>
 <script>
   // Newsletter form — replace ACTION with your Formspree or Substack embed URL
   const nf = document.getElementById('newsletter-form');
@@ -268,45 +281,6 @@
 </script>
 
 
-<!-- Floating Calendly Button -->
-<a href="https://calendly.com/dralinaschulhofer/consultation-15min" target="_blank" rel="noopener" class="calendly-float" aria-label="Book a Consultation">
-  <span class="calendly-float-icon">&#10022;</span>
-  <span class="calendly-float-text">Book a Consultation</span>
-</a>
-<style>
-.calendly-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #B8952A;
-  color: #F7F3EC;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 3px;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 18px rgba(184,149,42,.35);
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.calendly-float:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(184,149,42,.45);
-  background: #A8852A;
-}
-.calendly-float-icon { font-size: 0.85rem; opacity: .85; }
-@media (max-width: 480px) {
-  .calendly-float { padding: 11px 14px; }
-  .calendly-float-text { display: none; }
-  .calendly-float-icon { font-size: 1.1rem; opacity: 1; }
-}
-</style>
   <script>
     (function(){
       var w = "https://aoe-visitor-logger.alina-schulhofer.workers.dev/log";

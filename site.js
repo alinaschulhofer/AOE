@@ -1,11 +1,39 @@
 /* site.js — shared behaviour across all pages */
 (function () {
+  // ── Scroll progress indicator ─────────────────────────
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  progress.innerHTML = '<div class="scroll-progress-bar"></div>';
+  document.body.appendChild(progress);
+  const progressBar = progress.querySelector('.scroll-progress-bar');
+  const onProgress = () => {
+    const h = document.documentElement;
+    const scrollable = h.scrollHeight - h.clientHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', onProgress, { passive: true });
+  window.addEventListener('resize', onProgress);
+  onProgress();
+
   // ── Nav scroll state ─────────────────────────────────
   const nav = document.getElementById('nav');
   if (nav) {
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  // ── Nav dark-hero state — light nav while over a dark hero, dark once past it
+  const darkHero = document.querySelector('.hero--dark');
+  if (nav && darkHero) {
+    const onDarkHeroScroll = () => {
+      const threshold = darkHero.offsetHeight - (nav.offsetHeight || 76);
+      nav.classList.toggle('nav-on-dark', window.scrollY < threshold);
+    };
+    window.addEventListener('scroll', onDarkHeroScroll, { passive: true });
+    window.addEventListener('resize', onDarkHeroScroll);
+    onDarkHeroScroll();
   }
 
   // ── Scroll reveal ─────────────────────────────────────
@@ -69,6 +97,30 @@
     });
   }, { threshold: 0.5 });
   obs.observe(connector);
+})();
+
+// ── Generic section connector animation ──────────────
+(function(){
+  const connectors = document.querySelectorAll('.section-connector');
+  if (!connectors.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  connectors.forEach(c => obs.observe(c));
+})();
+
+// ── Framework badge ring draw-in ──────────────────────
+(function(){
+  const badges = document.querySelectorAll('.framework-badge');
+  if (!badges.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  badges.forEach(b => obs.observe(b));
 })();
 
 // ── Process steps staggered reveal ───────────────────
