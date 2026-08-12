@@ -2539,7 +2539,7 @@ ul { list-style: none; }
   height: 260px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(243,239,230,.25);
+  border: 2px solid var(--accent);
 }
 .diff-photo {
   width: 100%;
