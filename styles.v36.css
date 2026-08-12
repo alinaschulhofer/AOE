@@ -2526,21 +2526,6 @@ ul { list-style: none; }
 .dark-band--elevated::after { bottom: clamp(1.5rem, 3vw, 2.5rem); }
 .dark-band--elevated .container { position: relative; z-index: 1; }
 .dark-band--elevated .dark-band-quote { position: relative; }
-.dark-band--elevated .dark-band-quote::before {
-  content: '"';
-  position: absolute;
-  top: -3.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem;
-  font-style: normal;
-  line-height: 1;
-  color: var(--accent);
-  opacity: .32;
-  pointer-events: none;
-  border-color: var(--bg);
-}
 
 /* ── FAQ Accordion ────────────────────────────────────── */
 .faq-section {
