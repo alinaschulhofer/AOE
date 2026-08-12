@@ -945,6 +945,11 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .premise-underline::after { width: 100%; transition: none; }
 }
+/* About/Method hero headings — no underline, to match For Organizations/For Individuals hero treatment */
+.about-h1 .premise-underline::after,
+.method-hero-h1 .premise-underline::after {
+  content: none;
+}
 .premise-body { color: var(--ink2); font-size: .9rem; line-height: 1.8; }
 .premise-body p + p { margin-top: 1em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
@@ -3428,7 +3433,8 @@ ul { list-style: none; }
   .page-hero-text h1 + * { margin-top: 1rem !important; }
   /* page-hero-meta: visible on mobile but circle sized down to 80px */
   .page-hero-meta { display: flex; justify-content: flex-end; margin-top: 0; }
-  .about-circle-hero { width: 100px !important; height: 100px !important; clip-path: none !important; transform: scale(1) !important; opacity: 1 !important; transition: none !important; }
+  .about-circle-hero { width: 100px !important; height: 100px !important; clip-path: none !important; transform: scale(1) !important; opacity: 1 !important; transition: none !important; margin-inline: 0 !important; }
+  .founder-note .about-split { column-gap: 1rem; }
   /* Show the mobile-specific circle on about page (outside header, no grid/overflow interference) */
   .about-circle-mobile-wrap { display: flex; justify-content: flex-end; padding: .75rem clamp(1.5rem, 5vw, 5rem) 0; }
   .about-circle-mobile { display: block; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--accent); }
