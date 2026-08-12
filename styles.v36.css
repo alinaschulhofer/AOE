@@ -1455,17 +1455,19 @@ ul { list-style: none; }
   opacity: 1;
 }
 
-/* ===== Image reveal mask (gated on js-anim so images never hide without JS) ===== */
-.js-anim .about-circle-hero,
-.js-anim .about-portrait-inner img {
+/* ===== Image reveal mask — top-down wipe + settle, gated on the working .reveal/.in system ===== */
+.photo-reveal.reveal {
+  opacity: 1;
   clip-path: inset(0 0 100% 0);
   transform: scale(1.06);
   transition: clip-path 1.3s var(--ease-out), transform 1.6s var(--ease-out);
 }
-.js-anim .about-circle-hero.is-visible,
-.js-anim .about-portrait.is-visible .about-portrait-inner img {
+.photo-reveal.reveal.in {
   clip-path: inset(0 0 0 0);
   transform: scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-reveal.reveal { clip-path: inset(0 0 0 0); transform: scale(1); transition: none; }
 }
 
 /* ===== Button hover — clean background transition ===== */
@@ -1488,8 +1490,6 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-headline .word-inner,
   .page-hero-text h1 .word-inner { transform: none; opacity: 1; transition: none; }
-  .about-circle-hero,
-  .about-portrait-inner img { clip-path: none; transform: none; }
 }
 
 /* ── ABOUT PAGE ──────────────────────────────────────── */
@@ -2589,6 +2589,8 @@ ul { list-style: none; }
 .dark-band--elevated.dark-band--no-rule::after {
   content: none;
 }
+.dark-band--elevated.dark-band--tight-rule::before { top: clamp(2.75rem, 4.5vw, 3.75rem); }
+.dark-band--elevated.dark-band--tight-rule::after { bottom: clamp(2.75rem, 4.5vw, 3.75rem); }
 .dark-band--elevated .container { position: relative; z-index: 1; }
 .dark-band--elevated .dark-band-quote { position: relative; }
 
