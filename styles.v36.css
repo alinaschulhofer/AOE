@@ -2529,7 +2529,7 @@ ul { list-style: none; }
 .dark-band--elevated .dark-band-quote::before {
   content: '"';
   position: absolute;
-  top: -2.6rem;
+  top: -3.8rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Cormorant Garamond', serif;
