@@ -309,9 +309,6 @@ ul { list-style: none; }
 .nav-logo--light { display: none; }
 #nav.nav-on-dark .nav-logo--dark { display: none; }
 #nav.nav-on-dark .nav-logo--light { display: block; }
-@media (max-width: 768px) {
-  .nav-logo { height: 26px; }
-}
 
 .nav-links {
   display: flex;
@@ -461,8 +458,10 @@ ul { list-style: none; }
 .mobile-menu hr { width: 3rem; border-top: 1px solid var(--rule); }
 
 @media (max-width: 900px) {
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { height: 34px; }
   .nav-links { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-toggle { display: flex; margin-left: 0; }
   .nav-cta { display: none; }
 }
 
@@ -3385,9 +3384,9 @@ ul { list-style: none; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
   .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 1.25rem !important; }
-  .hero-headline--oneline { font-size: clamp(1.9rem, 8vw, 2.6rem) !important; line-height: 1.15; }
+  .hero-headline--oneline { font-size: clamp(2.3rem, 9.5vw, 3.1rem) !important; line-height: 1.15; }
   /* More comfortable subtext */
-  .hero-sub { font-size: 1rem; line-height: 2; margin-bottom: 3rem !important; }
+  .hero-sub { font-size: .85rem; line-height: 1.9; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
   .about-h1 { font-size: 1.45rem !important; }
