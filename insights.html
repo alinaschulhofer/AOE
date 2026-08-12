@@ -74,9 +74,17 @@
 <section style="padding-top:clamp(2rem,3vw,3rem);padding-bottom:var(--section);">
   <div class="container">
 
+    <div class="insight-filter-bar reveal" role="tablist" aria-label="Filter essays by topic">
+      <button type="button" class="insight-filter-pill active" data-filter="all">All</button>
+      <button type="button" class="insight-filter-pill" data-filter="Leadership">Leadership</button>
+      <button type="button" class="insight-filter-pill" data-filter="Psychology">Psychology</button>
+      <button type="button" class="insight-filter-pill" data-filter="Performance">Performance</button>
+      <button type="button" class="insight-filter-pill" data-filter="Relationships">Relationships</button>
+    </div>
+
     <div class="insights-grid">
 
-      <a href="adaptability.html" class="insight-card reveal" data-delay="1">
+      <a href="adaptability.html" class="insight-card reveal" data-tag="Leadership" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">August 2, 2026</span>
@@ -86,7 +94,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="masochism.html" class="insight-card reveal" data-delay="1">
+      <a href="masochism.html" class="insight-card reveal" data-tag="Psychology" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">June 1, 2026</span>
@@ -96,7 +104,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="why-high-performers-resist-inner-work.html" class="insight-card reveal" data-delay="2">
+      <a href="why-high-performers-resist-inner-work.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">April 14, 2026</span>
@@ -106,7 +114,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="emotional-intelligence-sports.html" class="insight-card reveal" data-delay="3">
+      <a href="emotional-intelligence-sports.html" class="insight-card reveal" data-tag="Performance" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">February 18, 2026</span>
@@ -116,7 +124,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="liminal-spaces.html" class="insight-card reveal" data-delay="2">
+      <a href="liminal-spaces.html" class="insight-card reveal" data-tag="Psychology" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">May 12, 2026</span>
@@ -126,7 +134,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="cost-of-avoidance.html" class="insight-card reveal" data-delay="3">
+      <a href="cost-of-avoidance.html" class="insight-card reveal" data-tag="Leadership" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">April 29, 2026</span>
@@ -136,7 +144,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="authentic-vs-ego-driven.html" class="insight-card reveal" data-delay="1">
+      <a href="authentic-vs-ego-driven.html" class="insight-card reveal" data-tag="Performance" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">April 5, 2026</span>
@@ -146,7 +154,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="fear-of-success.html" class="insight-card reveal" data-delay="2">
+      <a href="fear-of-success.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">March 30, 2026</span>
@@ -156,7 +164,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="difficult-relationships.html" class="insight-card reveal" data-delay="3">
+      <a href="difficult-relationships.html" class="insight-card reveal" data-tag="Relationships" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Relationships</span>
           <span class="insight-date">March 15, 2026</span>
@@ -166,7 +174,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="who-is-qualified.html" class="insight-card reveal" data-delay="1">
+      <a href="who-is-qualified.html" class="insight-card reveal" data-tag="Leadership" data-delay="1">
         <div class="insight-meta">
           <span class="insight-tag">Leadership</span>
           <span class="insight-date">March 14, 2026</span>
@@ -176,7 +184,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="mindset-hacks.html" class="insight-card reveal" data-delay="2">
+      <a href="mindset-hacks.html" class="insight-card reveal" data-tag="Performance" data-delay="2">
         <div class="insight-meta">
           <span class="insight-tag">Performance</span>
           <span class="insight-date">March 10, 2026</span>
@@ -186,7 +194,7 @@
         <span class="insight-read">Read →</span>
       </a>
 
-      <a href="alchemy.html" class="insight-card reveal" data-delay="3">
+      <a href="alchemy.html" class="insight-card reveal" data-tag="Psychology" data-delay="3">
         <div class="insight-meta">
           <span class="insight-tag">Psychology</span>
           <span class="insight-date">November 16, 2025</span>
@@ -233,6 +241,24 @@
 </footer>
 
 <script src="site.js?v=7"></script>
+<script>
+  // Insights filter bar
+  (function(){
+    const pills = document.querySelectorAll('.insight-filter-pill');
+    const cards = document.querySelectorAll('.insight-card');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.tag === filter;
+          card.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  })();
+</script>
 <script>
   // Newsletter form — replace ACTION with your Formspree or Substack embed URL
   const nf = document.getElementById('newsletter-form');
