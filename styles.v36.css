@@ -150,6 +150,10 @@ ul { list-style: none; }
   height: 2px;
   background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 75%, transparent) 50%, transparent);
 }
+.gold-divider--mobile-only { display: none; }
+@media (max-width: 640px) {
+  .gold-divider--mobile-only { display: block; }
+}
 
 /* ── Framework eyebrow — animated ring badge ─────────── */
 .framework-badge {
@@ -1055,6 +1059,7 @@ ul { list-style: none; }
 .teaser-grid--pair .teaser-body { font-size: .98rem; }
 @media (max-width: 640px) {
   .teaser-grid--pair { grid-template-columns: 1fr; }
+  .teaser-grid--pair .teaser-card + .teaser-card { border-left: none; border-top: 1px solid var(--rule); }
 }
 .teaser-card {
   background: var(--bg);
@@ -2315,6 +2320,9 @@ ul { list-style: none; }
 @media (max-width: 1100px) {
   .method-hero-sub { white-space: normal; }
 }
+@media (max-width: 640px) {
+  .method-hero-h1 { white-space: normal !important; font-size: clamp(1.9rem, 8vw, 2.6rem) !important; }
+}
 .designed-for-circles {
   display: flex;
   flex-wrap: nowrap;
@@ -2473,6 +2481,9 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .founder-sig.reveal { clip-path: inset(0 0 0 0); transition: none; }
 }
+@media (max-width: 480px) {
+  .founder-sig { font-size: 1.3rem !important; white-space: nowrap; }
+}
 .founder-prose .founder-sig {
   display: block;
   margin-top: 2.5rem;
@@ -2543,6 +2554,10 @@ ul { list-style: none; }
   color: var(--accent);
   display: block;
   margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .framework-badge .dark-band-eyebrow { font-size: .62rem; letter-spacing: .12em; }
 }
 .dark-band-quote {
   font-family: 'Cormorant Garamond', serif;
@@ -3389,7 +3404,7 @@ ul { list-style: none; }
   .hero-sub { font-size: .85rem; line-height: 1.9; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
-  .about-h1 { font-size: 1.45rem !important; }
+  .about-h1 { font-size: 1.95rem !important; line-height: 1.2; }
   .d-br { display: none; }
   /* Hide scroll indicator — doesn't apply in stacked mobile layout */
   .hero-scroll { display: none; }
@@ -3429,7 +3444,7 @@ ul { list-style: none; }
   .founder-note .about-split .prose { padding-left: 0; }
 
   /* ── PREMISE ── */
-  .premise { padding-top: 0 !important; }
+  .premise { padding-top: 2.5rem !important; }
   .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
   .premise-inner { grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
 
