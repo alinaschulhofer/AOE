@@ -963,7 +963,12 @@ ul { list-style: none; }
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: -.01em;
-  margin-bottom: 2.75rem;
+  margin-bottom: 1.15em;
+}
+/* Push the underline further from the heading text (not further from the lede below it) —
+   em-based so it scales with the clamp()'d heading size and never overlaps the margin above */
+.premise-centered-title .premise-underline::after {
+  bottom: -.85em;
 }
 .premise-lede {
   font-family: 'Cormorant Garamond', serif;
@@ -1664,7 +1669,7 @@ ul { list-style: none; }
   text-align: center;
   border-top: 1px solid var(--rule);
 }
-.contact-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.contact-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
 .contact-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -2044,7 +2049,7 @@ ul { list-style: none; }
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-style: italic;
   font-weight: 300;
-  color: var(--accent);
+  color: var(--ink);
   margin-top: 2rem;
   line-height: 1.5;
   background: none !important;
