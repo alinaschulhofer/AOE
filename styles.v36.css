@@ -223,6 +223,25 @@ ul { list-style: none; }
   height: var(--nav-h);
   transition: background .4s var(--ease), box-shadow .4s var(--ease);
 }
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 101;
+  pointer-events: none;
+  background: transparent;
+}
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width .1s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress-bar { transition: none; }
+}
 
 /* Subtle gradient behind nav on hero — keeps wordmark legible without a solid bar */
 .hero ~ * + *, .hero + #nav,

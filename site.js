@@ -1,5 +1,21 @@
 /* site.js — shared behaviour across all pages */
 (function () {
+  // ── Scroll progress indicator ─────────────────────────
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  progress.innerHTML = '<div class="scroll-progress-bar"></div>';
+  document.body.appendChild(progress);
+  const progressBar = progress.querySelector('.scroll-progress-bar');
+  const onProgress = () => {
+    const h = document.documentElement;
+    const scrollable = h.scrollHeight - h.clientHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', onProgress, { passive: true });
+  window.addEventListener('resize', onProgress);
+  onProgress();
+
   // ── Nav scroll state ─────────────────────────────────
   const nav = document.getElementById('nav');
   if (nav) {

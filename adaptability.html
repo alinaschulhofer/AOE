@@ -135,7 +135,7 @@
     <span class="foot-copy">© 2026 Architecture of Excellence™. All rights reserved. Architecture of Excellence™ is a proprietary framework. · <a href="privacy.html" style="color:inherit;text-decoration:none;opacity:.7;">Privacy Policy</a></span>
   </div>
 </footer>
-<script src="site.js?v=7"></script>
+<script src="site.js?v=8"></script>
 <script>
   const nf = document.getElementById('newsletter-form');
   if (nf) { nf.addEventListener('submit', async e => { e.preventDefault(); const btn = nf.querySelector('button'); btn.disabled = true; try { await fetch('https://app.kit.com/forms/9526283/subscriptions', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(nf) }); nf.style.display = 'none'; document.getElementById('newsletter-success').style.display = 'block'; } catch { btn.disabled = false; } }); }
