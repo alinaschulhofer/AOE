@@ -963,12 +963,7 @@ ul { list-style: none; }
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: -.01em;
-  margin-bottom: 1.15em;
-}
-/* Push the underline further from the heading text (not further from the lede below it) —
-   em-based so it scales with the clamp()'d heading size and never overlaps the margin above */
-.premise-centered-title .premise-underline::after {
-  bottom: -.85em;
+  margin-bottom: 1.75rem;
 }
 .premise-lede {
   font-family: 'Cormorant Garamond', serif;
@@ -977,7 +972,7 @@ ul { list-style: none; }
   font-style: italic;
   line-height: 1.55;
   color: var(--accent);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .premise-centered .premise-body { max-width: 620px; margin-inline: auto; }
 
@@ -2549,22 +2544,6 @@ ul { list-style: none; }
   position: relative;
   overflow: hidden;
 }
-.dark-band:not(.dark-band--no-rule)::before {
-  content: 'A';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(18rem, 38vw, 32rem);
-  line-height: 1;
-  color: var(--accent);
-  opacity: .035;
-  pointer-events: none;
-  z-index: 0;
-  white-space: nowrap;
-}
 .dark-band .container { max-width: 780px; margin-inline: auto; text-align: center; position: relative; z-index: 1; }
 .dark-band-eyebrow {
   font-family: 'Jost', sans-serif;
@@ -3343,6 +3322,14 @@ ul { list-style: none; }
 .t-h2.reveal {
   transform: translateY(36px);
   transition: opacity 1.1s cubic-bezier(0,.55,.45,1), transform 1.1s cubic-bezier(0,.55,.45,1);
+}
+/* Same specificity as the block above, so without this the .in reset below never wins the
+   cascade and these headings stay permanently offset by 36px even once revealed. */
+.page-hero .t-h1.reveal.in,
+.article-title.reveal.in,
+.contact-headline.reveal.in,
+.t-h2.reveal.in {
+  transform: none;
 }
 
 /* ── 4. Teaser cards — hover ──────────────────────────── */
