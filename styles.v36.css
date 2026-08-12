@@ -2504,8 +2504,26 @@ ul { list-style: none; }
 .dark-band {
   background: var(--ink);
   padding-block: clamp(3.5rem, 7vw, 6rem);
+  position: relative;
+  overflow: hidden;
 }
-.dark-band .container { max-width: 780px; margin-inline: auto; text-align: center; }
+.dark-band:not(.dark-band--no-rule)::before {
+  content: 'A';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(18rem, 38vw, 32rem);
+  line-height: 1;
+  color: var(--accent);
+  opacity: .035;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+.dark-band .container { max-width: 780px; margin-inline: auto; text-align: center; position: relative; z-index: 1; }
 .dark-band-eyebrow {
   font-family: 'Jost', sans-serif;
   font-size: .72rem;
