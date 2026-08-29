@@ -922,7 +922,7 @@ ul { list-style: none; }
   display: block;
 }
 .premise-gold {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent);
 }
 .premise-underline {
