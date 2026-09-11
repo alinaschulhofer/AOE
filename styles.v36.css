@@ -2437,6 +2437,45 @@ ul { list-style: none; }
 }
 
 /* ── Founder Note ─────────────────────────────────────── */
+/* ── Founder hero — 50/50 split, full-bleed photo (homepage) ── */
+.founder-hero {
+  position: relative;
+  background: var(--bg);
+}
+.founder-hero-body {
+  display: flex;
+  align-items: stretch;
+}
+.founder-hero-text {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--section) clamp(2rem, 5vw, 5rem);
+}
+.founder-hero-photo {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  aspect-ratio: 4 / 5;
+}
+.founder-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: block;
+}
+@media (max-width: 900px) {
+  .founder-hero-body { flex-direction: column; }
+  .founder-hero-text,
+  .founder-hero-photo { flex: 1 1 auto; }
+  .founder-hero-text { padding: clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 2.5rem); order: 2; }
+  .founder-hero-photo { aspect-ratio: 4 / 3; order: 1; }
+  .founder-hero-photo img { object-position: 50% 20%; }
+}
+
 .founder-note {
   padding-block: var(--section);
   border-top: 1px solid var(--rule);
