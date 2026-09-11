@@ -2451,6 +2451,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   padding: var(--section) clamp(2rem, 5vw, 5rem);
 }
 .founder-hero-photo {
