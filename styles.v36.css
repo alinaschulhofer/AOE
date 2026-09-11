@@ -2473,8 +2473,8 @@ ul { list-style: none; }
   .founder-hero-text,
   .founder-hero-photo { flex: 1 1 auto; }
   .founder-hero-text { padding: clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 2.5rem); order: 2; }
-  .founder-hero-photo { aspect-ratio: 4 / 3; order: 1; }
-  .founder-hero-photo img { object-position: 50% 20%; }
+  .founder-hero-photo { aspect-ratio: auto; order: 1; }
+  .founder-hero-photo img { height: auto; object-fit: contain; }
 }
 
 .founder-note {
