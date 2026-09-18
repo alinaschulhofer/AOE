@@ -945,9 +945,10 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .premise-underline::after { width: 100%; transition: none; }
 }
-/* About/Method hero headings — no underline, to match For Organizations/For Individuals hero treatment */
+/* About/Method hero headings and homepage Premise heading — no underline, to match For Organizations/For Individuals hero treatment */
 .about-h1 .premise-underline::after,
-.method-hero-h1 .premise-underline::after {
+.method-hero-h1 .premise-underline::after,
+.premise-centered-title .premise-underline::after {
   content: none;
 }
 .premise-body { color: var(--ink2); font-size: .9rem; line-height: 1.8; }
