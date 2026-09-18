@@ -1352,7 +1352,7 @@ ul { list-style: none; }
   justify-content: space-between;
   gap: 1.25rem;
   flex-wrap: nowrap;
-  font-size: .82rem;
+  font-size: clamp(.85rem, 1.1vw, 1.02rem);
   letter-spacing: .1em;
 }
 .svc-anchor-link {
@@ -1364,6 +1364,14 @@ ul { list-style: none; }
   transition: color .2s;
 }
 .svc-anchor-link:hover { color: var(--ink); }
+.svc-anchor-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35em;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-right: .3em;
+}
 
 .svc-detail {
   padding-block: var(--section);
