@@ -967,7 +967,7 @@ ul { list-style: none; }
   margin-bottom: 2.5rem;
 }
 .premise-lede {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Jost', sans-serif;
   font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   font-weight: 400;
   font-style: italic;
