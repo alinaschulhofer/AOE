@@ -903,7 +903,7 @@ ul { list-style: none; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.4;
   letter-spacing: -.01em;
   color: var(--ink2);
