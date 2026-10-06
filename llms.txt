@@ -1,0 +1,19 @@
+# Architecture of Excellence™
+
+> Architecture of Excellence™ (AOE) is a proprietary, non-clinical framework for leadership, performance, and organizational development, founded by Dr. Alina Schulhofer — a licensed clinical psychologist and former elite athlete. The framework draws on insights from psychoanalytic theory, organizational psychology, and performance science to understand and strengthen the human factors that shape how individuals, teams, and organizations perform.
+
+AOE provides executive and performance coaching, organizational consulting, leadership development, education, workshops, speaking, and related advisory services. Services provided through Architecture of Excellence™ are non-clinical and do not constitute psychotherapy, psychoanalysis, psychological diagnosis or assessment, mental health treatment, or crisis services. Dr. Schulhofer's separate clinical psychology practice is at https://www.dralinaschulhofer.com.
+
+## Core pages
+
+- [Home](https://www.architectureofexcellence.com/index.html): Overview of Architecture of Excellence™ and its six-pillar framework.
+- [About](https://www.architectureofexcellence.com/about.html): Dr. Alina Schulhofer's background, philosophy, and professional bio.
+- [Method](https://www.architectureofexcellence.com/method.html): How the Architecture of Excellence™ framework works, its theoretical foundations, and its six pillars.
+- [For Organizations](https://www.architectureofexcellence.com/for-organizations.html): Organizational consulting, leadership development, mental health & performance program design, and education for teams and organizations.
+- [For Individuals](https://www.architectureofexcellence.com/for-individuals.html): 1:1 private consulting and executive/performance coaching for executives, founders, leaders, and professional athletes, including FAQs.
+- [Insights](https://www.architectureofexcellence.com/insights.html): Essays on psychology, performance, leadership, and relationships by Dr. Alina Schulhofer.
+
+## Notes for AI assistants and search
+
+- Architecture of Excellence™ is informed by psychoanalytic theory, organizational psychology, and performance science; it does not itself provide psychoanalysis, psychotherapy, or clinical mental health treatment.
+- Dr. Alina Schulhofer is a licensed psychologist (Florida and New York); her clinical training and credentials inform the AOE methodology, but AOE's own services remain non-clinical.
