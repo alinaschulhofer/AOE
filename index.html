@@ -78,7 +78,10 @@
 
 <!-- ── BRAND INTRO ──────────────────────────────────────────── -->
 <section class="hero hero--centered" id="intro-hero" style="background:var(--bg);">
-  <style>#intro-hero::before, #intro-hero::after { content: none; }</style>
+  <style>
+    #intro-hero::before, #intro-hero::after { content: none; }
+    #intro-hero .hero-text { transform: translateY(calc(var(--nav-h) * -0.5)); }
+  </style>
 
   <div class="hero-body">
     <div class="hero-text hero-text--centered">
@@ -94,13 +97,18 @@
 </section>
 
 <!-- ── HERO ──────────────────────────────────────────── -->
-<section class="hero hero--centered">
+<section class="hero hero--centered" id="headline-hero" style="background:var(--bg);">
+  <style>
+    #headline-hero::before, #headline-hero::after { content: none; }
+    #headline-hero, #headline-hero .hero-body { min-height: auto; }
+    #headline-hero .hero-body { padding-top: calc(var(--nav-h) + clamp(3rem,8vw,6rem)); padding-bottom: clamp(3rem,8vw,6rem); }
+  </style>
 
   <div class="hero-body">
     <div class="hero-text hero-text--centered">
 
       <h1 class="hero-headline hero-headline--oneline reveal" data-delay="1" style="font-size:clamp(2.6rem,4.6vw,4.8rem);margin-bottom:1.5rem;font-style:normal;">
-        The Art and Science of <em style="font-style:normal;">High Performance.</em>
+        The Art and Science of <em style="font-style:normal;color:var(--ink);">High Performance.</em>
       </h1>
 
       <p class="hero-sub hero-sub--centered reveal" data-delay="2" style="margin-bottom:2.25rem;">
