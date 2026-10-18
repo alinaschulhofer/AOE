@@ -93,7 +93,7 @@ ul { list-style: none; }
 .t-h1 {
   font-family: 'Manrope', sans-serif;
   font-size: var(--h1);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.15;
   letter-spacing: -.01em;
   color: var(--ink);
