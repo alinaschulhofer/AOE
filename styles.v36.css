@@ -25,7 +25,7 @@
   /* Type scale */
   --display:  clamp(1.8rem, 3.6vw, 2.875rem); /* 46px desktop — main H1 */
   --h1:       clamp(1.7rem, 3.3vw, 2.75rem);  /* 44px desktop — main H1 */
-  --h2:       clamp(1.5rem, 2.4vw, 2.25rem);  /* 36px desktop — section H2 */
+  --h2:       clamp(1.4rem, 2.2vw, 2rem);  /* 32px desktop — section H2 */
   --h3:       clamp(1.25rem, 1.6vw, 1.6875rem); /* 27px desktop — H3 */
   --body:     1.0625rem;
   --small:    0.875rem;
@@ -971,7 +971,7 @@ ul { list-style: none; }
 .premise-centered { max-width: 780px; margin-inline: auto; }
 .premise-centered-title {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
@@ -1416,7 +1416,7 @@ ul { list-style: none; }
 }
 .svc-sidebar-title {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
@@ -1697,7 +1697,7 @@ ul { list-style: none; }
 .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
 .contact-headline {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
@@ -2552,7 +2552,7 @@ ul { list-style: none; }
 }
 .founder-note-heading {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
@@ -2661,7 +2661,7 @@ ul { list-style: none; }
 }
 .dark-band-heading {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
