@@ -1406,34 +1406,41 @@ ul { list-style: none; }
 
 /* ── Four-part service navigation (For Organizations) ──── */
 .svc-nav-bar {
-  background: var(--bg2);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
 }
 .svc-nav-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  flex-wrap: wrap;
   padding-inline: 0;
 }
 .svc-nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  text-align: center;
+  gap: 1rem;
   text-decoration: none;
-  padding-block: clamp(1.75rem, 3vw, 2.5rem);
-  padding-inline: 1rem;
-  border-left: 1px solid var(--rule);
-  transition: background .25s ease;
+  flex: 0 1 220px;
 }
-.svc-nav-item:first-child { border-left: none; }
-.svc-nav-item:hover, .svc-nav-item:active { background: rgba(28,25,22,.035); }
+.svc-nav-circle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 1px solid rgba(90,82,72,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color .3s ease, transform .3s ease;
+}
+.svc-nav-item:hover .svc-nav-circle,
+.svc-nav-item:active .svc-nav-circle { border-color: var(--accent); transform: scale(1.05); }
 .svc-nav-num {
   font-family: 'Manrope', sans-serif;
   font-weight: 200;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   color: var(--accent);
   letter-spacing: 0;
   line-height: 1;
@@ -1441,21 +1448,22 @@ ul { list-style: none; }
 .svc-nav-label {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: .78rem;
-  letter-spacing: .08em;
+  font-size: .82rem;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--ink);
+  text-align: center;
+  line-height: 1.4;
   transition: color .25s ease;
 }
 .svc-nav-item:hover .svc-nav-label { color: var(--accent); }
 @media (max-width: 768px) {
-  .svc-nav-grid { grid-template-columns: repeat(2, 1fr); }
-  .svc-nav-item:nth-child(2) { border-left: 1px solid var(--rule); }
-  .svc-nav-item:nth-child(3) { border-left: none; border-top: 1px solid var(--rule); }
-  .svc-nav-item:nth-child(4) { border-top: 1px solid var(--rule); }
-  .svc-nav-item { padding-block: 1.75rem; }
-  .svc-nav-label { font-size: .92rem; letter-spacing: .04em; line-height: 1.35; }
-  .svc-nav-num { font-size: 1rem; }
+  .svc-nav-bar { padding-block: 2.5rem; }
+  .svc-nav-grid { row-gap: 2.25rem; column-gap: 1.5rem; }
+  .svc-nav-item { flex: 0 1 calc(50% - 1.5rem); }
+  .svc-nav-circle { width: 76px; height: 76px; }
+  .svc-nav-num { font-size: 1.25rem; }
+  .svc-nav-label { font-size: .76rem; letter-spacing: .05em; }
 }
 
 .svc-detail {
