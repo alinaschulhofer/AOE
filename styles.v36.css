@@ -11,10 +11,10 @@
   --bg:          #F3EFE6;
   --bg2:         #EDE8DD;
   --bg3:         #E6E0D3;
-  --ink:         #1C1916;
-  --ink2:        #5A5248;
+  --ink:         #1C1B19;
+  --ink2:        #595650;
   --ink3:        #8A8078;
-  --accent:      #5A5248;
+  --accent:      #595650;
   --accent-2:    #8A8078;
   --rule:        rgba(28,25,22,.14);
   --rule-strong: rgba(28,25,22,.30);
@@ -23,10 +23,10 @@
   --card-border: rgba(28,25,22,.10);
 
   /* Type scale */
-  --display:  clamp(3.2rem, 7.5vw, 7.5rem);
-  --h1:       clamp(2.4rem, 5vw, 5rem);
-  --h2:       clamp(1.8rem, 3vw, 3rem);
-  --h3:       clamp(1.25rem, 1.9vw, 1.9rem);
+  --display:  clamp(2.4rem, 5.5vw, 4.25rem);  /* 68px desktop — homepage H1 */
+  --h1:       clamp(2.1rem, 4.4vw, 3.75rem);  /* 60px desktop — interior H1 */
+  --h2:       clamp(1.8rem, 3vw, 3rem);       /* 48px desktop — section H2 */
+  --h3:       clamp(1.4rem, 2vw, 2rem);       /* 32px desktop — H3 */
   --body:     1.0625rem;
   --small:    0.875rem;
   --eyebrow:  0.72rem;
@@ -69,8 +69,9 @@ body {
   color: var(--ink);
   font-family: 'Manrope', sans-serif;
   font-size: var(--body);
-  font-weight: 300;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: normal;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
   -webkit-font-smoothing: antialiased;
 }
@@ -83,25 +84,28 @@ ul { list-style: none; }
 .t-display {
   font-family: 'Bodoni Moda', serif;
   font-size: var(--display);
-  font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -.02em;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  color: var(--ink);
 }
 
 .t-h1 {
   font-family: 'Bodoni Moda', serif;
   font-size: var(--h1);
-  font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -.015em;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+  color: var(--ink);
 }
 
 .t-h2 {
   font-family: 'Bodoni Moda', serif;
   font-size: var(--h2);
-  font-weight: 300;
-  line-height: 1.2;
-  letter-spacing: -.01em;
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  color: var(--ink);
 }
 
 .t-h3 {
@@ -109,13 +113,15 @@ ul { list-style: none; }
   font-size: var(--h3);
   font-weight: 400;
   line-height: 1.3;
+  letter-spacing: -.015em;
+  color: var(--ink);
 }
 
 .t-eyebrow {
   font-family: 'Manrope', sans-serif;
   font-size: var(--eyebrow);
   font-weight: 500;
-  letter-spacing: .28em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -323,9 +329,9 @@ ul { list-style: none; }
 
 .nav-links a, .nav-dd-trigger {
   font-family: 'Manrope', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: normal;
   text-transform: none;
   color: var(--ink2);
   transition: color .25s;
@@ -375,7 +381,7 @@ ul { list-style: none; }
 
 .nav-dd-menu a {
   font-size: .78rem;
-  letter-spacing: .09em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink2);
   padding-block: .15rem;
@@ -454,7 +460,7 @@ ul { list-style: none; }
 .mobile-menu a {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .02em;
   color: var(--ink);
   transition: color .2s;
@@ -621,9 +627,10 @@ ul { list-style: none; }
 .hero-headline {
   font-family: 'Bodoni Moda', serif;
   font-size: var(--display);
-  font-weight: 300;
-  line-height: 1.0;
-  letter-spacing: -.025em;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  color: var(--ink);
   margin-bottom: 2rem;
 }
 .hero-headline em {
@@ -699,7 +706,7 @@ ul { list-style: none; }
 }
 .hero-scroll span {
   font-size: .68rem;
-  letter-spacing: .15em;
+  letter-spacing: .12em;
   text-transform: uppercase;
 }
 .hero-scroll-line {
@@ -775,9 +782,9 @@ ul { list-style: none; }
   gap: .6rem;
   padding: .85rem 2.2rem;
   font-family: 'Manrope', sans-serif;
-  font-size: .78rem;
+  font-size: .8125rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   border: 1px solid;
   border-radius: 999px;
@@ -857,7 +864,7 @@ ul { list-style: none; }
 .statement-band p, .statement-quote {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.4;
   max-width: 800px;
@@ -881,7 +888,7 @@ ul { list-style: none; }
   font-size: clamp(.68rem, .85vw, .78rem);
   font-style: normal;
   font-weight: 400;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-top: 2.5rem;
@@ -903,7 +910,7 @@ ul { list-style: none; }
 .premise-accent {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -.01em;
@@ -952,8 +959,8 @@ ul { list-style: none; }
 .premise-centered-title .premise-underline::after {
   content: none;
 }
-.premise-body { color: var(--ink2); font-size: .9rem; line-height: 1.8; }
-.premise-body p + p { margin-top: 1em; }
+.premise-body { color: var(--ink2); font-size: 1rem; line-height: 1.65; letter-spacing: -.01em; }
+.premise-body p + p { margin-top: 1.6em; }
 .premise-body .rule--accent { margin-block: 1.5rem; }
 
 /* ── Premise, centered variant ───────────────────────── */
@@ -961,10 +968,11 @@ ul { list-style: none; }
 .premise-centered { max-width: 700px; margin-inline: auto; }
 .premise-centered-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  font-weight: 300;
-  line-height: 1.25;
-  letter-spacing: -.01em;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  color: var(--ink);
   margin-bottom: 1.5rem;
 }
 .premise-lede {
@@ -978,7 +986,7 @@ ul { list-style: none; }
   margin-inline: auto;
   margin-bottom: 1.5rem;
 }
-.premise-centered .premise-body { max-width: 620px; margin-inline: auto; }
+.premise-centered .premise-body { max-width: 700px; margin-inline: auto; text-align: left; }
 
 @media (max-width: 768px) {
   .premise-inner { grid-template-columns: 1fr; }
@@ -1006,9 +1014,10 @@ ul { list-style: none; }
 .pull-quote blockquote {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.5rem, 2.2vw, 2.0rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.5;
+  color: var(--ink);
   max-width: 900px;
   margin-inline: auto;
   position: relative;
@@ -1029,7 +1038,7 @@ ul { list-style: none; }
   font-style: normal;
   font-family: 'Manrope', sans-serif;
   font-size: .75rem;
-  letter-spacing: .15em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
 }
@@ -1084,7 +1093,7 @@ ul { list-style: none; }
 .teaser-num {
   font-family: 'Bodoni Moda', serif;
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--accent);
   line-height: 1;
@@ -1095,15 +1104,16 @@ ul { list-style: none; }
 .teaser-card:hover .teaser-num { opacity: 1; }
 .teaser-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 1.2;
-  color: var(--accent);
+  line-height: 1.25;
+  letter-spacing: -.015em;
+  color: var(--ink);
 }
 .teaser-body { color: var(--ink2); font-size: .9rem; line-height: 1.65; flex: 1; }
 .teaser-link {
   font-size: .72rem;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   display: flex;
@@ -1169,7 +1179,7 @@ ul { list-style: none; }
 .page-hero-mark {
   font-family: 'Bodoni Moda', serif;
   font-size: 9rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--rule);
   line-height: 1;
   letter-spacing: -.05em;
@@ -1202,7 +1212,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .7rem;
   font-weight: 500;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -1216,22 +1226,24 @@ ul { list-style: none; }
   .credential-item { grid-template-columns: 1fr; gap: .5rem; }
 }
 .prose {
-  max-width: var(--prose-w);
+  max-width: 700px;
   color: var(--ink);
-  font-family: 'Bodoni Moda', serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.85;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  text-align: left;
 }
 .prose p + p { margin-top: 1.6em; }
 .prose h2 {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-top: 2.5em;
   margin-bottom: .75em;
-  letter-spacing: -.01em;
+  letter-spacing: -.015em;
 }
 .prose h3 {
   font-family: 'Bodoni Moda', serif;
@@ -1242,12 +1254,12 @@ ul { list-style: none; }
   margin-bottom: .5em;
   font-style: normal;
 }
-.prose strong { color: var(--ink); font-weight: 500; }
+.prose strong { color: var(--ink); font-weight: 600; }
 .prose em { font-style: normal; }
 .prose .pull {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--ink2);
   border-left: 2px solid var(--accent);
@@ -1279,7 +1291,7 @@ ul { list-style: none; }
 .cred-label {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.55rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: .01em;
   text-transform: none;
@@ -1321,7 +1333,7 @@ ul { list-style: none; }
   top: -1rem; right: 1.5rem;
   font-family: 'Bodoni Moda', serif;
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--rule);
   line-height: 1;
   transition: color .3s;
@@ -1329,7 +1341,7 @@ ul { list-style: none; }
 .pillar:hover::before { color: color-mix(in srgb, var(--accent) 25%, transparent); }
 .pillar-num {
   font-size: .68rem;
-  letter-spacing: .2em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -1392,7 +1404,7 @@ ul { list-style: none; }
 .svc-sidebar-num {
   font-family: 'Bodoni Moda', serif;
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--rule-strong);
   line-height: 1;
   margin-bottom: 1rem;
@@ -1400,21 +1412,21 @@ ul { list-style: none; }
 .svc-sidebar-title {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.15;
   margin-bottom: 1.5rem;
 }
 .svc-sidebar-tag {
   display: inline-block;
   font-size: .68rem;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   border: 1px solid var(--accent);
   color: var(--accent);
   padding: .35rem .8rem;
 }
-.svc-content { color: var(--ink2); }
-.svc-content p + p { margin-top: 1.3em; line-height: 1.8; }
+.svc-content { color: var(--ink2); font-size: 1rem; line-height: 1.65; letter-spacing: -.01em; max-width: 700px; }
+.svc-content p + p { margin-top: 1.6em; }
 .svc-content h3 {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.4rem;
@@ -1452,7 +1464,7 @@ ul { list-style: none; }
   font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-style: normal;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--ink);
   line-height: 1.25;
   padding-bottom: .8rem;
   margin-top: 2.75rem;
@@ -1467,7 +1479,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .78rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
@@ -1641,7 +1653,7 @@ ul { list-style: none; }
 .about-cred-list li {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.15rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--ink2);
   padding-left: 1.25rem;
@@ -1679,10 +1691,11 @@ ul { list-style: none; }
 .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
 .contact-headline {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 300;
-  line-height: 1.2;
-  letter-spacing: -.015em;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  color: var(--ink);
 }
 .contact-headline em { font-style: normal; color: var(--accent); }
 .contact-email {
@@ -1750,7 +1763,7 @@ ul { list-style: none; }
 }
 .foot-links a {
   font-size: .72rem;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   transition: color .2s;
@@ -1773,7 +1786,7 @@ ul { list-style: none; }
 .phil-marker {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.35;
   letter-spacing: .015em;
   color: var(--accent);
@@ -1828,7 +1841,7 @@ ul { list-style: none; }
 .phil-portrait .slot-note {
   font-family: 'Manrope', sans-serif;
   font-size: .72rem;
-  letter-spacing: .16em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   text-align: center;
@@ -1837,7 +1850,7 @@ ul { list-style: none; }
 .phil-portrait figcaption {
   font-family: 'Manrope', sans-serif;
   font-size: .72rem;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   margin-top: 1rem;
@@ -1894,7 +1907,7 @@ ul { list-style: none; }
 .method-dim-num {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--accent);
   line-height: 1;
   padding-top: .2rem;
@@ -1956,7 +1969,7 @@ ul { list-style: none; }
 }
 .lm-eyebrow {
   font-size: .68rem;
-  letter-spacing: .18em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -1964,7 +1977,7 @@ ul { list-style: none; }
 .lm-headline {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--ink);
   margin-bottom: .75rem;
@@ -2002,7 +2015,7 @@ ul { list-style: none; }
 .lm-success h3 {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--accent);
   margin-bottom: .75rem;
@@ -2068,7 +2081,7 @@ ul { list-style: none; }
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-top: 2rem;
   line-height: 1.5;
@@ -2169,7 +2182,7 @@ ul { list-style: none; }
 .t-h2--drama {
   font-family: 'Bodoni Moda', serif;
   font-size: var(--h2);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -.01em;
 }
@@ -2297,7 +2310,7 @@ ul { list-style: none; }
 .dim-card-num {
   font-family: 'Bodoni Moda', serif;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--accent);
   line-height: 1;
   font-style: normal;
@@ -2409,7 +2422,7 @@ ul { list-style: none; }
 .dfc-num {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.1rem, 1.8vw, 1.7rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--accent);
   line-height: 1;
@@ -2520,7 +2533,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .28em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -2529,7 +2542,7 @@ ul { list-style: none; }
 .founder-note-heading {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--ink);
   font-style: normal;
@@ -2542,13 +2555,15 @@ ul { list-style: none; }
   margin-bottom: 0;
 }
 .founder-prose {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 1.05rem;
-  font-weight: 300;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--ink);
-  line-height: 1.9;
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  max-width: 700px;
 }
-.founder-prose p + p { margin-top: 1.5em; }
+.founder-prose p + p { margin-top: 1.6em; }
 .founder-sig {
   opacity: 1;
   transform: none;
@@ -2614,7 +2629,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .28em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   display: block;
@@ -2626,24 +2641,32 @@ ul { list-style: none; }
 }
 .dark-band-quote {
   font-family: 'Bodoni Moda', serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1.4rem, 2.6vw, 2rem);
   line-height: 1.55;
-  color: var(--bg);
+  letter-spacing: -.015em;
+  color: #E6E1D9;
 }
 .dark-band-heading {
   font-family: 'Bodoni Moda', serif;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--bg);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  color: #E6E1D9;
 }
+.dark-band-heading .premise-underline::after { content: none; }
 .dark-band-body {
   font-family: 'Manrope', sans-serif;
-  font-weight: 300;
-  font-size: .95rem;
-  line-height: 1.9;
-  color: var(--bg);
-  margin-bottom: 2.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  color: #E6E1D9;
+  text-align: left;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
 }
 .dark-band .btn-primary {
   background: var(--bg);
@@ -2821,7 +2844,7 @@ ul { list-style: none; }
   color: var(--ink2);
   display: block;
   margin-bottom: .4rem;
-  letter-spacing: .06em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   font-size: .72rem;
 }
@@ -2885,7 +2908,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .68rem;
   font-weight: 500;
-  letter-spacing: .22em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -2976,7 +2999,7 @@ ul { list-style: none; }
 .hwb-step-num {
   font-family: 'Bodoni Moda', serif;
   font-size: 2.2rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--accent);
   line-height: 1;
   font-style: normal;
@@ -3122,7 +3145,7 @@ ul { list-style: none; }
   font-family: 'Manrope', sans-serif;
   font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.25rem;
@@ -3130,8 +3153,9 @@ ul { list-style: none; }
 .featured-essay-title {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
+  letter-spacing: -.015em;
   color: var(--ink);
   line-height: 1.3;
   margin-bottom: .9rem;
@@ -3171,7 +3195,7 @@ ul { list-style: none; }
 .newsletter-heading {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--ink);
   margin-bottom: .75rem;
@@ -3189,7 +3213,7 @@ ul { list-style: none; }
 .newsletter-band h3 {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--ink);
   margin-bottom: .75rem;
@@ -3217,7 +3241,7 @@ ul { list-style: none; }
   display: inline-block;
   font-family: 'Manrope', sans-serif;
   font-size: .75rem;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   text-decoration: none;
@@ -3239,18 +3263,18 @@ ul { list-style: none; }
 }
 .article-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 300;
+  font-size: clamp(2rem, 4.4vw, 3.75rem);
+  font-weight: 400;
   line-height: 1.15;
-  color: var(--accent);
+  color: var(--ink);
   margin-bottom: 2.5rem;
   padding-bottom: .25rem;
-  letter-spacing: -.01em;
+  letter-spacing: -.035em;
 }
 .article-subtitle {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--ink2);
   line-height: 1.6;
@@ -3271,7 +3295,7 @@ ul { list-style: none; }
 .article-byline-name {
   font-family: 'Manrope', sans-serif;
   font-size: .78rem;
-  letter-spacing: .08em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink2);
 }
@@ -3283,23 +3307,25 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .article-prose {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  font-weight: 300;
-  line-height: 1.9;
+  max-width: 700px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
-.article-prose p + p { margin-top: 1.4em; }
-.article-prose strong { font-weight: 500; }
+.article-prose p + p { margin-top: 1.6em; }
+.article-prose strong { font-weight: 600; }
 .article-prose em { font-style: normal; }
-.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: inherit; font-weight: 600; font-family: inherit; }
+.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: 1.4rem; font-weight: 400; font-family: 'Bodoni Moda', serif; }
 .article-pull {
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.55;
-  color: var(--accent);
+  color: var(--ink);
   border-left: 2px solid var(--accent);
   padding: 1.5rem 0 1.5rem 2rem;
   margin-block: clamp(2.5rem, 5vw, 4rem);
@@ -3479,8 +3505,8 @@ ul { list-style: none; }
   .about-ticker-inner { display: inline-block !important; white-space: nowrap; animation: ticker 28s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
-  .hero-headline { font-size: clamp(2.6rem, 10vw, 3.4rem) !important; line-height: 1.05; margin-bottom: 1.25rem !important; }
-  .hero-headline--oneline { font-size: clamp(2.3rem, 9.5vw, 3.1rem) !important; line-height: 1.15; }
+  .hero-headline { font-size: clamp(2.2rem, 9vw, 2.75rem) !important; line-height: 1.12; margin-bottom: 1.25rem !important; }
+  .hero-headline--oneline { font-size: clamp(2rem, 8.5vw, 2.5rem) !important; line-height: 1.18; }
   /* More comfortable subtext */
   .hero-sub { font-size: .85rem; line-height: 1.9; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
@@ -3536,12 +3562,12 @@ ul { list-style: none; }
   .foot-copy { text-align: center; }
 
   /* ── TYPOGRAPHY ── */
-  .article-title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
-  .contact-headline { font-size: clamp(1.5rem, 5vw, 2.4rem); }
+  .article-title { font-size: clamp(1.5rem, 6vw, 2.1rem); }
+  .contact-headline { font-size: clamp(1.5rem, 5vw, 2rem); }
   .statement-band p, .statement-quote { font-size: clamp(1.4rem, 5vw, 2rem); }
   .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
-  .t-h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
-  .t-h2 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+  .t-h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+  .t-h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
 
   /* ── SERVICES ── */
   .investment-inner { flex-direction: column; }
