@@ -1077,8 +1077,8 @@ ul { list-style: none; }
   border-left: 1px solid var(--rule);
 }
 .teaser-grid--pair .teaser-card { padding: clamp(2rem, 4vw, 3.25rem); }
-.teaser-grid--pair .teaser-num { font-size: clamp(2.2rem, 3vw, 2.75rem); }
-.teaser-grid--pair .teaser-title { font-size: 1.8rem; }
+.teaser-grid--pair .teaser-num { font-size: clamp(1.6rem, 2vw, 2rem); }
+.teaser-grid--pair .teaser-title { font-size: 1.3rem; letter-spacing: -.005em; }
 .teaser-grid--pair .teaser-body { font-size: .95rem; }
 @media (max-width: 640px) {
   .teaser-grid--pair { grid-template-columns: 1fr; }
@@ -2389,14 +2389,17 @@ ul { list-style: none; }
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: clamp(.75rem, 2vw, 1.5rem);
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+  gap: clamp(.75rem, 1.5vw, 1.25rem);
+  max-width: 1280px;
+  margin-inline: auto;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 .dfc-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.1rem;
+  gap: .85rem;
   flex: 1 1 0;
   min-width: 0;
   opacity: 1;
@@ -2413,10 +2416,10 @@ ul { list-style: none; }
 .dfc-item[data-dfc="5"] { transition-delay: .4s; }
 .dfc-item[data-dfc="6"] { transition-delay: .5s; }
 .dfc-circle {
-  width: clamp(80px, 10vw, 145px);
-  height: clamp(80px, 10vw, 145px);
+  width: clamp(90px, 8vw, 120px);
+  height: clamp(90px, 8vw, 120px);
   border-radius: 50%;
-  border: 1px solid rgba(90,82,72,.4);
+  border: 1px solid rgba(90,82,72,.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2429,7 +2432,7 @@ ul { list-style: none; }
 }
 .dfc-num {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+  font-size: clamp(1.3rem, 1.5vw, 1.75rem);
   font-weight: 200;
   font-style: normal;
   color: var(--accent);
@@ -2437,8 +2440,8 @@ ul { list-style: none; }
 }
 .dfc-label {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(.78rem, .95vw, .95rem);
-  font-weight: 200;
+  font-size: clamp(.9rem, 1vw, 1rem);
+  font-weight: 400;
   color: var(--ink2);
   text-align: center;
   line-height: 1.45;
