@@ -1520,7 +1520,7 @@ ul { list-style: none; }
   font-style: normal;
 }
 .svc-features {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: .75rem;
