@@ -24,7 +24,7 @@
 
   /* Type scale */
   --display:  clamp(1.8rem, 3.6vw, 2.875rem); /* 46px desktop — main H1 */
-  --h1:       clamp(1.9rem, 3.6vw, 3.1875rem);  /* ~51px desktop — interior H1 */
+  --h1:       clamp(1.85rem, 3.4vw, 2.9rem);  /* ~46px desktop — interior H1 */
   --h2:       clamp(1.4rem, 2.2vw, 2rem);  /* 32px desktop — section H2 */
   --h3:       clamp(1.25rem, 1.6vw, 1.6875rem); /* 27px desktop — H3 */
   --body:     1.0625rem;
@@ -1001,7 +1001,8 @@ ul { list-style: none; }
   .premise-centered-title { margin-bottom: 1.75rem; }
   .prose-section .prose > p { font-size: .9rem; line-height: 1.8; }
   #on-high-performance .dark-band-body { font-size: .9rem !important; line-height: 1.8; text-align: left !important; }
-  #retainer-engagements .dark-band-body { font-size: .9rem; line-height: 1.8; text-align: center; margin-inline: auto; }
+  #retainer-engagements .dark-band-body,
+  #one-on-one-engagements .dark-band-body { font-size: .9rem; line-height: 1.8; text-align: center; margin-inline: auto; }
   #advisory .svc-detail-inner { gap: 1.5rem; }
   #advisory .svc-sidebar-title { margin-bottom: 0; }
 }
@@ -2732,6 +2733,8 @@ ul { list-style: none; }
   color: #E6E1D9;
 }
 .dark-band-heading .premise-underline::after { content: none; }
+#retainer-engagements .dark-band-body,
+#one-on-one-engagements .dark-band-body { text-align: center; margin-inline: auto; }
 .dark-band-body {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
