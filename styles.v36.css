@@ -23,10 +23,10 @@
   --card-border: rgba(28,25,22,.10);
 
   /* Type scale */
-  --display:  clamp(2.4rem, 5.5vw, 4.25rem);  /* 68px desktop — homepage H1 */
-  --h1:       clamp(2.1rem, 4.4vw, 3.75rem);  /* 60px desktop — interior H1 */
-  --h2:       clamp(1.8rem, 3vw, 3rem);       /* 48px desktop — section H2 */
-  --h3:       clamp(1.4rem, 2vw, 2rem);       /* 32px desktop — H3 */
+  --display:  clamp(1.8rem, 3.6vw, 2.875rem); /* 46px desktop — main H1 */
+  --h1:       clamp(1.7rem, 3.3vw, 2.75rem);  /* 44px desktop — main H1 */
+  --h2:       clamp(1.5rem, 2.4vw, 2.25rem);  /* 36px desktop — section H2 */
+  --h3:       clamp(1.25rem, 1.6vw, 1.6875rem); /* 27px desktop — H3 */
   --body:     1.0625rem;
   --small:    0.875rem;
   --eyebrow:  0.72rem;
@@ -85,8 +85,8 @@ ul { list-style: none; }
   font-family: 'Bodoni Moda', serif;
   font-size: var(--display);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -.035em;
+  line-height: 1.15;
+  letter-spacing: -.025em;
   color: var(--ink);
 }
 
@@ -95,7 +95,7 @@ ul { list-style: none; }
   font-size: var(--h1);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
   color: var(--ink);
 }
 
@@ -103,8 +103,8 @@ ul { list-style: none; }
   font-family: 'Bodoni Moda', serif;
   font-size: var(--h2);
   font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   color: var(--ink);
 }
 
@@ -112,7 +112,7 @@ ul { list-style: none; }
   font-family: 'Bodoni Moda', serif;
   font-size: var(--h3);
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.25;
   letter-spacing: -.015em;
   color: var(--ink);
 }
@@ -593,7 +593,7 @@ ul { list-style: none; }
    override it explicitly, and fall back to a balanced wrap instead of
    overflowing if it still doesn't fit at a given viewport width. */
 .hero-headline--oneline {
-  max-width: 1200px !important;
+  max-width: 800px !important;
   white-space: normal !important;
   text-wrap: balance;
 }
@@ -628,8 +628,8 @@ ul { list-style: none; }
   font-family: 'Bodoni Moda', serif;
   font-size: var(--display);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -.035em;
+  line-height: 1.15;
+  letter-spacing: -.025em;
   color: var(--ink);
   margin-bottom: 2rem;
 }
@@ -968,12 +968,14 @@ ul { list-style: none; }
 .premise-centered { max-width: 700px; margin-inline: auto; }
 .premise-centered-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   color: var(--ink);
   margin-bottom: 1.5rem;
+  max-width: 680px;
+  margin-inline: auto;
 }
 .premise-lede {
   font-family: 'Manrope', sans-serif;
@@ -1013,12 +1015,13 @@ ul { list-style: none; }
 }
 .pull-quote blockquote {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.5rem, 2.2vw, 2.0rem);
+  font-size: clamp(1.4rem, 1.9vw, 1.75rem);
   font-weight: 400;
   font-style: normal;
+  letter-spacing: -.015em;
   line-height: 1.5;
   color: var(--ink);
-  max-width: 900px;
+  max-width: 800px;
   margin-inline: auto;
   position: relative;
   z-index: 1;
@@ -1411,9 +1414,10 @@ ul { list-style: none; }
 }
 .svc-sidebar-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   margin-bottom: 1.5rem;
 }
 .svc-sidebar-tag {
@@ -1691,11 +1695,13 @@ ul { list-style: none; }
 .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
 .contact-headline {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   color: var(--ink);
+  max-width: 680px;
+  margin-inline: auto;
 }
 .contact-headline em { font-style: normal; color: var(--accent); }
 .contact-email {
@@ -2541,9 +2547,10 @@ ul { list-style: none; }
 }
 .founder-note-heading {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 400;
   line-height: 1.2;
+  letter-spacing: -.02em;
   color: var(--ink);
   font-style: normal;
 }
@@ -2649,10 +2656,10 @@ ul { list-style: none; }
 }
 .dark-band-heading {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
   color: #E6E1D9;
 }
 .dark-band-heading .premise-underline::after { content: none; }
@@ -3194,9 +3201,10 @@ ul { list-style: none; }
 }
 .newsletter-heading {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
   font-weight: 400;
   font-style: normal;
+  letter-spacing: -.02em;
   color: var(--ink);
   margin-bottom: .75rem;
 }
@@ -3263,13 +3271,14 @@ ul { list-style: none; }
 }
 .article-title {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2rem, 4.4vw, 3.75rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
   font-weight: 400;
   line-height: 1.15;
   color: var(--ink);
   margin-bottom: 2.5rem;
   padding-bottom: .25rem;
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
+  max-width: 760px;
 }
 .article-subtitle {
   font-family: 'Bodoni Moda', serif;
@@ -3505,8 +3514,8 @@ ul { list-style: none; }
   .about-ticker-inner { display: inline-block !important; white-space: nowrap; animation: ticker 28s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
-  .hero-headline { font-size: clamp(2.2rem, 9vw, 2.75rem) !important; line-height: 1.12; margin-bottom: 1.25rem !important; }
-  .hero-headline--oneline { font-size: clamp(2rem, 8.5vw, 2.5rem) !important; line-height: 1.18; }
+  .hero-headline { font-size: clamp(1.9rem, 8vw, 2.4rem) !important; line-height: 1.18; margin-bottom: 1.25rem !important; }
+  .hero-headline--oneline { font-size: clamp(1.8rem, 7.5vw, 2.2rem) !important; line-height: 1.2; }
   /* More comfortable subtext */
   .hero-sub { font-size: .85rem; line-height: 1.9; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
@@ -3562,8 +3571,8 @@ ul { list-style: none; }
   .foot-copy { text-align: center; }
 
   /* ── TYPOGRAPHY ── */
-  .article-title { font-size: clamp(1.5rem, 6vw, 2.1rem); }
-  .contact-headline { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .article-title { font-size: clamp(1.4rem, 5.5vw, 1.9rem); }
+  .contact-headline { font-size: clamp(1.4rem, 4.5vw, 1.8rem); }
   .statement-band p, .statement-quote { font-size: clamp(1.4rem, 5vw, 2rem); }
   .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
   .t-h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
