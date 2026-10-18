@@ -3,7 +3,7 @@
    Complete Design System
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
@@ -13,9 +13,9 @@
   --bg3:         #E6E0D3;
   --ink:         #1C1B19;
   --ink2:        #595650;
-  --ink3:        #8A8078;
+  --ink3:        #6E685F;
   --accent:      #595650;
-  --accent-2:    #8A8078;
+  --accent-2:    #6E685F;
   --rule:        rgba(28,25,22,.14);
   --rule-strong: rgba(28,25,22,.30);
   --photo-filter: none;
@@ -23,17 +23,17 @@
   --card-border: rgba(28,25,22,.10);
 
   /* Type scale */
-  --display:  clamp(2.4rem, 5.5vw, 4.25rem);  /* 68px desktop — homepage H1 */
-  --h1:       clamp(2.1rem, 4.4vw, 3.75rem);  /* 60px desktop — interior H1 */
-  --h2:       clamp(1.8rem, 3vw, 3rem);       /* 48px desktop — section H2 */
-  --h3:       clamp(1.4rem, 2vw, 2rem);       /* 32px desktop — H3 */
+  --display:  clamp(1.8rem, 3.6vw, 2.875rem); /* 46px desktop — main H1 */
+  --h1:       clamp(1.7rem, 3.3vw, 2.75rem);  /* 44px desktop — main H1 */
+  --h2:       clamp(1.5rem, 2.4vw, 2.25rem);  /* 36px desktop — section H2 */
+  --h3:       clamp(1.25rem, 1.6vw, 1.6875rem); /* 27px desktop — H3 */
   --body:     1.0625rem;
   --small:    0.875rem;
   --eyebrow:  0.72rem;
 
   /* Spacing */
   --gap:      clamp(1.5rem, 4vw, 4rem);
-  --section:  clamp(3.5rem, 7vw, 7rem);
+  --section:  clamp(2.9rem, 5.8vw, 5.75rem);
   --nav-h:    76px;
   --max-w:    1320px;
   --prose-w:  740px;
@@ -82,38 +82,38 @@ ul { list-style: none; }
 
 /* ── TYPOGRAPHY ──────────────────────────────────────── */
 .t-display {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--display);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -.035em;
+  font-weight: 200;
+  line-height: 1.15;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
 
 .t-h1 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--h1);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.15;
-  letter-spacing: -.035em;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
 
 .t-h2 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--h2);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
 
 .t-h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--h3);
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: -.015em;
+  font-weight: 200;
+  line-height: 1.25;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
 
@@ -299,7 +299,7 @@ ul { list-style: none; }
 .nav-cta { flex-shrink: 0; justify-self: end; }
 
 .nav-wordmark {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.45rem;
   font-weight: 500;
   font-style: normal;
@@ -397,11 +397,12 @@ ul { list-style: none; }
   gap: .5rem;
   border-radius: 999px;
   border: 1px solid var(--ink);
-  padding: .65rem 1.5rem;
+  padding: .65rem 1.4rem;
   font-family: 'Manrope', sans-serif;
-  font-size: .82rem;
+  font-size: .8rem;
   font-weight: 500;
-  letter-spacing: .04em;
+  line-height: 1;
+  letter-spacing: .05em;
   text-transform: none;
   color: var(--ink);
   transition: background .25s, color .25s, border-color .25s;
@@ -458,9 +459,9 @@ ul { list-style: none; }
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: .02em;
   color: var(--ink);
   transition: color .2s;
@@ -572,8 +573,8 @@ ul { list-style: none; }
   margin-inline: auto;
   width: 100%;
   padding-inline: clamp(1.5rem, 5vw, 5rem);
-  padding-top: clamp(8rem, 20vh, 14rem);
-  padding-bottom: clamp(4rem, 8vh, 7rem);
+  padding-top: clamp(6.5rem, 16vh, 11.5rem);
+  padding-bottom: clamp(3.25rem, 6.5vh, 5.75rem);
   /* limit how wide the actual text block is within the container */
   box-sizing: border-box;
 }
@@ -593,7 +594,7 @@ ul { list-style: none; }
    override it explicitly, and fall back to a balanced wrap instead of
    overflowing if it still doesn't fit at a given viewport width. */
 .hero-headline--oneline {
-  max-width: 1200px !important;
+  max-width: 800px !important;
   white-space: normal !important;
   text-wrap: balance;
 }
@@ -625,11 +626,11 @@ ul { list-style: none; }
 }
 
 .hero-headline {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--display);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -.035em;
+  font-weight: 200;
+  line-height: 1.15;
+  letter-spacing: -.01em;
   color: var(--ink);
   margin-bottom: 2rem;
 }
@@ -667,11 +668,12 @@ ul { list-style: none; }
   gap: .5rem;
   border-radius: 999px;
   border: 1px solid rgba(243,239,230,.55);
-  padding: 1.05rem 2.3rem;
+  padding: .9rem 1.8rem;
   font-family: 'Manrope', sans-serif;
-  font-size: .76rem;
+  font-size: .8rem;
   font-weight: 500;
-  letter-spacing: .04em;
+  line-height: 1;
+  letter-spacing: .06em;
   color: #F3EFE6;
   background: transparent;
   transition: background .25s, color .25s, border-color .25s;
@@ -758,7 +760,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   color: var(--ink3);
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-size: 1.1rem;
 }
@@ -779,12 +781,13 @@ ul { list-style: none; }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: .6rem;
-  padding: .85rem 2.2rem;
+  gap: .5rem;
+  padding: .95rem 1.875rem;
   font-family: 'Manrope', sans-serif;
   font-size: .8125rem;
   font-weight: 500;
-  letter-spacing: .12em;
+  line-height: 1;
+  letter-spacing: .07em;
   text-transform: uppercase;
   border: 1px solid;
   border-radius: 999px;
@@ -814,11 +817,11 @@ ul { list-style: none; }
 
 /* Refined variant — smaller, thinner border, tighter tracking, subtle arrow nudge */
 .btn-refined {
-  padding: .95rem 2.2rem;
+  padding: .95rem 2rem;
   border-width: 1px;
-  font-size: .82rem;
-  letter-spacing: .1em;
-  gap: .55rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  gap: .5rem;
 }
 .btn-arrow {
   display: inline-block;
@@ -862,9 +865,9 @@ ul { list-style: none; }
 }
 .statement-quote { margin: 0; }
 .statement-band p, .statement-quote {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   line-height: 1.4;
   max-width: 800px;
@@ -908,9 +911,9 @@ ul { list-style: none; }
   align-items: start;
 }
 .premise-accent {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -.01em;
@@ -967,13 +970,16 @@ ul { list-style: none; }
 .premise--centered { text-align: center; }
 .premise-centered { max-width: 700px; margin-inline: auto; }
 .premise-centered-title {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -.01em;
   color: var(--ink);
   margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-inline: auto;
+  text-align: left;
 }
 .premise-lede {
   font-family: 'Manrope', sans-serif;
@@ -1009,16 +1015,17 @@ ul { list-style: none; }
   transform: translate(-50%, -50%);
   pointer-events: none;
   color: var(--accent);
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
 }
 .pull-quote blockquote {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.5rem, 2.2vw, 2.0rem);
-  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+  font-weight: 200;
   font-style: normal;
+  letter-spacing: -.015em;
   line-height: 1.5;
   color: var(--ink);
-  max-width: 900px;
+  max-width: 800px;
   margin-inline: auto;
   position: relative;
   z-index: 1;
@@ -1091,9 +1098,9 @@ ul { list-style: none; }
   background: transparent;
 }
 .teaser-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--accent);
   line-height: 1;
@@ -1103,11 +1110,11 @@ ul { list-style: none; }
 }
 .teaser-card:hover .teaser-num { opacity: 1; }
 .teaser-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.25;
-  letter-spacing: -.015em;
+  letter-spacing: -.01em;
   color: var(--ink);
 }
 .teaser-body { color: var(--ink2); font-size: .9rem; line-height: 1.65; flex: 1; }
@@ -1177,9 +1184,9 @@ ul { list-style: none; }
   z-index: 1;
 }
 .page-hero-mark {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 9rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--rule);
   line-height: 1;
   letter-spacing: -.05em;
@@ -1237,18 +1244,18 @@ ul { list-style: none; }
 }
 .prose p + p { margin-top: 1.6em; }
 .prose h2 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   margin-top: 2.5em;
   margin-bottom: .75em;
   letter-spacing: -.015em;
 }
 .prose h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   margin-top: 2em;
   margin-bottom: .5em;
@@ -1257,9 +1264,9 @@ ul { list-style: none; }
 .prose strong { color: var(--ink); font-weight: 600; }
 .prose em { font-style: normal; }
 .prose .pull {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--ink2);
   border-left: 2px solid var(--accent);
@@ -1284,14 +1291,14 @@ ul { list-style: none; }
   gap: 1.1rem;
 }
 .cred-icon {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 2.6rem;
   color: var(--accent);
 }
 .cred-label {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.55rem;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   letter-spacing: .01em;
   text-transform: none;
@@ -1331,9 +1338,9 @@ ul { list-style: none; }
   content: attr(data-num);
   position: absolute;
   top: -1rem; right: 1.5rem;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 6rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--rule);
   line-height: 1;
   transition: color .3s;
@@ -1347,9 +1354,9 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 .pillar-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.3rem, 2vw, 1.8rem);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -1380,9 +1387,9 @@ ul { list-style: none; }
 }
 .svc-anchor-link:hover { color: var(--ink); }
 .svc-anchor-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.35em;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0;
   text-transform: none;
   margin-right: .3em;
@@ -1402,18 +1409,19 @@ ul { list-style: none; }
 }
 .svc-sidebar { position: sticky; top: calc(var(--nav-h) + 3rem); }
 .svc-sidebar-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 5rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--rule-strong);
   line-height: 1;
   margin-bottom: 1rem;
 }
 .svc-sidebar-title {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1.15;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -.01em;
   margin-bottom: 1.5rem;
 }
 .svc-sidebar-tag {
@@ -1428,9 +1436,9 @@ ul { list-style: none; }
 .svc-content { color: var(--ink2); font-size: 1rem; line-height: 1.65; letter-spacing: -.01em; max-width: 700px; }
 .svc-content p + p { margin-top: 1.6em; }
 .svc-content h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   margin-top: 2em;
   margin-bottom: .5em;
@@ -1460,10 +1468,10 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 .svc-content h3.series-heading {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   line-height: 1.25;
   padding-bottom: .8rem;
@@ -1630,7 +1638,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   color: var(--ink3);
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
 }
 
@@ -1651,9 +1659,9 @@ ul { list-style: none; }
   padding: 0;
 }
 .about-cred-list li {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.5;
   color: var(--ink2);
   padding-left: 1.25rem;
@@ -1690,16 +1698,18 @@ ul { list-style: none; }
 }
 .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
 .contact-headline {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -.01em;
   color: var(--ink);
+  max-width: 680px;
+  margin-inline: auto;
 }
 .contact-headline em { font-style: normal; color: var(--accent); }
 .contact-email {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.2rem;
   font-style: normal;
   color: var(--accent);
@@ -1734,9 +1744,9 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: .65rem;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 200;
 }
 .foot-logo { height: 22px; width: auto; display: block; }
 .foot-copy {
@@ -1784,9 +1794,9 @@ ul { list-style: none; }
 
 /* Gold section markers — refined breathing room + hairline */
 .phil-marker {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.35;
   letter-spacing: .015em;
   color: var(--accent);
@@ -1905,17 +1915,17 @@ ul { list-style: none; }
 }
 .method-dim:hover { background: var(--bg2); }
 .method-dim-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--accent);
   line-height: 1;
   padding-top: .2rem;
 }
 .method-dim-body h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   line-height: 1.3;
   color: var(--ink);
@@ -1975,9 +1985,9 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 .lm-headline {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.2;
   color: var(--ink);
   margin-bottom: .75rem;
@@ -2013,9 +2023,9 @@ ul { list-style: none; }
 }
 .lm-success { display: none; text-align: center; }
 .lm-success h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--accent);
   margin-bottom: .75rem;
@@ -2078,10 +2088,10 @@ ul { list-style: none; }
 .cf-success,
 [data-fs-success] {
   display: none;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   margin-top: 2rem;
   line-height: 1.5;
@@ -2180,9 +2190,9 @@ ul { list-style: none; }
 
 /* ── Heading sizes — keep original t-h2, no drama override */
 .t-h2--drama {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: var(--h2);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.01em;
 }
@@ -2280,7 +2290,7 @@ ul { list-style: none; }
   transform: rotate(45deg);
 }
 .method-seal-text {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-size: .9rem;
   color: var(--ink3);
@@ -2308,18 +2318,18 @@ ul { list-style: none; }
 }
 .dim-card:hover { background: var(--bg2); }
 .dim-card-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--accent);
   line-height: 1;
   font-style: normal;
   text-align: center;
 }
 .dim-card-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(.95rem, 1.2vw, 1.1rem);
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   line-height: 1.35;
   text-align: center;
@@ -2420,17 +2430,17 @@ ul { list-style: none; }
   transform: scale(1.05);
 }
 .dfc-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.1rem, 1.8vw, 1.7rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--accent);
   line-height: 1;
 }
 .dfc-label {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(.78rem, .95vw, .95rem);
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink2);
   text-align: center;
   line-height: 1.45;
@@ -2540,10 +2550,11 @@ ul { list-style: none; }
   display: block;
 }
 .founder-note-heading {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 200;
   line-height: 1.2;
+  letter-spacing: -.01em;
   color: var(--ink);
   font-style: normal;
 }
@@ -2640,19 +2651,19 @@ ul { list-style: none; }
   .framework-badge .dark-band-eyebrow { font-size: .62rem; letter-spacing: .12em; }
 }
 .dark-band-quote {
-  font-family: 'Bodoni Moda', serif;
-  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
   font-size: clamp(1.4rem, 2.6vw, 2rem);
   line-height: 1.55;
-  letter-spacing: -.015em;
+  letter-spacing: -.01em;
   color: #E6E1D9;
 }
 .dark-band-heading {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -.025em;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -.01em;
   color: #E6E1D9;
 }
 .dark-band-heading .premise-underline::after { content: none; }
@@ -2782,7 +2793,7 @@ ul { list-style: none; }
 .faq-q:hover { color: var(--accent); }
 .faq-q-text { display: flex; align-items: baseline; gap: .9rem; }
 .faq-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-size: 1.15rem;
   color: var(--accent);
@@ -2918,9 +2929,9 @@ ul { list-style: none; }
   color: var(--ink3);
 }
 .insight-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   line-height: 1.35;
 }
@@ -2997,17 +3008,17 @@ ul { list-style: none; }
 .hwb-step--anim[data-hwb="3"] { transition-delay: .3s; }
 .hwb-step--anim[data-hwb="4"] { transition-delay: .45s; }
 .hwb-step-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 2.2rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--accent);
   line-height: 1;
   font-style: normal;
 }
 .hwb-step-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1rem, 1.3vw, 1.15rem);
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   line-height: 1.3;
   margin-bottom: .75rem;
@@ -3151,11 +3162,11 @@ ul { list-style: none; }
   margin-bottom: 1.25rem;
 }
 .featured-essay-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
-  letter-spacing: -.015em;
+  letter-spacing: -.01em;
   color: var(--ink);
   line-height: 1.3;
   margin-bottom: .9rem;
@@ -3193,10 +3204,11 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .newsletter-heading {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 200;
   font-style: normal;
+  letter-spacing: -.01em;
   color: var(--ink);
   margin-bottom: .75rem;
 }
@@ -3211,9 +3223,9 @@ ul { list-style: none; }
   margin-inline: auto;
 }
 .newsletter-band h3 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--ink);
   margin-bottom: .75rem;
@@ -3262,19 +3274,20 @@ ul { list-style: none; }
   letter-spacing: .04em;
 }
 .article-title {
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2rem, 4.4vw, 3.75rem);
-  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-weight: 200;
   line-height: 1.15;
   color: var(--ink);
   margin-bottom: 2.5rem;
   padding-bottom: .25rem;
-  letter-spacing: -.035em;
+  letter-spacing: -.01em;
+  max-width: 760px;
 }
 .article-subtitle {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   color: var(--ink2);
   line-height: 1.6;
@@ -3318,11 +3331,11 @@ ul { list-style: none; }
 .article-prose p + p { margin-top: 1.6em; }
 .article-prose strong { font-weight: 600; }
 .article-prose em { font-style: normal; }
-.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: 1.4rem; font-weight: 400; font-family: 'Bodoni Moda', serif; }
+.article-prose h2 { margin-top: 2.5rem; margin-bottom: .5rem; font-size: 1.4rem; font-weight: 200; font-family: 'Manrope', sans-serif; }
 .article-pull {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   line-height: 1.55;
   color: var(--ink);
@@ -3346,9 +3359,9 @@ ul { list-style: none; }
   line-height: 1.8;
 }
 .article-author-name {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--ink);
   margin-bottom: .5rem;
 }
@@ -3377,7 +3390,7 @@ ul { list-style: none; }
 .newsletter-input:focus { border-color: var(--accent); }
 .newsletter-success {
   display: none;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   color: var(--accent);
   font-size: 1rem;
@@ -3505,8 +3518,8 @@ ul { list-style: none; }
   .about-ticker-inner { display: inline-block !important; white-space: nowrap; animation: ticker 28s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   /* Larger, more commanding headline on mobile */
-  .hero-headline { font-size: clamp(2.2rem, 9vw, 2.75rem) !important; line-height: 1.12; margin-bottom: 1.25rem !important; }
-  .hero-headline--oneline { font-size: clamp(2rem, 8.5vw, 2.5rem) !important; line-height: 1.18; }
+  .hero-headline { font-size: clamp(1.9rem, 8vw, 2.4rem) !important; line-height: 1.18; margin-bottom: 1.25rem !important; }
+  .hero-headline--oneline { font-size: clamp(1.8rem, 7.5vw, 2.2rem) !important; line-height: 1.2; }
   /* More comfortable subtext */
   .hero-sub { font-size: .85rem; line-height: 1.9; margin-bottom: 3rem !important; }
   /* Philosophy page h1 — smaller so line 1 fits, hide desktop br, show mobile br */
@@ -3562,8 +3575,8 @@ ul { list-style: none; }
   .foot-copy { text-align: center; }
 
   /* ── TYPOGRAPHY ── */
-  .article-title { font-size: clamp(1.5rem, 6vw, 2.1rem); }
-  .contact-headline { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .article-title { font-size: clamp(1.4rem, 5.5vw, 1.9rem); }
+  .contact-headline { font-size: clamp(1.4rem, 4.5vw, 1.8rem); }
   .statement-band p, .statement-quote { font-size: clamp(1.4rem, 5vw, 2rem); }
   .pull { font-size: clamp(1.1rem, 4vw, 1.4rem); padding-left: 1.25rem; }
   .t-h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
