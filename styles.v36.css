@@ -775,7 +775,9 @@ ul { list-style: none; }
       linear-gradient(to top, var(--bg) 0%, transparent 18%),
       linear-gradient(to right, var(--bg) 0%, color-mix(in srgb, var(--bg) 70%, transparent) 50%, transparent 80%);
   }
-  .hero-scroll { display: none; }
+  .hero-scroll { bottom: .9rem; opacity: .45; }
+  .hero-scroll span { font-size: .62rem; }
+  .hero-scroll-line { height: 28px; }
 }
 
 /* ── BUTTONS ─────────────────────────────────────────── */
@@ -995,6 +997,13 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .premise-inner { grid-template-columns: 1fr; }
+  .premise-body { font-size: .9rem; line-height: 1.8; }
+  .premise-centered-title { margin-bottom: 1.75rem; }
+  .prose-section .prose > p { font-size: .9rem; line-height: 1.8; }
+  #on-high-performance .dark-band-body { font-size: .9rem !important; line-height: 1.8; text-align: left !important; }
+  #retainer-engagements .dark-band-body { font-size: .9rem; line-height: 1.8; text-align: center; margin-inline: auto; }
+  #advisory .svc-detail-inner { gap: 1.5rem; }
+  #advisory .svc-sidebar-title { margin-bottom: 0; }
 }
 
 /* ── PULL QUOTE ──────────────────────────────────────── */
@@ -1443,8 +1452,9 @@ ul { list-style: none; }
   .svc-nav-item:nth-child(2) { border-left: 1px solid var(--rule); }
   .svc-nav-item:nth-child(3) { border-left: none; border-top: 1px solid var(--rule); }
   .svc-nav-item:nth-child(4) { border-top: 1px solid var(--rule); }
-  .svc-nav-item { padding-block: 1.5rem; }
-  .svc-nav-label { font-size: .72rem; }
+  .svc-nav-item { padding-block: 1.75rem; }
+  .svc-nav-label { font-size: .92rem; letter-spacing: .04em; line-height: 1.35; }
+  .svc-nav-num { font-size: 1rem; }
 }
 
 .svc-detail {
@@ -3581,8 +3591,6 @@ ul { list-style: none; }
   .philosophy-h1 { font-size: 1.75rem !important; line-height: 1.15; }
   .about-h1 { font-size: 1.95rem !important; line-height: 1.2; }
   .d-br { display: none; }
-  /* Hide scroll indicator — doesn't apply in stacked mobile layout */
-  .hero-scroll { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .hero-actions .btn { width: auto; }
 
