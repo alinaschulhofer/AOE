@@ -2287,7 +2287,6 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.4rem;
   padding-block: clamp(.75rem, 1.5vw, 1.25rem);
   position: relative;
 }
@@ -2301,14 +2300,6 @@ ul { list-style: none; }
 }
 .gold-ornament::after {
   background: linear-gradient(270deg, transparent, rgba(90,82,72,.6));
-}
-.gold-ornament-mark {
-  width: 7px;
-  height: 7px;
-  background: var(--accent);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-  box-shadow: 0 0 0 2px rgba(90,82,72,.18);
 }
 
 /* ── Method dim — staggered slide only, no left line ─── */
@@ -3646,6 +3637,7 @@ ul { list-style: none; }
   .premise { padding-top: 2.5rem !important; }
   .premise-accent { margin-top: 0 !important; font-size: clamp(1.5rem, 5vw, 2rem); }
   .premise-inner { grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
+  #common-challenges .premise-body { margin-top: 1rem; }
 
   /* ── FOOTER ── */
   .foot-top { flex-direction: column; align-items: center; text-align: center; }
