@@ -125,6 +125,10 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--accent);
 }
+.svc-content .t-eyebrow {
+  font-weight: 700;
+  color: var(--ink);
+}
 
 .t-italic { font-style: normal; }
 
