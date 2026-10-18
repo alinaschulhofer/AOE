@@ -968,7 +968,7 @@ ul { list-style: none; }
 
 /* ── Premise, centered variant ───────────────────────── */
 .premise--centered { text-align: center; }
-.premise-centered { max-width: 700px; margin-inline: auto; }
+.premise-centered { max-width: 780px; margin-inline: auto; }
 .premise-centered-title {
   font-family: 'Manrope', sans-serif;
   font-size: clamp(1.6rem, 2.6vw, 2.25rem);
@@ -977,8 +977,6 @@ ul { list-style: none; }
   letter-spacing: -.01em;
   color: var(--ink);
   margin-bottom: 1.5rem;
-  max-width: 700px;
-  margin-inline: auto;
   text-align: left;
 }
 .premise-lede {
@@ -992,7 +990,7 @@ ul { list-style: none; }
   margin-inline: auto;
   margin-bottom: 1.5rem;
 }
-.premise-centered .premise-body { max-width: 700px; margin-inline: auto; text-align: left; }
+.premise-centered .premise-body { text-align: left; }
 
 @media (max-width: 768px) {
   .premise-inner { grid-template-columns: 1fr; }
