@@ -3,6 +3,7 @@
 //
 //   node export.js              -> all concepts
 //   node export.js concept-2    -> only files whose name starts with "concept-2"
+//   node export.js final        -> the final, refined ad
 //
 // Requires Playwright (npm i -D playwright, or a global install).
 const { chromium } = require('playwright');
@@ -24,10 +25,14 @@ const FORMATS = {
 
   const browser = await chromium.launch();
   for (const file of concepts) {
+    const html = fs.readFileSync(path.join(dir, file), 'utf8');
     // Concepts that style body[data-theme="dark"] also get a dark export.
-    const themes = fs.readFileSync(path.join(dir, file), 'utf8').includes('data-theme="dark"') ? ['', 'dark'] : [''];
+    const themes = html.includes('data-theme="dark"') ? ['', 'dark'] : [''];
+    // <meta name="ad-formats" content="v,a4"> limits which formats a file exports.
+    const only = (html.match(/<meta name="ad-formats" content="([^"]+)"/) || [])[1];
+    const formats = Object.entries(FORMATS).filter(([key]) => !only || only.split(',').includes(key));
     for (const theme of themes)
-    for (const [key, fmt] of Object.entries(FORMATS)) {
+    for (const [key, fmt] of formats) {
       const page = await browser.newPage({ deviceScaleFactor: 3 });
       await page.goto('file://' + path.join(dir, file) + '?format=' + key + (theme ? '&theme=' + theme : ''));
       await page.evaluate(() => document.fonts.ready);

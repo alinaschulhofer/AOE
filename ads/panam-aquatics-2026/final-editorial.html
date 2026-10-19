@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="ad-formats" content="v,a4" />
+<title>AOE · Final — Editorial</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  /* Final — Editorial refinement of Concept 2 (dark).
+     Portrait 148 × 210 mm; exported to A4 by scaling (see format.js). */
+  .fe {
+    --bg:      #1C1C1A;
+    --ivory:   #F0EDE7;
+    --gray:    #B4AEA6;
+    --line:    #494742;   /* architectural motif */
+    --divider: #383734;   /* hairline rules */
+    --m: 13mm;            /* outer margin */
+
+    background: var(--bg);
+    color: var(--ivory);
+    padding: 13mm var(--m) 11mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .fe > * { position: relative; z-index: 1; }
+
+  /* Architectural signature: one compass figure on the right edge */
+  .fe .motif { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .fe .motif svg { width: 100%; height: 100%; display: block; }
+
+  /* 1 · Brand + headline */
+  .fe .masthead { display: flex; justify-content: flex-end; }
+  .fe .lockup { width: 27mm; }
+  .fe .headline {
+    margin-top: 7mm;
+    font-size: 29pt;
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -.022em;
+  }
+  .fe .headline .l1 { display: block; color: var(--gray); }
+  .fe .headline .l2 { display: block; color: var(--ivory); }
+
+  /* 2 · Introduction: two short paragraphs at a reading measure */
+  .fe .intro { margin-top: 7.5mm; max-width: 84mm; }
+  .fe .intro p { font-size: 8.4pt; font-weight: 300; line-height: 1.62; letter-spacing: .003em; text-wrap: pretty; }
+  .fe .intro p + p { margin-top: 2.6mm; }
+  .fe .intro .lead { color: var(--ivory); }
+  .fe .intro .follow { color: var(--gray); }
+  .fe .intro .follow b { font-weight: 400; color: var(--ivory); }
+
+  /* 3 · Services: editorial index */
+  .fe .services { margin-top: auto; border-top: .25pt solid var(--divider); }
+  .fe .svc { padding: 3.6mm 0 3.8mm; border-bottom: .25pt solid var(--divider); }
+  .fe .svc-head {
+    font-size: 7.6pt;
+    font-weight: 400;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    line-height: 1;
+  }
+  .fe .svc-head .num { color: var(--gray); letter-spacing: .06em; }
+  .fe .svc-head .sep { color: var(--line); margin: 0 .55em 0 .45em; letter-spacing: 0; }
+  .fe .svc-text {
+    margin-top: 2mm;
+    max-width: 104mm;
+    font-size: 7.4pt;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--gray);
+    text-wrap: pretty;
+  }
+
+  /* 4 · Call to action (left) and founder (right) */
+  .fe .foot {
+    margin-top: 8mm;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 8mm;
+  }
+  .fe .cta-label {
+    display: block;
+    font-size: 6.2pt;
+    font-weight: 400;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1.8mm;
+  }
+  .fe .url { font-size: 10.6pt; font-weight: 400; letter-spacing: .005em; color: var(--ivory); line-height: 1; }
+  .fe .founder { text-align: right; font-size: 7pt; line-height: 1.5; }
+  .fe .founder .name { display: block; font-weight: 400; color: var(--ivory); }
+  .fe .founder .line { display: block; font-weight: 300; color: var(--gray); }
+  /* Bottom lines of both blocks share one baseline */
+  .fe .founder .line, .fe .url { padding-bottom: .2mm; }
+</style>
+</head>
+<body>
+<article class="ad fe">
+
+  <div class="motif" aria-hidden="true">
+    <!-- Compass on the right edge: outer circle, inner circle, axis and tick.
+         Sits beside the introduction and clears the service text. -->
+    <svg viewBox="0 0 148 210" preserveAspectRatio="none" fill="none" stroke="#494742">
+      <circle cx="160" cy="70" r="44" stroke-width=".2" />
+      <circle cx="160" cy="70" r="29" stroke-width=".14" stroke-dasharray=".5 1.1" />
+      <line x1="106" y1="70" x2="148" y2="70" stroke-width=".14" />
+      <line x1="116" y1="68" x2="116" y2="72" stroke-width=".2" />
+      <circle cx="116" cy="70" r=".5" fill="#494742" stroke="none" />
+    </svg>
+  </div>
+
+  <header class="masthead">
+    <img class="lockup" src="assets/aoe-lockup-warm-ivory.png" alt="Architecture of Excellence™" />
+  </header>
+
+  <h1 class="headline">
+    <span class="l1">Performance is visible.</span>
+    <span class="l2">Its architecture is not.</span>
+  </h1>
+
+  <div class="intro">
+    <p class="lead">Behind every result lies a deeper architecture — the psychological and relational patterns within individuals and systems that determine whether excellence is healthy and sustainable.</p>
+    <p class="follow"><b>Architecture of Excellence™</b> brings psychological depth to high performance, leadership, and organizational development in business, sport, and beyond.</p>
+  </div>
+
+  <section class="services">
+    <div class="svc">
+      <h2 class="svc-head"><span class="num">01</span><span class="sep">/</span>Organizational Consulting</h2>
+      <p class="svc-text">Assessment-led engagements addressing organizational culture, leadership, alignment, conflict, and change, including the development of mental health and performance programs.</p>
+    </div>
+    <div class="svc">
+      <h2 class="svc-head"><span class="num">02</span><span class="sep">/</span>Speaking &amp; Education</h2>
+      <p class="svc-text">Keynotes, workshops, and educational experiences that translate psychological insight into practice for organizations, conferences, and leadership teams.</p>
+    </div>
+    <div class="svc">
+      <h2 class="svc-head"><span class="num">03</span><span class="sep">/</span>Private Advisory</h2>
+      <p class="svc-text">Individualized engagements for executives, leaders, and elite athletes, addressing the psychological and relational dimensions of performance, leadership, and personal development.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="cta">
+      <span class="cta-label">Begin the conversation</span>
+      <span class="url">architectureofexcellence.com</span>
+    </div>
+    <p class="founder">
+      <span class="name">Founded by Dr. Alina Schulhofer</span>
+      <span class="line">Bridging psychology and high performance.</span>
+    </p>
+  </footer>
+
+</article>
+<script src="format.js"></script>
+</body>
+</html>

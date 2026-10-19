@@ -28,7 +28,7 @@
 <body>
 <header>
   <h1>Architecture of Excellence™ · PanAm Aquatics half-page</h1>
-  <p>Three concepts built on the live site's identity. Concept 2 (dark) is the selected direction. Toggle the format below; each concept opens on its own for print preview, and PDFs are in <code>export/</code>.</p>
+  <p>Concepts built on the live site's identity. The final editorial version (first) is the selected design; the concepts that led to it follow. Toggle the format below; each concept opens on its own for print preview, and PDFs are in <code>export/</code>.</p>
   <div class="toggle" role="group" aria-label="Format">
     <button data-format="v" aria-pressed="true">Portrait 148 × 210 mm</button>
     <button data-format="h" aria-pressed="false">Horizontal 210 × 148 mm</button>
@@ -37,12 +37,16 @@
 
 <section class="grid">
   <figure>
+    <div class="frame"><iframe data-src="final-editorial.html" title="Final"></iframe></div>
+    <figcaption><b>Final — Editorial</b> (selected)<span>Refinement of Concept 2: larger headline, two-part introduction, one compass motif on the right, and an editorial service index. Portrait and A4 only.</span></figcaption>
+  </figure>
+  <figure>
     <div class="frame"><iframe data-src="concept-1-elevation.html" title="Concept 1"></iframe></div>
     <figcaption><b>Concept 1 — Elevation</b><span>Charcoal ground; three services with architectural line drawings in place of photography.</span></figcaption>
   </figure>
   <figure>
     <div class="frame"><iframe data-src="concept-2-ripple.html" data-theme="dark" title="Concept 2"></iframe></div>
-    <figcaption><b>Concept 2 — Ripple</b> (selected)<span>Typography-led; concentric rings and the site's thin-circle numerals. Also available in ivory.</span></figcaption>
+    <figcaption><b>Concept 2 — Ripple</b><span>Typography-led; concentric rings and the site's thin-circle numerals. Also available in ivory.</span></figcaption>
   </figure>
   <figure>
     <div class="frame"><iframe data-src="concept-3-foundation.html" title="Concept 3"></iframe></div>
@@ -59,7 +63,9 @@
     document.querySelectorAll('.frame').forEach(function (frame) {
       var f = frame.querySelector('iframe');
       frame.style.setProperty('--ratio', format === 'h' ? '210 / 148' : '148 / 210');
-      f.src = f.dataset.src + '?embed=1&format=' + format + (f.dataset.theme ? '&theme=' + f.dataset.theme : '');
+      var fmt = f.dataset.src.indexOf('final') === 0 ? 'v' : format;
+      if (fmt !== format) frame.style.setProperty('--ratio', '148 / 210');
+      f.src = f.dataset.src + '?embed=1&format=' + fmt + (f.dataset.theme ? '&theme=' + f.dataset.theme : '');
     });
   }
   document.querySelectorAll('.toggle button').forEach(function (b) {

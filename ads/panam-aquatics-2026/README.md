@@ -9,12 +9,13 @@ hairline rules, and the thin-circle motif.
 
 | File | Status | Headline |
 |---|---|---|
+| `final-editorial.html` | **Final, selected.** Editorial refinement of Concept 2 (portrait + A4) | Performance is visible. Its architecture is not. |
 | `concept-1-elevation.html` | Alternate | Performance is visible. Its architecture is not. |
-| `concept-2-ripple.html` | **Selected direction**, dark (`?theme=dark`) | Performance is visible. Its architecture is not. |
+| `concept-2-ripple.html` | Basis for the final (dark: `?theme=dark`) | Performance is visible. Its architecture is not. |
 | `concept-3-foundation.html` | Alternate (shared as A4) | The Art and Science of High Performance. |
 
-All three highlight the same services: Speaking & Education · 1:1 Performance & Leadership
-Coaching · Team & Organizational Consulting.
+The final ad lists Organizational Consulting · Speaking & Education · Private Advisory. The earlier
+concepts list Speaking & Education · 1:1 Performance & Leadership Coaching · Team & Organizational Consulting.
 
 ## Preview
 
@@ -31,6 +32,7 @@ Open `index.html` for the gallery (it has a portrait/horizontal toggle), or open
 npm i -D playwright     # or use a global install
 node export.js          # all concepts → export/*.pdf + export/*.png
 node export.js concept-1
+node export.js final    # final ad → portrait + A4 PDFs
 ```
 
 PDFs are vector, at exact trim size, with fonts embedded as TrueType. Fonts are static Manrope
