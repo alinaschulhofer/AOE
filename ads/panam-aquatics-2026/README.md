@@ -11,7 +11,7 @@ hairline rules, and the thin-circle motif.
 |---|---|---|
 | `concept-1-elevation.html` | Alternate | Performance is visible. Its architecture is not. |
 | `concept-2-ripple.html` | **Selected direction**, dark (`?theme=dark`) | Performance is visible. Its architecture is not. |
-| `concept-3-foundation.html` | Alternate | The Art and Science of High Performance. |
+| `concept-3-foundation.html` | Alternate (shared as A4) | The Art and Science of High Performance. |
 
 All three highlight the same services: Speaking & Education · 1:1 Performance & Leadership
 Coaching · Team & Organizational Consulting.
@@ -22,6 +22,7 @@ Open `index.html` for the gallery (it has a portrait/horizontal toggle), or open
 
 - `?format=v`: portrait, 148 × 210 mm (default)
 - `?format=h`: horizontal half page, 210 × 148 mm
+- `?format=a4`: full A4 page, 210 × 297 mm (the portrait layout scaled up; the publisher can resize it)
 - `?theme=dark`: dark variant (Concept 2)
 
 ## Export to PDF

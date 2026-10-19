@@ -51,6 +51,10 @@ body {
 }
 body[data-format="h"] .ad { width: var(--h-w); height: var(--h-h); }
 
+/* A4: the portrait layout scaled to 210 × 297 mm (210/148 = 1.41892).
+   Height is 297/1.41892 so the scaled page lands exactly on A4. */
+body[data-page="a4"] .ad { height: 209.31mm; zoom: 1.41892; }
+
 /* Only one format visible at a time */
 body[data-format="h"] .only-v,
 body[data-format="v"] .only-h { display: none !important; }

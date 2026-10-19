@@ -12,6 +12,7 @@ const path = require('path');
 const FORMATS = {
   h: { width: '210mm', height: '148mm', label: 'horizontal-210x148' },
   v: { width: '148mm', height: '210mm', label: 'portrait-148x210' },
+  a4: { width: '210mm', height: '297mm', label: 'A4-210x297' },
 };
 
 (async () => {
