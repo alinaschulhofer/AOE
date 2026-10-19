@@ -9,7 +9,8 @@ hairline rules, and the thin-circle motif.
 
 | File | Status | Headline |
 |---|---|---|
-| `final-editorial.html` | **Final, selected.** Editorial refinement of Concept 2 (portrait + A4) | Performance is visible. Its architecture is not. |
+| `final-ad.html` | **Final, selected.** Dark Concept 2 layout, no background rings, final copy (portrait + A4) | Performance is visible. Its architecture is not. |
+| `final-editorial.html` | Editorial variant explored on the way to the final (portrait + A4) | Performance is visible. Its architecture is not. |
 | `concept-1-elevation.html` | Alternate | Performance is visible. Its architecture is not. |
 | `concept-2-ripple.html` | Basis for the final (dark: `?theme=dark`) | Performance is visible. Its architecture is not. |
 | `concept-3-foundation.html` | Alternate (shared as A4) | The Art and Science of High Performance. |
@@ -32,7 +33,7 @@ Open `index.html` for the gallery (it has a portrait/horizontal toggle), or open
 npm i -D playwright     # or use a global install
 node export.js          # all concepts → export/*.pdf + export/*.png
 node export.js concept-1
-node export.js final    # final ad → portrait + A4 PDFs
+node export.js final-ad # final ad → portrait + A4 PDFs
 ```
 
 PDFs are vector, at exact trim size, with fonts embedded as TrueType. Fonts are static Manrope

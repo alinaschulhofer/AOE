@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="ad-formats" content="v,a4" />
+<title>AOE · Final ad</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  /* Final ad — the dark Concept 2 layout without background rings,
+     with the final copy. Portrait 148 × 210 mm; A4 via ?format=a4. */
+  .fa {
+    --fg: var(--on-dark); --fg2: var(--on-dark-2); --rule: var(--rule-dark); --ring: rgba(243,239,230,.45);
+    background: var(--char);
+    color: var(--fg);
+    padding: 11mm 11mm 9mm;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .fa .top { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: start; }
+  .fa .lockup { width: 30mm; margin-top: .6mm; }
+  .fa .headline { font-size: 23pt; }
+  .fa .headline .muted { color: var(--fg2); }
+
+  .fa .lede { margin-top: 14mm; font-size: 8.4pt; color: var(--fg2); max-width: 104mm; text-wrap: pretty; }
+  .fa .lede strong { font-weight: 500; color: var(--fg); }
+
+  /* Services sit centred in the space between the introduction and the footer */
+  .fa .services { align-self: center; margin-block: 6mm; }
+  .fa .svc { display: grid; grid-template-columns: 15mm 1fr; gap: 5.5mm; align-items: center; padding-block: 6.5mm; }
+  .fa .svc + .svc { border-top: .25pt solid var(--rule); }
+  .fa .ring {
+    width: 15mm; height: 15mm; border-radius: 50%;
+    border: .5pt solid var(--ring);
+    display: grid; place-items: center;
+    font-size: 10pt; color: var(--fg2);
+  }
+  .fa .svc-title { font-size: 12pt; margin-bottom: 1.3mm; }
+  .fa .svc-text { font-size: 7.9pt; color: var(--fg2); text-wrap: pretty; }
+
+  .fa .foot {
+    padding-top: 4.5mm;
+    border-top: .25pt solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center; gap: 6mm;
+  }
+  .fa .cta .eyebrow { color: var(--fg2); display: block; margin-bottom: 1mm; }
+  .fa .url { font-size: 10pt; font-weight: 400; letter-spacing: -.005em; }
+  .fa .credit { font-size: 6.6pt; font-weight: 300; color: var(--fg2); line-height: 1.5; text-align: right; }
+  .fa .credit b { font-weight: 500; color: var(--fg); }
+</style>
+</head>
+<body>
+<article class="ad fa">
+
+  <header class="top">
+    <h1 class="headline">
+      <span class="muted">Performance is visible.</span><br />
+      Its architecture is not.
+    </h1>
+    <img class="lockup" src="assets/aoe-lockup-ivory.png" alt="Architecture of Excellence™" />
+  </header>
+
+  <p class="lede">
+    The psychological and relational patterns within individuals and systems determine whether
+    excellence is sustainable. <strong>Architecture of Excellence™</strong> brings psychological depth
+    to high performance, leadership, and organizational development in business, sport, and beyond.
+  </p>
+
+  <section class="services">
+    <div class="svc">
+      <div class="ring numeral">01</div>
+      <div>
+        <h2 class="svc-title">Organizational Consulting</h2>
+        <p class="svc-text">Assessment-led engagements addressing organizational culture, leadership, alignment, conflict, and change, including the development of mental health and performance programs.</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="ring numeral">02</div>
+      <div>
+        <h2 class="svc-title">Speaking &amp; Education</h2>
+        <p class="svc-text">Keynotes, workshops, and educational experiences that translate psychological insight into practice for organizations, conferences, and leadership teams.</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="ring numeral">03</div>
+      <div>
+        <h2 class="svc-title">Private Advisory</h2>
+        <p class="svc-text">Individualized engagements for executives, leaders, and elite athletes, addressing the psychological and relational dimensions of performance, leadership, and personal development.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="cta">
+      <span class="eyebrow">Begin the conversation</span>
+      <span class="url">architectureofexcellence.com</span>
+    </div>
+    <p class="credit"><b>Founded by Dr. Alina Schulhofer</b><br />Bridging psychology and high performance.</p>
+  </footer>
+
+</article>
+<script src="format.js"></script>
+</body>
+</html>
