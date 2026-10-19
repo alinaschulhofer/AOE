@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AOE · Concept 1 — Elevation</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  /* Concept 1 — Elevation
+     Charcoal ground, lockup in the corner, three services with
+     architectural line drawings in place of photography. */
+  .c1 {
+    background: var(--char);
+    color: var(--on-dark);
+    padding: 11mm 11mm 9mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c1 .top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 6mm;
+  }
+  .c1 .lockup { width: 31mm; margin-top: .6mm; }
+  .c1 .headline { font-size: 22pt; }
+  .c1 .headline .muted { color: var(--on-dark-2); }
+  .c1 .lede {
+    margin-top: 5mm;
+    font-size: 8pt;
+    color: var(--on-dark-2);
+    max-width: 104mm;
+  }
+  .c1 .lede strong { font-weight: 400; color: var(--on-dark); }
+
+  .c1 .services { margin-top: 7mm; flex: 1; display: flex; flex-direction: column; }
+  .c1 .svc { display: grid; grid-template-columns: 54mm 1fr; gap: 6mm; align-items: center; flex: 1; min-height: 0; padding-block: 3mm; }
+  .c1 .svc + .svc { border-top: .25pt solid var(--rule-dark); }
+  .c1 .svc:nth-child(2) { grid-template-columns: 1fr 54mm; }
+  .c1 .svc:nth-child(2) .panel { order: 2; }
+  .c1 .panel {
+    height: 100%;
+    border-radius: 2.5mm;
+    background: var(--char-2);
+    color: var(--on-dark);
+    overflow: hidden;
+  }
+  .c1 .panel svg { display: block; width: 100%; height: 100%; }
+  .c1 .eyebrow { color: var(--on-dark-2); margin-bottom: 1.6mm; }
+  .c1 .svc-title { font-size: 11pt; margin-bottom: 1.6mm; }
+  .c1 .svc-text { font-size: 7.3pt; color: var(--on-dark-2); }
+
+  .c1 .foot {
+    margin-top: 4mm;
+    padding-top: 4.5mm;
+    border-top: .25pt solid var(--rule-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6mm;
+  }
+  .c1 .credit { flex: 1; min-width: 0; font-size: 6.6pt; font-weight: 300; color: var(--on-dark-2); line-height: 1.5; }
+  .c1 .credit b { font-weight: 400; color: var(--on-dark); }
+  .c1 .cta { display: flex; align-items: center; gap: 3mm; white-space: nowrap; }
+  .c1 .cta .eyebrow { margin: 0; }
+  .c1 .pill {
+    border: .5pt solid var(--on-dark);
+    border-radius: 99mm;
+    padding: 1.7mm 4.2mm;
+    font-size: 7.6pt;
+    font-weight: 400;
+    letter-spacing: .02em;
+  }
+
+  /* Horizontal half page: services become three columns */
+  body[data-format="h"] .c1 { padding: 9mm 10mm 7.5mm; }
+  body[data-format="h"] .c1 .headline { font-size: 21pt; }
+  body[data-format="h"] .c1 .lockup { width: 29mm; }
+  body[data-format="h"] .c1 .lede { margin-top: 3.5mm; max-width: 132mm; font-size: 7.8pt; }
+  body[data-format="h"] .c1 .services { margin-top: 6mm; flex-direction: row; gap: 6mm; }
+  body[data-format="h"] .c1 .svc,
+  body[data-format="h"] .c1 .svc:nth-child(2) {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 3.2mm;
+    padding: 0;
+    border: 0;
+  }
+  body[data-format="h"] .c1 .svc:nth-child(2) .panel { order: 0; }
+  body[data-format="h"] .c1 .panel { min-height: 0; height: 100%; }
+  body[data-format="h"] .c1 .svc-title { font-size: 10pt; }
+  body[data-format="h"] .c1 .svc-text { font-size: 7pt; }
+  body[data-format="h"] .c1 .foot { margin-top: 6mm; padding-top: 3.8mm; }
+  body[data-format="v"] .c1 .cta .eyebrow { display: none; }
+</style>
+</head>
+<body>
+<article class="ad c1">
+
+  <header class="top">
+    <h1 class="headline">
+      <span class="muted">Performance is visible.</span><br />
+      Its architecture is not.
+    </h1>
+    <img class="lockup" src="assets/aoe-lockup-ivory.png" alt="Architecture of Excellence™" />
+  </header>
+
+  <p class="lede">
+    Behind every result lies a deeper architecture — the patterns, relationships, and systems
+    that determine whether excellence is healthy and sustainable. <strong>Architecture of Excellence™</strong>
+    brings psychological depth to high performance, leadership, and organizational development
+    in business, sport, and beyond.
+  </p>
+
+  <section class="services">
+
+    <div class="svc">
+      <div class="panel" aria-hidden="true">
+        <!-- Speaking & Education: concentric rings radiating from a single point -->
+        <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor">
+          <g stroke-width=".9">
+            <circle cx="150" cy="104" r="9"   opacity=".9" />
+            <circle cx="150" cy="104" r="22"  opacity=".8" />
+            <circle cx="150" cy="104" r="38"  opacity=".68" />
+            <circle cx="150" cy="104" r="58"  opacity=".55" />
+            <circle cx="150" cy="104" r="82"  opacity=".42" />
+            <circle cx="150" cy="104" r="110" opacity=".3" />
+            <circle cx="150" cy="104" r="142" opacity=".2" />
+          </g>
+          <line x1="0" y1="104" x2="300" y2="104" stroke-width=".6" opacity=".3" />
+          <circle cx="150" cy="104" r="1.8" fill="currentColor" stroke="none" />
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">I</p>
+        <h2 class="svc-title">Speaking &amp; Education</h2>
+        <p class="svc-text">Keynotes, workshops, and signature series that translate psychological insight into practice for organizations, conferences, and leadership teams.</p>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="panel" aria-hidden="true">
+        <!-- 1:1 Coaching: an arch on its columns, with an inscribed circle -->
+        <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor">
+          <g stroke-width=".9" opacity=".85">
+            <path d="M92 200 V104 A58 58 0 0 1 208 104 V200" />
+            <path d="M108 200 V106 A42 42 0 0 1 192 106 V200" />
+          </g>
+          <circle cx="150" cy="106" r="22" stroke-width=".7" opacity=".55" />
+          <g stroke-width=".6" opacity=".35">
+            <line x1="40" y1="70" x2="40" y2="200" /><line x1="56" y1="70" x2="56" y2="200" />
+            <line x1="244" y1="70" x2="244" y2="200" /><line x1="260" y1="70" x2="260" y2="200" />
+            <line x1="20" y1="70" x2="280" y2="70" stroke-dasharray="2 3" />
+            <line x1="0" y1="176" x2="300" y2="176" />
+            <line x1="150" y1="20" x2="150" y2="200" stroke-dasharray="2 3" />
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">II</p>
+        <h2 class="svc-title">1:1 Performance &amp; Leadership Coaching</h2>
+        <p class="svc-text">Private engagements for executives, leaders, and elite athletes, addressing the patterns, pressures, and relationships that shape how they perform and lead.</p>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="panel" aria-hidden="true">
+        <!-- Team & Organizational: three intersecting circles -->
+        <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor">
+          <g stroke-width=".9" opacity=".85">
+            <circle cx="122" cy="116" r="52" />
+            <circle cx="178" cy="116" r="52" />
+            <circle cx="150" cy="68" r="52" />
+          </g>
+          <g stroke-width=".6" opacity=".35" stroke-dasharray="2 3">
+            <path d="M122 116 L178 116 L150 68 Z" />
+          </g>
+          <line x1="0" y1="168" x2="300" y2="168" stroke-width=".6" opacity=".3" />
+          <g fill="currentColor" stroke="none">
+            <circle cx="122" cy="116" r="1.8" /><circle cx="178" cy="116" r="1.8" /><circle cx="150" cy="68" r="1.8" />
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">III</p>
+        <h2 class="svc-title">Team &amp; Organizational Consulting</h2>
+        <p class="svc-text">Assessment-led engagements on culture, alignment, conflict, and change, including the design of mental health and performance programs.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="foot">
+    <p class="credit"><b>Founded by Dr. Alina Schulhofer</b><br />Licensed psychologist and former elite athlete</p>
+    <div class="cta">
+      <span class="eyebrow">Begin the conversation</span>
+      <span class="pill">architectureofexcellence.com</span>
+    </div>
+  </footer>
+
+</article>
+<script src="format.js"></script>
+</body>
+</html>

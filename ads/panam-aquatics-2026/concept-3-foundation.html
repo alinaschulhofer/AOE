@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AOE · Concept 3 — Foundation</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  /* Concept 3 — Foundation
+     Charcoal ground. The headline sits inside an architect's construction:
+     a compass circle on its axes. Services read as a three-bay plan below. */
+  .c3 {
+    background: var(--char);
+    color: var(--on-dark);
+    padding: 11mm 11mm 9mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c3 .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6mm; }
+  .c3 .top .eyebrow { color: var(--on-dark-2); margin-top: 1mm; line-height: 1.7; }
+  .c3 .lockup { width: 31mm; }
+
+  .c3 .stage { position: relative; height: 92mm; margin-top: 2mm; display: grid; place-items: center; }
+  .c3 .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: var(--on-dark); }
+  .c3 .headline { position: relative; text-align: center; font-size: 24pt; line-height: 1.12; max-width: 76mm; }
+  .c3 .headline .muted { color: var(--on-dark-2); }
+
+  .c3 .lede {
+    margin: 5mm auto 0;
+    text-align: center;
+    font-size: 8pt;
+    color: var(--on-dark-2);
+    max-width: 108mm;
+  }
+  .c3 .lede strong { font-weight: 400; color: var(--on-dark); }
+
+  .c3 .plan {
+    flex: 1;
+    margin-top: 7mm;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: .25pt solid var(--rule-dark);
+    border-bottom: .25pt solid var(--rule-dark);
+  }
+  .c3 .bay { padding: 5mm 3.6mm 4mm; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .c3 .bay + .bay { border-left: .25pt solid var(--rule-dark); }
+  .c3 .bay .numeral { font-size: 8.5pt; color: var(--on-dark-2); margin-bottom: 2.4mm; }
+  .c3 .svc-title { font-size: 9.6pt; margin-bottom: 1.8mm; }
+  .c3 .svc-text { font-size: 7pt; color: var(--on-dark-2); }
+
+  .c3 .foot { margin-top: 5mm; display: flex; justify-content: space-between; align-items: center; gap: 6mm; }
+  .c3 .credit { font-size: 6.6pt; font-weight: 300; color: var(--on-dark-2); line-height: 1.5; }
+  .c3 .credit b { font-weight: 400; color: var(--on-dark); }
+  .c3 .cta { text-align: right; }
+  .c3 .cta .eyebrow { display: block; color: var(--on-dark-2); margin-bottom: 1mm; }
+  .c3 .url { font-size: 10pt; font-weight: 400; letter-spacing: -.005em; }
+
+  /* Horizontal: construction on the left, text column on the right */
+  body[data-format="h"] .c3 {
+    padding: 9mm 10mm 7.5mm;
+    display: grid;
+    grid-template-columns: 92mm 1fr;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 9mm;
+    grid-template-areas: "stage top" "stage body" "stage foot";
+  }
+  body[data-format="h"] .c3 .top { grid-area: top; }
+  body[data-format="h"] .c3 .lockup { width: 27mm; }
+  body[data-format="h"] .c3 .stage { grid-area: stage; height: auto; margin: 0; }
+  body[data-format="h"] .c3 .headline { font-size: 20pt; max-width: 70mm; }
+  body[data-format="h"] .c3 .body { grid-area: body; display: flex; flex-direction: column; justify-content: center; }
+  body[data-format="h"] .c3 .lede { margin: 0; text-align: left; font-size: 7.6pt; max-width: none; }
+  body[data-format="h"] .c3 .plan { flex: none; margin-top: 5mm; grid-template-columns: 1fr; border-bottom: 0; }
+  body[data-format="h"] .c3 .bay {
+    padding: 2.6mm 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 7mm 1fr;
+    align-items: baseline;
+    border-bottom: .25pt solid var(--rule-dark);
+  }
+  body[data-format="h"] .c3 .bay + .bay { border-left: 0; }
+  body[data-format="h"] .c3 .bay .numeral { margin: 0; font-size: 7.5pt; }
+  body[data-format="h"] .c3 .svc-title { font-size: 9pt; margin-bottom: .8mm; }
+  body[data-format="h"] .c3 .svc-text { grid-column: 2; font-size: 6.8pt; }
+  body[data-format="h"] .c3 .foot { grid-area: foot; margin-top: 4mm; }
+  body[data-format="h"] .c3 .url { font-size: 9pt; }
+  /* .body only exists as a layout wrapper in the horizontal grid */
+  body[data-format="v"] .c3 .body { display: contents; }
+</style>
+</head>
+<body>
+<article class="ad c3">
+
+  <header class="top">
+    <p class="eyebrow">Performance · Leadership<br />Organizational Development</p>
+    <img class="lockup" src="assets/aoe-lockup-ivory.png" alt="Architecture of Excellence™" />
+  </header>
+
+  <div class="stage">
+    <!-- Compass construction: circle on its axes, an inner circle, and quadrant ticks.
+         viewBox is square and centred; axes run past the edges to the trim. -->
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" fill="none" stroke="currentColor" aria-hidden="true">
+      <g stroke-width=".22" opacity=".22">
+        <line x1="-40" y1="50" x2="104" y2="50" />
+        <line x1="50" y1="-12" x2="50" y2="112" />
+      </g>
+      <circle cx="50" cy="50" r="49" stroke-width=".3" opacity=".75" />
+      <circle cx="50" cy="50" r="42" stroke-width=".2" opacity=".3" stroke-dasharray=".6 1.2" />
+      <g stroke-width=".3" opacity=".6">
+        <line x1="50" y1="-1.5" x2="50" y2="2.5" /><line x1="50" y1="97.5" x2="50" y2="101.5" />
+        <line x1="-1.5" y1="50" x2="2.5" y2="50" /><line x1="97.5" y1="50" x2="101.5" y2="50" />
+      </g>
+      <g fill="currentColor" stroke="none" opacity=".85">
+        <circle cx="50" cy="1" r=".55" /><circle cx="50" cy="99" r=".55" />
+      </g>
+    </svg>
+    <h1 class="headline">
+      <span class="muted">The Art and Science of</span>
+      High Performance.
+    </h1>
+  </div>
+
+  <div class="body">
+    <p class="lede">
+      The hardest performance problems are rarely about performance. They live in the patterns,
+      relationships, and cultures beneath the result. <strong>Architecture of Excellence™</strong> helps leaders, teams, and organizations
+      build the psychological and relational foundations that sustain excellence,
+      in sport, business, and beyond.
+    </p>
+
+    <section class="plan">
+      <div class="bay">
+        <span class="numeral">I</span>
+        <div>
+          <h2 class="svc-title">Speaking &amp; Education</h2>
+          <p class="svc-text">Keynotes, workshops, and signature series that translate psychological insight into practice.</p>
+        </div>
+      </div>
+      <div class="bay">
+        <span class="numeral">II</span>
+        <div>
+          <h2 class="svc-title">1:1 Performance &amp; Leadership Coaching</h2>
+          <p class="svc-text">Private engagements for executives, leaders, and elite athletes.</p>
+        </div>
+      </div>
+      <div class="bay">
+        <span class="numeral">III</span>
+        <div>
+          <h2 class="svc-title">Team &amp; Organizational Consulting</h2>
+          <p class="svc-text">Culture, alignment, conflict, and change, including mental health and performance program design.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <p class="credit"><b>Founded by Dr. Alina Schulhofer</b><br />Licensed psychologist and former elite athlete</p>
+    <div class="cta">
+      <span class="eyebrow">Begin the conversation</span>
+      <span class="url">architectureofexcellence.com</span>
+    </div>
+  </footer>
+
+</article>
+<script src="format.js"></script>
+</body>
+</html>

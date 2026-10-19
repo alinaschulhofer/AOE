@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AOE · Concept 2 — Ripple</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  /* Concept 2 — Ripple
+     Ivory ground, typography-led. Concentric rings — the site's circle
+     motif, and a quiet nod to water — radiate from beyond the edge.
+     Services carry the site's thin-circle numerals. */
+  .c2 {
+    --fg: var(--ink); --fg2: var(--ink-2); --rule: var(--rule-light); --ring: rgba(89,86,80,.55);
+    background: var(--ivory);
+    color: var(--fg);
+    padding: 11mm 11mm 9mm;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "top" "lede" "svcs" "foot";
+  }
+  .c2 > * { position: relative; z-index: 1; }
+
+  .c2 .rings { position: absolute; inset: 0; z-index: 0; color: var(--fg); pointer-events: none; }
+  .c2 .rings svg { width: 100%; height: 100%; display: block; }
+
+  .c2 .top { grid-area: top; display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: start; }
+  .c2 .lockup { width: 30mm; margin-top: .6mm; }
+  .c2 .headline { font-size: 27pt; }
+  .c2 .headline .sub { display: block; margin-top: 2.6mm; font-size: 11pt; font-weight: 300; letter-spacing: -.005em; color: var(--fg2); }
+
+  .c2 .lede { grid-area: lede; margin-top: 7mm; font-size: 8.4pt; color: var(--fg2); max-width: 104mm; }
+  .c2 .lede strong { font-weight: 500; color: var(--fg); }
+
+  .c2 .services { grid-area: svcs; align-self: end; margin-top: 6mm; }
+  .c2 .svc { display: grid; grid-template-columns: 15mm 1fr; gap: 5.5mm; align-items: center; padding-block: 5mm; }
+  .c2 .svc + .svc { border-top: .25pt solid var(--rule); }
+  .c2 .ring {
+    width: 15mm; height: 15mm; border-radius: 50%;
+    border: .5pt solid var(--ring);
+    display: grid; place-items: center;
+    font-size: 10pt; color: var(--fg2);
+  }
+  .c2 .svc-title { font-size: 12pt; margin-bottom: 1.3mm; }
+  .c2 .svc-text { font-size: 7.9pt; color: var(--fg2); }
+
+  .c2 .foot {
+    grid-area: foot;
+    margin-top: 6mm;
+    padding-top: 4.5mm;
+    border-top: .25pt solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center; gap: 6mm;
+  }
+  .c2 .cta .eyebrow { color: var(--fg2); display: block; margin-bottom: 1mm; }
+  .c2 .url { font-size: 10pt; font-weight: 400; letter-spacing: -.005em; }
+  .c2 .credit { font-size: 6.6pt; font-weight: 300; color: var(--fg2); line-height: 1.5; text-align: right; }
+  .c2 .credit b { font-weight: 500; color: var(--fg); }
+
+  /* Dark variant (?theme=dark) */
+  body[data-theme="dark"] .c2 {
+    --fg: var(--on-dark); --fg2: var(--on-dark-2); --rule: var(--rule-dark); --ring: rgba(243,239,230,.45);
+    background: var(--char);
+  }
+  body[data-theme="dark"] .c2 .rings g { opacity: .2; }
+  .c2 .lockup--dark { display: none; }
+  body[data-theme="dark"] .c2 .lockup--light { display: none; }
+  body[data-theme="dark"] .c2 .lockup--dark { display: block; }
+
+  /* Horizontal: headline and lede on the left, services as a column on the right */
+  body[data-format="h"] .c2 {
+    padding: 9mm 10mm 7.5mm;
+    grid-template-columns: 1fr 86mm;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 12mm;
+    grid-template-areas: "top top" "lede svcs" "foot foot";
+  }
+  body[data-format="h"] .c2 .headline { font-size: 25pt; }
+  body[data-format="h"] .c2 .lockup { width: 28mm; }
+  body[data-format="h"] .c2 .lede { align-self: start; margin-top: 7mm; font-size: 8.2pt; }
+  body[data-format="h"] .c2 .services { align-self: end; margin-top: 4mm; }
+  body[data-format="h"] .c2 .svc { grid-template-columns: 11mm 1fr; gap: 4mm; padding-block: 2.8mm; }
+  body[data-format="h"] .c2 .ring { width: 11mm; height: 11mm; font-size: 8pt; }
+  body[data-format="h"] .c2 .svc-title { font-size: 9.5pt; margin-bottom: .8mm; }
+  body[data-format="h"] .c2 .svc-text { font-size: 7pt; }
+  body[data-format="h"] .c2 .foot { margin-top: 5mm; padding-top: 3.8mm; }
+</style>
+</head>
+<body>
+<article class="ad c2">
+
+  <div class="rings" aria-hidden="true">
+    <!-- Portrait: rings centred beyond the right edge, behind the headline -->
+    <svg class="only-v" viewBox="0 0 148 210" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width=".18">
+      <g opacity=".15">
+        <circle cx="158" cy="104" r="8" /> <circle cx="158" cy="104" r="16" /> <circle cx="158" cy="104" r="26" /> <circle cx="158" cy="104" r="38" /> <circle cx="158" cy="104" r="52" /> <circle cx="158" cy="104" r="68" /> <circle cx="158" cy="104" r="86" />
+      </g>
+    </svg>
+    <!-- Horizontal: rings centred beyond the bottom-left corner, under the lede -->
+    <svg class="only-h" viewBox="0 0 210 148" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width=".18">
+      <g opacity=".15">
+        <circle cx="44" cy="168" r="14" /> <circle cx="44" cy="168" r="26" /> <circle cx="44" cy="168" r="40" /> <circle cx="44" cy="168" r="56" /> <circle cx="44" cy="168" r="74" /> <circle cx="44" cy="168" r="94" />
+      </g>
+    </svg>
+  </div>
+
+  <header class="top">
+    <h1 class="headline">
+      The Art and Science<br class="only-v" /> of High Performance.
+      <span class="sub">Talent is rarely the limit. What sustains excellence lies beneath it.</span>
+    </h1>
+    <div>
+      <img class="lockup lockup--light" src="assets/aoe-lockup-ink.png" alt="Architecture of Excellence™" />
+      <img class="lockup lockup--dark" src="assets/aoe-lockup-ivory.png" alt="Architecture of Excellence™" />
+    </div>
+  </header>
+
+  <p class="lede">
+    At the highest levels, performance is shaped less by skill than by how people understand
+    themselves, relate to one another, and respond under pressure.
+    <strong>Architecture of Excellence™</strong> works with these psychological, relational,
+    and organizational conditions — for leaders, teams, and organizations in sport, business, and beyond.
+  </p>
+
+  <section class="services">
+    <div class="svc">
+      <div class="ring numeral">01</div>
+      <div>
+        <h2 class="svc-title">Speaking &amp; Education</h2>
+        <p class="svc-text">Keynotes, workshops, and signature series that translate psychological insight into practice.</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="ring numeral">02</div>
+      <div>
+        <h2 class="svc-title">1:1 Performance &amp; Leadership Coaching</h2>
+        <p class="svc-text">Private engagements for executives, leaders, and elite athletes, addressing how they perform, decide, and lead.</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="ring numeral">03</div>
+      <div>
+        <h2 class="svc-title">Team &amp; Organizational Consulting</h2>
+        <p class="svc-text">Culture, alignment, conflict, and change, including the design of mental health and performance programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="cta">
+      <span class="eyebrow">Begin the conversation</span>
+      <span class="url">architectureofexcellence.com</span>
+    </div>
+    <p class="credit"><b>Founded by Dr. Alina Schulhofer</b><br />Licensed psychologist and former elite athlete</p>
+  </footer>
+
+</article>
+<script src="format.js"></script>
+</body>
+</html>

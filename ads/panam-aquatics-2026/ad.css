@@ -1,0 +1,87 @@
+/* =====================================================
+   AOE — PanAm Aquatics half-page advertisement
+   Shared foundation for all three concepts.
+   Tokens mirror the live site (styles.v36.css on gh-pages).
+   ===================================================== */
+
+/* Static weights (not the variable font) so PDFs embed TrueType, not Type 3. Manrope is OFL; see assets/fonts/OFL.txt. */
+@font-face { font-family: 'Manrope'; src: url('assets/fonts/manrope-200.ttf') format('truetype'); font-weight: 200; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('assets/fonts/manrope-300.ttf') format('truetype'); font-weight: 300; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('assets/fonts/manrope-400.ttf') format('truetype'); font-weight: 400; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('assets/fonts/manrope-500.ttf') format('truetype'); font-weight: 500; font-display: block; }
+
+:root {
+  --ivory:  #F3EFE6;
+  --ivory2: #EDE8DD;
+  --ink:    #1C1B19;
+  --ink-2:  #595650;
+  --ink-3:  #6E685F;
+  --char:   #1C1B19;   /* dark band */
+  --char-2: #24221F;   /* panel on dark */
+  --on-dark:   #F3EFE6;
+  --on-dark-2: #B8B0A4;
+  --rule-dark:  rgba(243,239,230,.22);
+  --rule-light: rgba(28,27,25,.18);
+
+  /* Ad formats (trim size; bleed is added once print specs are confirmed) */
+  --h-w: 210mm; --h-h: 148mm;   /* horizontal half page */
+  --v-w: 148mm; --v-h: 210mm;   /* portrait */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: #8f8a82; }
+body {
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 10mm;
+}
+
+.ad {
+  position: relative;
+  overflow: hidden;
+  width: var(--v-w);
+  height: var(--v-h);
+  font-feature-settings: 'kern', 'liga';
+}
+body[data-format="h"] .ad { width: var(--h-w); height: var(--h-h); }
+
+/* Only one format visible at a time */
+body[data-format="h"] .only-v,
+body[data-format="v"] .only-h { display: none !important; }
+
+/* Shared type */
+.eyebrow {
+  font-size: 6.5pt;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.headline {
+  font-weight: 200;
+  letter-spacing: -.015em;
+  line-height: 1.08;
+}
+.lede { font-weight: 300; line-height: 1.55; }
+.svc-title { font-weight: 400; letter-spacing: -.005em; line-height: 1.2; }
+.svc-text  { font-weight: 300; line-height: 1.5; }
+.numeral   { font-weight: 200; letter-spacing: .02em; }
+
+.lockup { display: block; height: auto; }
+
+/* Hairline that fades at both ends, as on the site */
+.fade-rule {
+  height: .25pt;
+  border: 0;
+  background: linear-gradient(90deg, transparent, currentColor 18%, currentColor 82%, transparent);
+  opacity: .35;
+}
+
+@media print {
+  html, body { background: none; padding: 0; min-height: 0; display: block; }
+}
