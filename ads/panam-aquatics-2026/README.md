@@ -9,8 +9,8 @@ hairline rules, and the thin-circle motif.
 
 | File | Status | Headline |
 |---|---|---|
-| `concept-1-elevation.html` | **Selected direction** | Performance is visible. Its architecture is not. |
-| `concept-2-ripple.html` | Alternate (ivory, or `?theme=dark`) | The Art and Science of High Performance. |
+| `concept-1-elevation.html` | Alternate | Performance is visible. Its architecture is not. |
+| `concept-2-ripple.html` | **Selected direction**, dark (`?theme=dark`) | Performance is visible. Its architecture is not. |
 | `concept-3-foundation.html` | Alternate | The Art and Science of High Performance. |
 
 All three highlight the same services: Speaking & Education · 1:1 Performance & Leadership
