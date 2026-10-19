@@ -22,7 +22,8 @@
   .fa .headline { font-size: 23pt; }
   .fa .headline .muted { color: var(--fg2); }
 
-  .fa .lede { margin-top: 14mm; font-size: 8.4pt; color: var(--fg2); max-width: 104mm; text-wrap: pretty; }
+  .fa .lede { margin-top: 14mm; font-size: 8.4pt; line-height: 1.65; color: var(--fg2); max-width: 104mm; text-wrap: pretty; }
+  .fa .lede p + p { margin-top: 3.6mm; }
   .fa .lede strong { font-weight: 500; color: var(--fg); }
 
   /* Services sit centred in the space between the introduction and the footer */
@@ -60,11 +61,12 @@
     <img class="lockup" src="assets/aoe-lockup-ivory.png" alt="Architecture of Excellence™" />
   </header>
 
-  <p class="lede">
-    The psychological and relational patterns within individuals and systems determine whether
-    excellence is sustainable. <strong>Architecture of Excellence™</strong> brings psychological depth
-    to high performance, leadership, and organizational development in business, sport, and beyond.
-  </p>
+  <div class="lede">
+    <p>The psychological and relational patterns within individuals and systems determine whether
+    excellence is sustainable.</p>
+    <p><strong>Architecture of Excellence™</strong> brings psychological depth to high performance,
+    leadership, and organizational development in business, sport, and beyond.</p>
+  </div>
 
   <section class="services">
     <div class="svc">
