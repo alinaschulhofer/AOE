@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AOE · LinkedIn banner</title>
+<style>
+  /* LinkedIn personal profile banner: 1584 × 396 px.
+     The profile photo covers the bottom-left, so content sits centre-right.
+     ?guides=1 overlays the profile-photo area and the mobile side crop. */
+  @font-face { font-family: 'Manrope'; src: url('assets/manrope-200.ttf') format('truetype'); font-weight: 200; }
+  @font-face { font-family: 'Manrope'; src: url('assets/manrope-300.ttf') format('truetype'); font-weight: 300; }
+  @font-face { font-family: 'Manrope'; src: url('assets/manrope-400.ttf') format('truetype'); font-weight: 400; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #8f8a82; }
+
+  .banner {
+    --bg: #1C1C1A; --ivory: #F0EDE7; --gray: #B4AEA6; --divider: #383734;
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    background: var(--bg);
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 64px;
+    padding: 0 112px 0 500px;
+  }
+
+  .headline {
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    color: var(--ivory);
+  }
+  .headline .muted { color: var(--gray); }
+
+  .services {
+    margin-top: 26px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .16em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .services .sep { color: #6B6760; margin: 0 .8em; letter-spacing: 0; }
+
+  .brand { display: flex; align-items: center; height: 100%; padding-left: 64px; border-left: 1px solid var(--divider); }
+  .brand img { width: 210px; display: block; }
+
+  /* Layout guides (not part of the exported image) */
+  .guide { display: none; position: absolute; pointer-events: none; }
+  body.guides .guide { display: block; }
+  .guide.photo { left: 40px; top: 236px; width: 320px; height: 320px; border-radius: 50%; border: 2px dashed rgba(255,120,90,.9); }
+  .guide.crop { top: 0; bottom: 0; width: 100px; background: rgba(255,120,90,.18); }
+  .guide.crop.l { left: 0; } .guide.crop.r { right: 0; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div>
+    <h1 class="headline">
+      <span class="muted">Performance is visible.</span><br />
+      Its architecture is not.
+    </h1>
+    <p class="services">Organizational Consulting<span class="sep">·</span>Speaking &amp; Education<span class="sep">·</span>Private Advisory</p>
+  </div>
+  <div class="brand"><img src="assets/aoe-lockup-warm-ivory.png" alt="Architecture of Excellence™" /></div>
+
+  <div class="guide photo"></div>
+  <div class="guide crop l"></div>
+  <div class="guide crop r"></div>
+</div>
+<script>
+  if (new URLSearchParams(location.search).get('guides') === '1') document.body.classList.add('guides');
+</script>
+</body>
+</html>
