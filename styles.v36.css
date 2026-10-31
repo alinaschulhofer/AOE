@@ -2840,3 +2840,5 @@ ul { list-style: none; }
   .contact-book .btn { width: 100%; max-width: 100%; white-space: normal; text-align: center; justify-content: center; box-sizing: border-box; }
 }
 .nowrap { white-space: nowrap; }
+.svc-book-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.svc-book-note + .svc-book-note { margin-top: .35rem; }
