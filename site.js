@@ -91,3 +91,34 @@
   }, { threshold: 0.15 });
   items.forEach(i => obs.observe(i));
 })();
+
+// ── Cal.com booking pop-ups ──────────────────────────
+// Any element with data-book="<cal link>" opens that Cal.com event in a
+// pop-up. Each element's href points straight to the Cal.com page, so if the
+// embed script can't load (ad blockers, etc.) the link still works normally.
+(function () {
+  const triggers = document.querySelectorAll('[data-book]');
+  if (!triggers.length) return;
+
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  let ready = false;
+  const s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+  if (s) s.addEventListener('load', () => { ready = true; });
+
+  Cal('init', { origin: 'https://cal.com' });
+  Cal('ui', {
+    theme: 'light',
+    cssVarsPerTheme: { light: { 'cal-brand': '#A8824E' } },
+    hideEventTypeDetails: false,
+    layout: 'month_view'
+  });
+
+  triggers.forEach(el => {
+    el.addEventListener('click', e => {
+      if (!ready) return; // fall back to opening the Cal.com page
+      e.preventDefault();
+      Cal('modal', { calLink: el.getAttribute('data-book'), config: { layout: 'month_view' } });
+    });
+  });
+})();

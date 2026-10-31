@@ -2813,3 +2813,30 @@ ul { list-style: none; }
   /* Services sidebar number smaller */
   .svc-sidebar-num { font-size: clamp(3rem, 12vw, 5rem); }
 }
+
+/* ===== Cal.com booking buttons ===== */
+.contact-book { display: flex; flex-direction: column; align-items: center; gap: .9rem; }
+.contact-or {
+  font-family: 'Jost', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+.svc-book {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin-top: 3.5rem;
+}
+.svc-book .svc-inquire { margin-top: 0; }
+.svc-book-note { margin-top: 1rem; font-size: .85rem; color: var(--ink2); }
+@media (max-width: 640px) {
+  .svc-book { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .contact-book { width: 100%; }
+  .contact-book .btn { width: 100%; max-width: 100%; white-space: normal; text-align: center; justify-content: center; box-sizing: border-box; }
+}
+.nowrap { white-space: nowrap; }
