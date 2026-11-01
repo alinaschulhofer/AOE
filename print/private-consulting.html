@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One-on-One Private Consulting — Architecture of Excellence™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --bg: #1C1B19;
+    --hi: #F1EDE5;      /* bright text */
+    --mid: #B7B1A5;     /* dimmed headline / footer secondary */
+    --body: #918C83;    /* body copy */
+    --rule: #474644;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+  body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--body);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm; height: 297mm;
+    padding: 50px 55px 26px;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    page-break-after: always; break-after: page;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  /* Header */
+  header { display: flex; justify-content: space-between; align-items: flex-start; }
+  h1 {
+    font-weight: 300; font-size: 44px; line-height: 1.12; letter-spacing: -0.025em;
+    color: var(--hi);
+  }
+  h1 .dim { color: var(--mid); }
+  .logo { width: 164px; text-align: center; margin-top: 2px; }
+  .logo img { width: 164px; display: block; }
+  .logo span {
+    display: block; margin-top: 7px;
+    font-size: 5.6px; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--hi); white-space: nowrap;
+  }
+
+  /* Intro */
+  .intro { margin-top: 74px; max-width: 560px; }
+  .intro p { font-size: 15.5px; font-weight: 300; line-height: 1.72; color: var(--mid); opacity: .92; }
+  .intro p + p { margin-top: 16px; }
+  .intro strong { font-weight: 500; color: var(--hi); }
+
+  .label {
+    font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* Numbered rows (as in the flyer) */
+  .rows { margin-top: 30px; }
+  .row { display: flex; align-items: center; gap: 30px; padding: 26px 0; }
+  .row + .row { border-top: 1px solid var(--rule); }
+  .num {
+    flex: none; width: 82px; height: 82px; border-radius: 50%;
+    border: 1px solid #8A867F;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px; font-weight: 200; color: var(--mid); letter-spacing: 0.02em;
+  }
+  .row h2 { font-size: 24px; font-weight: 400; color: var(--hi); letter-spacing: -0.01em; line-height: 1.2; }
+  .row p { margin-top: 7px; font-size: 15.5px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+  /* Focus grid (page 2) */
+  .focus { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .focus .row { padding: 30px 0; gap: 22px; border-top: 1px solid var(--rule); }
+  .focus .row:nth-child(-n+2) { border-top: none; }
+  .focus .num { width: 64px; height: 64px; font-size: 16px; }
+  .focus h2 { font-size: 18.5px; line-height: 1.35; }
+
+  .note { margin-top: 70px; padding-top: 40px; border-top: 1px solid var(--rule); max-width: 600px; }
+  .note .lead { font-size: 22px; font-weight: 300; color: var(--hi); letter-spacing: -0.01em; line-height: 1.35; }
+  .note .lead .dim { color: var(--mid); }
+  .note .fine { margin-top: 22px; font-size: 12px; font-weight: 300; line-height: 1.7; color: #79756E; }
+
+  /* Footer */
+  footer {
+    margin-top: auto; border-top: 1px solid var(--rule); padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  footer .label { font-size: 12px; }
+  footer .url { margin-top: 12px; font-size: 20px; font-weight: 400; color: var(--hi); letter-spacing: -0.005em; }
+  footer .right { text-align: right; }
+  footer .right b { display: block; font-size: 13px; font-weight: 500; color: var(--hi); }
+  footer .right i { display: block; margin-top: 6px; font-style: normal; font-size: 13px; font-weight: 300; color: var(--mid); opacity: .85; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <header>
+    <h1><span class="dim">One-on-One</span><br>Private Consulting.</h1>
+    <div class="logo"><img src="aoe-logo.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+  </header>
+
+  <div class="intro">
+    <p>Private, one-on-one coaching for those operating at the highest levels of their field — executives, founders, leaders, professional athletes, and others committed to closing the gap between where they are and what they’re truly capable of.</p>
+    <p>Grounded in the <strong>Architecture of Excellence™</strong> framework, 1:1 engagements include strategy, skill-building, and other dynamics that can either accelerate or constrain what an individual is able to achieve, while shaping their wellbeing and personal life.</p>
+  </div>
+
+  <div class="rows" style="margin-top:62px">
+    <div class="label">What to Expect</div>
+    <div class="row" style="padding-top:30px">
+      <div class="num">01</div>
+      <div>
+        <h2>A Considered Beginning</h2>
+        <p>We begin with a conversation to better understand your current context, your goals, and the specific obstacles that are shaping your performance, wellbeing, relationships, and leadership.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="num">02</div>
+      <div>
+        <h2>Highly Individualized</h2>
+        <p>Each engagement is highly individualized. From there, the work unfolds according to your unique needs.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="num">03</div>
+      <div>
+        <h2>Retainer-Based Continuity</h2>
+        <p>Engagements are typically retainer-based, allowing for the depth, continuity, and trust that meaningful transformation requires.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="label">Begin the Conversation</div>
+      <div class="url">architectureofexcellence.com</div>
+    </div>
+    <div class="right">
+      <b>Founded by Dr. Alina Schulhofer</b>
+      <i>Bridging psychology and high performance.</i>
+    </div>
+  </footer>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <header>
+    <h1><span class="dim">Where the</span><br>work focuses.</h1>
+    <div class="logo"><img src="aoe-logo.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+  </header>
+
+  <div class="rows" style="margin-top:82px">
+    <div class="label">Areas of Focus</div>
+    <div class="focus">
+      <div class="row"><div class="num">01</div><h2>Identification of patterns limiting leadership and performance growth</h2></div>
+      <div class="row"><div class="num">02</div><h2>Relational and emotional intelligence</h2></div>
+      <div class="row"><div class="num">03</div><h2>Leadership presence, clarity, and decision-making</h2></div>
+      <div class="row"><div class="num">04</div><h2>Navigating pressure and complex organizational demands</h2></div>
+      <div class="row"><div class="num">05</div><h2>Clarification of vision, values, and legacy</h2></div>
+      <div class="row"><div class="num">06</div><h2>Ongoing strategic support and accountability</h2></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="label">Investment</div>
+    <p class="lead" style="margin-top:16px">Investment details are available<br><span class="dim">upon inquiry.</span></p>
+    <p class="fine">Please note that coaching is a non-clinical service focused on personal growth and leadership development. It does not constitute psychotherapy, mental health treatment, or crisis services.</p>
+  </div>
+
+  <footer>
+    <div>
+      <div class="label">Begin the Conversation</div>
+      <div class="url">architectureofexcellence.com</div>
+    </div>
+    <div class="right">
+      <b>Founded by Dr. Alina Schulhofer</b>
+      <i>Bridging psychology and high performance.</i>
+    </div>
+  </footer>
+</section>
+
+</body>
+</html>
