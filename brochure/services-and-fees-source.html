@@ -109,6 +109,17 @@
 
   .fine { font-size: 8.9pt; color: var(--muted); font-style: italic; margin-top: 0.34in; padding-top: 0.16in; border-top: 0.5pt solid var(--rule); }
 
+  .benefit.wide { grid-column: 1 / -1; }
+  .p3 .label { margin-top: 0.28in; }
+  .p3 .two-col p, .p3 .benefit p { line-height: 1.55; }
+  .p3 h2 { margin-bottom: 0.18in; }
+  .p3 .terms > div { padding: 0.13in 0.1in 0.14in; }
+  .p3 .terms { margin-bottom: 0.28in; }
+  .p3 .benefits { row-gap: 0.16in; }
+  .benefit.wide p { max-width: none; }
+  .benefit p + p { margin-top: 0.07in; }
+  .benefit .example { font-size: 8.8pt; font-style: italic; color: var(--muted); }
+
   /* Page 4 */
   .block + .block { margin-top: 0.55in; }
   .crisis {
@@ -202,7 +213,7 @@
 </div>
 
 <!-- ======================= PAGE 3 ======================= -->
-<div class="page">
+<div class="page p3">
   <h2 class="center">Concierge Psychotherapy</h2>
 
   <div class="terms">
@@ -214,7 +225,7 @@
   <div class="two-col">
     <div>
       <p>Concierge Psychotherapy is a flexible, individualized approach to psychological care for those seeking greater accessibility, continuity, and support beyond traditional appointment-based treatment.</p>
-      <p>The arrangement includes up to six hours of clinical support per month, which may be allocated flexibly according to the client’s evolving needs and preferences.</p>
+      <p>The arrangement includes up to six hours of clinical support per month, which may be allocated flexibly according to the client’s evolving needs and preferences. The allocation includes scheduled appointments and substantive between-session clinical support.</p>
     </div>
     <div>
       <p>Rather than following a predetermined session structure, clients may choose shorter, more frequent appointments or longer sessions, depending on what is clinically appropriate and mutually agreed upon.</p>
@@ -240,13 +251,14 @@
       <h3>Direct Between-Session Access</h3>
       <p>Clients may communicate by phone, email, or text for additional clinical guidance and support within agreed boundaries.</p>
     </div>
-    <div class="benefit">
+    <div class="benefit wide">
       <h3>Month-to-Month Flexibility</h3>
-      <p>No minimum commitment is required.</p>
+      <p>Concierge Psychotherapy is offered on a month-to-month basis without a minimum commitment. The arrangement automatically renews each month unless either party provides written notice of nonrenewal at least seven days before the beginning of the next billing period.</p>
+      <p>Monthly fees are payable in advance, and unused clinical hours do not carry over to subsequent months.</p>
+      <p class="example">The monthly billing period begins on the client’s enrollment date rather than following the calendar month. For example, if a client begins on November 12, the next billing period begins December 12, and written notice of nonrenewal must be provided by December 5 to avoid renewal.</p>
     </div>
   </div>
 
-  <p class="fine">The six-hour allocation includes scheduled appointments and substantive between-session clinical support. Fees are paid in advance at the beginning of each monthly period. Unused hours do not roll over to subsequent months.</p>
 
   <footer class="footer"><span>Dr. Alina Schulhofer, PsyD</span><span>3 / 4</span></footer>
 </div>
