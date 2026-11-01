@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Psychotherapy Services &amp; Fees</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@300;400;500;600&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Manrope:wght@400;500;600&display=block" rel="stylesheet">
 <style>
   @page { size: 8.5in 11in; margin: 0; }
   :root {
@@ -12,7 +12,7 @@
     --ink: #1E1B18;
     --soft: #4A4540;
     --muted: #7C756C;
-    --rule: #D9D2C5;
+    --rule: #DDD6C9;
     --hair: #C9C0B1;
     --accent: #8C6D45;
     --shade: #F1ECE1;
@@ -21,146 +21,106 @@
   html, body { background: var(--paper); }
   body {
     font-family: 'Manrope', sans-serif;
-    font-weight: 400;
     color: var(--ink);
-    font-size: 9pt;
-    line-height: 1.5;
+    font-size: 9.6pt;
+    line-height: 1.68;
     -webkit-font-smoothing: antialiased;
+  }
+  /* One serif voice everywhere: the same optical size as the name line */
+  .serif, h1, h2, h3, .name, .fee, .big {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-variation-settings: "opsz" 24;
+    font-optical-sizing: none;
+    font-variant-numeric: lining-nums;
   }
   .page {
     width: 8.5in; height: 11in;
-    padding: 0.6in 0.8in 0.46in;
-    position: relative;
-    overflow: hidden;
+    padding: 0.85in 0.95in 0.6in;
+    position: relative; overflow: hidden;
     background: var(--paper);
     page-break-after: always;
     display: flex; flex-direction: column;
   }
   .page:last-child { page-break-after: auto; }
 
-  /* ---------- Masthead ---------- */
-  .masthead { text-align: center; padding-bottom: 0.26in; border-bottom: 0.5pt solid var(--hair); margin-bottom: 0.27in; }
-  .eyebrow {
-    font-size: 7pt; letter-spacing: 0.32em; text-transform: uppercase;
-    color: var(--accent); font-weight: 500; margin-bottom: 0.12in;
-  }
-  h1 {
-    font-family: 'Bodoni Moda', serif; font-weight: 400;
-    font-size: 28pt; line-height: 1.08; letter-spacing: 0.01em;
-    font-variation-settings: "opsz" 72;
-  }
-  h1 em { font-style: italic; font-weight: 400; }
-  .name {
-    font-family: 'Bodoni Moda', serif; font-size: 12.5pt; margin-top: 0.12in;
-    font-variation-settings: "opsz" 24;
-  }
+  /* Masthead */
+  .masthead { text-align: center; padding: 0.55in 0 0.6in; border-bottom: 0.5pt solid var(--hair); margin-bottom: 0.6in; }
+  h1 { font-size: 30pt; line-height: 1.15; letter-spacing: 0.005em; }
+  .name { font-size: 14pt; margin-top: 0.24in; }
   .cred {
-    font-size: 7.4pt; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--soft); margin-top: 0.05in; font-weight: 500;
+    font-size: 7.6pt; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--soft); margin-top: 0.08in; font-weight: 500;
   }
-  .cred .sep { color: var(--hair); margin: 0 0.6em; }
+  .cred .sep { color: var(--hair); margin: 0 0.7em; }
 
-  /* ---------- Sections ---------- */
-  section + section { margin-top: 0.3in; }
-  .sec-head { display: flex; align-items: baseline; gap: 0.1in; margin-bottom: 0.08in; }
-  .num {
-    font-family: 'Bodoni Moda', serif; font-style: italic; color: var(--accent);
-    font-size: 12pt; flex: none;
-  }
-  h2 {
-    font-family: 'Bodoni Moda', serif; font-weight: 400;
-    font-size: 16pt; line-height: 1.15; letter-spacing: 0.005em;
-    font-variation-settings: "opsz" 40;
-  }
-  .indent { padding-left: 0; }
-  p + p { margin-top: 0.08in; }
+  /* Sections */
+  h2 { font-size: 20pt; line-height: 1.2; margin-bottom: 0.22in; }
+  h2.center { text-align: center; }
+  h3 { font-size: 12pt; line-height: 1.3; }
+  p + p { margin-top: 0.12in; }
   .lede { color: var(--soft); }
-
-  h3 {
-    font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 11pt;
-    line-height: 1.25; font-variation-settings: "opsz" 18;
-  }
   .label {
-    font-size: 6.8pt; letter-spacing: 0.26em; text-transform: uppercase;
-    color: var(--accent); font-weight: 600; margin: 0.14in 0 0.06in;
+    font-size: 7pt; letter-spacing: 0.26em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0.36in 0 0.14in;
   }
 
   /* Fee rows */
-  .svc { padding: 0.085in 0; border-top: 0.5pt solid var(--rule); }
+  .svc { padding: 0.2in 0 0.22in; border-top: 0.5pt solid var(--rule); }
   .svc:last-child { border-bottom: 0.5pt solid var(--rule); }
-  .svc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.2in; margin-bottom: 0.03in; }
-  .meta { display: flex; align-items: baseline; gap: 0.18in; white-space: nowrap; }
-  .dur { font-size: 7.2pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
-  .fee {
-    font-family: 'Bodoni Moda', serif; font-size: 13pt; min-width: 0.72in; text-align: right;
-    font-variant-numeric: lining-nums; font-variation-settings: "opsz" 24;
-  }
-  .svc p { color: var(--soft); max-width: 5.9in; }
+  .svc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.2in; margin-bottom: 0.07in; }
+  .meta { display: flex; align-items: baseline; gap: 0.22in; white-space: nowrap; }
+  .dur { font-size: 7.4pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .fee { font-size: 14pt; min-width: 0.75in; text-align: right; }
+  .svc p { color: var(--soft); max-width: 5.4in; }
 
-  ul.dash { list-style: none; columns: 2; column-gap: 0.32in; margin-top: 0.06in; }
-  ul.dash li { position: relative; padding-left: 0.17in; break-inside: avoid; margin-bottom: 0.02in; color: var(--soft); }
-  ul.dash li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 0.08in; border-top: 0.5pt solid var(--accent); }
+  ul.dash { list-style: none; }
+  ul.dash li { position: relative; padding-left: 0.22in; margin-bottom: 0.07in; color: var(--soft); }
+  ul.dash li::before { content: ""; position: absolute; left: 0; top: 0.78em; width: 0.1in; border-top: 0.5pt solid var(--accent); }
 
-  .note { font-size: 8.3pt; line-height: 1.5; color: var(--muted); margin-top: 0.1in; }
-  .note p + p { margin-top: 0.05in; }
+  .note { font-size: 8.8pt; color: var(--muted); margin-top: 0.26in; }
   .note em { font-style: italic; }
 
-  .formats { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.32in; }
-  .formats .svc { border-bottom: 0.5pt solid var(--rule); }
-  .formats .svc p { font-size: 8.7pt; }
-  .formats h3 { white-space: nowrap; }
-  .formats .meta { gap: 0.12in; }
-  .formats .fee { min-width: 0; }
-
-  /* ---------- Footer ---------- */
+  /* Footer */
   .footer {
-    margin-top: auto; padding-top: 0.12in; border-top: 0.5pt solid var(--hair);
+    margin-top: auto; padding-top: 0.14in; border-top: 0.5pt solid var(--hair);
     display: flex; justify-content: space-between;
-    font-size: 6.6pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+    font-size: 6.8pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
   }
 
-  /* ---------- Page 2 ---------- */
-  .feature-head { text-align: center; margin-bottom: 0.14in; }
-  .feature-head .eyebrow { margin-bottom: 0.1in; }
-  .feature-head h2 { font-size: 22pt; font-variation-settings: "opsz" 60; }
+  /* Concierge */
   .terms {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
     border-top: 0.5pt solid var(--hair); border-bottom: 0.5pt solid var(--hair);
-    margin: 0 0 0.14in; text-align: center;
+    margin: 0 0 0.34in; text-align: center;
   }
-  .terms > div { padding: 0.07in 0.1in 0.075in; }
+  .terms > div { padding: 0.16in 0.1in 0.17in; }
   .terms > div + div { border-left: 0.5pt solid var(--rule); }
-  .terms .big { font-family: 'Bodoni Moda', serif; font-size: 15pt; line-height: 1.2; font-variation-settings: "opsz" 30; }
-  .terms .small { font-size: 6.8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-top: 0.02in; }
+  .terms .big { font-size: 16pt; line-height: 1.2; }
+  .terms .small { font-size: 7pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-top: 0.05in; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.36in; }
-  .two-col p { color: var(--soft); line-height: 1.45; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.45in; }
+  .two-col p { color: var(--soft); }
 
-  .benefits { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.36in; row-gap: 0.06in; margin-top: 0.02in; }
-  .benefit { border-top: 0.5pt solid var(--rule); padding-top: 0.07in; }
-  .benefit h3 { font-size: 10.2pt; margin-bottom: 0.02in; }
-  .benefit p { color: var(--soft); font-size: 8.6pt; line-height: 1.42; }
+  .benefits { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.45in; row-gap: 0.2in; }
+  .benefit { border-top: 0.5pt solid var(--rule); padding-top: 0.12in; }
+  .benefit h3 { font-size: 11.5pt; margin-bottom: 0.05in; }
+  .benefit p { color: var(--soft); font-size: 9.2pt; line-height: 1.6; }
 
-  .fine { font-size: 8.4pt; color: var(--soft); margin-top: 0.1in; font-style: normal; }
+  .fine { font-size: 8.9pt; color: var(--muted); font-style: italic; margin-top: 0.34in; padding-top: 0.16in; border-top: 0.5pt solid var(--rule); }
 
-  .fine-cell p { font-style: italic; color: var(--muted); padding-top: 0.02in; }
-  .footer { margin-bottom: 0; }
-  .page > :nth-last-child(2) { margin-bottom: 0.14in; }
+  /* Page 4 */
+  .block + .block { margin-top: 0.55in; }
   .crisis {
     background: var(--shade); border-left: 1.5pt solid var(--accent);
-    padding: 0.11in 0.2in 0.12in; margin-top: 0.16in;
+    padding: 0.26in 0.32in 0.28in;
   }
-  .crisis h3 { font-size: 10.5pt; margin-bottom: 0.04in; }
-  .crisis p { font-size: 8.8pt; color: var(--ink); }
+  .crisis h3 { font-size: 14pt; margin-bottom: 0.1in; }
+  .crisis p { color: var(--ink); }
   .crisis strong { font-weight: 600; }
-
-  .lower { display: grid; grid-template-columns: 1.08fr 0.92fr; column-gap: 0.32in; margin-top: 0.17in; }
-  .lower h3 { font-size: 11pt; margin-bottom: 0.06in; padding-bottom: 0.05in; border-bottom: 0.5pt solid var(--rule); }
-  .lower p { font-size: 8.6pt; color: var(--soft); line-height: 1.45; }
-  .lower p + p { margin-top: 0.06in; }
-  .lower .fee-line { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 0.5pt solid var(--rule); padding: 0.02in 0 0.05in; }
-  .lower .fee-line .fee { font-size: 12pt; color: var(--ink); }
-  .lower .fee-inline { font-family: 'Bodoni Moda', serif; font-size: 10pt; color: var(--ink); }
+  .policy h2 { font-size: 16pt; margin-bottom: 0.12in; padding-bottom: 0.12in; border-bottom: 0.5pt solid var(--rule); }
+  .policy p { color: var(--soft); }
+  .policy .svc-top { margin: 0.14in 0 0.1in; padding-bottom: 0.1in; border-bottom: 0.5pt solid var(--rule); }
 </style>
 </head>
 <body>
@@ -168,87 +128,83 @@
 <!-- ======================= PAGE 1 ======================= -->
 <div class="page">
   <header class="masthead">
-    <h1>Psychotherapy Services <em>&amp;</em> Fees</h1>
+    <h1>Psychotherapy Services &amp; Fees</h1>
     <div class="name">Dr. Alina Schulhofer, PsyD</div>
     <div class="cred">Licensed Psychologist<span class="sep">|</span>Florida &amp; New York</div>
   </header>
 
   <section>
-    <div class="sec-head"><span class="num">i.</span><h2>Individual Psychotherapy</h2></div>
-    <div class="indent">
-      <div class="svc">
-        <div class="svc-top">
-          <h3>Initial Psychotherapy Consultation</h3>
-          <div class="meta"><span class="dur">90 minutes</span><span class="fee">$750</span></div>
-        </div>
-        <p>A comprehensive initial appointment dedicated to exploring personal history, current concerns, recurring psychological and relational patterns, and goals for treatment. The consultation also provides an opportunity to assess clinical needs and establish an appropriate direction for our work together.</p>
+    <h2>Individual Psychotherapy</h2>
+    <div class="svc">
+      <div class="svc-top">
+        <h3>Initial Psychotherapy Consultation</h3>
+        <div class="meta"><span class="dur">90 minutes</span><span class="fee">$750</span></div>
       </div>
-      <div class="svc">
-        <div class="svc-top">
-          <h3>Individual Psychotherapy</h3>
-          <div class="meta"><span class="dur">50 minutes</span><span class="fee">$350</span></div>
-        </div>
-        <p>Ongoing psychoanalytically oriented psychotherapy focused on developing greater self-understanding, exploring underlying psychological and relational patterns, and supporting meaningful, long-lasting change.</p>
+      <p>A comprehensive initial appointment dedicated to exploring personal history, current concerns, recurring psychological and relational patterns, and goals for treatment. The consultation also provides an opportunity to assess clinical needs and establish an appropriate direction for our work together.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-top">
+        <h3>Individual Psychotherapy</h3>
+        <div class="meta"><span class="dur">50 minutes</span><span class="fee">$350</span></div>
       </div>
-      <div class="svc">
-        <div class="svc-top">
-          <h3>Extended Psychotherapy Session</h3>
-          <div class="meta"><span class="dur">90 minutes</span><span class="fee">$750</span></div>
-        </div>
-        <p>An extended appointment offering additional time for deeper exploration, reflection, and therapeutic work.</p>
+      <p>Ongoing psychoanalytically oriented psychotherapy focused on developing greater self-understanding, exploring underlying psychological and relational patterns, and supporting meaningful, long-lasting change.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-top">
+        <h3>Extended Psychotherapy Session</h3>
+        <div class="meta"><span class="dur">90 minutes</span><span class="fee">$750</span></div>
       </div>
+      <p>An extended appointment offering additional time for deeper exploration, reflection, and therapeutic work.</p>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head"><span class="num">ii.</span><h2>Psychotherapy Intensives</h2></div>
-    <div class="indent">
-      <p class="lede">Psychotherapy intensives offer a focused, in-depth therapeutic experience beyond the structure of traditional weekly sessions. Designed for individuals and couples seeking greater depth, continuity, or momentum in their therapeutic work, intensives provide extended time for meaningful psychological exploration in a contained and supportive setting.</p>
-
-      <div class="label">An intensive may be particularly beneficial for those navigating</div>
-      <ul class="dash">
-        <li>Significant life transitions</li>
-        <li>Interpersonal or relational crises</li>
-        <li>Trauma or experiences that are difficult to explore in shorter sessions</li>
-        <li>Recurring psychological or relational patterns</li>
-        <li>A desire for deeper personal or relational growth</li>
-        <li>Professional or personal schedules that make weekly psychotherapy challenging</li>
-      </ul>
-
-      <div class="label">Available Formats</div>
-      <div class="formats">
-      <div class="svc">
-        <div class="svc-top">
-          <h3>Two-Hour Intensive</h3>
-          <div class="meta"><span class="dur">120 minutes</span><span class="fee">$1,000</span></div>
-        </div>
-        <p>An extended, uninterrupted psychotherapy session providing additional space to explore significant concerns, recurring patterns, and emotional or relational challenges in greater depth.</p>
-      </div>
-      <div class="svc">
-        <div class="svc-top">
-          <h3>Full-Day Intensive</h3>
-          <div class="meta"><span class="dur">4 clinical hours</span><span class="fee">$2,250</span></div>
-        </div>
-        <p>A concentrated therapeutic engagement consisting of two two-hour sessions separated by a one-hour break. This format allows for sustained exploration, reflection, and integration throughout the day.</p>
-      </div>
-      </div>
-
-      <div class="note">
-        <p>Intensives are individually tailored to the client’s needs and therapeutic goals. They may be scheduled as standalone engagements or incorporated into ongoing psychotherapy, depending on individual circumstances and clinical suitability.</p>
-        <p><em>Fees listed are for individual psychotherapy intensives. Couples’ intensive arrangements and fees are discussed separately.</em></p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD</span><span>Services &amp; Fees &nbsp;·&nbsp; 1 / 2</span></footer>
+  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD</span><span>1 / 4</span></footer>
 </div>
 
 <!-- ======================= PAGE 2 ======================= -->
 <div class="page">
-  <header class="feature-head">
-    <div class="num" style="width:auto;margin-bottom:0.02in">iii.</div>
-    <h2>Concierge Psychotherapy</h2>
-  </header>
+  <section>
+    <h2>Psychotherapy Intensives</h2>
+    <p class="lede">Psychotherapy intensives offer a focused, in-depth therapeutic experience beyond the structure of traditional weekly sessions. Designed for individuals and couples seeking greater depth, continuity, or momentum in their therapeutic work, intensives provide extended time for meaningful psychological exploration in a contained and supportive setting.</p>
+
+    <div class="label">An intensive may be particularly beneficial for those navigating</div>
+    <ul class="dash">
+      <li>Significant life transitions</li>
+      <li>Interpersonal or relational crises</li>
+      <li>Trauma or experiences that are difficult to explore in shorter sessions</li>
+      <li>Recurring psychological or relational patterns</li>
+      <li>A desire for deeper personal or relational growth</li>
+      <li>Professional or personal schedules that make weekly psychotherapy challenging</li>
+    </ul>
+
+    <div class="label">Available Formats</div>
+    <div class="svc">
+      <div class="svc-top">
+        <h3>Two-Hour Intensive</h3>
+        <div class="meta"><span class="dur">120 minutes</span><span class="fee">$1,000</span></div>
+      </div>
+      <p>An extended, uninterrupted psychotherapy session providing additional space to explore significant concerns, recurring patterns, and emotional or relational challenges in greater depth.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-top">
+        <h3>Full-Day Intensive</h3>
+        <div class="meta"><span class="dur">4 clinical hours</span><span class="fee">$2,250</span></div>
+      </div>
+      <p>A concentrated therapeutic engagement consisting of two two-hour sessions separated by a one-hour break. This format allows for sustained exploration, reflection, and integration throughout the day.</p>
+    </div>
+
+    <div class="note">
+      <p>Intensives are individually tailored to the client’s needs and therapeutic goals. They may be scheduled as standalone engagements or incorporated into ongoing psychotherapy, depending on individual circumstances and clinical suitability.</p>
+      <p><em>Fees listed are for individual psychotherapy intensives. Couples’ intensive arrangements and fees are discussed separately.</em></p>
+    </div>
+  </section>
+
+  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD</span><span>2 / 4</span></footer>
+</div>
+
+<!-- ======================= PAGE 3 ======================= -->
+<div class="page">
+  <h2 class="center">Concierge Psychotherapy</h2>
 
   <div class="terms">
     <div><div class="big">$2,500</div><div class="small">Per month</div></div>
@@ -267,7 +223,7 @@
     </div>
   </div>
 
-  <div class="label" style="margin-top:0.15in">Concierge Benefits</div>
+  <div class="label">Concierge Benefits</div>
   <div class="benefits">
     <div class="benefit">
       <h3>Flexible Appointments</h3>
@@ -289,32 +245,38 @@
       <h3>Month-to-Month Flexibility</h3>
       <p>No minimum commitment is required.</p>
     </div>
-    <div class="benefit fine-cell">
-      <p>The six-hour allocation includes scheduled appointments and substantive between-session clinical support. Fees are paid in advance at the beginning of each monthly period. Unused hours do not roll over to subsequent months.</p>
-    </div>
   </div>
 
-  <aside class="crisis">
+  <p class="fine">The six-hour allocation includes scheduled appointments and substantive between-session clinical support. Fees are paid in advance at the beginning of each monthly period. Unused hours do not roll over to subsequent months.</p>
+
+  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD</span><span>3 / 4</span></footer>
+</div>
+
+<!-- ======================= PAGE 4 ======================= -->
+<div class="page">
+  <aside class="block crisis">
     <h3>Emergency &amp; Crisis Services</h3>
     <p>Concierge Psychotherapy includes direct between-session communication for non-emergency clinical guidance and support. However, this access does not constitute emergency or crisis-response services, and immediate responses cannot be guaranteed.</p>
-    <p style="margin-top:0.06in">In the event of a mental health crisis or other emergency, please <strong>call 911</strong>, contact <strong>988</strong> (Suicide &amp; Crisis Lifeline), or proceed to the nearest emergency department.</p>
+    <p>In the event of a mental health crisis or other emergency, please <strong>call 911</strong>, contact <strong>988</strong> (Suicide &amp; Crisis Lifeline), or proceed to the nearest emergency department.</p>
   </aside>
 
-  <div class="lower">
-    <div>
-      <h3>Cancellation &amp; Rescheduling</h3>
-      <p>A 48-hour cancellation policy applies to all psychotherapy appointments, including extended sessions and intensives. Appointments canceled or rescheduled with less than 48 hours’ notice are charged at the full scheduled fee.</p>
-      <p>For Concierge Psychotherapy, late-canceled or rescheduled appointments are deducted from the six-hour monthly allocation based on the originally scheduled appointment duration. Remaining hours may still be used during the same monthly period, subject to availability.</p>
-    </div>
-    <div>
-      <h3>Beginning the Work</h3>
-      <p>Psychotherapy begins with an Initial Psychotherapy Consultation.</p>
-      <p class="fee-line"><span class="dur">90 minutes</span><span class="fee">$750</span></p>
-      <p>This comprehensive first appointment explores personal history, current concerns, recurring patterns, and goals for treatment, and establishes an appropriate direction for our work together.</p>
-    </div>
-  </div>
+  <section class="block policy">
+    <h2>Cancellation &amp; Rescheduling</h2>
+    <p>A 48-hour cancellation policy applies to all psychotherapy appointments, including extended sessions and intensives.</p>
+    <p>Appointments canceled or rescheduled with less than 48 hours’ notice are charged at the full scheduled fee.</p>
+    <p>For Concierge Psychotherapy, late-canceled or rescheduled appointments are deducted from the six-hour monthly allocation based on the originally scheduled appointment duration. Remaining hours may still be used during the same monthly period, subject to availability.</p>
+  </section>
 
-  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD &nbsp;·&nbsp; Licensed Psychologist, Florida &amp; New York</span><span>2 / 2</span></footer>
+  <section class="block policy">
+    <h2>Beginning the Work</h2>
+    <div class="svc-top">
+      <h3>Initial Psychotherapy Consultation</h3>
+      <div class="meta"><span class="dur">90 minutes</span><span class="fee">$750</span></div>
+    </div>
+    <p>Psychotherapy begins with this comprehensive first appointment, which explores personal history, current concerns, recurring patterns, and goals for treatment, and establishes an appropriate direction for our work together.</p>
+  </section>
+
+  <footer class="footer"><span>Dr. Alina Schulhofer, PsyD&nbsp; · &nbsp;Licensed Psychologist, Florida &amp; New York</span><span>4 / 4</span></footer>
 </div>
 
 </body>
