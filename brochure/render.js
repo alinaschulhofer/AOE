@@ -17,6 +17,6 @@ const { chromium } = require('playwright');
   console.log(JSON.stringify(info));
   const els = await p.$$('.page');
   for (let i = 0; i < els.length; i++) await els[i].screenshot({ path: require('os').tmpdir() + `/p${i+1}.png` });
-  await p.pdf({ path: 'Psychotherapy-Services-and-Fees.pdf', width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true });
+  await p.pdf({ path: __dirname + '/Psychotherapy-Services-and-Fees.pdf', width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true });
   await b.close();
 })();
