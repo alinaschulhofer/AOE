@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>1:1 Private Consulting — Architecture of Excellence™</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --bg: #1C1B19;
+    --hi: #F1EDE5;      /* bright text */
+    --mid: #B7B1A5;     /* dimmed headline / secondary */
+    --body: #ABA59A;    /* body copy */
+    --soft: #85807A;    /* fine print */
+    --rule: #3E3D3A;
+    --rule-strong: #5A5853;
+    --circle: #8A867F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+  body {
+    font-family: 'Manrope', sans-serif; color: var(--body);
+    font-size: 12.8px; line-height: 1.68; font-weight: 300;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm; height: 297mm; overflow: hidden;
+    padding: 50px 58px 0; background: var(--bg);
+    display: flex; flex-direction: column;
+    break-after: page;
+  }
+  .page:last-child { break-after: auto; }
+
+  /* Header */
+  header { display: flex; justify-content: space-between; align-items: flex-start; }
+  h1 { font-weight: 300; font-size: 44px; line-height: 1.12; letter-spacing: -0.025em; color: var(--hi); }
+  h1 .dim, .h-dim { color: var(--mid); }
+  .logo { width: 150px; text-align: center; margin-top: 2px; flex: none; }
+  .logo img { width: 150px; display: block; }
+  .logo span { display: block; margin-top: 6px; font-size: 5.2px; font-weight: 600; letter-spacing: 0.02em; color: var(--hi); white-space: nowrap; }
+  .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+  .runhead img { height: 18px; display: block; }
+
+  .label { font-size: 10.5px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); }
+  h2 { font-weight: 300; font-size: 30px; line-height: 1.15; letter-spacing: -0.02em; color: var(--hi); }
+  h3 { font-weight: 400; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em; color: var(--hi); }
+  p + p { margin-top: 11px; }
+  strong { font-weight: 500; color: var(--hi); }
+
+  .sub { margin-top: 26px; font-size: 17px; line-height: 1.5; font-weight: 300; color: var(--hi); max-width: 540px; }
+  .sec-title { margin-top: 44px; }
+  .lead { margin-top: 16px; font-size: 15px; line-height: 1.62; color: var(--mid); max-width: 620px; }
+
+  .cols2 { column-count: 2; column-gap: 34px; margin-top: 16px; }
+  .cols2 p { orphans: 3; widows: 3; margin: 0 0 11px; }
+  .cols2 p:last-child { margin-bottom: 0; }
+
+  .framework { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; column-gap: 34px; }
+  .framework h3 { font-weight: 300; font-size: 21px; line-height: 1.3; }
+
+  /* Numbered rows with circles (as in the flyer) */
+  .num {
+    flex: none; width: 64px; height: 64px; border-radius: 50%;
+    border: 1px solid var(--circle);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 300; color: var(--mid); letter-spacing: 0.02em;
+  }
+  .phase { padding: 14px 0 16px; border-top: 1px solid var(--rule); }
+  .phase:first-of-type { border-top: 0; padding-top: 6px; }
+  .phase .ph { display: flex; align-items: center; gap: 18px; }
+  .phase .ph .num { width: 46px; height: 46px; font-size: 13px; }
+  .phase .cols2 { margin-top: 10px; }
+  .aside { font-size: 11.4px; color: var(--soft); }
+  .deliv {
+    margin-top: 12px; border: 1px solid var(--rule-strong); padding: 11px 16px;
+    display: grid; grid-template-columns: 170px 1fr; column-gap: 18px; align-items: baseline;
+  }
+  .deliv .k { font-size: 9.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--hi); line-height: 1.5; }
+  .deliv p { font-size: 11.8px; line-height: 1.6; }
+
+  /* Areas of focus */
+  .focus { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+  .focus .it { display: flex; gap: 18px; align-items: center; padding: 13px 0; border-top: 1px solid var(--rule); }
+  .focus .it:nth-child(-n+2) { border-top: 0; }
+  .focus .num { width: 48px; height: 48px; font-size: 13px; }
+  .focus .it span { font-size: 14px; line-height: 1.4; font-weight: 400; color: var(--hi); }
+  .note { margin-top: 14px; font-size: 11.4px; color: var(--soft); }
+
+  .block { margin-top: 40px; padding-top: 34px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; column-gap: 34px; }
+  .block h3 { font-weight: 300; font-size: 21px; line-height: 1.3; }
+
+  /* Investment */
+  .tiers { margin-top: 22px; display: grid; grid-template-columns: 1.12fr 1fr; column-gap: 20px; }
+  .tier { border: 1px solid var(--rule-strong); padding: 22px 22px 18px; display: flex; flex-direction: column; }
+  .tier.primary { border-color: var(--circle); }
+  .tier .price { margin-top: 10px; font-size: 40px; font-weight: 300; line-height: 1; color: var(--hi); letter-spacing: -0.03em; }
+  .tier .price small { font-size: 15px; font-weight: 300; color: var(--mid); letter-spacing: 0; }
+  .tier .desc { margin-top: 10px; font-size: 12px; line-height: 1.5; color: var(--mid); }
+  .tier ul { list-style: none; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+  .tier li { position: relative; padding-left: 15px; font-size: 11.4px; line-height: 1.5; }
+  .tier li + li { margin-top: 5px; }
+  .tier li::before { content: ""; position: absolute; left: 0; top: .74em; width: 7px; height: 1px; background: var(--mid); }
+  .tier .terms { margin-top: auto; padding-top: 12px; font-size: 11px; font-weight: 500; color: var(--hi); }
+  .fine { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+  .fine p { font-size: 10.6px; line-height: 1.55; color: var(--soft); }
+  .fine p + p { margin-top: 6px; }
+  .scope { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  .scope p { margin-top: 8px; font-size: 10.6px; line-height: 1.55; color: var(--soft); }
+
+  /* Footer */
+  footer {
+    margin-top: auto; height: 56px; border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; font-weight: 400; color: var(--mid); letter-spacing: 0.02em;
+  }
+  footer b { font-weight: 500; color: var(--hi); }
+  footer .sep { margin: 0 10px; color: var(--rule-strong); }
+
+  /* Flyer-style phase rows */
+  .intro { margin-top: 48px; max-width: 610px; }
+  .intro .lead { margin-top: 0; font-size: 16px; line-height: 1.62; color: var(--mid); max-width: none; }
+  .intro p:not(.lead) { margin-top: 14px; font-size: 13.4px; }
+  .rows { margin-top: 54px; }
+  .row { display: flex; align-items: center; gap: 30px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .row:first-of-type { border-top: 0; padding-top: 22px; }
+  .row .num { width: 82px; height: 82px; font-size: 19px; font-weight: 300; }
+  .row h3 { font-size: 22px; font-weight: 400; }
+  .row p { margin-top: 7px; font-size: 13.4px; line-height: 1.62; }
+  .row .tag { display: inline-block; margin-top: 12px; padding: 5px 11px; border: 1px solid var(--rule-strong);
+              font-size: 9.5px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--hi); }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — Introduction & Process ============ -->
+<section class="page">
+  <header>
+    <h1><span class="dim">1:1 Private</span><br>Consulting.</h1>
+    <div class="logo"><img src="aoe-logo.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+  </header>
+
+  <div class="intro">
+    <p class="lead">Private coaching for those operating at the highest levels of their field — executives, founders, leaders, professional athletes, and others committed to closing the gap between where they are and what they’re truly capable of.</p>
+    <p>Grounded in the proprietary <strong>Architecture of Excellence™</strong> framework, each engagement integrates psychological insight, executive coaching, strategy, and skill-building to understand and develop the individual behind the performance. Informed by Dr. Schulhofer’s training as a licensed psychologist, the work brings depth to leadership, decision-making, relationships, and well-being while remaining distinctly nonclinical.</p>
+  </div>
+
+  <div class="rows">
+    <div class="label">The Process</div>
+    <div class="row">
+      <div class="num">01</div>
+      <div>
+        <h3>Exploration &amp; Assessment</h3>
+        <p>The initial four sessions are dedicated to an in-depth exploration of the individual’s personal and professional landscape — current circumstances, strengths, challenges, relational dynamics, and aspirations — identifying the recurring patterns and obstacles shaping their performance.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="num">02</div>
+      <div>
+        <h3>Individualized Strategy &amp; Development</h3>
+        <p>Together we establish a targeted developmental strategy. Subsequent sessions integrate psychological insight, executive coaching, strategy, and skill-building to translate insight into meaningful behavioral change.</p>
+        <span class="tag">Written Developmental Strategy</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="num">03</div>
+      <div>
+        <h3>Integration &amp; Continued Development</h3>
+        <p>At the conclusion of the engagement, or another mutually agreed milestone, clients receive a comprehensive report synthesizing key insights, progress, and recommendations for continued growth. The work may continue month to month thereafter.</p>
+        <span class="tag">Comprehensive Integration Report</span>
+      </div>
+    </div>
+  </div>
+
+  <footer><span><b>Dr. Alina Schulhofer, PsyD</b><span class="sep">|</span>alina@architectureofexcellence.com</span><span>01 / 02</span></footer>
+</section>
+
+<!-- ============ PAGE 2 — Structure & Investment ============ -->
+<section class="page">
+  <div class="runhead"><img src="aoe-logo.svg" alt="aoe"><span class="label">1:1 Private Consulting</span></div>
+  <h2 style="margin-top:40px"><span class="h-dim">Structure &amp;</span> Investment.</h2>
+
+  <div class="tiers">
+    <div class="tier primary">
+      <span class="label">Initial Engagement</span>
+      <div class="price">$15,000</div>
+      <div class="desc">Three-month private consulting engagement</div>
+      <ul>
+        <li>A three-month commitment</li>
+        <li>Up to eight hours of individualized consulting per month</li>
+        <li>Flexible scheduling by mutual arrangement</li>
+        <li>Priority scheduling consideration, subject to availability</li>
+        <li>Agreed-upon between-session advisory communication</li>
+        <li>An initial structured developmental exploration</li>
+        <li>A collaboratively established developmental strategy</li>
+        <li>A written summary of developmental priorities and objectives</li>
+        <li>Ongoing individualized consulting, strategy, and skill-building</li>
+        <li>A comprehensive written integration report at the conclusion of the engagement or another mutually agreed milestone</li>
+      </ul>
+      <div class="terms">Payable in advance.</div>
+    </div>
+    <div class="tier">
+      <span class="label">Continued Engagement</span>
+      <div class="price">$5,000<small> / month</small></div>
+      <div class="desc">Following the initial three-month engagement, clients may elect to continue on a month-to-month basis, subject to mutual agreement.</div>
+      <ul>
+        <li>Up to eight hours of individualized consulting per month</li>
+        <li>Flexible scheduling by mutual arrangement</li>
+        <li>Agreed-upon between-session advisory communication</li>
+        <li>Continued strategic support, skill-building, and accountability</li>
+        <li>Ongoing refinement of developmental priorities as circumstances evolve</li>
+      </ul>
+      <div class="terms">Monthly fees are payable in advance.</div>
+    </div>
+  </div>
+
+  <div class="fine">
+    <div>
+      <p>The engagement is designed to provide the continuity, depth, and individualized attention necessary for meaningful developmental work.</p>
+      <p>The eight-hour monthly allocation may be distributed across sessions according to the client’s needs and mutual scheduling arrangements.</p>
+      <p>Between-session communication is provided within agreed professional boundaries and does not constitute unlimited or immediate access.</p>
+    </div>
+    <div>
+      <p>Continuation allows for sustained developmental work without requiring a further three-month commitment.</p>
+      <p>The comprehensive written integration report is generally provided at the conclusion of the overall engagement or another mutually agreed milestone, rather than automatically following each monthly renewal.</p>
+    </div>
+  </div>
+
+  <div class="scope">
+    <div class="label">Professional Scope</div>
+    <p>1:1 Private Consulting is a nonclinical service focused on personal growth, leadership development, and performance enhancement. Although informed by Dr. Schulhofer’s training and professional experience as a licensed psychologist, the engagement does not constitute psychotherapy, psychoanalysis, psychological diagnosis, mental health treatment, or crisis services. The consulting relationship does not establish a psychologist-patient relationship.</p>
+  </div>
+
+  <footer><span><b>Dr. Alina Schulhofer, PsyD</b><span class="sep">|</span>alina@architectureofexcellence.com</span><span>02 / 02</span></footer>
+</section>
+
+</body>
+</html>
