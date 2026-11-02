@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Method — Architecture of Excellence™</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>document.documentElement.dataset.theme = location.hash === '#light' ? 'light' : 'dark';</script>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root, [data-theme="dark"] {
+    --bg: #1C1B19; --hi: #F1EDE5; --mid: #B7B1A5; --body: #ABA59A; --soft: #85807A;
+    --rule: #3E3D3A; --rule-strong: #5A5853; --circle: #8A867F; --band: rgba(255,255,255,.05);
+    --photo: grayscale(1) brightness(.78) contrast(1.05);
+  }
+  [data-theme="light"] {
+    --bg: #F3EFE6; --hi: #1C1916; --mid: #5E574F; --body: #4A443D; --soft: #8A8279;
+    --rule: rgba(28,25,22,.14); --rule-strong: rgba(28,25,22,.30); --circle: rgba(28,25,22,.45); --band: rgba(28,25,22,.05);
+    --photo: grayscale(1) brightness(1.02);
+  }
+  .on-light { display: none !important; }
+  [data-theme="light"] .on-light { display: block !important; }
+  [data-theme="light"] .on-dark { display: none !important; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+  body { font-family: 'Manrope', sans-serif; color: var(--body); font-weight: 300; font-size: 15px; line-height: 1.65;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; width: 1280px; height: 720px; overflow: hidden; background: var(--bg);
+           padding: 52px 72px 0; display: flex; flex-direction: column; break-after: page; }
+  .slide:last-child { break-after: auto; }
+  strong { font-weight: 500; color: var(--hi); }
+  .dim { color: var(--mid); }
+  .label { font-size: 11px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--mid); }
+  h1 { font-weight: 300; font-size: 66px; line-height: 1.08; letter-spacing: -0.03em; color: var(--hi); }
+  h2 { font-weight: 300; font-size: 40px; line-height: 1.12; letter-spacing: -0.025em; color: var(--hi); }
+
+  .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .top img { height: 20px; display: block; }
+  .mark { width: 190px; text-align: center; }
+  .mark img { width: 190px; display: block; }
+  .mark span { display: block; margin-top: 8px; font-size: 6.6px; font-weight: 600; letter-spacing: .02em; color: var(--hi); white-space: nowrap; }
+
+  .foot { margin-top: auto; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center;
+          font-size: 10px; font-weight: 400; letter-spacing: .03em; color: var(--soft); }
+  .foot .pg { color: var(--mid); }
+
+  /* 1 — Cover */
+  .cover .head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover .title { margin-top: auto; margin-bottom: 64px; }
+  .cover .title .label { margin-bottom: 26px; }
+  .cover .by { margin-top: 28px; font-size: 17px; color: var(--mid); }
+  .cover .rule { width: 72px; height: 1px; background: var(--circle); margin-top: 30px; }
+
+  /* 2 — Method */
+  .method { padding: 0; flex-direction: row; }
+  .method .photo { width: 440px; flex: none; background: url(method-columns.jpg) center/cover; filter: var(--photo); }
+  .method .text { flex: 1; padding: 52px 72px 0 64px; display: flex; flex-direction: column; }
+  .method h2 { margin-top: 34px; }
+  .method .body { margin-top: 24px; max-width: 640px; }
+  .method .body p { font-size: 14.2px; line-height: 1.68; }
+  .method .body p + p { margin-top: 12px; }
+
+  /* 3 — Structure */
+  .structure .stage { flex: 1; display: grid; grid-template-columns: 300px 1fr; column-gap: 40px; align-items: center; }
+  .structure .stage p { margin-top: 18px; font-size: 14.5px; }
+  .temple { width: 100%; height: auto; display: block; }
+  .temple .ln { stroke: var(--circle); fill: none; stroke-width: 1.2; }
+  .temple .col { stroke: var(--circle); fill: var(--band); stroke-width: 1.1; }
+  .temple .band { fill: var(--band); stroke: var(--circle); stroke-width: 1.1; }
+  .temple text { fill: var(--hi); font-family: 'Manrope', sans-serif; }
+  .temple .cn { fill: var(--mid); font-size: 12px; font-weight: 300; }
+  .temple .vl { font-size: 15px; font-weight: 400; letter-spacing: .26em; text-transform: uppercase; }
+  .temple .ex { font-size: 17px; font-weight: 400; letter-spacing: .4em; }
+  .temple .base { font-size: 11px; font-weight: 500; letter-spacing: .3em; fill: var(--mid); }
+
+  /* 4 — Framework */
+  .grid { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 28px; row-gap: 22px; }
+  .card { border-top: 1px solid var(--rule-strong); padding-top: 16px; }
+  .card .nh { display: flex; align-items: center; gap: 14px; }
+  .num { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--circle);
+         display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--mid); }
+  .card h3 { font-weight: 400; font-size: 21px; letter-spacing: -0.015em; color: var(--hi); line-height: 1.1; }
+  .card .label { display: block; margin-top: 12px; font-size: 9.5px; line-height: 1.5; letter-spacing: .18em; min-height: 28px; }
+  .card ul { list-style: none; margin-top: 10px; }
+  .card li { position: relative; padding-left: 14px; font-size: 12.4px; line-height: 1.45; }
+  .card li + li { margin-top: 5px; }
+  .card li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 1px; background: var(--mid); }
+  .card.ex { grid-column: span 2; border: 1px solid var(--circle); padding: 16px 22px 18px; }
+
+  /* 5 — Close */
+  .close .stage { flex: 1; display: grid; grid-template-columns: 1.15fr 1fr; column-gap: 72px; align-items: center; }
+  .close .lead { margin-top: 22px; font-size: 18px; line-height: 1.55; color: var(--mid); max-width: 520px; }
+  .close .mail { margin-top: 30px; font-size: 26px; font-weight: 300; color: var(--hi); letter-spacing: -0.01em; }
+  .close .web { margin-top: 8px; font-size: 15px; color: var(--mid); }
+  .close .disc { border-left: 1px solid var(--rule-strong); padding-left: 40px; }
+  .close .disc p { margin-top: 14px; font-size: 12px; line-height: 1.65; color: var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="slide cover">
+  <div class="head">
+    <span class="label">The Method</span>
+    <div class="mark"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+  </div>
+  <div class="title">
+    <h1><span class="dim">The Art and Science of</span><br>High Performance.</h1>
+    <div class="rule"></div>
+    <p class="by">Developed by Dr. Alina Schulhofer</p>
+  </div>
+  <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">01 / 05</span></div>
+</section>
+
+<!-- 2 · The Method -->
+<section class="slide method">
+  <div class="photo"></div>
+  <div class="text">
+    <div class="top"><span class="label">The Method</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+    <h2><span class="dim">Architecture of</span> Excellence™</h2>
+    <div class="body">
+      <p>Developed by Dr. Alina Schulhofer, <strong>Architecture of Excellence™</strong> is a proprietary method designed for high-performance environments. It integrates psychological, relational, and systemic perspectives to support sustained excellence and well-being across the entire high-performance ecosystem — including individuals, leadership, and organizations.</p>
+      <p>At its core, Architecture of Excellence is built on the metaphor of the high performer as a masterpiece of architecture — designed with intention, built on a solid foundation, and refined over time. High performance is seen not merely as an outcome, but as an art form.</p>
+      <p>What makes Architecture of Excellence uniquely effective is its ability to bridge two historically siloed disciplines: psychoanalysis and high-performance strategy. This integration creates a method that transforms not only outcomes, but the internal structures that drive them.</p>
+      <p>The framework is built upon six interconnected pillars — Truth, Connection, Being, Vision, Meaning, and Creation — which together create the psychological, relational, and systemic conditions that support sustained excellence and well-being. Each pillar targets a critical psychological and strategic dimension of growth.</p>
+    </div>
+    <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer &nbsp;|&nbsp; Client Use Only</span><span class="pg">02 / 05</span></div>
+  </div>
+</section>
+
+<!-- 3 · Structure -->
+<section class="slide structure">
+  <div class="top"><span class="label">The Structure</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <div class="stage">
+    <div>
+      <h2><span class="dim">Six pillars.</span><br>One structure.</h2>
+      <p>Six interconnected pillars that together create the psychological, relational, and systemic conditions that support sustained excellence and well-being.</p>
+    </div>
+    <svg class="temple" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg">
+      <!-- pediment -->
+      <polygon class="ln" points="20,118 410,14 800,118"/>
+      <text class="ex" x="410" y="92" text-anchor="middle">EXCELLENCE</text>
+      <line class="ln" x1="60" y1="136" x2="760" y2="136"/>
+      <!-- columns -->
+      <g id="cols"></g>
+      <rect class="col" x="62"  y="156" width="86" height="292"/>
+      <rect class="col" x="184" y="156" width="86" height="292"/>
+      <rect class="col" x="306" y="156" width="86" height="292"/>
+      <rect class="col" x="428" y="156" width="86" height="292"/>
+      <rect class="col" x="550" y="156" width="86" height="292"/>
+      <rect class="col" x="672" y="156" width="86" height="292"/>
+      <text class="cn" x="105" y="182" text-anchor="middle">01</text>
+      <text class="cn" x="227" y="182" text-anchor="middle">02</text>
+      <text class="cn" x="349" y="182" text-anchor="middle">03</text>
+      <text class="cn" x="471" y="182" text-anchor="middle">04</text>
+      <text class="cn" x="593" y="182" text-anchor="middle">05</text>
+      <text class="cn" x="715" y="182" text-anchor="middle">06</text>
+      <text class="vl" transform="translate(110,322) rotate(-90)" text-anchor="middle">Truth</text>
+      <text class="vl" transform="translate(232,322) rotate(-90)" text-anchor="middle">Connection</text>
+      <text class="vl" transform="translate(354,322) rotate(-90)" text-anchor="middle">Being</text>
+      <text class="vl" transform="translate(476,322) rotate(-90)" text-anchor="middle">Vision</text>
+      <text class="vl" transform="translate(598,322) rotate(-90)" text-anchor="middle">Meaning</text>
+      <text class="vl" transform="translate(720,322) rotate(-90)" text-anchor="middle">Creation</text>
+      <!-- base -->
+      <rect class="band" x="20" y="460" width="780" height="44"/>
+      <text class="base" x="410" y="487" text-anchor="middle">ARCHITECTURE OF EXCELLENCE™</text>
+    </svg>
+  </div>
+  <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">03 / 05</span></div>
+</section>
+
+<!-- 4 · Framework -->
+<section class="slide framework">
+  <div class="top"><span class="label">The Framework</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <h2 style="margin-top:28px"><span class="dim">Six-Pillar</span> Framework.</h2>
+  <div class="grid">
+    <div class="card"><div class="nh"><div class="num">01</div><h3>Truth</h3></div><span class="label">The Foundation: Confronting Reality</span>
+      <ul><li>Radical honesty</li><li>Self-awareness</li><li>Confronting ‘the shadow’ and reality in more mature and effective ways</li><li>Breaking down illusions</li></ul></div>
+    <div class="card"><div class="nh"><div class="num">02</div><h3>Connection</h3></div><span class="label">The Framework of Emotional &amp; Relational Intelligence</span>
+      <ul><li>Mastering connection with yourself and others</li><li>True connection begins within</li><li>Strengthens leadership presence, communication skills, and influence</li></ul></div>
+    <div class="card"><div class="nh"><div class="num">03</div><h3>Being</h3></div><span class="label">The Art of Embodiment</span>
+      <ul><li>Learning to be in the here-and-now</li><li>Mind-body integration, nervous system regulation</li><li>Clarity and creativity emerge naturally</li></ul></div>
+    <div class="card"><div class="nh"><div class="num">04</div><h3>Vision</h3></div><span class="label">The Blueprint of Excellence</span>
+      <ul><li>Defining purpose, long-term strategy</li><li>Building a life with intentionality and depth</li><li>Realign aspirations with deeper values</li></ul></div>
+    <div class="card"><div class="nh"><div class="num">05</div><h3>Meaning</h3></div><span class="label">The Core of Fulfillment</span>
+      <ul><li>Connect external accolades with internal fulfillment</li><li>Integrates philosophical and existential depth</li></ul></div>
+    <div class="card"><div class="nh"><div class="num">06</div><h3>Creation</h3></div><span class="label">The Execution of Mastery</span>
+      <ul><li>Turning vision into reality</li><li>Deliberate action and discipline</li><li>Converting insight into execution</li><li>Transforms potential into reality</li></ul></div>
+    <div class="card ex"><div class="nh"><div class="num">→</div><h3>Excellence</h3></div><span class="label" style="min-height:0">The Embodiment of Greatness</span>
+      <ul><li>Culmination of all pillars</li><li>Excellence as a way of being, rather than a destination</li><li>Continuous refinement of the self</li></ul></div>
+  </div>
+  <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">04 / 05</span></div>
+</section>
+
+<!-- 5 · Contact & Disclaimer -->
+<section class="slide close">
+  <div class="top"><span class="label">Contact</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <div class="stage">
+    <div>
+      <span class="label">Begin the Conversation</span>
+      <p class="lead">To work with Dr. Alina Schulhofer and experience the Architecture of Excellence™ method, contact:</p>
+      <div class="mail">alina@architectureofexcellence.com</div>
+      <div class="web">www.architectureofexcellence.com</div>
+    </div>
+    <div class="disc">
+      <span class="label">Disclaimer</span>
+      <p>Architecture of Excellence™ is the proprietary intellectual property of Dr. Alina K. Schulhofer. All concepts, frameworks, terminology, and system elements contained herein are protected by trademark and copyright law.</p>
+      <p>This material is provided for informational and educational purposes only and may not be reproduced, adapted, taught, or used for commercial or professional purposes without prior written permission. This material does not constitute psychotherapeutic diagnosis, treatment, or medical care.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">05 / 05</span></div>
+</section>
+
+</body>
+</html>
