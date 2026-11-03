@@ -79,8 +79,8 @@ for pi, idxs in enumerate(LAYOUT, 1):
     body = []
     if pi == 1:
         body.append('''<header>
-    <h1><span class="dim">Self-</span><br>Assessment.</h1>
     <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+    <h1><span class="dim">Self-</span>Assessment.</h1>
   </header>
   <div class="intro">
     <p class="lead">A reflective inventory across the pillars of the Architecture of Excellence™ framework.</p>

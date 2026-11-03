@@ -48,17 +48,18 @@
   .page:last-child { break-after: auto; }
   strong { font-weight: 500; color: var(--hi); }
 
-  header { display: flex; justify-content: space-between; align-items: flex-start; }
+  header { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  header h1 { margin-top: 26px; white-space: nowrap; }
   h1 { font-weight: 300; font-size: 40px; line-height: 1.12; letter-spacing: -0.025em; color: var(--hi); }
   .dim { color: var(--mid); }
-  .logo { width: 150px; text-align: center; margin-top: 2px; flex: none; }
+  .logo { width: 150px; text-align: center; flex: none; }
   .logo img { width: 150px; display: block; }
   .logo span { display: block; margin-top: 6px; font-size: 5.2px; font-weight: 600; letter-spacing: 0.02em; color: var(--hi); white-space: nowrap; }
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
   .runhead img { height: 18px; display: block; }
   .label { font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
 
-  .intro { margin-top: 20px; max-width: 600px; }
+  .intro { margin: 18px auto 0; max-width: 580px; text-align: center; }
   .intro .lead { font-size: 15px; line-height: 1.55; color: var(--hi); }
   .intro p + p { margin-top: 10px; }
 
@@ -130,8 +131,8 @@
 <body>
 <section class="page">
   <header>
-    <h1><span class="dim">Self-</span><br>Assessment.</h1>
     <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+    <h1><span class="dim">Self-</span>Assessment.</h1>
   </header>
   <div class="intro">
     <p class="lead">A reflective inventory across the pillars of the Architecture of Excellence™ framework.</p>
