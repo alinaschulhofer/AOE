@@ -54,14 +54,11 @@
   .cover .rule { width: 72px; height: 1px; background: var(--circle); margin: 30px auto 0; }
 
   /* 2 — Method */
-  .method { padding: 0; flex-direction: row; }
-  .method .photo { width: 440px; flex: none; background: url(method-columns.jpg) center/cover; filter: var(--photo); }
-  .method .text { flex: 1; padding: 52px 72px 0 64px; display: flex; flex-direction: column; }
-  .method h2 { margin-top: 34px; }
-  .method .body { margin: auto 0; max-width: 640px; }
-  .method .body p { font-size: 15px !important; }
-  .method .body p { font-size: 14.2px; line-height: 1.68; }
-  .method .body p + p { margin-top: 12px; }
+  .method .body { margin: auto; max-width: 1010px; column-count: 2; column-gap: 64px; }
+  .method .body p { font-size: 15.5px; line-height: 1.75; break-inside: avoid; }
+  .method .body p { margin: 0 0 18px; }
+  .method .body p:last-child { margin-bottom: 0; }
+  .method .foot { margin-top: 0; }
 
   /* 3 — Structure */
   .structure .stage { flex: 1; display: grid; grid-template-columns: 300px 1fr; column-gap: 40px; align-items: center; }
@@ -116,17 +113,14 @@
 
 <!-- 2 · The Method -->
 <section class="slide method">
-  <div class="photo"></div>
-  <div class="text">
-    <div class="top"><span class="label">The Method</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
-    <div class="body">
-      <p>Developed by Dr. Alina Schulhofer, <strong>Architecture of Excellence™</strong> is a proprietary method designed for high-performance environments. It integrates psychological, relational, and systemic perspectives to support sustained excellence and well-being across the entire high-performance ecosystem — including individuals, leadership, and organizations.</p>
-      <p>At its core, Architecture of Excellence is built on the metaphor of the high performer as a masterpiece of architecture — designed with intention, built on a solid foundation, and refined over time. High performance is seen not merely as an outcome, but as an art form.</p>
-      <p>What makes Architecture of Excellence uniquely effective is its ability to bridge two historically siloed disciplines: psychoanalysis and high-performance strategy. This integration creates a method that transforms not only outcomes, but the internal structures that drive them.</p>
-      <p>The framework is built upon six interconnected pillars — Truth, Connection, Being, Vision, Meaning, and Creation — which together create the psychological, relational, and systemic conditions that support sustained excellence and well-being. Each pillar targets a critical psychological and strategic dimension of growth.</p>
-    </div>
-    <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">02 / 05</span></div>
+  <div class="top"><span class="label">The Method</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <div class="body">
+    <p>Developed by Dr. Alina Schulhofer, <strong>Architecture of Excellence™</strong> is a proprietary method designed for high-performance environments. It integrates psychological, relational, and systemic perspectives to support sustained excellence and well-being across the entire high-performance ecosystem — including individuals, leadership, and organizations.</p>
+    <p>At its core, Architecture of Excellence is built on the metaphor of the high performer as a masterpiece of architecture — designed with intention, built on a solid foundation, and refined over time. High performance is seen not merely as an outcome, but as an art form.</p>
+    <p>What makes Architecture of Excellence uniquely effective is its ability to bridge two historically siloed disciplines: psychoanalysis and high-performance strategy. This integration creates a method that transforms not only outcomes, but the internal structures that drive them.</p>
+    <p>The framework is built upon six interconnected pillars — Truth, Connection, Being, Vision, Meaning, and Creation — which together create the psychological, relational, and systemic conditions that support sustained excellence and well-being. Each pillar targets a critical psychological and strategic dimension of growth.</p>
   </div>
+  <div class="foot"><span>Architecture of Excellence™ &nbsp;|&nbsp; © 2026 Dr. Alina K. Schulhofer. All rights reserved. &nbsp;|&nbsp; Client Use Only</span><span class="pg">02 / 05</span></div>
 </section>
 
 <!-- 3 · Structure -->
