@@ -47,7 +47,8 @@
 
   /* 1 — Cover */
   .cover .head { display: flex; justify-content: space-between; align-items: flex-start; }
-  .cover .title { margin: auto 0; padding-bottom: 40px; text-align: center; }
+  .cover .title { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; }
+  .cover .foot { margin-top: auto; }
   .cover .title .label { margin-bottom: 26px; }
   .cover .by { margin-top: 28px; font-size: 17px; color: var(--mid); }
   .cover .rule { width: 72px; height: 1px; background: var(--circle); margin: 30px auto 0; }
@@ -91,7 +92,8 @@
 
   /* 5 — Close */
   .close .stage { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .close .disc { max-width: 720px; text-align: center; padding-bottom: 20px; }
+  .close .stage { position: absolute; inset: 0; }
+  .close .disc { max-width: 720px; text-align: center; }
   .close .disc p { margin-top: 18px; font-size: 15px; line-height: 1.7; color: var(--body); }
   .close .disc h2 { margin-bottom: 10px; }
 </style>
