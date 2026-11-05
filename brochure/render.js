@@ -1,8 +1,10 @@
 const { chromium } = require('playwright');
+const src = process.argv[2] || 'services-and-fees-source.html';
+const out = process.argv[3] || 'Psychotherapy-Services-and-Fees.pdf';
 (async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 816, height: 1056 }, deviceScaleFactor: 1.5 });
-  await p.goto('file://' + __dirname + '/services-and-fees-source.html', { waitUntil: 'networkidle' });
+  await p.goto('file://' + __dirname + '/' + src, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
   const info = await p.evaluate(() => {
     const fonts = [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family + ' ' + f.weight);
@@ -17,6 +19,6 @@ const { chromium } = require('playwright');
   console.log(JSON.stringify(info));
   const els = await p.$$('.page');
   for (let i = 0; i < els.length; i++) await els[i].screenshot({ path: require('os').tmpdir() + `/p${i+1}.png` });
-  await p.pdf({ path: __dirname + '/Psychotherapy-Services-and-Fees.pdf', width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true });
+  await p.pdf({ path: __dirname + '/' + out, width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true });
   await b.close();
 })();
