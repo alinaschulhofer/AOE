@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="diagram-e-institutional-applications" viewBox="-24 -24 388 388" xmlns="http://www.w3.org/2000/svg" width="388" height="388"><rect x="-24" y="-24" width="388" height="388" fill="rgb(28, 27, 25)"></rect>
+<circle cx="170" cy="170" r="160" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-dasharray="2px, 4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="170" cy="88" r="62" fill="rgba(241, 237, 229, 0.043)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="248" cy="144.7" r="62" fill="rgba(241, 237, 229, 0.043)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="218.2" cy="236.3" r="62" fill="rgba(241, 237, 229, 0.043)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="121.8" cy="236.3" r="62" fill="rgba(241, 237, 229, 0.043)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="92" cy="144.7" r="62" fill="rgba(241, 237, 229, 0.043)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="170" cy="88" r="62" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="248" cy="144.7" r="62" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="218.2" cy="236.3" r="62" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="121.8" cy="236.3" r="62" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="92" cy="144.7" r="62" fill="none" stroke="rgb(138, 134, 127)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<text x="170" y="58" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12px" font-weight="300" opacity="1">01</text>
+<text x="276.5" y="135.4" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12px" font-weight="300" opacity="1">02</text>
+<text x="235.8" y="260.6" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12px" font-weight="300" opacity="1">03</text>
+<text x="104.2" y="260.6" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12px" font-weight="300" opacity="1">04</text>
+<text x="63.5" y="135.4" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12px" font-weight="300" opacity="1">05</text>
+<circle cx="170" cy="170" r="46" fill="rgb(28, 27, 25)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="170" cy="170" r="46" fill="rgba(241, 237, 229, 0.09)" stroke="rgb(241, 237, 229)" stroke-width="1.1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<text text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="8.4px" font-weight="500" letter-spacing="1.344px" opacity="1"><tspan x="170" y="158">ASSESSMENT</tspan><tspan x="170" y="170">&amp; STRATEGIC</tspan><tspan x="170" y="182">DESIGN</tspan></text>
+</svg>
