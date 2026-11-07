@@ -35,33 +35,23 @@ MARKERS = """<defs>
 
 # ---------------------------------------------------------------- Diagram A
 def diagram_a():
-    cx = cy = 190
-    radii = [58, 100, 142, 184]
+    cx = cy = 200
+    radii = [56, 104, 152, 198]
     names = ["RELATIONAL &amp; TEAM", "ORGANIZATIONAL", "SYSTEMIC"]
-    o = [f'<svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">',
+    o = [f'<svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="ma")]
     for i, r in enumerate(reversed(radii)):
         o.append(f'<circle class="{"band" if i % 2 == 0 else "bg"}" cx="{cx}" cy="{cy}" r="{r}"/>')
     for r in radii:
-        o.append(f'<circle class="ring{" dash" if r != radii[-1] else ""}" cx="{cx}" cy="{cy}" r="{r}"/>')
-    # level names along the top of each band, numbers along the bottom
-    bands = [(radii[i], radii[i + 1]) for i in range(3)]
-    for (a, b), n in zip(bands, names):
-        m = (a + b) / 2
+        o.append(f'<circle class="ring" cx="{cx}" cy="{cy}" r="{r}"/>')
+    for k, n in enumerate(names):
+        m = (radii[k] + radii[k + 1]) / 2
         o.append(f'<text class="lv" x="{cx}" y="{f(cy - m)}" text-anchor="middle" dominant-baseline="central">{n}</text>')
-    for i, (a, b) in enumerate([(0, 58)] + bands):
-        m = 40 if i == 0 else (a + b) / 2
-        o.append(f'<text class="ln" x="{cx}" y="{f(cy + m)}" text-anchor="middle" dominant-baseline="central">0{i + 1}</text>')
-    o.append(f'<text class="lv core" x="{cx}" y="{cy - 4}" text-anchor="middle" dominant-baseline="central">INDIVIDUAL</text>')
-    # reciprocal arrows across every boundary on two diagonals
-    for th in (-38, 142, 38, 218):
-        u = (cos(radians(th)), sin(radians(th)))
-        n = (-u[1], u[0])
-        for r in radii[:3]:
-            for s, (r1, r2) in ((4.2, (r - 12, r + 12)), (-4.2, (r + 12, r - 12))):
-                x1, y1 = cx + u[0] * r1 + n[0] * s, cy + u[1] * r1 + n[1] * s
-                x2, y2 = cx + u[0] * r2 + n[0] * s, cy + u[1] * r2 + n[1] * s
-                o.append(f'<line class="arw" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}" marker-end="url(#ma)"/>')
+    o.append(f'<text class="lv core" x="{cx}" y="{cy}" text-anchor="middle" dominant-baseline="central">INDIVIDUAL</text>')
+    # one reciprocal pair: influence moves outward and inward across all levels
+    x1, x2 = cx + radii[0] + 8, cx + radii[-1] - 8
+    o.append(f'<line class="arw" x1="{x1}" y1="{cy - 6}" x2="{x2}" y2="{cy - 6}" marker-end="url(#ma)"/>')
+    o.append(f'<line class="arw" x1="{x2}" y1="{cy + 6}" x2="{x1}" y2="{cy + 6}" marker-end="url(#ma)"/>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -70,88 +60,63 @@ def diagram_a():
 PILLAR_NAMES = ["Truth", "Connection", "Being", "Vision", "Meaning", "Creation"]
 
 
-def diagram_b(cls="dg", id_="diagram-b-pillar-model", labels=True):
-    cx = cy = 230
-    R, outer = 150, 205
-    pts = [pol(cx, cy, R, -90 + k * 60) for k in range(6)]
-    vb = "-80 -6 620 472" if labels else "0 0 460 460"
-    o = [f'<svg class="{cls}" id="{id_}" viewBox="{vb}" xmlns="http://www.w3.org/2000/svg">']
-    o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="{outer}"/>')
-    o.append(f'<circle class="ring faint" cx="{cx}" cy="{cy}" r="{R + 22}"/>')
-    o.append(f'<circle class="ring faint" cx="{cx}" cy="{cy}" r="{R - 22}"/>')
-    for i in range(6):
-        for j in range(i + 1, 6):
-            (x1, y1), (x2, y2) = pts[i], pts[j]
-            o.append(f'<line class="web" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}"/>')
-    o.append(f'<circle class="ring strong" cx="{cx}" cy="{cy}" r="{R}"/>')
-    o.append(f'<circle class="core-bg" cx="{cx}" cy="{cy}" r="66"/>')
-    o.append(f'<circle class="core" cx="{cx}" cy="{cy}" r="66"/>')
-    o.append(f'<circle class="ring faint" cx="{cx}" cy="{cy}" r="74"/>')
-    o.append(f'<text class="ex" x="{cx}" y="{cy - 7}" text-anchor="middle" dominant-baseline="central">EXCELLENCE</text>')
-    o.append(tlines(cx, cy + 17, ["The integration", "of the six pillars"], "exs", 12))
-    for k, (x, y) in enumerate(pts):
-        o.append(f'<circle class="col" cx="{f(x)}" cy="{f(y)}" r="13"/>')
-        o.append(f'<circle class="col-in" cx="{f(x)}" cy="{f(y)}" r="4"/>')
-        if labels:
-            a = -90 + k * 60
-            lx, ly = pol(cx, cy, 182, a)
-            anchor = "middle" if k in (0, 3) else ("start" if k in (1, 2) else "end")
-            if k == 0:
-                ly -= 4
-            if k == 3:
-                ly += 6
-            o.append(f'<text class="pn" x="{f(lx)}" y="{f(ly - 8)}" text-anchor="{anchor}" dominant-baseline="central">0{k + 1}</text>')
-            o.append(f'<text class="pl" x="{f(lx)}" y="{f(ly + 7)}" text-anchor="{anchor}" dominant-baseline="central">{PILLAR_NAMES[k].upper()}</text>')
-    o.append("</svg>")
+def diagram_b():
+    o = ['<svg class="dg temple" id="diagram-b-pillar-model" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg">',
+         '<polygon class="t-ln" points="20,118 410,14 800,118"/>',
+         '<text class="t-ex" x="410" y="92" text-anchor="middle">EXCELLENCE</text>',
+         '<line class="t-ln" x1="60" y1="136" x2="760" y2="136"/>']
+    for k, name in enumerate(PILLAR_NAMES):
+        x = 62 + k * 122
+        o.append(f'<rect class="t-col" x="{x}" y="156" width="86" height="292"/>')
+        o.append(f'<text class="t-cn" x="{x + 43}" y="182" text-anchor="middle">0{k + 1}</text>')
+        o.append(f'<text class="t-vl" transform="translate({x + 48},322) rotate(-90)" text-anchor="middle">{name.upper()}</text>')
+    o += ['<rect class="t-band" x="20" y="460" width="780" height="44"/>',
+          '<text class="t-base" x="410" y="487" text-anchor="middle">ARCHITECTURE OF EXCELLENCE™</text>',
+          '</svg>']
     return "\n".join(o)
 
 
 # ---------------------------------------------------------------- Diagram C
-CORE = [
-    ["Self-Awareness,", "Integrity &amp;", "Accountability"],
-    ["Emotional &amp;", "Relational", "Intelligence"],
-    ["Presence &amp;", "Self-Regulation"],
-    ["Purposeful", "Direction &amp;", "Strategic", "Alignment"],
-    ["Purpose,", "Fulfillment &amp;", "Meaningful", "Engagement"],
-    ["Intentional", "Action &amp;", "Continuous", "Development"],
-]
-SUBS = [
-    [["Self-Awareness"], ["Psychological", "Insight"], ["Integrity"], ["Accountability"], ["Openness to", "Feedback"]],
-    [["Emotional", "Intelligence"], ["Relational", "Intelligence"], ["Effective", "Communication"], ["Conflict", "Navigation"], ["Trust &amp;", "Collaboration"]],
-    [["Self-Regulation"], ["Present-Moment", "Awareness"], ["Mind-Body", "Awareness"], ["Psychological", "Flexibility"], ["Stress", "Management"]],
-    [["Vision", "Development"], ["Strategic", "Thinking"], ["Values", "Alignment"], ["Intentional", "Decision-Making"], ["Shared", "Direction"]],
-    [["Purpose", "Awareness"], ["Intrinsic", "Motivation"], ["Values-Based", "Engagement"], ["Identity &amp;", "Fulfillment"], ["Belonging &amp;", "Contribution"]],
-    [["Personal Agency"], ["Intentional", "Action"], ["Discipline &amp;", "Follow-Through"], ["Adaptability"], ["Continuous", "Learning"]],
+CORE2 = [["Self-Awareness, Integrity", "&amp; Accountability"], ["Emotional &amp; Relational", "Intelligence"],
+         ["Presence &amp; Self-Regulation"], ["Purposeful Direction", "&amp; Strategic Alignment"],
+         ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
+SUB_NAMES = [
+    ["Self-Awareness", "Psychological Insight", "Integrity", "Accountability", "Openness to Feedback"],
+    ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Navigation", "Trust &amp; Collaboration"],
+    ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Awareness", "Psychological Flexibility", "Stress Management"],
+    ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
+    ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity &amp; Fulfillment", "Belonging &amp; Contribution"],
+    ["Personal Agency", "Intentional Action", "Discipline &amp; Follow-Through", "Adaptability", "Continuous Learning"],
 ]
 
 
 def diagram_c():
-    W, gap, lab = 678, 8, 0
-    cw = (W - lab - gap * 5) / 6
-    y_head, h_head = 0, 70
-    y_core, h_core = 80, 84
-    y_sub, h_sub, g_sub = 190, 52, 8
-    y_ex = y_sub + 5 * (h_sub + g_sub) + 30
-    H = y_ex + 44
-    o = [f'<svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">']
+    W, top, rh = 678, 30, 110
+    xc, xs = 196, 450
+    H = top + 6 * rh + 22 + 42
+    o = [f'<svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
+         MARKERS.format(id="mc")]
+    for x, t in ((0, "PILLAR"), (xc, "CORE COMPETENCY"), (xs, "CORE SUBCOMPETENCIES")):
+        o.append(f'<text class="phl" x="{x}" y="10" dominant-baseline="central">{t}</text>')
+    o.append(f'<line class="rule" x1="0" y1="{top - .5}" x2="{W}" y2="{top - .5}"/>')
     for k in range(6):
-        x = lab + k * (cw + gap)
-        mx = x + cw / 2
-        o.append(f'<line class="rule" x1="{f(x)}" y1="0.5" x2="{f(x + cw)}" y2="0.5"/>')
-        o.append(f'<circle class="numc" cx="{f(mx)}" cy="26" r="15"/>')
-        o.append(f'<text class="numt" x="{f(mx)}" y="26" text-anchor="middle" dominant-baseline="central">0{k + 1}</text>')
-        o.append(f'<text class="cname" x="{f(mx)}" y="58" text-anchor="middle" dominant-baseline="central">{PILLAR_NAMES[k]}</text>')
-        o.append(f'<rect class="corebox" x="{f(x)}" y="{y_core}" width="{f(cw)}" height="{h_core}"/>')
-        o.append(tlines(mx, y_core + h_core / 2, CORE[k], "ccore", 14))
-        o.append(f'<line class="stem" x1="{f(mx)}" y1="{y_core + h_core}" x2="{f(mx)}" y2="{y_sub}"/>')
-        for j, lines in enumerate(SUBS[k]):
-            y = y_sub + j * (h_sub + g_sub)
-            o.append(f'<rect class="subbox" x="{f(x)}" y="{y}" width="{f(cw)}" height="{h_sub}"/>')
-            o.append(tlines(mx, y + h_sub / 2, lines, "csub", 13.5))
-        yb = y_sub + 5 * (h_sub + g_sub) - g_sub
-        o.append(f'<line class="stem" x1="{f(mx)}" y1="{yb}" x2="{f(mx)}" y2="{y_ex}"/>')
-    o.append(f'<rect class="exbar" x="0" y="{y_ex}" width="{W}" height="40"/>')
-    o.append(f'<text class="ex" x="{W / 2}" y="{y_ex + 20}" text-anchor="middle" dominant-baseline="central">EXCELLENCE · THE INTEGRATION OF THE SIX PILLARS</text>')
+        y = top + k * rh
+        m = y + rh / 2
+        if k % 2 == 0:
+            o.append(f'<rect class="rowband" x="0" y="{y}" width="{W}" height="{rh}"/>')
+        o.append(f'<circle class="numc" cx="18" cy="{m}" r="17"/>')
+        o.append(f'<text class="numt" x="18" y="{m}" text-anchor="middle" dominant-baseline="central">0{k + 1}</text>')
+        o.append(f'<text class="rname" x="50" y="{m}" dominant-baseline="central">{PILLAR_NAMES[k]}</text>')
+        o.append(tlines(xc, m, CORE2[k], "rcore", 17, "start"))
+        o.append(f'<line class="arw soft" x1="{xs - 46}" y1="{m}" x2="{xs - 18}" y2="{m}" marker-end="url(#mc)"/>')
+        for j, t in enumerate(SUB_NAMES[k]):
+            yy = m + (j - 2) * 18.5
+            o.append(f'<line class="rule" x1="{xs}" y1="{f(yy)}" x2="{xs + 6}" y2="{f(yy)}"/>')
+            o.append(f'<text class="rsub" x="{xs + 14}" y="{f(yy)}" dominant-baseline="central">{t}</text>')
+        o.append(f'<line class="rule faint" x1="0" y1="{y + rh - .5}" x2="{W}" y2="{y + rh - .5}"/>')
+    ye = top + 6 * rh + 22
+    o.append(f'<rect class="exbar" x="0" y="{ye}" width="{W}" height="42"/>')
+    o.append(f'<text class="ex" x="{W / 2}" y="{ye + 21}" text-anchor="middle" dominant-baseline="central">EXCELLENCE · THE INTEGRATION OF THE SIX PILLARS</text>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -422,24 +387,16 @@ def build():
     pages.append(f"""
 <!-- ============ PAGE 01 · COVER ============ -->
 <section class="page cover">
-  <header>
-    <span class="label">Institutional Framework</span>
-    <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
-  </header>
-  <div class="cover-art">{diagram_b(cls="dg art", id_="cover-mark", labels=False)}</div>
-  <div class="cover-title">
-    <div class="label">Architecture of Excellence™</div>
+  <div class="cover-center">
+    <div class="logo cover-logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
     <h1><span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.</h1>
-    <div class="rule"></div>
-    <p class="by">Developed by Dr. Alina K. Schulhofer</p>
   </div>
-  <footer><span>{COPY}</span><span class="pg">01 / {TOTAL}</span></footer>
+  <footer class="center"><span>{COPY}</span></footer>
 </section>""")
 
     # 02 — Overview
     pages.append(page(2, "Overview", """
   <div class="stack">
-    <h1 class="pt"><span class="dim">Architecture of</span><br>Excellence™.</h1>
     <p class="sub">Architecture of Excellence™ (AOE) is a proprietary, science-based approach designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
@@ -459,19 +416,18 @@ def build():
               ("Relational and Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
               ("Organizational", "Improving leadership practices, organizational culture, processes, and working conditions."),
               ("Systemic", "Supporting alignment, shared practices, and development across interconnected stakeholders, teams, and organizations.")]
-    lv = "".join(f'<div class="lvl"><div class="num sm">0{i + 1}</div><div><h3>{t}</h3><p>{d}</p></div></div>' for i, (t, d) in enumerate(levels))
+    lv = "".join(f'<div class="lvl"><div class="label">Level 0{i + 1}</div><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(levels))
     pages.append(page(3, "A Systems-Based Approach", f"""
-  <h1 class="pt"><span class="dim">A Systems-Based</span><br>Approach to Excellence.</h1>
+  <h1 class="pt one"><span class="dim">A Systems-Based</span> Approach to Excellence.</h1>
   <div class="cols2 mt20">
     <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bi-directional and can manifest in a variety of ways.</p>
     <p>For example, leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These factors are constantly interacting and interconnected, often in unseen ways.</p>
   </div>
-  <div class="eco">
-    <figure>{diagram_a()}
-      <figcaption><svg viewBox="0 0 30 14" class="dg key"><defs><marker id="mk" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M1,1.2 L9,5 L1,8.8"/></marker></defs><line class="arw" x1="2" y1="4" x2="27" y2="4" marker-end="url(#mk)"/><line class="arw" x1="27" y1="10.5" x2="2" y2="10.5" marker-end="url(#mk)"/></svg>Bidirectional influence across every level</figcaption>
-    </figure>
-    <div class="levels"><p class="intro">AOE therefore approaches transformation at four interconnected levels:</p>{lv}</div>
-  </div>
+  <figure class="eco-fig">{diagram_a()}
+    <figcaption>Influence moves in both directions across every level</figcaption>
+  </figure>
+  <p class="levels-intro">AOE therefore approaches transformation at four interconnected levels:</p>
+  <div class="levels-row">{lv}</div>
   <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
 """, "systems"))
 
@@ -495,7 +451,6 @@ def build():
     pages.append(page(5, "Part I — The AOE Competency Framework", f"""
   <h1 class="pt"><span class="dim">From Principles</span><br>to Competencies.</h1>
   <p class="lead">Each pillar represents a core competency domain supported by specific developmental competencies.</p>
-  <div class="matrix-key"><span class="label">Pillar</span><span class="arrow">→</span><span class="label">Core Competency</span><span class="arrow">→</span><span class="label">Core Subcompetencies</span></div>
   <figure class="matrix">{diagram_c()}</figure>
 """, "competencies"))
 
@@ -519,8 +474,8 @@ def build():
     # 10 — Phases detail
     rows = "".join(f"""
     <div class="phase">
-      <div class="ph"><div class="num sm">0{k + 1}</div><div><h3>{PHASES[k]}</h3><div class="label tag">{t}</div></div></div>
-      <div class="phb"><p>{" ".join(body)}</p><div class="out"><span class="k">Outcome</span><p>{o}</p></div></div>
+      <div class="ph"><div class="label">Phase 0{k + 1}</div><h3>{PHASES[k]}</h3><p class="sub2">{t}</p></div>
+      <div class="phb"><p>{" ".join(body)}</p><p class="out"><span class="k">Outcome</span>{o}</p></div>
     </div>""" for k, (t, body, o) in enumerate(PHASE_TEXT))
     pages.append(page(10, "Part II — The Five Phases", f'<div class="phases">{rows}</div>', "phases-pg"))
 
@@ -568,9 +523,7 @@ def build():
     pages.append(f"""
 <!-- ============ PAGE 14 · CLOSING ============ -->
 <section class="page closing">
-  <div class="runhead"><span class="label">Closing Statement</span>{LOGO_SMALL}</div>
   <div class="close-stage">
-    <div class="close-mark">{diagram_b(cls="dg art", id_="close-mark", labels=False)}</div>
     <p class="cl">Architecture of Excellence™ provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and transforming organizational environments.</p>
     <p class="cl">By translating its six foundational pillars into competencies, developmental interventions, and institutional practices, AOE offers a structured and adaptable approach to cultivating excellence across high-performance ecosystems.</p>
     <div class="rule"></div>
