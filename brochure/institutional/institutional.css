@@ -1,11 +1,11 @@
   @page { size: A4; margin: 0; }
   :root, [data-theme="dark"] {
-    --bg: #1C1B19; --hi: #F1EDE5; --mid: #B7B1A5; --body: #ABA59A; --soft: #85807A;
+    --bg: #1C1B19; --hi: #F1EDE5; --mid: #C2BCB0; --body: #BEB8AD; --soft: #9A948A;
     --rule: #3E3D3A; --rule-strong: #5A5853; --circle: #8A867F;
     --band: rgba(241,237,229,.045); --band2: rgba(241,237,229,.09); --web: rgba(241,237,229,.16);
   }
   [data-theme="light"] {
-    --bg: #F3EFE6; --hi: #1C1916; --mid: #5E574F; --body: #4A443D; --soft: #8A8279;
+    --bg: #F3EFE6; --hi: #1C1916; --mid: #554E46; --body: #3B3631; --soft: #736C64;
     --rule: rgba(28,25,22,.14); --rule-strong: rgba(28,25,22,.30); --circle: rgba(28,25,22,.45);
     --band: rgba(28,25,22,.04); --band2: rgba(28,25,22,.08); --web: rgba(28,25,22,.16);
   }
@@ -133,12 +133,12 @@
   /* 03 Systems */
   h1.pt.one { font-size: 34px; white-space: nowrap; }
   .eco-fig { width: 330px; margin: 30px auto 0; }
-  .eco-fig figcaption { margin: 12px -80px 0; text-align: center; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+  .eco-fig figcaption { margin: 14px -30px 0; text-align: center; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
   .levels-intro { margin-top: 30px; color: var(--mid); }
   .levels-row { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 22px; }
   .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
   .lvl h3 { margin-top: 6px; }
-  .lvl p { margin-top: 6px; font-size: 11.4px; line-height: 1.55; }
+  .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
   .closing-line { margin-top: auto; margin-bottom: 26px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
 
   /* 04 Part I */
@@ -169,19 +169,19 @@
 
   /* 06–08 Pillars */
   .pillar { padding-top: 18px; }
-  .pillar + .pillar { margin-top: 12px; border-top: 1px solid var(--rule); }
+  .pillar + .pillar { margin-top: 6px; border-top: 1px solid var(--rule); }
   .p-head { display: grid; grid-template-columns: 48px 1fr 228px; column-gap: 18px; align-items: center; }
   .p-head .tag { margin-top: 6px; font-size: 9px; }
   .core-c { border-left: 1px solid var(--rule); padding-left: 18px; }
   .core-c .label { font-size: 8.5px; display: block; }
   .core-c .cc { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.35; font-weight: 400; color: var(--hi); }
-  .p-body { margin-top: 12px; padding-left: 66px; }
-  .p-def { font-size: 12.2px; color: var(--hi); line-height: 1.6; }
+  .p-body { margin-top: 12px; padding-left: 0; }
+  .p-def { font-size: 12.8px; color: var(--hi); line-height: 1.6; }
   .p-def p + p { margin-top: 6px; }
-  .p-grid { margin-top: 12px; display: grid; grid-template-columns: 1.08fr 1fr; column-gap: 26px; font-size: 11px; line-height: 1.48; }
+  .p-grid { margin-top: 12px; display: grid; grid-template-columns: 1.05fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
   .p-grid .k.mt { margin-top: 12px; }
   .p-grid dl { margin-top: 4px; }
-  .sc { padding: 4px 0; border-top: 1px solid var(--rule); }
+  .sc { padding: 3.5px 0; border-top: 1px solid var(--rule); }
   .sc:first-child { border-top: 0; }
   .sc dt { font-weight: 500; color: var(--hi); }
   .sc dd { margin: 0; }
@@ -199,31 +199,31 @@
   .phase { display: grid; grid-template-columns: 196px 1fr; column-gap: 30px; padding: 4px 0; }
   .phase + .phase { border-top: 1px solid var(--rule); padding-top: 18px; }
   .ph h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
-  .ph .sub2 { margin-top: 6px; font-size: 11px; line-height: 1.45; color: var(--soft); }
-  .phb { font-size: 11.6px; line-height: 1.62; }
+  .ph .sub2 { margin-top: 6px; font-size: 11.6px; line-height: 1.45; color: var(--soft); }
+  .phb { font-size: 12.4px; line-height: 1.62; }
   .phb .out { margin-top: 9px; color: var(--hi); }
   .phb .out .k { margin-right: 10px; color: var(--mid); }
 
   /* 11 Applications */
   .apps-top { display: grid; grid-template-columns: 1fr 250px; column-gap: 30px; align-items: center; }
   .apps-fig { margin-top: 22px; }
-  .apps { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.2px; line-height: 1.52; }
+  .apps { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
   .appc { padding: 12px 0 12px; border-top: 1px solid var(--rule); }
   .ah2 { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
   .ah2 h3 { font-size: 14px; }
-  .appc .note { margin-top: 6px; color: var(--soft); font-size: 10.6px; }
+  .appc .note { margin-top: 6px; color: var(--mid); font-size: 11.2px; }
   .appc.wide { grid-row: span 2; }
 
   /* 12 Standards */
-  .steps { margin-top: 24px; }
-  .levels4 { margin-top: 18px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 8px; font-size: 10.8px; line-height: 1.5; }
+  .steps { margin-top: 18px; }
+  .levels4 { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 12px; font-size: 11.6px; line-height: 1.5; }
   .lv-c { padding: 12px 12px 0 0; border-top: 1px solid var(--rule-strong); }
   .lv-c h3 { margin-top: 4px; font-size: 13.5px; }
   .lv-c p { margin-top: 6px; }
   .lv-c .rec { margin-top: 10px; color: var(--hi); }
-  .lv-c .rec .k { display: block; font-size: 8.2px; color: var(--mid); margin-bottom: 2px; }
+  .lv-c .rec .k { display: block; font-size: 8.8px; color: var(--mid); margin-bottom: 2px; }
   .lv-c.future { border-top-style: dashed; }
-  .caveat { margin-top: 22px; padding: 14px 18px; border: 1px dashed var(--circle); font-size: 12px; color: var(--hi); text-align: center; }
+  .caveat { margin-top: 16px; padding: 14px 18px; border: 1px dashed var(--circle); font-size: 12px; color: var(--hi); text-align: center; }
 
   /* 13 Principles */
   .principles { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
@@ -241,3 +241,26 @@
   .contact .ct { display: flex; gap: 46px; }
   .contact .ct p { margin-top: 4px; color: var(--hi); font-size: 12.5px; }
   .legal { padding-bottom: 16px; font-size: 9.4px; line-height: 1.55; color: var(--soft); }
+
+  /* Refinements: overview value line, ecological note, matrix note, methodology principle */
+  .overview .value { margin-top: 30px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 14.5px; line-height: 1.6; color: var(--hi); max-width: 640px; }
+  .overview .value .label, .cml .label { display: block; margin-bottom: 6px; }
+  .eco { margin-top: 20px; display: grid; grid-template-columns: 290px 1fr; column-gap: 40px; align-items: center; }
+  .eco .eco-fig { width: 290px; margin: 0; }
+  .eco-note p { font-size: 14px; line-height: 1.6; color: var(--hi); }
+  .eco-note p + p { margin-top: 12px; color: var(--mid); font-size: 13px; }
+  .levels-intro { margin-top: 20px; }
+  .matrix-note { margin-top: 18px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 13px; line-height: 1.6; color: var(--hi); }
+  .cycle { margin-top: 18px; }
+  .cml { margin-top: 14px; padding: 14px 18px; border: 1px solid var(--rule-strong); font-size: 12.4px; line-height: 1.6; color: var(--hi); }
+  .dg .spoke { stroke: var(--circle); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+  .dg.temple .t-link { fill: none; stroke: var(--circle); stroke-width: 1; }
+  .dg.temple .t-link.faint { stroke: var(--rule-strong); stroke-width: .8; }
+  .dg.temple .t-tie { stroke: var(--circle); stroke-width: 1; }
+  .dg.temple .t-node { fill: var(--hi); }
+  /* Principles page carrying the contact block (Document C) */
+  .principles-pg.compact .principles { margin-top: 22px; }
+  .principles-pg.compact .pr { padding: 14px 0; }
+  .principles-pg.compact .pr h3 { font-size: 15.5px; }
+  .principles-pg.compact .pr p { font-size: 11.9px; margin-top: 4px; }
+  .principles-pg.compact .contact { margin-top: auto; }

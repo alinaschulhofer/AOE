@@ -4,18 +4,20 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const SRC = 'file://' + path.join(__dirname, 'institutional.html');
 const PREV = process.argv[2] || path.join(__dirname, 'previews');
-const OUT = {
-  dark: 'AOE_Institutional_Framework_dark.pdf',
-  light: 'AOE_Institutional_Framework_light.pdf',
-};
+// Document A is the complete reference; B and C are shorter modular editions built from the same pages.
+const DOCS = [
+  { src: 'institutional.html', pdf: 'AOE_Institutional_Framework', tag: 'A', diagrams: true },
+  { src: 'competency-framework.html', pdf: 'AOE_Competency_Framework', tag: 'B' },
+  { src: 'implementation-methodology.html', pdf: 'AOE_Implementation_Methodology', tag: 'C' },
+];
 
 (async () => {
   fs.mkdirSync(PREV, { recursive: true });
   fs.mkdirSync(path.join(__dirname, 'diagrams'), { recursive: true });
   const browser = await chromium.launch();
-  for (const theme of ['dark', 'light']) {
+  for (const doc of DOCS) for (const theme of ['dark', 'light']) {
+    const SRC = 'file://' + path.join(__dirname, doc.src);
     const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 1 });
     await page.goto(SRC + '#' + theme, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
@@ -33,14 +35,15 @@ const OUT = {
       return { page: i + 1, spaceAboveFooter: Math.round(foot.top - last), footerInside: Math.round(pb.bottom - foot.bottom) };
     }));
     const bad = report.filter(r => r.spaceAboveFooter < 0 || r.footerInside < 0);
-    console.log(theme, bad.length ? 'OVERFLOW ' + JSON.stringify(bad) : 'layout ok', JSON.stringify(report.map(r => r.spaceAboveFooter)));
+    console.log(doc.tag, theme, bad.length ? 'OVERFLOW ' + JSON.stringify(bad) : 'layout ok', JSON.stringify(report.map(r => r.spaceAboveFooter)));
 
     const els = await page.$$('.page');
     for (let i = 0; i < els.length; i++) {
-      await els[i].screenshot({ path: path.join(PREV, `${theme}-${String(i + 1).padStart(2, '0')}.png`) });
+      await els[i].screenshot({ path: path.join(PREV, `${doc.tag}-${theme}-${String(i + 1).padStart(2, '0')}.png`) });
     }
-    await page.pdf({ path: path.join(__dirname, OUT[theme]), preferCSSPageSize: true, printBackground: true });
+    await page.pdf({ path: path.join(__dirname, `${doc.pdf}_${theme}.pdf`), preferCSSPageSize: true, printBackground: true });
 
+    if (!doc.diagrams) { await page.close(); continue; }
     // Export each diagram as a self-contained SVG with resolved colours.
     const svgs = await page.evaluate((theme) => {
       const PROPS = ['fill', 'stroke', 'stroke-width', 'stroke-dasharray', 'stroke-linecap', 'stroke-linejoin',

@@ -12,11 +12,21 @@
 <circle cx="200" cy="200" r="56" fill="none" stroke="rgba(28, 25, 22, 0.45)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
 <circle cx="200" cy="200" r="104" fill="none" stroke="rgba(28, 25, 22, 0.45)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
 <circle cx="200" cy="200" r="152" fill="none" stroke="rgba(28, 25, 22, 0.45)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
-<circle cx="200" cy="200" r="198" fill="none" stroke="rgba(28, 25, 22, 0.45)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
+<circle cx="200" cy="200" r="198" fill="none" stroke="rgba(28, 25, 22, 0.45)" stroke-width="1px" stroke-dasharray="2px, 4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></circle>
 <text x="200" y="120" text-anchor="middle" dominant-baseline="central" fill="rgb(28, 25, 22)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="10.5px" font-weight="500" letter-spacing="2.1px" opacity="1">RELATIONAL &amp; TEAM</text>
 <text x="200" y="72" text-anchor="middle" dominant-baseline="central" fill="rgb(28, 25, 22)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="10.5px" font-weight="500" letter-spacing="2.1px" opacity="1">ORGANIZATIONAL</text>
-<text x="200" y="25" text-anchor="middle" dominant-baseline="central" fill="rgb(28, 25, 22)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="10.5px" font-weight="500" letter-spacing="2.1px" opacity="1">SYSTEMIC</text>
+<text x="200" y="25" text-anchor="middle" dominant-baseline="central" fill="rgb(28, 25, 22)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="10.5px" font-weight="500" letter-spacing="2.1px" opacity="1">BROADER SYSTEMS</text>
 <text x="200" y="200" text-anchor="middle" dominant-baseline="central" fill="rgba(28, 25, 22, 0.08)" stroke="rgb(28, 25, 22)" stroke-width="1.1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="11px" font-weight="500" letter-spacing="2.2px" opacity="1">INDIVIDUAL</text>
-<line x1="264" y1="194" x2="390" y2="194" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
-<line x1="390" y1="206" x2="264" y2="206" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="225.8" y1="232.2" x2="247" y2="253.4" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="253.4" y1="247" x2="232.2" y2="225.8" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="259.8" y1="266.1" x2="281" y2="287.3" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="287.3" y1="281" x2="266.1" y2="259.8" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="293.7" y1="300.1" x2="314.9" y2="321.3" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="321.3" y1="314.9" x2="300.1" y2="293.7" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="167.8" y1="225.8" x2="146.6" y2="247" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="153" y1="253.4" x2="174.2" y2="232.2" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="133.9" y1="259.8" x2="112.7" y2="281" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="119" y1="287.3" x2="140.2" y2="266.1" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="99.9" y1="293.7" x2="78.7" y2="314.9" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
+<line x1="85.1" y1="321.3" x2="106.3" y2="300.1" marker-end="url(#ma)" fill="none" stroke="rgb(28, 25, 22)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 </svg>

@@ -1,12 +1,23 @@
-# AOE Institutional Framework brochure
+# AOE institutional documents
 
-- `AOE_Institutional_Framework_dark.pdf` / `AOE_Institutional_Framework_light.pdf`: print-ready A4, 14 pages, with the fonts embedded.
-- `diagrams/`: each diagram as a standalone vector SVG, in a dark and a light version, for Illustrator, Figma, Affinity or slides.
-- Editable source: the copy and diagram geometry are in `build.py`, and the styling is in `institutional.css`.
+There are three coordinated documents, all built from the same source. They share the same pages, copy and diagrams.
+
+| Document | File | Pages |
+|---|---|---|
+| A: Comprehensive Institutional Framework & Methodology | `AOE_Institutional_Framework_{dark,light}.pdf` | 14 |
+| B: Institutional Competency Framework | `AOE_Competency_Framework_{dark,light}.pdf` | 9 |
+| C: Institutional Implementation Methodology | `AOE_Implementation_Methodology_{dark,light}.pdf` | 7 |
+
+- `diagrams/`: each diagram as a standalone vector SVG, in a dark and a light version.
+- Editable source:
+  - `build.py` holds the copy, the diagram geometry and which pages appear in each document (`DOCS`).
+  - `institutional.css` holds the styling.
+
+To edit the copy, change it once in `build.py`. Every document that uses that page updates when you rebuild.
 
 Rebuild:
 
-    python3 build.py      # writes institutional.html
-    node render.js        # writes both PDFs, diagrams/*.svg and previews/
+    python3 build.py      # writes institutional.html, competency-framework.html, implementation-methodology.html
+    node render.js        # writes all six PDFs, diagrams/*.svg and previews/
 
-Open `institutional.html` in a browser to preview it. Add `#light` to the URL to see the ivory version.
+Open any of the `.html` files in a browser to preview it. Add `#light` to the URL to see the ivory version.

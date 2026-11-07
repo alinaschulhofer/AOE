@@ -37,21 +37,26 @@ MARKERS = """<defs>
 def diagram_a():
     cx = cy = 200
     radii = [56, 104, 152, 198]
-    names = ["RELATIONAL &amp; TEAM", "ORGANIZATIONAL", "SYSTEMIC"]
+    names = ["RELATIONAL &amp; TEAM", "ORGANIZATIONAL", "BROADER SYSTEMS"]
     o = [f'<svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="ma")]
     for i, r in enumerate(reversed(radii)):
         o.append(f'<circle class="{"band" if i % 2 == 0 else "bg"}" cx="{cx}" cy="{cy}" r="{r}"/>')
     for r in radii:
-        o.append(f'<circle class="ring" cx="{cx}" cy="{cy}" r="{r}"/>')
+        o.append(f'<circle class="ring{" dash" if r == radii[-1] else ""}" cx="{cx}" cy="{cy}" r="{r}"/>')
     for k, n in enumerate(names):
         m = (radii[k] + radii[k + 1]) / 2
         o.append(f'<text class="lv" x="{cx}" y="{f(cy - m)}" text-anchor="middle" dominant-baseline="central">{n}</text>')
     o.append(f'<text class="lv core" x="{cx}" y="{cy}" text-anchor="middle" dominant-baseline="central">INDIVIDUAL</text>')
-    # one reciprocal pair: influence moves outward and inward across all levels
-    x1, x2 = cx + radii[0] + 8, cx + radii[-1] - 8
-    o.append(f'<line class="arw" x1="{x1}" y1="{cy - 6}" x2="{x2}" y2="{cy - 6}" marker-end="url(#ma)"/>')
-    o.append(f'<line class="arw" x1="{x2}" y1="{cy + 6}" x2="{x1}" y2="{cy + 6}" marker-end="url(#ma)"/>')
+    # a reciprocal pair of arrows across each of the three boundaries, on the two lower diagonals
+    for th in (45, 135):
+        u = (cos(radians(th)), sin(radians(th)))
+        n = (-u[1], u[0])
+        for r in radii[:3]:
+            for s, (r1, r2) in ((4.5, (r - 15, r + 15)), (-4.5, (r + 15, r - 15))):
+                x1, y1 = cx + u[0] * r1 + n[0] * s, cy + u[1] * r1 + n[1] * s
+                x2, y2 = cx + u[0] * r2 + n[0] * s, cy + u[1] * r2 + n[1] * s
+                o.append(f'<line class="arw" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}" marker-end="url(#ma)"/>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -65,11 +70,24 @@ def diagram_b():
          '<polygon class="t-ln" points="20,118 410,14 800,118"/>',
          '<text class="t-ex" x="410" y="92" text-anchor="middle">EXCELLENCE</text>',
          '<line class="t-ln" x1="60" y1="136" x2="760" y2="136"/>']
+    xs = [62 + k * 122 + 43 for k in range(6)]
+    # interdependence: each pillar linked to its neighbours and, more faintly, to every other pillar
+    for i in range(6):
+        for j in range(i + 1, 6):
+            if j - i == 1:
+                continue
+            mid = (xs[i] + xs[j]) / 2
+            o.append(f'<path class="t-link faint" d="M{xs[i]},158 Q{mid},{158 - 6 - 3 * (j - i)} {xs[j]},158"/>')
+    for i in range(5):
+        mid = (xs[i] + xs[i + 1]) / 2
+        o.append(f'<path class="t-link" d="M{xs[i]},158 Q{mid},144 {xs[i + 1]},158"/>')
     for k, name in enumerate(PILLAR_NAMES):
         x = 62 + k * 122
-        o.append(f'<rect class="t-col" x="{x}" y="156" width="86" height="292"/>')
-        o.append(f'<text class="t-cn" x="{x + 43}" y="182" text-anchor="middle">0{k + 1}</text>')
-        o.append(f'<text class="t-vl" transform="translate({x + 48},322) rotate(-90)" text-anchor="middle">{name.upper()}</text>')
+        o.append(f'<rect class="t-col" x="{x}" y="172" width="86" height="276"/>')
+        o.append(f'<line class="t-tie" x1="{x + 43}" y1="158" x2="{x + 43}" y2="172"/>')
+        o.append(f'<circle class="t-node" cx="{x + 43}" cy="158" r="3.2"/>')
+        o.append(f'<text class="t-cn" x="{x + 43}" y="198" text-anchor="middle">0{k + 1}</text>')
+        o.append(f'<text class="t-vl" transform="translate({x + 48},330) rotate(-90)" text-anchor="middle">{name.upper()}</text>')
     o += ['<rect class="t-band" x="20" y="460" width="780" height="44"/>',
           '<text class="t-base" x="410" y="487" text-anchor="middle">ARCHITECTURE OF EXCELLENCE™</text>',
           '</svg>']
@@ -91,7 +109,7 @@ SUB_NAMES = [
 
 
 def diagram_c():
-    W, top, rh = 678, 30, 110
+    W, top, rh = 678, 30, 101
     xc, xs = 196, 450
     H = top + 6 * rh + 22 + 42
     o = [f'<svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
@@ -110,7 +128,7 @@ def diagram_c():
         o.append(tlines(xc, m, CORE2[k], "rcore", 17, "start"))
         o.append(f'<line class="arw soft" x1="{xs - 46}" y1="{m}" x2="{xs - 18}" y2="{m}" marker-end="url(#mc)"/>')
         for j, t in enumerate(SUB_NAMES[k]):
-            yy = m + (j - 2) * 18.5
+            yy = m + (j - 2) * 17.5
             o.append(f'<line class="rule" x1="{xs}" y1="{f(yy)}" x2="{xs + 6}" y2="{f(yy)}"/>')
             o.append(f'<text class="rsub" x="{xs + 14}" y="{f(yy)}" dominant-baseline="central">{t}</text>')
         o.append(f'<line class="rule faint" x1="0" y1="{y + rh - .5}" x2="{W}" y2="{y + rh - .5}"/>')
@@ -130,23 +148,26 @@ PHASE_LINES = [["Discovery &amp;", "Assessment"], ["Strategic", "Design"], ["Imp
 
 def diagram_d():
     W, H = 678, 420
-    cx, cy, R, nr = 339, 218, 146, 29
+    cx, cy, R, nr, cr = 339, 214, 146, 29, 66
     o = [f'<svg class="dg" id="diagram-d-institutional-methodology" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="md")]
     angs = [-90 + k * 72 for k in range(5)]
     d = degrees(asin((nr + 9) / R)) * 2
     o.append(f'<circle class="ring faint" cx="{cx}" cy="{cy}" r="{R + 20}"/>')
+    # progression 01 → 05 and back to 01 (iterative cycle)
     for k in range(5):
         a1, a2 = angs[k] + d / 2 + 1, angs[k] + 72 - d / 2 - 1
         x1, y1 = pol(cx, cy, R, a1)
         x2, y2 = pol(cx, cy, R, a2)
         o.append(f'<path class="arc" d="M{f(x1)},{f(y1)} A{R},{R} 0 0 1 {f(x2)},{f(y2)}" marker-end="url(#md)"/>')
-    # refinement loop: Evaluation (4) back to Implementation (3)
-    p4 = pol(cx, cy, R - nr - 6, angs[3] - 12)
-    p3 = pol(cx, cy, R - nr - 6, angs[2] + 12)
-    o.append(f'<path class="loop" d="M{f(p4[0])},{f(p4[1])} Q{cx},{cy + 34} {f(p3[0])},{f(p3[1])}" marker-end="url(#md)"/>')
-    o.append(f'<text class="lp" x="{cx}" y="{cy + 44}" text-anchor="middle" dominant-baseline="central">REFINE</text>')
-    o.append(tlines(cx, cy - 12, ["Structured", "yet adaptable"], "ctr", 17))
+    # continuous monitoring & learning: two-way feedback between the centre and every phase
+    for k in range(5):
+        x1, y1 = pol(cx, cy, cr + 8, angs[k])
+        x2, y2 = pol(cx, cy, R - nr - 8, angs[k])
+        o.append(f'<line class="spoke" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}" marker-start="url(#md)" marker-end="url(#md)"/>')
+    o.append(f'<circle class="core-bg" cx="{cx}" cy="{cy}" r="{cr}"/>')
+    o.append(f'<circle class="core" cx="{cx}" cy="{cy}" r="{cr}"/>')
+    o.append(tlines(cx, cy, ["CONTINUOUS", "MONITORING", "&amp; LEARNING"], "exm", 14))
     pos = [("middle", 0, -52), ("start", 44, 0), ("start", 34, 30), ("end", -34, 30), ("end", -44, 0)]
     for k in range(5):
         x, y = pol(cx, cy, R, angs[k])
@@ -339,17 +360,20 @@ PRINCIPLES = [
 ]
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
+LOGO_BLOCK = '<div class="logo{cls}"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>'
 COPY = "Architecture of Excellence™<span class=\"sep\">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved."
-
-
-def page(n, label, body, cls=""):
-    return f"""
-<!-- ============ PAGE {n:02d} ============ -->
-<section class="page {cls}">
-  <div class="runhead"><span class="label">{label}</span>{LOGO_SMALL}</div>
-{body}
-  <footer><span>{COPY}</span><span class="pg">{n:02d} / {TOTAL}</span></footer>
-</section>"""
+LEGAL = ("Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards "
+         "are developmental and subject to further refinement and validation. This document does not establish a clinical "
+         "treatment protocol or an existing certification program.")
+CONTACT = """
+  <div class="contact">
+    """ + LOGO_BLOCK.format(cls="") + """
+    <div class="ct">
+      <div><span class="label">Founder</span><p>Dr. Alina K. Schulhofer</p></div>
+      <div><span class="label">Contact</span><p>alina@architectureofexcellence.com</p></div>
+    </div>
+  </div>
+  <p class="legal">""" + LEGAL + "</p>"
 
 
 def ul(items, cls="dash"):
@@ -379,25 +403,15 @@ def pillar_block(p):
   </article>"""
 
 
-def build():
-    css = (HERE / "institutional.css").read_text()
-    pages = []
+# ------------------------------------------------------------------ pages
+# Each page function returns (running-head label, body html, css class).
+# Labels may carry a "Part X — " prefix, which is shown only in Document A.
 
-    # 01 — Cover
-    pages.append(f"""
-<!-- ============ PAGE 01 · COVER ============ -->
-<section class="page cover">
-  <div class="cover-center">
-    <div class="logo cover-logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
-    <h1><span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.</h1>
-  </div>
-  <footer class="center"><span>{COPY}</span></footer>
-</section>""")
-
-    # 02 — Overview
-    pages.append(page(2, "Overview", """
+def p_overview():
+    return "Overview", """
   <div class="stack">
-    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary, science-based approach designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
       <p>The institutional framework translates AOE’s six foundational pillars — <strong>Truth, Connection, Being, Vision, Meaning, and Creation</strong> — into competencies and organizational practices that can be developed, implemented, and evaluated across diverse environments.</p>
@@ -409,83 +423,103 @@ def build():
     <div class="dims">
       <div><span class="label">Individuals</span></div><div><span class="label">Teams</span></div><div><span class="label">Leadership</span></div><div><span class="label">Organizations</span></div>
     </div>
-  </div>""", "overview"))
+  </div>""", "overview"
 
-    # 03 — Systems
-    levels = [("Individual", "Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills."),
-              ("Relational and Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
-              ("Organizational", "Improving leadership practices, organizational culture, processes, and working conditions."),
-              ("Systemic", "Supporting alignment, shared practices, and development across interconnected stakeholders, teams, and organizations.")]
-    lv = "".join(f'<div class="lvl"><div class="label">Level 0{i + 1}</div><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(levels))
-    pages.append(page(3, "A Systems-Based Approach", f"""
-  <h1 class="pt one"><span class="dim">A Systems-Based</span> Approach to Excellence.</h1>
+
+LEVELS4 = [("Individual", "Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills."),
+           ("Relational &amp; Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
+           ("Organizational", "Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions."),
+           ("Broader Systems", "Supporting alignment, shared practices, and development across the larger institutional and social environments in which organizations operate, including interconnected stakeholders, teams, and organizations.")]
+
+
+def p_systems():
+    lv = "".join(f'<div class="lvl"><div class="label">Level 0{i + 1}</div><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(LEVELS4))
+    return "An Ecological, Systems-Based Approach", f"""
+  <h1 class="pt"><span class="dim">An Ecological, Systems-Based</span><br>Approach to Excellence.</h1>
   <div class="cols2 mt20">
-    <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bi-directional and can manifest in a variety of ways.</p>
+    <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
     <p>For example, leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These factors are constantly interacting and interconnected, often in unseen ways.</p>
   </div>
-  <figure class="eco-fig">{diagram_a()}
-    <figcaption>Influence moves in both directions across every level</figcaption>
-  </figure>
+  <div class="eco">
+    <figure class="eco-fig">{diagram_a()}
+      <figcaption>Bidirectional influence across all four levels</figcaption>
+    </figure>
+    <div class="eco-note">
+      <p>Organizations are themselves systems, embedded within broader systems.</p>
+      <p>Individuals and groups also participate in multiple, overlapping systems at the same time. These influences are interconnected rather than strictly hierarchical.</p>
+    </div>
+  </div>
   <p class="levels-intro">AOE therefore approaches transformation at four interconnected levels:</p>
   <div class="levels-row">{lv}</div>
   <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
-""", "systems"))
+""", "systems"
 
-    # 04 — Part I + pillar model
-    pages.append(page(4, "Part I — The AOE Competency Framework", f"""
-  <h1 class="pt"><span class="dim">The Six</span> Pillars.</h1>
-  <div class="cols2 mt20 p1">
-    <p>The AOE Competency Framework translates six core psychological principles into capabilities that support individual development, effective team functioning, and organizational excellence.</p>
-    <p>Each pillar represents a core competency domain supported by specific developmental competencies.</p>
-  </div>
-  <figure class="pillar-fig">{diagram_b()}</figure>
+
+EXCELLENCE_BLOCK = """
   <div class="excellence">
     <div class="ex-h"><div class="num">→</div><div><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div><div class="label tag soft">The Embodiment of Greatness</div></div></div>
     <div class="cols2">
       <p>Within Architecture of Excellence™, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
       <p>Excellence involves the continuous pursuit of development, integrity, meaningful achievement, and psychological sustainability. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
     </div>
-  </div>""", "part1"))
+  </div>"""
 
-    # 05 — Competency matrix
-    pages.append(page(5, "Part I — The AOE Competency Framework", f"""
+
+def p_model():
+    return "Part I — The AOE Competency Framework", f"""
+  <h1 class="pt"><span class="dim">The Architecture of</span> Excellence™ Model.</h1>
+  <div class="cols2 mt20 p1">
+    <p>The AOE Competency Framework translates six core psychological principles into capabilities that support individual development, effective team functioning, and organizational excellence.</p>
+    <p>The six pillars are interconnected developmental dimensions rather than sequential stages: each informs and depends on the others, and Excellence emerges from their integration.</p>
+  </div>
+  <figure class="pillar-fig">{diagram_b()}</figure>
+{EXCELLENCE_BLOCK}""", "part1"
+
+
+def p_matrix():
+    return "Part I — The AOE Competency Framework", f"""
   <h1 class="pt"><span class="dim">From Principles</span><br>to Competencies.</h1>
   <p class="lead">Each pillar represents a core competency domain supported by specific developmental competencies.</p>
   <figure class="matrix">{diagram_c()}</figure>
-""", "competencies"))
+  <p class="matrix-note">The AOE competencies are developed and expressed across individual, relational, team, and organizational contexts. Their application considers both the capabilities of people and the conditions that enable or constrain their expression.</p>
+""", "competencies"
 
-    # 06–08 — pillars
-    for i in range(3):
-        a, b = PILLARS[2 * i], PILLARS[2 * i + 1]
-        pages.append(page(6 + i, f"The Six Pillars — {a['n']} · {b['n']}", pillar_block(a) + pillar_block(b), "pillars"))
 
-    # 09 — Part II + cycle
-    pages.append(page(9, "Part II — The AOE Institutional Methodology", f"""
+def p_pillars(i):
+    a, b = PILLARS[2 * i], PILLARS[2 * i + 1]
+    return f"The Six Pillars — {a['n']} · {b['n']}", pillar_block(a) + pillar_block(b), "pillars"
+
+
+def p_method():
+    return "Part II — The AOE Institutional Methodology", f"""
   <h1 class="pt"><span class="dim">The AOE Institutional</span><br>Methodology.</h1>
   <div class="cols2 mt20">
     <p>The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development.</p>
     <p>The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
   </div>
   <figure class="cycle">{diagram_d()}</figure>
+  <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   <div class="outcomes">
     {"".join(f'<div class="oc"><div class="label">Phase 0{k + 1} · Outcome</div><p>{PHASE_TEXT[k][2]}</p></div>' for k in range(5))}
-  </div>""", "method"))
+  </div>""", "method"
 
-    # 10 — Phases detail
+
+def p_phases():
     rows = "".join(f"""
     <div class="phase">
       <div class="ph"><div class="label">Phase 0{k + 1}</div><h3>{PHASES[k]}</h3><p class="sub2">{t}</p></div>
       <div class="phb"><p>{" ".join(body)}</p><p class="out"><span class="k">Outcome</span>{o}</p></div>
     </div>""" for k, (t, body, o) in enumerate(PHASE_TEXT))
-    pages.append(page(10, "Part II — The Five Phases", f'<div class="phases">{rows}</div>', "phases-pg"))
+    return "Part II — The Five Phases", f'<div class="phases">{rows}</div>', "phases-pg"
 
-    # 11 — Applications
+
+def p_apps():
     cards = "".join(f"""
     <div class="appc{' wide' if k == 3 else ''}">
       <div class="ah2"><div class="num sm">0{k + 1}</div><h3>{t}</h3></div>
       <p>{lead}</p>{ul(items)}{f'<p class="note">{note}</p>' if note else ''}
     </div>""" for k, (t, lead, items, note) in enumerate(APPS))
-    pages.append(page(11, "Part III — Institutional Applications", f"""
+    return "Part III — Institutional Applications", f"""
   <div class="apps-top">
     <div>
       <h1 class="pt"><span class="dim">Institutional</span><br>Applications.</h1>
@@ -494,15 +528,16 @@ def build():
     </div>
     <figure class="apps-fig">{diagram_e()}</figure>
   </div>
-  <div class="apps">{cards}</div>""", "apps-pg"))
+  <div class="apps">{cards}</div>""", "apps-pg"
 
-    # 12 — Part IV
+
+def p_standards():
     lv = "".join(f"""
     <div class="lv-c{' future' if i == 3 else ''}">
       <div class="label">Level {i + 1}</div><h3>{t}</h3><p>{d}</p>
       {f'<p class="rec"><span class="k">Potential recognition</span>{r}</p>' if r else '<p class="rec"><span class="k">Status</span>Any certification or mandatory educational requirements would require further development, validation, governance arrangements, and appropriate institutional agreements.</p>'}
     </div>""" for i, (t, d, r) in enumerate(LEVELS))
-    pages.append(page(12, "Part IV — Institutional Standards &amp; Future Development", f"""
+    return "Part IV — Institutional Standards &amp; Future Development", f"""
   <h1 class="pt"><span class="dim">Institutional Standards</span><br>&amp; Future Development.</h1>
   <div class="cols2 mt20">
     <p>Architecture of Excellence™ is designed to support the progressive development of shared competencies and institutional practices.</p>
@@ -510,42 +545,91 @@ def build():
   </div>
   <figure class="steps">{diagram_f()}</figure>
   <div class="levels4">{lv}</div>
-  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>""", "standards"))
+  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>""", "standards"
 
-    # 13 — Principles
+
+def p_principles(with_contact=False):
     pr = "".join(f'<div class="pr"><div class="num sm">0{i + 1}</div><div><h3>{t}</h3><p>{d}</p></div></div>' for i, (t, d) in enumerate(PRINCIPLES))
-    pages.append(page(13, "Foundational Implementation Principles", f"""
+    return "Foundational Implementation Principles", f"""
   <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
   <p class="lead">All applications of the AOE Institutional Framework should be guided by the following commitments.</p>
-  <div class="principles">{pr}</div>""", "principles-pg"))
+  <div class="principles">{pr}</div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
 
-    # 14 — Closing
-    pages.append(f"""
-<!-- ============ PAGE 14 · CLOSING ============ -->
+
+# ------------------------------------------------------------------ documents
+def cover(title_html):
+    return f"""
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="cover-center">
+    {LOGO_BLOCK.format(cls=" cover-logo")}
+    <h1>{title_html}</h1>
+  </div>
+  <footer class="center"><span>{COPY}</span></footer>
+</section>"""
+
+
+def closing(n, total):
+    return f"""
+<!-- ============ CLOSING ============ -->
 <section class="page closing">
   <div class="close-stage">
-    <p class="cl">Architecture of Excellence™ provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and transforming organizational environments.</p>
+    <p class="cl">Architecture of Excellence™ provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and strengthening organizational environments.</p>
     <p class="cl">By translating its six foundational pillars into competencies, developmental interventions, and institutional practices, AOE offers a structured and adaptable approach to cultivating excellence across high-performance ecosystems.</p>
     <div class="rule"></div>
     <p class="final">The objective is not merely to improve individual performance, but to develop the people, relationships, cultures, and institutional conditions through which excellence can be achieved and sustained.</p>
   </div>
-  <div class="contact">
-    <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
-    <div class="ct">
-      <div><span class="label">Founder</span><p>Dr. Alina K. Schulhofer</p></div>
-      <div><span class="label">Contact</span><p>alina@architectureofexcellence.com</p></div>
-    </div>
-  </div>
-  <p class="legal">Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards are developmental and subject to further refinement and validation. This document does not establish a clinical treatment protocol or an existing certification program.</p>
-  <footer><span>{COPY}</span><span class="pg">{TOTAL} / {TOTAL}</span></footer>
-</section>""")
+{CONTACT}
+  <footer><span>{COPY}</span><span class="pg">{n:02d} / {total}</span></footer>
+</section>"""
 
+
+DOCS = {
+    "institutional": dict(
+        title="Institutional Framework &amp; Methodology",
+        cover='<span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.',
+        parts=True,
+        pages=[p_overview, p_systems, p_model, p_matrix, lambda: p_pillars(0), lambda: p_pillars(1), lambda: p_pillars(2),
+               p_method, p_phases, p_apps, p_standards, p_principles, "closing"]),
+    "competency-framework": dict(
+        title="Institutional Competency Framework",
+        cover='<span class="dim">Institutional</span><br>Competency Framework.',
+        parts=False,
+        pages=[p_overview, p_systems, p_model, p_matrix, lambda: p_pillars(0), lambda: p_pillars(1), lambda: p_pillars(2),
+               "closing"]),
+    "implementation-methodology": dict(
+        title="Institutional Implementation Methodology",
+        cover='<span class="dim">Institutional</span><br>Implementation Methodology.',
+        parts=False,
+        pages=[p_overview, p_method, p_phases, p_apps, p_standards, lambda: p_principles(with_contact=True)]),
+}
+
+
+def assemble(key):
+    d = DOCS[key]
+    total = len(d["pages"]) + 1
+    out = [cover(d["cover"])]
+    for n, fn in enumerate(d["pages"], start=2):
+        if fn == "closing":
+            out.append(closing(n, total))
+            continue
+        label, body, cls = fn()
+        if not d["parts"] and " — " in label and label.startswith("Part"):
+            label = label.split(" — ", 1)[1]
+        out.append(f"""
+<!-- ============ PAGE {n:02d} ============ -->
+<section class="page {cls}">
+  <div class="runhead"><span class="label">{label}</span>{LOGO_SMALL}</div>
+{body}
+  <footer><span>{COPY}</span><span class="pg">{n:02d} / {total}</span></footer>
+</section>""")
+    css = (HERE / "institutional.css").read_text()
     html = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Institutional Framework — Architecture of Excellence™</title>
+<title>{d['title']} — Architecture of Excellence™</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <script>document.documentElement.dataset.theme = location.hash === '#light' ? 'light' : 'dark';</script>
 <style>
@@ -553,13 +637,14 @@ def build():
 </style>
 </head>
 <body>
-{"".join(pages)}
+{"".join(out)}
 </body>
 </html>
 """
-    (HERE / "institutional.html").write_text(html)
-    print("wrote institutional.html,", len(pages), "pages")
+    (HERE / f"{key}.html").write_text(html)
+    print(f"wrote {key}.html, {total} pages")
 
 
 if __name__ == "__main__":
-    build()
+    for k in DOCS:
+        assemble(k)

@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Institutional Implementation Methodology — Architecture of Excellence™</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>document.documentElement.dataset.theme = location.hash === '#light' ? 'light' : 'dark';</script>
+<style>
+  @page { size: A4; margin: 0; }
+  :root, [data-theme="dark"] {
+    --bg: #1C1B19; --hi: #F1EDE5; --mid: #C2BCB0; --body: #BEB8AD; --soft: #9A948A;
+    --rule: #3E3D3A; --rule-strong: #5A5853; --circle: #8A867F;
+    --band: rgba(241,237,229,.045); --band2: rgba(241,237,229,.09); --web: rgba(241,237,229,.16);
+  }
+  [data-theme="light"] {
+    --bg: #F3EFE6; --hi: #1C1916; --mid: #554E46; --body: #3B3631; --soft: #736C64;
+    --rule: rgba(28,25,22,.14); --rule-strong: rgba(28,25,22,.30); --circle: rgba(28,25,22,.45);
+    --band: rgba(28,25,22,.04); --band2: rgba(28,25,22,.08); --web: rgba(28,25,22,.16);
+  }
+  .on-light { display: none !important; }
+  [data-theme="light"] .on-light { display: block !important; }
+  [data-theme="light"] .on-dark { display: none !important; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+  body { font-family: 'Manrope', sans-serif; color: var(--body); font-size: 12.4px; line-height: 1.66; font-weight: 300;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { position: relative; width: 210mm; height: 297mm; overflow: hidden; padding: 46px 58px 0; background: var(--bg);
+          display: flex; flex-direction: column; break-after: page; }
+  .page:last-child { break-after: auto; }
+  strong { font-weight: 500; color: var(--hi); }
+  .dim { color: var(--mid); }
+  figure { margin: 0; }
+
+  .label { font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--mid); line-height: 1.5; }
+  h1 { font-weight: 300; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; color: var(--hi); }
+  h1.pt { margin-top: 34px; font-size: 38px; }
+  h2 { font-weight: 300; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; color: var(--hi); }
+  h3 { font-weight: 400; font-size: 15.5px; line-height: 1.3; letter-spacing: -0.01em; color: var(--hi); }
+  p + p { margin-top: 10px; }
+  .lead { margin-top: 14px; font-size: 14px; line-height: 1.6; color: var(--mid); max-width: 600px; }
+  .lead + .lead { margin-top: 8px; }
+  .sub { margin-top: 26px; font-size: 18px; line-height: 1.5; color: var(--hi); max-width: 620px; }
+  .cols2 { column-count: 2; column-gap: 34px; }
+  .cols2 p { break-inside: avoid; margin: 0 0 10px; }
+  .cols2 p:last-child { margin-bottom: 0; }
+  .mt20 { margin-top: 20px; }
+  .k { font-size: 9.5px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--hi); line-height: 1.5; }
+
+  .num { flex: none; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--circle);
+         display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 300; color: var(--mid); }
+  .num.sm { width: 36px; height: 36px; font-size: 11px; }
+
+  ul.dash { list-style: none; margin-top: 6px; }
+  ul.dash li { position: relative; padding-left: 14px; }
+  ul.dash li + li { margin-top: 3px; }
+  ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 6px; height: 1px; background: var(--mid); }
+
+  /* Running head & footer */
+  .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+  .runhead img { height: 17px; display: block; }
+  footer { margin-top: auto; flex: none; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center;
+           font-size: 9.5px; font-weight: 400; color: var(--soft); letter-spacing: .02em; }
+  footer .sep { margin: 0 9px; color: var(--rule-strong); }
+  footer .pg { color: var(--mid); letter-spacing: .08em; }
+  .logo { width: 150px; text-align: center; flex: none; }
+  .logo img { width: 150px; display: block; }
+  .logo span { display: block; margin-top: 6px; font-size: 5.2px; font-weight: 600; letter-spacing: .02em; color: var(--hi); white-space: nowrap; }
+
+  /* SVG diagram styling */
+  .dg { display: block; width: 100%; height: auto; overflow: visible; }
+  .dg text { font-family: 'Manrope', sans-serif; }
+  .dg .ring { fill: none; stroke: var(--circle); stroke-width: 1; }
+  .dg .ring.dash { stroke-dasharray: 2 4; }
+  .dg .ring.faint { stroke: var(--rule); }
+  .dg .ring.strong { stroke: var(--hi); stroke-width: 1.2; }
+  .dg .band { fill: var(--band); stroke: none; }
+  .dg .bg { fill: var(--bg); stroke: none; }
+  .dg .lv { fill: var(--hi); font-size: 10.5px; font-weight: 500; letter-spacing: .2em; }
+  .dg .lv.core { font-size: 11px; }
+  .dg .ln { fill: var(--mid); font-size: 9px; font-weight: 300; letter-spacing: .08em; }
+  .dg .arw { stroke: var(--hi); stroke-width: 1; fill: none; }
+  .dg .ah { fill: none; stroke: var(--hi); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .dg .web { stroke: var(--web); stroke-width: .8; }
+  .dg .core-bg { fill: var(--bg); }
+  .dg .core { fill: var(--band2); stroke: var(--hi); stroke-width: 1.1; }
+  .dg .col { fill: var(--bg); stroke: var(--hi); stroke-width: 1.2; }
+  .dg .col-in { fill: var(--hi); }
+  .dg .ex { fill: var(--hi); font-size: 11px; font-weight: 500; letter-spacing: .32em; }
+  .dg .exs { fill: var(--mid); font-size: 9px; font-weight: 300; }
+  .dg .exm { fill: var(--hi); font-size: 8.4px; font-weight: 500; letter-spacing: .16em; }
+  .dg .pn { fill: var(--mid); font-size: 10px; font-weight: 300; letter-spacing: .06em; }
+  .dg .pl { fill: var(--hi); font-size: 11.5px; font-weight: 400; letter-spacing: .26em; }
+  .dg .rule { stroke: var(--rule-strong); stroke-width: 1; }
+  .dg .numc, .dg .node { fill: var(--bg); stroke: var(--circle); stroke-width: 1; }
+  .dg .numt { fill: var(--mid); font-size: 10px; font-weight: 300; }
+  .dg .numt.big { font-size: 12px; fill: var(--hi); }
+  .dg .cname { fill: var(--hi); font-size: 13.5px; font-weight: 400; letter-spacing: -.01em; }
+  .dg .corebox { fill: var(--band2); stroke: var(--circle); stroke-width: 1; }
+  .dg .ccore { fill: var(--hi); font-size: 10.2px; font-weight: 500; }
+  .dg .subbox { fill: var(--band); stroke: var(--rule-strong); stroke-width: .8; }
+  .dg .csub { fill: var(--body); font-size: 10px; font-weight: 400; }
+  .dg .stem { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 2 3; }
+  .dg .exbar { fill: var(--band2); stroke: var(--hi); stroke-width: 1; }
+  .dg .arc { fill: none; stroke: var(--hi); stroke-width: 1.1; }
+  .dg .loop { fill: none; stroke: var(--mid); stroke-width: 1; stroke-dasharray: 3 3; }
+  .dg .lp { fill: var(--mid); font-size: 8.5px; font-weight: 500; letter-spacing: .24em; }
+  .dg .ctr { fill: var(--mid); font-size: 14px; font-weight: 300; }
+  .dg .phl { fill: var(--mid); font-size: 8.5px; font-weight: 500; letter-spacing: .22em; }
+  .dg .phn { fill: var(--hi); font-size: 13.5px; font-weight: 400; }
+  .dg .petal { fill: var(--band); stroke: none; }
+  .dg .petal-line { fill: none; stroke: var(--circle); stroke-width: 1; }
+  .dg .step { fill: var(--band); stroke: var(--circle); stroke-width: 1; }
+  .dg .step.dash { fill: none; stroke-dasharray: 3 4; }
+  .dg.art .ring, .dg.art .ring.strong { stroke: var(--rule-strong); }
+  .dg.art .web { stroke: var(--rule); }
+  .dg.art .col { stroke: var(--circle); }
+  .dg.art .col-in { fill: var(--circle); }
+  .dg.art .core { stroke: var(--circle); }
+  .dg.art .ex { fill: var(--mid); }
+
+  /* 01 Cover */
+  .cover-center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-bottom: 20px; }
+  .cover-logo { width: 300px; }
+  .cover-logo img { width: 300px; }
+  .cover-logo span { margin-top: 12px; font-size: 10.4px; letter-spacing: .02em; }
+  .cover-center h1 { margin-top: 96px; font-size: 34px; line-height: 1.22; }
+  footer.center { justify-content: center; }
+  .closing .rule { width: 72px; height: 1px; background: var(--circle); margin: 34px auto 0; }
+
+  /* 02 Overview */
+  .overview .stack { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .overview .sub { margin-top: 0; font-size: 21px; line-height: 1.5; max-width: 660px; }
+  .overview .ov { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--rule); font-size: 13px; }
+  .quote { margin-top: 50px; border: 1px solid var(--circle); padding: 26px 30px; }
+  .quote p { margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--hi); }
+  .dims { margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); }
+  .dims div { padding-top: 14px; }
+  .dims div + div { border-left: 1px solid var(--rule); padding-left: 16px; }
+
+  /* 03 Systems */
+  h1.pt.one { font-size: 34px; white-space: nowrap; }
+  .eco-fig { width: 330px; margin: 30px auto 0; }
+  .eco-fig figcaption { margin: 14px -30px 0; text-align: center; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+  .levels-intro { margin-top: 30px; color: var(--mid); }
+  .levels-row { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 22px; }
+  .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
+  .lvl h3 { margin-top: 6px; }
+  .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
+  .closing-line { margin-top: auto; margin-bottom: 26px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
+
+  /* 04 Part I */
+  .p1 { font-size: 13.4px; color: var(--mid); }
+  .pillar-fig { width: 600px; margin: 30px auto 6px; }
+  .dg.temple .t-ln { stroke: var(--circle); fill: none; stroke-width: 1.2; }
+  .dg.temple .t-col { stroke: var(--circle); fill: var(--band); stroke-width: 1.1; }
+  .dg.temple .t-band { fill: var(--band); stroke: var(--circle); stroke-width: 1.1; }
+  .dg.temple .t-cn { fill: var(--mid); font-size: 12px; font-weight: 300; }
+  .dg.temple .t-vl { fill: var(--hi); font-size: 15px; font-weight: 400; letter-spacing: .26em; }
+  .dg.temple .t-ex { fill: var(--hi); font-size: 17px; font-weight: 400; letter-spacing: .4em; }
+  .dg.temple .t-base { fill: var(--mid); font-size: 11px; font-weight: 500; letter-spacing: .3em; }
+  .excellence { margin-top: auto; margin-bottom: 26px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .ex-h { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+  .ex-h .tag { margin-top: 6px; }
+  .tag.soft { margin-top: 2px !important; color: var(--soft); }
+
+  /* 05 Matrix */
+  .matrix-key { margin-top: 34px; display: flex; gap: 12px; align-items: center; }
+  .matrix-key .arrow { color: var(--soft); font-size: 12px; }
+  .matrix { margin-top: 30px; }
+  .dg .rowband { fill: var(--band); }
+  .dg .rule.faint { stroke: var(--rule); }
+  .dg .rname { fill: var(--hi); font-size: 17px; font-weight: 300; letter-spacing: -.01em; }
+  .dg .rcore { fill: var(--hi); font-size: 13px; font-weight: 400; }
+  .dg .rsub { fill: var(--body); font-size: 12.2px; font-weight: 400; }
+  .dg .arw.soft { stroke: var(--circle); }
+
+  /* 06–08 Pillars */
+  .pillar { padding-top: 18px; }
+  .pillar + .pillar { margin-top: 6px; border-top: 1px solid var(--rule); }
+  .p-head { display: grid; grid-template-columns: 48px 1fr 228px; column-gap: 18px; align-items: center; }
+  .p-head .tag { margin-top: 6px; font-size: 9px; }
+  .core-c { border-left: 1px solid var(--rule); padding-left: 18px; }
+  .core-c .label { font-size: 8.5px; display: block; }
+  .core-c .cc { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.35; font-weight: 400; color: var(--hi); }
+  .p-body { margin-top: 12px; padding-left: 0; }
+  .p-def { font-size: 12.8px; color: var(--hi); line-height: 1.6; }
+  .p-def p + p { margin-top: 6px; }
+  .p-grid { margin-top: 12px; display: grid; grid-template-columns: 1.05fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
+  .p-grid .k.mt { margin-top: 12px; }
+  .p-grid dl { margin-top: 4px; }
+  .sc { padding: 3.5px 0; border-top: 1px solid var(--rule); }
+  .sc:first-child { border-top: 0; }
+  .sc dt { font-weight: 500; color: var(--hi); }
+  .sc dd { margin: 0; }
+  .app { margin-top: 5px; }
+
+  /* 09 Methodology */
+  .cycle { margin-top: 22px; }
+  .outcomes { margin-top: 20px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 14px; border-top: 1px solid var(--rule); }
+  .oc { padding-top: 12px; }
+  .oc .label { font-size: 8.2px; letter-spacing: .16em; }
+  .oc p { margin-top: 6px; font-size: 11px; line-height: 1.5; color: var(--hi); }
+
+  /* 10 Phases */
+  .phases { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .phase { display: grid; grid-template-columns: 196px 1fr; column-gap: 30px; padding: 4px 0; }
+  .phase + .phase { border-top: 1px solid var(--rule); padding-top: 18px; }
+  .ph h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
+  .ph .sub2 { margin-top: 6px; font-size: 11.6px; line-height: 1.45; color: var(--soft); }
+  .phb { font-size: 12.4px; line-height: 1.62; }
+  .phb .out { margin-top: 9px; color: var(--hi); }
+  .phb .out .k { margin-right: 10px; color: var(--mid); }
+
+  /* 11 Applications */
+  .apps-top { display: grid; grid-template-columns: 1fr 250px; column-gap: 30px; align-items: center; }
+  .apps-fig { margin-top: 22px; }
+  .apps { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
+  .appc { padding: 12px 0 12px; border-top: 1px solid var(--rule); }
+  .ah2 { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+  .ah2 h3 { font-size: 14px; }
+  .appc .note { margin-top: 6px; color: var(--mid); font-size: 11.2px; }
+  .appc.wide { grid-row: span 2; }
+
+  /* 12 Standards */
+  .steps { margin-top: 18px; }
+  .levels4 { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 12px; font-size: 11.6px; line-height: 1.5; }
+  .lv-c { padding: 12px 12px 0 0; border-top: 1px solid var(--rule-strong); }
+  .lv-c h3 { margin-top: 4px; font-size: 13.5px; }
+  .lv-c p { margin-top: 6px; }
+  .lv-c .rec { margin-top: 10px; color: var(--hi); }
+  .lv-c .rec .k { display: block; font-size: 8.8px; color: var(--mid); margin-bottom: 2px; }
+  .lv-c.future { border-top-style: dashed; }
+  .caveat { margin-top: 16px; padding: 14px 18px; border: 1px dashed var(--circle); font-size: 12px; color: var(--hi); text-align: center; }
+
+  /* 13 Principles */
+  .principles { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+  .pr { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .pr h3 { font-size: 17px; font-weight: 300; }
+  .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
+  .pr:last-child { grid-column: span 2; }
+
+  /* 14 Closing */
+  .close-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; }
+  .cl { max-width: 520px; font-size: 13.4px; line-height: 1.75; }
+  .cl + .cl { margin-top: 16px; }
+  .final { margin-top: 36px; max-width: 560px; font-size: 20px; line-height: 1.45; font-weight: 300; color: var(--hi); letter-spacing: -.01em; }
+  .contact { display: flex; justify-content: space-between; align-items: flex-end; padding: 28px 0 24px; border-top: 1px solid var(--rule); }
+  .contact .ct { display: flex; gap: 46px; }
+  .contact .ct p { margin-top: 4px; color: var(--hi); font-size: 12.5px; }
+  .legal { padding-bottom: 16px; font-size: 9.4px; line-height: 1.55; color: var(--soft); }
+
+  /* Refinements: overview value line, ecological note, matrix note, methodology principle */
+  .overview .value { margin-top: 30px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 14.5px; line-height: 1.6; color: var(--hi); max-width: 640px; }
+  .overview .value .label, .cml .label { display: block; margin-bottom: 6px; }
+  .eco { margin-top: 20px; display: grid; grid-template-columns: 290px 1fr; column-gap: 40px; align-items: center; }
+  .eco .eco-fig { width: 290px; margin: 0; }
+  .eco-note p { font-size: 14px; line-height: 1.6; color: var(--hi); }
+  .eco-note p + p { margin-top: 12px; color: var(--mid); font-size: 13px; }
+  .levels-intro { margin-top: 20px; }
+  .matrix-note { margin-top: 18px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 13px; line-height: 1.6; color: var(--hi); }
+  .cycle { margin-top: 18px; }
+  .cml { margin-top: 14px; padding: 14px 18px; border: 1px solid var(--rule-strong); font-size: 12.4px; line-height: 1.6; color: var(--hi); }
+  .dg .spoke { stroke: var(--circle); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+  .dg.temple .t-link { fill: none; stroke: var(--circle); stroke-width: 1; }
+  .dg.temple .t-link.faint { stroke: var(--rule-strong); stroke-width: .8; }
+  .dg.temple .t-tie { stroke: var(--circle); stroke-width: 1; }
+  .dg.temple .t-node { fill: var(--hi); }
+  /* Principles page carrying the contact block (Document C) */
+  .principles-pg.compact .principles { margin-top: 22px; }
+  .principles-pg.compact .pr { padding: 14px 0; }
+  .principles-pg.compact .pr h3 { font-size: 15.5px; }
+  .principles-pg.compact .pr p { font-size: 11.9px; margin-top: 4px; }
+  .principles-pg.compact .contact { margin-top: auto; }
+
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="cover-center">
+    <div class="logo cover-logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+    <h1><span class="dim">Institutional</span><br>Implementation Methodology.</h1>
+  </div>
+  <footer class="center"><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span></footer>
+</section>
+<!-- ============ PAGE 02 ============ -->
+<section class="page overview">
+  <div class="runhead"><span class="label">Overview</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <div class="stack">
+    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
+    <div class="cols2 ov">
+      <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
+      <p>The institutional framework translates AOE’s six foundational pillars — <strong>Truth, Connection, Being, Vision, Meaning, and Creation</strong> — into competencies and organizational practices that can be developed, implemented, and evaluated across diverse environments.</p>
+    </div>
+    <div class="quote">
+      <div class="label">Excellence</div>
+      <p>Excellence represents the integration of the six primary dimensions: targeting not simply the achievement of exceptional outcomes, but the ongoing development of the people, relationships, and conditions that make those outcomes possible and sustainable.</p>
+    </div>
+    <div class="dims">
+      <div><span class="label">Individuals</span></div><div><span class="label">Teams</span></div><div><span class="label">Leadership</span></div><div><span class="label">Organizations</span></div>
+    </div>
+  </div>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">02 / 7</span></footer>
+</section>
+<!-- ============ PAGE 03 ============ -->
+<section class="page method">
+  <div class="runhead"><span class="label">The AOE Institutional Methodology</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <h1 class="pt"><span class="dim">The AOE Institutional</span><br>Methodology.</h1>
+  <div class="cols2 mt20">
+    <p>The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development.</p>
+    <p>The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
+  </div>
+  <figure class="cycle"><svg class="dg" id="diagram-d-institutional-methodology" viewBox="0 0 678 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="md" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path class="ah" d="M1,1.2 L9,5 L1,8.8"/>
+  </marker>
+</defs>
+<circle class="ring faint" cx="339" cy="214" r="166"/>
+<path class="arc" d="M379.5,73.7 A146,146 0 0 1 459.9,132.2" marker-end="url(#md)"/>
+<path class="arc" d="M484.9,209.1 A146,146 0 0 1 454.2,303.7" marker-end="url(#md)"/>
+<path class="arc" d="M388.7,351.3 A146,146 0 0 1 289.3,351.3" marker-end="url(#md)"/>
+<path class="arc" d="M223.8,303.7 A146,146 0 0 1 193.1,209.1" marker-end="url(#md)"/>
+<path class="arc" d="M218.1,132.2 A146,146 0 0 1 298.5,73.7" marker-end="url(#md)"/>
+<line class="spoke" x1="339" y1="140" x2="339" y2="105" marker-start="url(#md)" marker-end="url(#md)"/>
+<line class="spoke" x1="409.4" y1="191.1" x2="442.7" y2="180.3" marker-start="url(#md)" marker-end="url(#md)"/>
+<line class="spoke" x1="382.5" y1="273.9" x2="403.1" y2="302.2" marker-start="url(#md)" marker-end="url(#md)"/>
+<line class="spoke" x1="295.5" y1="273.9" x2="274.9" y2="302.2" marker-start="url(#md)" marker-end="url(#md)"/>
+<line class="spoke" x1="268.6" y1="191.1" x2="235.3" y2="180.3" marker-start="url(#md)" marker-end="url(#md)"/>
+<circle class="core-bg" cx="339" cy="214" r="66"/>
+<circle class="core" cx="339" cy="214" r="66"/>
+<text class="exm" text-anchor="middle" dominant-baseline="central"><tspan x="339" y="200">CONTINUOUS</tspan><tspan x="339" y="214">MONITORING</tspan><tspan x="339" y="228">&amp; LEARNING</tspan></text>
+<circle class="node" cx="339" cy="68" r="29"/>
+<text class="numt big" x="339" y="68" text-anchor="middle" dominant-baseline="central">01</text>
+<text class="phl" x="339" y="-2" text-anchor="middle" dominant-baseline="central">PHASE 01</text>
+<text class="phn" text-anchor="middle" dominant-baseline="central"><tspan x="339" y="12">Discovery &amp;</tspan><tspan x="339" y="28">Assessment</tspan></text>
+<circle class="node" cx="477.9" cy="168.9" r="29"/>
+<text class="numt big" x="477.9" y="168.9" text-anchor="middle" dominant-baseline="central">02</text>
+<text class="phl" x="521.9" y="150.9" text-anchor="start" dominant-baseline="central">PHASE 02</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="521.9" y="164.9">Strategic</tspan><tspan x="521.9" y="180.9">Design</tspan></text>
+<circle class="node" cx="424.8" cy="332.1" r="29"/>
+<text class="numt big" x="424.8" y="332.1" text-anchor="middle" dominant-baseline="central">03</text>
+<text class="phl" x="458.8" y="344.1" text-anchor="start" dominant-baseline="central">PHASE 03</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="458.8" y="358.1">Implementation &amp;</tspan><tspan x="458.8" y="374.1">Development</tspan></text>
+<circle class="node" cx="253.2" cy="332.1" r="29"/>
+<text class="numt big" x="253.2" y="332.1" text-anchor="middle" dominant-baseline="central">04</text>
+<text class="phl" x="219.2" y="344.1" text-anchor="end" dominant-baseline="central">PHASE 04</text>
+<text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="219.2" y="358.1">Evaluation &amp;</tspan><tspan x="219.2" y="374.1">Refinement</tspan></text>
+<circle class="node" cx="200.1" cy="168.9" r="29"/>
+<text class="numt big" x="200.1" y="168.9" text-anchor="middle" dominant-baseline="central">05</text>
+<text class="phl" x="156.1" y="150.9" text-anchor="end" dominant-baseline="central">PHASE 05</text>
+<text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="156.1" y="164.9">Integration &amp;</tspan><tspan x="156.1" y="180.9">Sustainability</tspan></text>
+</svg></figure>
+  <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
+  <div class="outcomes">
+    <div class="oc"><div class="label">Phase 01 · Outcome</div><p>A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement.</p></div><div class="oc"><div class="label">Phase 02 · Outcome</div><p>A tailored institutional development plan with defined priorities, interventions, and intended outcomes.</p></div><div class="oc"><div class="label">Phase 03 · Outcome</div><p>Active development of competencies and implementation of practices that support organizational effectiveness and sustainable performance.</p></div><div class="oc"><div class="label">Phase 04 · Outcome</div><p>Evidence-informed understanding of progress, challenges, and opportunities for further development.</p></div><div class="oc"><div class="label">Phase 05 · Outcome</div><p>A sustainable approach through which AOE principles and competencies become increasingly embedded in organizational functioning.</p></div>
+  </div>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 7</span></footer>
+</section>
+<!-- ============ PAGE 04 ============ -->
+<section class="page phases-pg">
+  <div class="runhead"><span class="label">The Five Phases</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+<div class="phases">
+    <div class="phase">
+      <div class="ph"><div class="label">Phase 01</div><h3>Discovery &amp; Assessment</h3><p class="sub2">Understanding the organization and its environment</p></div>
+      <div class="phb"><p>The process begins with understanding the organization’s current functioning, strategic priorities, leadership structures, relationships, culture, and developmental needs. Potential methods include stakeholder consultations, interviews, surveys, organizational assessments, facilitated discussions, and reviews of existing structures and practices. Assessment considers both individual capabilities and environmental conditions.</p><p class="out"><span class="k">Outcome</span>A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement.</p></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><div class="label">Phase 02</div><h3>Strategic Design</h3><p class="sub2">Translating assessment into a tailored development strategy</p></div>
+      <div class="phb"><p>Based on the findings, AOE competencies are mapped to organizational priorities. Relevant stakeholder groups, developmental objectives, interventions, resources, responsibilities, and evaluation methods are identified. The resulting strategy may involve individual leadership development, team interventions, organizational initiatives, educational programs, or a combination of approaches.</p><p class="out"><span class="k">Outcome</span>A tailored institutional development plan with defined priorities, interventions, and intended outcomes.</p></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><div class="label">Phase 03</div><h3>Implementation &amp; Development</h3><p class="sub2">Translating the framework into practice</p></div>
+      <div class="phb"><p>AOE principles and competencies are translated into educational experiences, developmental interventions, and organizational practices. Implementation may include leadership consulting, coaching, training, facilitated dialogue, team development, and organizational change initiatives. Activities are adapted to the organization’s size, structure, resources, and objectives.</p><p class="out"><span class="k">Outcome</span>Active development of competencies and implementation of practices that support organizational effectiveness and sustainable performance.</p></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><div class="label">Phase 04</div><h3>Evaluation &amp; Refinement</h3><p class="sub2">Assessing progress and identifying opportunities for improvement</p></div>
+      <div class="phb"><p>Progress is evaluated against the objectives established during strategic design. Evaluation may consider participation, learning, demonstrated competencies, behavioral changes, stakeholder experiences, organizational practices, and relevant performance or well-being indicators. Findings inform adjustments to the development strategy and ongoing interventions.</p><p class="out"><span class="k">Outcome</span>Evidence-informed understanding of progress, challenges, and opportunities for further development.</p></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><div class="label">Phase 05</div><h3>Integration &amp; Sustainability</h3><p class="sub2">Embedding development into organizational functioning</p></div>
+      <div class="phb"><p>The final phase focuses on sustaining progress beyond individual programs or interventions. This may involve integrating competencies into leadership development, educational systems, organizational processes, professional development pathways, and institutional expectations. Ongoing review, internal capacity-building, and continued learning support long-term development.</p><p class="out"><span class="k">Outcome</span>A sustainable approach through which AOE principles and competencies become increasingly embedded in organizational functioning.</p></div>
+    </div></div>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">04 / 7</span></footer>
+</section>
+<!-- ============ PAGE 05 ============ -->
+<section class="page apps-pg">
+  <div class="runhead"><span class="label">Institutional Applications</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <div class="apps-top">
+    <div>
+      <h1 class="pt"><span class="dim">Institutional</span><br>Applications.</h1>
+      <p class="lead">AOE can be implemented through several interconnected developmental pathways.</p>
+      <p class="lead">The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
+    </div>
+    <figure class="apps-fig"><svg class="dg" id="diagram-e-institutional-applications" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+<circle class="ring dash" cx="170" cy="170" r="160"/>
+<circle class="petal" cx="170" cy="88" r="62"/>
+<circle class="petal" cx="248" cy="144.7" r="62"/>
+<circle class="petal" cx="218.2" cy="236.3" r="62"/>
+<circle class="petal" cx="121.8" cy="236.3" r="62"/>
+<circle class="petal" cx="92" cy="144.7" r="62"/>
+<circle class="petal-line" cx="170" cy="88" r="62"/>
+<circle class="petal-line" cx="248" cy="144.7" r="62"/>
+<circle class="petal-line" cx="218.2" cy="236.3" r="62"/>
+<circle class="petal-line" cx="121.8" cy="236.3" r="62"/>
+<circle class="petal-line" cx="92" cy="144.7" r="62"/>
+<text class="numt big" x="170" y="58" text-anchor="middle" dominant-baseline="central">01</text>
+<text class="numt big" x="276.5" y="135.4" text-anchor="middle" dominant-baseline="central">02</text>
+<text class="numt big" x="235.8" y="260.6" text-anchor="middle" dominant-baseline="central">03</text>
+<text class="numt big" x="104.2" y="260.6" text-anchor="middle" dominant-baseline="central">04</text>
+<text class="numt big" x="63.5" y="135.4" text-anchor="middle" dominant-baseline="central">05</text>
+<circle class="core-bg" cx="170" cy="170" r="46"/>
+<circle class="core" cx="170" cy="170" r="46"/>
+<text class="exm" text-anchor="middle" dominant-baseline="central"><tspan x="170" y="158">ASSESSMENT</tspan><tspan x="170" y="170">&amp; STRATEGIC</tspan><tspan x="170" y="182">DESIGN</tspan></text>
+</svg></figure>
+  </div>
+  <div class="apps">
+    <div class="appc">
+      <div class="ah2"><div class="num sm">01</div><h3>Education &amp; Development of Core Competencies</h3></div>
+      <p>Development of psychological, relational, and leadership competencies through:</p><ul class="dash"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p>
+    </div>
+    <div class="appc">
+      <div class="ah2"><div class="num sm">02</div><h3>Leadership &amp; Individual Development</h3></div>
+      <p>Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p>
+    </div>
+    <div class="appc">
+      <div class="ah2"><div class="num sm">03</div><h3>Team &amp; Relational Development</h3></div>
+      <p>Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul>
+    </div>
+    <div class="appc wide">
+      <div class="ah2"><div class="num sm">04</div><h3>Organizational Development &amp; Culture</h3></div>
+      <p>Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul>
+    </div>
+    <div class="appc">
+      <div class="ah2"><div class="num sm">05</div><h3>System-Wide Development &amp; Integration</h3></div>
+      <p>For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul>
+    </div></div>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">05 / 7</span></footer>
+</section>
+<!-- ============ PAGE 06 ============ -->
+<section class="page standards">
+  <div class="runhead"><span class="label">Institutional Standards &amp; Future Development</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <h1 class="pt"><span class="dim">Institutional Standards</span><br>&amp; Future Development.</h1>
+  <div class="cols2 mt20">
+    <p>Architecture of Excellence™ is designed to support the progressive development of shared competencies and institutional practices.</p>
+    <p>As the framework is implemented and evaluated, it may provide the foundation for more formal educational standards, professional development pathways, and institutional recognition.</p>
+  </div>
+  <figure class="steps"><svg class="dg" id="diagram-f-developmental-pathway" viewBox="0 0 678 236" xmlns="http://www.w3.org/2000/svg">
+<rect class="step" x="0" y="136" width="163.5" height="92"/>
+<text class="phl" x="16" y="158" dominant-baseline="central">LEVEL 1</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="16" y="179.5">Foundational</tspan><tspan x="16" y="196.5">Education</tspan></text>
+<rect class="step" x="171.5" y="92" width="163.5" height="136"/>
+<text class="phl" x="187.5" y="114" dominant-baseline="central">LEVEL 2</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="187.5" y="135.5">Competency</tspan><tspan x="187.5" y="152.5">Development</tspan></text>
+<rect class="step" x="343" y="48" width="163.5" height="180"/>
+<text class="phl" x="359" y="70" dominant-baseline="central">LEVEL 3</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="359" y="91.5">Institutional</tspan><tspan x="359" y="108.5">Integration</tspan></text>
+<rect class="step dash" x="514.5" y="4" width="163.5" height="224"/>
+<text class="phl" x="530.5" y="26" dominant-baseline="central">LEVEL 4</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="530.5" y="47.5">Institutional Standards</tspan><tspan x="530.5" y="64.5">&amp; Certification</tspan></text>
+<text class="lp" text-anchor="start" dominant-baseline="central"><tspan x="530.5" y="195.5">PROPOSED</tspan><tspan x="530.5" y="208.5">FUTURE PATHWAY</tspan></text>
+<line class="rule" x1="0" y1="228.5" x2="678" y2="228.5"/>
+</svg></figure>
+  <div class="levels4">
+    <div class="lv-c">
+      <div class="label">Level 1</div><h3>Foundational Education</h3><p>Introduction to AOE principles, competencies, and their application through structured educational programs.</p>
+      <p class="rec"><span class="k">Potential recognition</span>Completion of foundational education.</p>
+    </div>
+    <div class="lv-c">
+      <div class="label">Level 2</div><h3>Competency Development</h3><p>More advanced development of relevant competencies through applied learning, reflection, and demonstrated understanding.</p>
+      <p class="rec"><span class="k">Potential recognition</span>Completion of defined competency-development requirements, with assessment appropriate to the role and learning objectives.</p>
+    </div>
+    <div class="lv-c">
+      <div class="label">Level 3</div><h3>Institutional Integration</h3><p>Organizations adopt and demonstrate AOE-informed practices across relevant leadership, team, and organizational functions.</p>
+      <p class="rec"><span class="k">Potential recognition</span>Institutional participation or recognition based on documented implementation criteria.</p>
+    </div>
+    <div class="lv-c future">
+      <div class="label">Level 4</div><h3>Institutional Standards &amp; Certification</h3><p>A potential future pathway involving formalized standards, competency requirements, evaluation procedures, and periodic review. Such a model could support recognition of institutions or qualified participants demonstrating alignment with defined AOE standards.</p>
+      <p class="rec"><span class="k">Status</span>Any certification or mandatory educational requirements would require further development, validation, governance arrangements, and appropriate institutional agreements.</p>
+    </div></div>
+  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">06 / 7</span></footer>
+</section>
+<!-- ============ PAGE 07 ============ -->
+<section class="page principles-pg compact">
+  <div class="runhead"><span class="label">Foundational Implementation Principles</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
+  <p class="lead">All applications of the AOE Institutional Framework should be guided by the following commitments.</p>
+  <div class="principles"><div class="pr"><div class="num sm">01</div><div><h3>Ecological Responsibility</h3><p>Development addresses both individual capabilities and the environmental conditions influencing behavior, performance, and well-being.</p></div></div><div class="pr"><div class="num sm">02</div><div><h3>Contextual Adaptability</h3><p>The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities.</p></div></div><div class="pr"><div class="num sm">03</div><div><h3>Psychological Depth &amp; Practical Accessibility</h3><p>The methodology draws on psychoanalytic, relational, and systemic perspectives while translating complex psychological concepts into accessible, practical approaches.</p></div></div><div class="pr"><div class="num sm">04</div><div><h3>Integration Over Isolation</h3><p>Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence.</p></div></div><div class="pr"><div class="num sm">05</div><div><h3>Sustainable Excellence</h3><p>High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability.</p></div></div><div class="pr"><div class="num sm">06</div><div><h3>Continuous Development</h3><p>Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement.</p></div></div><div class="pr"><div class="num sm">07</div><div><h3>Ethical &amp; Professional Boundaries</h3><p>Education, coaching, consulting, organizational assessment, and clinical services remain appropriately differentiated. Participation, confidentiality, safeguarding, and professional responsibilities are addressed according to the nature of each engagement.</p></div></div></div>
+  <div class="contact">
+    <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+    <div class="ct">
+      <div><span class="label">Founder</span><p>Dr. Alina K. Schulhofer</p></div>
+      <div><span class="label">Contact</span><p>alina@architectureofexcellence.com</p></div>
+    </div>
+  </div>
+  <p class="legal">Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards are developmental and subject to further refinement and validation. This document does not establish a clinical treatment protocol or an existing certification program.</p>
+  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">07 / 7</span></footer>
+</section>
+</body>
+</html>
