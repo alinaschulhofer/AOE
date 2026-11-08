@@ -375,10 +375,6 @@ LEGAL = ("Proprietary working framework. Institutional competency definitions, i
 CONTACT = """
   <div class="contact">
     """ + LOGO_BLOCK.format(cls="", tm="") + """
-    <div class="ct">
-      <div><span class="label">Founder</span><p>Dr. Alina K. Schulhofer</p></div>
-      <div><span class="label">Contact</span><p>alina@architectureofexcellence.com</p></div>
-    </div>
   </div>
   <p class="legal">""" + LEGAL + "</p>"
 
@@ -529,7 +525,7 @@ def p_phases():
     rows = "".join(f"""
     <div class="phase">
       <div class="ph"><div class="label">Phase 0{k + 1}</div><h3>{PHASES[k]}</h3><p class="sub2">{t}</p></div>
-      <div class="phb"><p>{" ".join(body)}</p><p class="out"><span class="k">Outcome</span>{o}</p></div>
+      <div class="phb"><p>{" ".join(body)}</p></div>
     </div>""" for k, (t, body, o) in enumerate(PHASE_TEXT))
     return "Part II — The Five Phases", f'<div class="phases">{rows}</div>', "phases-pg"
 
@@ -545,10 +541,16 @@ def p_apps():
 
 
 def p_pathways():
+    def tags(items):
+        return '<div class="tags">' + "".join(f'<span>{i.rstrip(".")}</span>' for i in items) + "</div>"
     rows = "".join(f"""
-    <div class="pw-card{' wide' if k == 4 else ''}">
-      <div class="pw-top"><span class="pw-n">0{k + 1}</span><h3>{t}</h3></div>
-      <p class="pw-lead">{lead}</p>{ul(items, "dash two" if k == 4 else "dash")}{f'<p class="note">{note}</p>' if note else ''}
+    <div class="pw-row">
+      <div class="pw-n">0{k + 1}</div>
+      <div class="pw-body">
+        <h3>{t}</h3>
+        <p class="pw-lead">{lead}</p>
+        {tags(items)}{f'<p class="note">{note}</p>' if note else ''}
+      </div>
     </div>""" for k, (t, lead, items, note) in enumerate(APPS))
     return "Part III — The Five Pathways", f'<div class="pathways">{rows}</div>', "pathways-pg"
 
@@ -598,8 +600,7 @@ def closing(n, total):
   <div class="close-stage">
     <p class="cl">Architecture of Excellence provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and strengthening organizational environments.</p>
     <p class="cl">By translating its six foundational pillars into competencies, developmental interventions, and institutional practices, AOE offers a structured and adaptable approach to cultivating excellence across high-performance ecosystems.</p>
-    <div class="rule"></div>
-    <p class="final">The objective is not merely to improve individual performance, but to develop the people, relationships, cultures, and institutional conditions through which excellence can be achieved and sustained.</p>
+    <p class="cl">The objective is not merely to improve individual performance, but to develop the people, relationships, cultures, and institutional conditions through which excellence can be achieved and sustained.</p>
   </div>
 {CONTACT}
   <footer><span>{COPY}</span><span class="pg">{n:02d} / {total}</span></footer>

@@ -228,21 +228,21 @@
   .caveat { margin-top: 16px; padding: 14px 18px; border: 1px dashed var(--circle); font-size: 12px; color: var(--hi); text-align: center; }
 
   /* 13 Principles */
-  .principles { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
-  .pr { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .principles { flex: 1; margin: 10px 0 24px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; align-content: center; }
+  .pr { display: flex; gap: 16px; padding: 30px 0; border-top: 1px solid var(--rule); }
   .pr h3 { font-size: 17px; font-weight: 300; }
   .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
   
 
   /* 14 Closing */
   .close-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; }
-  .cl { max-width: 520px; font-size: 13.4px; line-height: 1.75; }
-  .cl + .cl { margin-top: 16px; }
+  .cl { max-width: 560px; font-size: 16px; line-height: 1.7; color: var(--hi); font-weight: 300; }
+  .cl + .cl { margin-top: 22px; }
   .final { margin-top: 36px; max-width: 560px; font-size: 20px; line-height: 1.45; font-weight: 300; color: var(--hi); letter-spacing: -.01em; }
-  .contact { display: flex; justify-content: space-between; align-items: flex-end; padding: 28px 0 24px; border-top: 1px solid var(--rule); }
+  .contact { display: flex; justify-content: center; padding: 30px 0 18px; border-top: 1px solid var(--rule); }
   .contact .ct { display: flex; gap: 46px; }
   .contact .ct p { margin-top: 4px; color: var(--hi); font-size: 12.5px; }
-  .legal { padding-bottom: 16px; font-size: 9.4px; line-height: 1.55; color: var(--soft); }
+  .legal { text-align: center; padding-bottom: 16px; font-size: 9.4px; line-height: 1.55; color: var(--soft); }
 
   /* Refinements: overview value line, ecological note, matrix note, methodology principle */
   .overview .value { margin-top: 30px; font-size: 14.5px; line-height: 1.6; color: var(--hi); max-width: 640px; }
@@ -261,11 +261,11 @@
   .dg.temple .t-tie { stroke: var(--circle); stroke-width: 1; }
   .dg.temple .t-node { fill: var(--hi); }
   /* Principles page carrying the contact block (Document C) */
-  .principles-pg.compact .principles { margin-top: 22px; }
+  .principles-pg.compact .principles { margin: 10px 0 16px; }
   .principles-pg.compact .pr { padding: 14px 0; }
   .principles-pg.compact .pr h3 { font-size: 15.5px; }
   .principles-pg.compact .pr p { font-size: 11.9px; margin-top: 4px; }
-  .principles-pg.compact .contact { margin-top: auto; }
+  .principles-pg.compact .contact { margin-top: 0; }
 
   /* Pillar pages: one pillar per page */
   .pillar-pg .pp-head { margin-top: 40px; display: grid; grid-template-columns: 1fr 250px; column-gap: 34px; align-items: end; }
@@ -289,17 +289,14 @@
   .method-stage .cycle { margin-top: 0; }
   .method-stage .cml { margin-top: 26px; }
 
-  /* Pathways detail page: modular cards */
-  .pathways { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; padding: 14px 0 12px; }
-  .pw-card { border: 1px solid var(--rule-strong); background: rgba(241,237,229,.03); padding: 15px 20px 15px; font-size: 12px; line-height: 1.48; }
-  .pw-card.wide { grid-column: span 2; }
-  .pw-top { display: flex; align-items: baseline; gap: 14px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--rule); }
-  .pw-n { font-size: 26px; font-weight: 300; color: var(--mid); letter-spacing: -.02em; line-height: 1; }
-  .pw-top h3 { font-size: 16px; font-weight: 400; line-height: 1.25; }
-  .pw-lead { color: var(--mid); }
-  .pw-card ul.dash { margin-top: 8px; }
-  .pw-card ul.dash li + li { margin-top: 4px; }
-  .pw-card ul.two { columns: 2; column-gap: 30px; }
-  .pw-card ul.two li { break-inside: avoid; }
-  .pw-card .note { margin-top: 10px; color: var(--soft); font-size: 11.4px; }
+  /* Pathways detail page: rows with service tags */
+  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 4px 0 8px; }
+  .pw-row { display: grid; grid-template-columns: 64px 1fr; column-gap: 18px; padding: 10px 0; }
+  .pw-row + .pw-row { border-top: 1px solid var(--rule); }
+  .pw-n { font-size: 34px; font-weight: 300; line-height: 1; color: var(--mid); letter-spacing: -.02em; }
+  .pw-body h3 { font-size: 18px; font-weight: 400; line-height: 1.25; }
+  .pw-lead { margin-top: 4px; font-size: 12.4px; line-height: 1.5; color: var(--mid); }
+  .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { border: 1px solid var(--rule-strong); border-radius: 999px; padding: 3px 11px; font-size: 11.3px; line-height: 1.35; color: var(--hi); }
+  .pw-body .note { margin-top: 7px; font-size: 11.4px; line-height: 1.5; color: var(--soft); }
   .about-h { font-size: 44px; margin-bottom: 30px; }
