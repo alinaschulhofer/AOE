@@ -439,8 +439,8 @@ LEVELS4 = [("Individual", "Developing core psychological, emotional, and relatio
 
 def p_systems():
     lv = "".join(f'<div class="lvl"><div class="label">Level 0{i + 1}</div><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(LEVELS4))
-    return "An Ecological, Systems-Based Approach", f"""
-  <h1 class="pt"><span class="dim">An Ecological, Systems-Based</span><br>Approach to Excellence.</h1>
+    return "An Ecological Approach", f"""
+  <h1 class="pt"><span class="dim">An Ecological</span> Approach to Excellence.</h1>
   <div class="cols2 mt20">
     <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
     <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being.</p>
@@ -457,9 +457,8 @@ def p_systems():
 EXCELLENCE_BLOCK = """
   <div class="excellence">
     <div class="ex-h"><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div></div>
-    <div class="cols2">
-      <p>AOE’s philosophy views excellence not as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
-      <p>At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
+    <div class="ex-body">
+      <p>AOE’s philosophy views excellence not as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
     </div>
   </div>"""
 
@@ -542,7 +541,7 @@ def p_apps():
 
 def p_pathways():
     def tags(items):
-        return '<div class="tags">' + "".join(f'<span>{i.rstrip(".")}</span>' for i in items) + "</div>"
+        return ul(items, "dash two" if len(items) > 4 else "dash two")
     rows = "".join(f"""
     <div class="pw-row">
       <div class="pw-n">0{k + 1}</div>
@@ -576,8 +575,10 @@ def p_principles(with_contact=False):
     pr = "".join(f'<div class="pr"><div class="num sm">0{i + 1}</div><div><h3>{t}</h3><p>{d}</p></div></div>' for i, (t, d) in enumerate(PRINCIPLES))
     return "Foundational Implementation Principles", f"""
   <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
-  <p class="lead">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
-  <div class="principles">{pr}</div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
+  <div class="principles-wrap">
+    <p class="commit">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
+    <div class="principles">{pr}</div>
+  </div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
 
 
 # ------------------------------------------------------------------ documents

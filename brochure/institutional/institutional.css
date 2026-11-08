@@ -155,6 +155,7 @@
   .excellence { margin-top: auto; margin-bottom: 26px; padding-top: 24px; border-top: 1px solid var(--rule); }
   .ex-h { text-align: center; margin-bottom: 18px; }
   .ex-h .tag { margin-top: 6px; }
+  .ex-body { max-width: 580px; margin: 0 auto; text-align: center; font-size: 13.6px; line-height: 1.75; }
   .tag.soft { margin-top: 2px !important; color: var(--soft); }
 
   /* 05 Matrix */
@@ -228,7 +229,9 @@
   .caveat { margin-top: 16px; padding: 14px 18px; border: 1px dashed var(--circle); font-size: 12px; color: var(--hi); text-align: center; }
 
   /* 13 Principles */
-  .principles { flex: 1; margin: 10px 0 24px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; align-content: center; }
+  .principles-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 24px; }
+  .commit { font-size: 18px; line-height: 1.5; color: var(--hi); font-weight: 300; margin-bottom: 22px; max-width: 600px; }
+  .principles { display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
   .pr { display: flex; gap: 16px; padding: 30px 0; border-top: 1px solid var(--rule); }
   .pr h3 { font-size: 17px; font-weight: 300; }
   .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
@@ -261,7 +264,8 @@
   .dg.temple .t-tie { stroke: var(--circle); stroke-width: 1; }
   .dg.temple .t-node { fill: var(--hi); }
   /* Principles page carrying the contact block (Document C) */
-  .principles-pg.compact .principles { margin: 10px 0 16px; }
+  .principles-pg.compact .principles-wrap { padding-bottom: 16px; }
+  .principles-pg.compact .commit { font-size: 16px; margin-bottom: 14px; }
   .principles-pg.compact .pr { padding: 14px 0; }
   .principles-pg.compact .pr h3 { font-size: 15.5px; }
   .principles-pg.compact .pr p { font-size: 11.9px; margin-top: 4px; }
@@ -300,3 +304,7 @@
   .tags span { border: 1px solid var(--rule-strong); border-radius: 999px; padding: 3px 11px; font-size: 11.3px; line-height: 1.35; color: var(--hi); }
   .pw-body .note { margin-top: 7px; font-size: 11.4px; line-height: 1.5; color: var(--soft); }
   .about-h { font-size: 44px; margin-bottom: 30px; }
+  .pw-body ul.dash { margin-top: 8px; font-size: 12.2px; line-height: 1.5; }
+  .pw-body ul.two { columns: 2; column-gap: 28px; }
+  .pw-body ul.two li { break-inside: avoid; }
+  .pw-body ul.dash li + li { margin-top: 3px; }
