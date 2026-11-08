@@ -462,8 +462,8 @@ EXCELLENCE_BLOCK = """
   <div class="excellence">
     <div class="ex-h"><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div></div>
     <div class="cols2">
-      <p>Within Architecture of Excellence, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
-      <p>Excellence involves the continuous pursuit of development, integrity, meaningful achievement, and psychological sustainability. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
+      <p>AOE’s philosophy views excellence not as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
+      <p>At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
     </div>
   </div>"""
 
