@@ -438,7 +438,7 @@ def p_overview():
 LEVELS4 = [("Individual", "Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills."),
            ("Relational &amp; Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
            ("Organizational", "Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions."),
-           ("Broader Systems", "Supporting alignment, shared practices, and the development of competencies across the institutional and social environments, including interconnected stakeholders, teams, and organizations.")]
+           ("Broader Systems", "Supporting alignment, shared practices, and the development of competencies across the institutional and social environments.")]
 
 
 def p_systems():
