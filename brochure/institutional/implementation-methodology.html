@@ -55,7 +55,7 @@
   ul.dash { list-style: none; margin-top: 6px; }
   ul.dash li { position: relative; padding-left: 14px; }
   ul.dash li + li { margin-top: 3px; }
-  ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 6px; height: 1px; background: var(--mid); }
+  ul.dash li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 4px; height: 4px; border-radius: 50%; background: var(--mid); }
 
   /* Running head & footer */
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
@@ -149,7 +149,7 @@
   .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
   .lvl h3 { margin-top: 6px; }
   .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
-  .closing-line { margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
+  .closing-line { text-align: center; margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
 
   /* 04 Part I */
   .p1 { font-size: 13.4px; color: var(--mid); }
@@ -162,7 +162,7 @@
   .dg.temple .t-ex { fill: var(--hi); font-size: 17px; font-weight: 400; letter-spacing: .4em; }
   .dg.temple .t-base { fill: var(--mid); font-size: 11px; font-weight: 500; letter-spacing: .3em; }
   .excellence { margin-top: auto; margin-bottom: 26px; padding-top: 24px; border-top: 1px solid var(--rule); }
-  .ex-h { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+  .ex-h { text-align: center; margin-bottom: 18px; }
   .ex-h .tag { margin-top: 6px; }
   .tag.soft { margin-top: 2px !important; color: var(--soft); }
 
@@ -241,7 +241,7 @@
   .pr { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid var(--rule); }
   .pr h3 { font-size: 17px; font-weight: 300; }
   .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
-  .pr:last-child { grid-column: span 2; }
+  
 
   /* 14 Closing */
   .close-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; }
@@ -298,18 +298,20 @@
   .method-stage .cycle { margin-top: 0; }
   .method-stage .cml { margin-top: 26px; }
 
-  /* Pathways detail page */
-  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 0 0 4px; }
-  .pw { display: grid; grid-template-columns: 200px 1fr; column-gap: 30px; padding: 11px 0; }
-  .pw + .pw { border-top: 1px solid var(--rule); }
-  .pw-h h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
-  .pw-b { font-size: 12.4px; line-height: 1.52; }
-  .pw-b > p:first-child { color: var(--mid); }
-  .pw-b ul.dash { margin-top: 8px; }
-  .pw-b ul.two { columns: 2; column-gap: 26px; }
-  .pw-b ul.two li { break-inside: avoid; }
-  .pw-b ul.dash li + li { margin-top: 4px; }
-  .pw-b .note { margin-top: 8px; color: var(--mid); font-size: 12px; }
+  /* Pathways detail page: modular cards */
+  .pathways { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; padding: 14px 0 12px; }
+  .pw-card { border: 1px solid var(--rule-strong); background: rgba(241,237,229,.03); padding: 15px 20px 15px; font-size: 12px; line-height: 1.48; }
+  .pw-card.wide { grid-column: span 2; }
+  .pw-top { display: flex; align-items: baseline; gap: 14px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .pw-n { font-size: 26px; font-weight: 300; color: var(--mid); letter-spacing: -.02em; line-height: 1; }
+  .pw-top h3 { font-size: 16px; font-weight: 400; line-height: 1.25; }
+  .pw-lead { color: var(--mid); }
+  .pw-card ul.dash { margin-top: 8px; }
+  .pw-card ul.dash li + li { margin-top: 4px; }
+  .pw-card ul.two { columns: 2; column-gap: 30px; }
+  .pw-card ul.two li { break-inside: avoid; }
+  .pw-card .note { margin-top: 10px; color: var(--soft); font-size: 11.4px; }
+  .about-h { font-size: 44px; margin-bottom: 30px; }
 
 </style>
 </head>
@@ -325,10 +327,11 @@
 </section>
 <!-- ============ PAGE 02 ============ -->
 <section class="page overview">
-  <div class="runhead"><span class="label">Overview</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <div class="runhead"><span class="label">About</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <div class="stack">
-    <p class="sub">Architecture of Excellence (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <h1 class="about-h">About.</h1>
+    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary method informed by psychology and high-performance science, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
     <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
@@ -396,7 +399,7 @@
 <text class="phl" x="156.1" y="150.9" text-anchor="end" dominant-baseline="central">PHASE 05</text>
 <text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="156.1" y="164.9">Integration &amp;</tspan><tspan x="156.1" y="180.9">Sustainability</tspan></text>
 </svg></figure>
-    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
+    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>
   <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 8</span></footer>
 </section>
@@ -467,25 +470,25 @@
 <section class="page pathways-pg">
   <div class="runhead"><span class="label">The Five Pathways</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 <div class="pathways">
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 01</div><h3>Education &amp; Development of Core Competencies</h3></div>
-      <div class="pw-b"><p>Development of psychological, relational, and leadership competencies through:</p><ul class="dash two"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p></div>
+    <div class="pw-card">
+      <div class="pw-top"><span class="pw-n">01</span><h3>Education &amp; Development of Core Competencies</h3></div>
+      <p class="pw-lead">Development of psychological, relational, and leadership competencies through:</p><ul class="dash"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p>
     </div>
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 02</div><h3>Leadership &amp; Individual Development</h3></div>
-      <div class="pw-b"><p>Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p></div>
+    <div class="pw-card">
+      <div class="pw-top"><span class="pw-n">02</span><h3>Leadership &amp; Individual Development</h3></div>
+      <p class="pw-lead">Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p>
     </div>
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 03</div><h3>Team &amp; Relational Development</h3></div>
-      <div class="pw-b"><p>Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul></div>
+    <div class="pw-card">
+      <div class="pw-top"><span class="pw-n">03</span><h3>Team &amp; Relational Development</h3></div>
+      <p class="pw-lead">Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul>
     </div>
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 04</div><h3>Organizational Development &amp; Culture</h3></div>
-      <div class="pw-b"><p>Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash two"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul></div>
+    <div class="pw-card">
+      <div class="pw-top"><span class="pw-n">04</span><h3>Organizational Development &amp; Culture</h3></div>
+      <p class="pw-lead">Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul>
     </div>
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 05</div><h3>System-Wide Development &amp; Integration</h3></div>
-      <div class="pw-b"><p>For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash two"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul></div>
+    <div class="pw-card wide">
+      <div class="pw-top"><span class="pw-n">05</span><h3>System-Wide Development &amp; Integration</h3></div>
+      <p class="pw-lead">For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash two"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul>
     </div></div>
   <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">06 / 8</span></footer>
 </section>
@@ -539,8 +542,8 @@
   <div class="runhead"><span class="label">Foundational Implementation Principles</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
-  <p class="lead">All applications of the AOE Institutional Framework should be guided by the following commitments.</p>
-  <div class="principles"><div class="pr"><div class="num sm">01</div><div><h3>Ecological Responsibility</h3><p>Development addresses both individual capabilities and the environmental conditions influencing behavior, performance, and well-being.</p></div></div><div class="pr"><div class="num sm">02</div><div><h3>Contextual Adaptability</h3><p>The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities.</p></div></div><div class="pr"><div class="num sm">03</div><div><h3>Psychological Depth &amp; Practical Accessibility</h3><p>The methodology draws on psychoanalytic, relational, and systemic perspectives while translating complex psychological concepts into accessible, practical approaches.</p></div></div><div class="pr"><div class="num sm">04</div><div><h3>Integration Over Isolation</h3><p>Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence.</p></div></div><div class="pr"><div class="num sm">05</div><div><h3>Sustainable Excellence</h3><p>High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability.</p></div></div><div class="pr"><div class="num sm">06</div><div><h3>Continuous Development</h3><p>Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement.</p></div></div><div class="pr"><div class="num sm">07</div><div><h3>Ethical &amp; Professional Boundaries</h3><p>Education, coaching, consulting, organizational assessment, and clinical services remain appropriately differentiated. Participation, confidentiality, safeguarding, and professional responsibilities are addressed according to the nature of each engagement.</p></div></div></div>
+  <p class="lead">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
+  <div class="principles"><div class="pr"><div class="num sm">01</div><div><h3>Ecological Responsibility</h3><p>Development addresses both individual capabilities and the environmental conditions influencing behavior, performance, and well-being.</p></div></div><div class="pr"><div class="num sm">02</div><div><h3>Contextual Adaptability</h3><p>The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities.</p></div></div><div class="pr"><div class="num sm">03</div><div><h3>Psychological Depth &amp; Practical Accessibility</h3><p>The methodology draws on psychoanalytic, relational, and systemic perspectives while translating complex psychological concepts into accessible, practical approaches.</p></div></div><div class="pr"><div class="num sm">04</div><div><h3>Integration Over Isolation</h3><p>Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence.</p></div></div><div class="pr"><div class="num sm">05</div><div><h3>Sustainable Excellence</h3><p>High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability.</p></div></div><div class="pr"><div class="num sm">06</div><div><h3>Continuous Development</h3><p>Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement.</p></div></div></div>
   <div class="contact">
     <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE</span></div>
     <div class="ct">

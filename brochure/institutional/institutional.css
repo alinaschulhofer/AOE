@@ -46,7 +46,7 @@
   ul.dash { list-style: none; margin-top: 6px; }
   ul.dash li { position: relative; padding-left: 14px; }
   ul.dash li + li { margin-top: 3px; }
-  ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 6px; height: 1px; background: var(--mid); }
+  ul.dash li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 4px; height: 4px; border-radius: 50%; background: var(--mid); }
 
   /* Running head & footer */
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
@@ -140,7 +140,7 @@
   .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
   .lvl h3 { margin-top: 6px; }
   .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
-  .closing-line { margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
+  .closing-line { text-align: center; margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
 
   /* 04 Part I */
   .p1 { font-size: 13.4px; color: var(--mid); }
@@ -153,7 +153,7 @@
   .dg.temple .t-ex { fill: var(--hi); font-size: 17px; font-weight: 400; letter-spacing: .4em; }
   .dg.temple .t-base { fill: var(--mid); font-size: 11px; font-weight: 500; letter-spacing: .3em; }
   .excellence { margin-top: auto; margin-bottom: 26px; padding-top: 24px; border-top: 1px solid var(--rule); }
-  .ex-h { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+  .ex-h { text-align: center; margin-bottom: 18px; }
   .ex-h .tag { margin-top: 6px; }
   .tag.soft { margin-top: 2px !important; color: var(--soft); }
 
@@ -232,7 +232,7 @@
   .pr { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid var(--rule); }
   .pr h3 { font-size: 17px; font-weight: 300; }
   .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
-  .pr:last-child { grid-column: span 2; }
+  
 
   /* 14 Closing */
   .close-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; }
@@ -289,15 +289,17 @@
   .method-stage .cycle { margin-top: 0; }
   .method-stage .cml { margin-top: 26px; }
 
-  /* Pathways detail page */
-  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 0 0 4px; }
-  .pw { display: grid; grid-template-columns: 200px 1fr; column-gap: 30px; padding: 11px 0; }
-  .pw + .pw { border-top: 1px solid var(--rule); }
-  .pw-h h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
-  .pw-b { font-size: 12.4px; line-height: 1.52; }
-  .pw-b > p:first-child { color: var(--mid); }
-  .pw-b ul.dash { margin-top: 8px; }
-  .pw-b ul.two { columns: 2; column-gap: 26px; }
-  .pw-b ul.two li { break-inside: avoid; }
-  .pw-b ul.dash li + li { margin-top: 4px; }
-  .pw-b .note { margin-top: 8px; color: var(--mid); font-size: 12px; }
+  /* Pathways detail page: modular cards */
+  .pathways { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; padding: 14px 0 12px; }
+  .pw-card { border: 1px solid var(--rule-strong); background: rgba(241,237,229,.03); padding: 15px 20px 15px; font-size: 12px; line-height: 1.48; }
+  .pw-card.wide { grid-column: span 2; }
+  .pw-top { display: flex; align-items: baseline; gap: 14px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .pw-n { font-size: 26px; font-weight: 300; color: var(--mid); letter-spacing: -.02em; line-height: 1; }
+  .pw-top h3 { font-size: 16px; font-weight: 400; line-height: 1.25; }
+  .pw-lead { color: var(--mid); }
+  .pw-card ul.dash { margin-top: 8px; }
+  .pw-card ul.dash li + li { margin-top: 4px; }
+  .pw-card ul.two { columns: 2; column-gap: 30px; }
+  .pw-card ul.two li { break-inside: avoid; }
+  .pw-card .note { margin-top: 10px; color: var(--soft); font-size: 11.4px; }
+  .about-h { font-size: 44px; margin-bottom: 30px; }

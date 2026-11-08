@@ -55,7 +55,7 @@
   ul.dash { list-style: none; margin-top: 6px; }
   ul.dash li { position: relative; padding-left: 14px; }
   ul.dash li + li { margin-top: 3px; }
-  ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 6px; height: 1px; background: var(--mid); }
+  ul.dash li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 4px; height: 4px; border-radius: 50%; background: var(--mid); }
 
   /* Running head & footer */
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
@@ -149,7 +149,7 @@
   .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
   .lvl h3 { margin-top: 6px; }
   .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
-  .closing-line { margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
+  .closing-line { text-align: center; margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
 
   /* 04 Part I */
   .p1 { font-size: 13.4px; color: var(--mid); }
@@ -162,7 +162,7 @@
   .dg.temple .t-ex { fill: var(--hi); font-size: 17px; font-weight: 400; letter-spacing: .4em; }
   .dg.temple .t-base { fill: var(--mid); font-size: 11px; font-weight: 500; letter-spacing: .3em; }
   .excellence { margin-top: auto; margin-bottom: 26px; padding-top: 24px; border-top: 1px solid var(--rule); }
-  .ex-h { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+  .ex-h { text-align: center; margin-bottom: 18px; }
   .ex-h .tag { margin-top: 6px; }
   .tag.soft { margin-top: 2px !important; color: var(--soft); }
 
@@ -241,7 +241,7 @@
   .pr { display: flex; gap: 16px; padding: 26px 0; border-top: 1px solid var(--rule); }
   .pr h3 { font-size: 17px; font-weight: 300; }
   .pr p { margin-top: 7px; font-size: 12.4px; line-height: 1.62; }
-  .pr:last-child { grid-column: span 2; }
+  
 
   /* 14 Closing */
   .close-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; }
@@ -298,18 +298,20 @@
   .method-stage .cycle { margin-top: 0; }
   .method-stage .cml { margin-top: 26px; }
 
-  /* Pathways detail page */
-  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 0 0 4px; }
-  .pw { display: grid; grid-template-columns: 200px 1fr; column-gap: 30px; padding: 11px 0; }
-  .pw + .pw { border-top: 1px solid var(--rule); }
-  .pw-h h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
-  .pw-b { font-size: 12.4px; line-height: 1.52; }
-  .pw-b > p:first-child { color: var(--mid); }
-  .pw-b ul.dash { margin-top: 8px; }
-  .pw-b ul.two { columns: 2; column-gap: 26px; }
-  .pw-b ul.two li { break-inside: avoid; }
-  .pw-b ul.dash li + li { margin-top: 4px; }
-  .pw-b .note { margin-top: 8px; color: var(--mid); font-size: 12px; }
+  /* Pathways detail page: modular cards */
+  .pathways { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; padding: 14px 0 12px; }
+  .pw-card { border: 1px solid var(--rule-strong); background: rgba(241,237,229,.03); padding: 15px 20px 15px; font-size: 12px; line-height: 1.48; }
+  .pw-card.wide { grid-column: span 2; }
+  .pw-top { display: flex; align-items: baseline; gap: 14px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .pw-n { font-size: 26px; font-weight: 300; color: var(--mid); letter-spacing: -.02em; line-height: 1; }
+  .pw-top h3 { font-size: 16px; font-weight: 400; line-height: 1.25; }
+  .pw-lead { color: var(--mid); }
+  .pw-card ul.dash { margin-top: 8px; }
+  .pw-card ul.dash li + li { margin-top: 4px; }
+  .pw-card ul.two { columns: 2; column-gap: 30px; }
+  .pw-card ul.two li { break-inside: avoid; }
+  .pw-card .note { margin-top: 10px; color: var(--soft); font-size: 11.4px; }
+  .about-h { font-size: 44px; margin-bottom: 30px; }
 
 </style>
 </head>
@@ -325,10 +327,11 @@
 </section>
 <!-- ============ PAGE 02 ============ -->
 <section class="page overview">
-  <div class="runhead"><span class="label">Overview</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+  <div class="runhead"><span class="label">About</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <div class="stack">
-    <p class="sub">Architecture of Excellence (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <h1 class="about-h">About.</h1>
+    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary method informed by psychology and high-performance science, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
     <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
@@ -352,7 +355,7 @@
   <h1 class="pt"><span class="dim">An Ecological, Systems-Based</span><br>Approach to Excellence.</h1>
   <div class="cols2 mt20">
     <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
-    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These dynamics are constantly interacting.</p>
+    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being.</p>
   </div>
   <figure class="eco-fig"><svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
 <defs>
@@ -388,7 +391,7 @@
     <figcaption>Bidirectional influence across all four levels</figcaption>
   </figure>
   <p class="levels-intro">AOE targets transformation at four main interconnected levels:</p>
-  <div class="levels-row"><div class="lvl"><div class="label">Level 01</div><h3>Individual</h3><p>Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills.</p></div><div class="lvl"><div class="label">Level 02</div><h3>Relational &amp; Team</h3><p>Strengthening relational patterns, communication, trust, collaboration, and collective functioning.</p></div><div class="lvl"><div class="label">Level 03</div><h3>Organizational</h3><p>Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions.</p></div><div class="lvl"><div class="label">Level 04</div><h3>Broader Systems</h3><p>Supporting alignment, shared practices, and development across the larger institutional and social environments in which organizations operate, including interconnected stakeholders, teams, and organizations.</p></div></div>
+  <div class="levels-row"><div class="lvl"><div class="label">Level 01</div><h3>Individual</h3><p>Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills.</p></div><div class="lvl"><div class="label">Level 02</div><h3>Relational &amp; Team</h3><p>Strengthening relational patterns, communication, trust, collaboration, and collective functioning.</p></div><div class="lvl"><div class="label">Level 03</div><h3>Organizational</h3><p>Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions.</p></div><div class="lvl"><div class="label">Level 04</div><h3>Broader Systems</h3><p>Supporting alignment, shared practices, and the development of competencies across the institutional and social environments, including interconnected stakeholders, teams, and organizations.</p></div></div>
   <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
 
   <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 12</span></footer>
@@ -456,7 +459,7 @@
 </svg></figure>
 
   <div class="excellence">
-    <div class="ex-h"><div class="num">→</div><div><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div><div class="label tag soft">The Embodiment of Greatness</div></div></div>
+    <div class="ex-h"><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div></div>
     <div class="cols2">
       <p>Within Architecture of Excellence, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
       <p>Excellence involves the continuous pursuit of development, integrity, meaningful achievement, and psychological sustainability. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
@@ -470,7 +473,7 @@
 
   <h1 class="pt"><span class="dim">Core</span> Competencies.</h1>
   <p class="lead">Each pillar represents a core competency domain supported by specific developmental competencies.</p>
-  <figure class="matrix"><svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 678 700" xmlns="http://www.w3.org/2000/svg">
+  <figure class="matrix"><svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 678 638" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <marker id="mc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path class="ah" d="M1,1.2 L9,5 L1,8.8"/>
@@ -579,8 +582,6 @@
 <line class="rule" x1="450" y1="620.5" x2="456" y2="620.5"/>
 <text class="rsub" x="464" y="620.5" dominant-baseline="central">Continuous Learning</text>
 <line class="rule faint" x1="0" y1="635.5" x2="678" y2="635.5"/>
-<rect class="exbar" x="0" y="658" width="678" height="42"/>
-<text class="ex" x="339.0" y="679" text-anchor="middle" dominant-baseline="central">EXCELLENCE · THE INTEGRATION OF THE SIX PILLARS</text>
 </svg></figure>
   <p class="matrix-note">The AOE competencies are developed and expressed across individual, relational, team, and organizational contexts. Their application considers both the capabilities of people and the conditions that enable or constrain their expression.</p>
 

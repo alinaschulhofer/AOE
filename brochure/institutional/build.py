@@ -111,7 +111,7 @@ SUB_NAMES = [
 def diagram_c():
     W, top, rh = 678, 30, 101
     xc, xs = 196, 450
-    H = top + 6 * rh + 22 + 42
+    H = top + 6 * rh + 2
     o = [f'<svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="mc")]
     for x, t in ((0, "PILLAR"), (xc, "CORE COMPETENCY"), (xs, "CORE SUBCOMPETENCIES")):
@@ -132,9 +132,6 @@ def diagram_c():
             o.append(f'<line class="rule" x1="{xs}" y1="{f(yy)}" x2="{xs + 6}" y2="{f(yy)}"/>')
             o.append(f'<text class="rsub" x="{xs + 14}" y="{f(yy)}" dominant-baseline="central">{t}</text>')
         o.append(f'<line class="rule faint" x1="0" y1="{y + rh - .5}" x2="{W}" y2="{y + rh - .5}"/>')
-    ye = top + 6 * rh + 22
-    o.append(f'<rect class="exbar" x="0" y="{ye}" width="{W}" height="42"/>')
-    o.append(f'<text class="ex" x="{W / 2}" y="{ye + 21}" text-anchor="middle" dominant-baseline="central">EXCELLENCE · THE INTEGRATION OF THE SIX PILLARS</text>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -366,7 +363,6 @@ PRINCIPLES = [
     ("Integration Over Isolation", "Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence."),
     ("Sustainable Excellence", "High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability."),
     ("Continuous Development", "Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement."),
-    ("Ethical &amp; Professional Boundaries", "Education, coaching, consulting, organizational assessment, and clinical services remain appropriately differentiated. Participation, confidentiality, safeguarding, and professional responsibilities are addressed according to the nature of each engagement."),
 ]
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
@@ -419,9 +415,10 @@ def pillar_block(p):
 # Labels may carry a "Part X — " prefix, which is shown only in Document A.
 
 def p_overview():
-    return "Overview", """
+    return "About", """
   <div class="stack">
-    <p class="sub">Architecture of Excellence (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <h1 class="about-h">About.</h1>
+    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary method informed by psychology and high-performance science, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
     <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
@@ -441,7 +438,7 @@ def p_overview():
 LEVELS4 = [("Individual", "Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills."),
            ("Relational &amp; Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
            ("Organizational", "Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions."),
-           ("Broader Systems", "Supporting alignment, shared practices, and development across the larger institutional and social environments in which organizations operate, including interconnected stakeholders, teams, and organizations.")]
+           ("Broader Systems", "Supporting alignment, shared practices, and the development of competencies across the institutional and social environments, including interconnected stakeholders, teams, and organizations.")]
 
 
 def p_systems():
@@ -450,7 +447,7 @@ def p_systems():
   <h1 class="pt"><span class="dim">An Ecological, Systems-Based</span><br>Approach to Excellence.</h1>
   <div class="cols2 mt20">
     <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
-    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These dynamics are constantly interacting.</p>
+    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being.</p>
   </div>
   <figure class="eco-fig">{diagram_a()}
     <figcaption>Bidirectional influence across all four levels</figcaption>
@@ -463,7 +460,7 @@ def p_systems():
 
 EXCELLENCE_BLOCK = """
   <div class="excellence">
-    <div class="ex-h"><div class="num">→</div><div><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div><div class="label tag soft">The Embodiment of Greatness</div></div></div>
+    <div class="ex-h"><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div></div>
     <div class="cols2">
       <p>Within Architecture of Excellence, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
       <p>Excellence involves the continuous pursuit of development, integrity, meaningful achievement, and psychological sustainability. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
@@ -524,7 +521,7 @@ def p_method():
   </div>
   <div class="method-stage">
     <figure class="cycle">{diagram_d()}</figure>
-    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
+    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>""", "method"
 
 
@@ -549,9 +546,9 @@ def p_apps():
 
 def p_pathways():
     rows = "".join(f"""
-    <div class="pw">
-      <div class="pw-h"><div class="label">Pathway 0{k + 1}</div><h3>{t}</h3></div>
-      <div class="pw-b"><p>{lead}</p>{ul(items, "dash two" if len(items) > 4 else "dash")}{f'<p class="note">{note}</p>' if note else ''}</div>
+    <div class="pw-card{' wide' if k == 4 else ''}">
+      <div class="pw-top"><span class="pw-n">0{k + 1}</span><h3>{t}</h3></div>
+      <p class="pw-lead">{lead}</p>{ul(items, "dash two" if k == 4 else "dash")}{f'<p class="note">{note}</p>' if note else ''}
     </div>""" for k, (t, lead, items, note) in enumerate(APPS))
     return "Part III — The Five Pathways", f'<div class="pathways">{rows}</div>', "pathways-pg"
 
@@ -577,7 +574,7 @@ def p_principles(with_contact=False):
     pr = "".join(f'<div class="pr"><div class="num sm">0{i + 1}</div><div><h3>{t}</h3><p>{d}</p></div></div>' for i, (t, d) in enumerate(PRINCIPLES))
     return "Foundational Implementation Principles", f"""
   <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
-  <p class="lead">All applications of the AOE Institutional Framework should be guided by the following commitments.</p>
+  <p class="lead">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
   <div class="principles">{pr}</div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
 
 

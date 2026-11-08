@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="diagram-c-competency-framework" viewBox="-24 -24 726 748" xmlns="http://www.w3.org/2000/svg" width="726" height="748"><rect x="-24" y="-24" width="726" height="748" fill="rgb(28, 27, 25)"></rect>
+<svg id="diagram-c-competency-framework" viewBox="-24 -24 726 686" xmlns="http://www.w3.org/2000/svg" width="726" height="686"><rect x="-24" y="-24" width="726" height="686" fill="rgb(28, 27, 25)"></rect>
 <defs>
   <marker id="mc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path d="M1,1.2 L9,5 L1,8.8" fill="none" stroke="rgb(241, 237, 229)" stroke-width="1.4px" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
@@ -108,6 +108,4 @@
 <line x1="450" y1="620.5" x2="456" y2="620.5" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 <text x="464" y="620.5" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Continuous Learning</text>
 <line x1="0" y1="635.5" x2="678" y2="635.5" fill="rgb(0, 0, 0)" stroke="rgb(62, 61, 58)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
-<rect x="0" y="658" width="678" height="42" fill="rgba(241, 237, 229, 0.09)" stroke="rgb(241, 237, 229)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></rect>
-<text x="339.0" y="679" text-anchor="middle" dominant-baseline="central" fill="rgb(241, 237, 229)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="11px" font-weight="500" letter-spacing="3.52px" opacity="1">EXCELLENCE · THE INTEGRATION OF THE SIX PILLARS</text>
 </svg>
