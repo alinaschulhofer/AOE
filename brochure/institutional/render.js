@@ -16,7 +16,7 @@ const DOCS = [
   fs.mkdirSync(PREV, { recursive: true });
   fs.mkdirSync(path.join(__dirname, 'diagrams'), { recursive: true });
   const browser = await chromium.launch();
-  for (const doc of DOCS) for (const theme of ['dark', 'light']) {
+  for (const doc of DOCS) for (const theme of ['dark']) {
     const SRC = 'file://' + path.join(__dirname, doc.src);
     const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 1 });
     await page.goto(SRC + '#' + theme, { waitUntil: 'networkidle' });
