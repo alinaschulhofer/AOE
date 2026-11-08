@@ -4,9 +4,9 @@ There are three coordinated documents, all built from the same source. They shar
 
 | Document | File | Pages |
 |---|---|---|
-| A: Comprehensive Institutional Framework & Methodology | `AOE_Institutional_Framework_{dark,light}.pdf` | 14 |
-| B: Institutional Competency Framework | `AOE_Competency_Framework_{dark,light}.pdf` | 9 |
-| C: Institutional Implementation Methodology | `AOE_Implementation_Methodology_{dark,light}.pdf` | 7 |
+| A: Comprehensive Institutional Framework & Methodology | `AOE_Institutional_Framework_{dark,light}.pdf` | 18 |
+| B: Institutional Competency Framework | `AOE_Competency_Framework_{dark,light}.pdf` | 12 |
+| C: Institutional Implementation Methodology | `AOE_Implementation_Methodology_{dark,light}.pdf` | 8 |
 
 - `diagrams/`: each diagram as a standalone vector SVG, in a dark and a light version.
 - Editable source:

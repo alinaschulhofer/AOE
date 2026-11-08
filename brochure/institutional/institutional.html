@@ -133,22 +133,23 @@
   .overview .stack { flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .overview .sub { margin-top: 0; font-size: 21px; line-height: 1.5; max-width: 660px; }
   .overview .ov { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--rule); font-size: 13px; }
-  .quote { margin-top: 50px; border: 1px solid var(--circle); padding: 26px 30px; }
+  .quote { margin-top: 50px; border: 1px solid var(--circle); padding: 28px 40px; text-align: center; }
   .quote p { margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--hi); }
-  .dims { margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); }
+  .dims-h { margin-top: 50px; text-align: center; }
+  .dims { margin-top: 14px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); }
   .dims div { padding-top: 14px; }
   .dims div + div { border-left: 1px solid var(--rule); padding-left: 16px; }
 
   /* 03 Systems */
   h1.pt.one { font-size: 34px; white-space: nowrap; }
-  .eco-fig { width: 330px; margin: 30px auto 0; }
-  .eco-fig figcaption { margin: 14px -30px 0; text-align: center; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
+  .eco-fig { width: 316px; margin: 22px auto 0; }
+  .eco-fig figcaption { margin: 16px -40px 0; text-align: center; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); }
   .levels-intro { margin-top: 30px; color: var(--mid); }
   .levels-row { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 22px; }
   .lvl { padding-top: 12px; border-top: 1px solid var(--rule-strong); }
   .lvl h3 { margin-top: 6px; }
   .lvl p { margin-top: 6px; font-size: 11.6px; line-height: 1.55; }
-  .closing-line { margin-top: auto; margin-bottom: 26px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
+  .closing-line { margin-top: auto; margin-bottom: 18px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.6px; line-height: 1.65; }
 
   /* 04 Part I */
   .p1 { font-size: 13.4px; color: var(--mid); }
@@ -215,7 +216,8 @@
 
   /* 11 Applications */
   .apps-top { display: grid; grid-template-columns: 1fr 250px; column-gap: 30px; align-items: center; }
-  .apps-fig { margin-top: 22px; }
+  .apps-fig { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .apps-fig svg { width: 640px; }
   .apps { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
   .appc { padding: 12px 0 12px; border-top: 1px solid var(--rule); }
   .ah2 { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
@@ -252,7 +254,7 @@
   .legal { padding-bottom: 16px; font-size: 9.4px; line-height: 1.55; color: var(--soft); }
 
   /* Refinements: overview value line, ecological note, matrix note, methodology principle */
-  .overview .value { margin-top: 30px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 14.5px; line-height: 1.6; color: var(--hi); max-width: 640px; }
+  .overview .value { margin-top: 30px; font-size: 14.5px; line-height: 1.6; color: var(--hi); max-width: 640px; }
   .overview .value .label, .cml .label { display: block; margin-bottom: 6px; }
   .eco { margin-top: 20px; display: grid; grid-template-columns: 290px 1fr; column-gap: 40px; align-items: center; }
   .eco .eco-fig { width: 290px; margin: 0; }
@@ -274,6 +276,41 @@
   .principles-pg.compact .pr p { font-size: 11.9px; margin-top: 4px; }
   .principles-pg.compact .contact { margin-top: auto; }
 
+  /* Pillar pages: one pillar per page */
+  .pillar-pg .pp-head { margin-top: 40px; display: grid; grid-template-columns: 1fr 250px; column-gap: 34px; align-items: end; }
+  .pp-title h1 { margin: 10px 0 12px; font-size: 52px; }
+  .pp-core { border-left: 1px solid var(--circle); padding: 4px 0 4px 20px; }
+  .pp-core p { margin-top: 8px; font-size: 16px; line-height: 1.4; color: var(--hi); font-weight: 400; }
+  .pp-def { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--rule); font-size: 15.5px; line-height: 1.65; color: var(--hi); max-width: 640px; }
+  .pp-def p + p { margin-top: 10px; }
+  .pp-sec { margin-top: 34px; }
+  .pp-subs { margin-top: 10px; }
+  .ps { display: grid; grid-template-columns: 210px 1fr; column-gap: 24px; padding: 11px 0; border-top: 1px solid var(--rule); font-size: 13px; line-height: 1.55; }
+  .ps:last-child { border-bottom: 1px solid var(--rule); }
+  .ps dt { font-weight: 500; color: var(--hi); }
+  .ps dd { margin: 0; }
+  .pp-cols { margin-top: 34px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; font-size: 13px; line-height: 1.6; }
+  .pp-cols .k { margin-bottom: 8px; }
+  .pp-cols ul.dash li + li { margin-top: 5px; }
+
+  /* Methodology page */
+  .method-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 20px; }
+  .method-stage .cycle { margin-top: 0; }
+  .method-stage .cml { margin-top: 26px; }
+
+  /* Pathways detail page */
+  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 0 0 4px; }
+  .pw { display: grid; grid-template-columns: 200px 1fr; column-gap: 30px; padding: 11px 0; }
+  .pw + .pw { border-top: 1px solid var(--rule); }
+  .pw-h h3 { margin-top: 6px; font-size: 18px; font-weight: 300; line-height: 1.25; }
+  .pw-b { font-size: 12.4px; line-height: 1.52; }
+  .pw-b > p:first-child { color: var(--mid); }
+  .pw-b ul.dash { margin-top: 8px; }
+  .pw-b ul.two { columns: 2; column-gap: 26px; }
+  .pw-b ul.two li { break-inside: avoid; }
+  .pw-b ul.dash li + li { margin-top: 4px; }
+  .pw-b .note { margin-top: 8px; color: var(--mid); font-size: 12px; }
+
 </style>
 </head>
 <body>
@@ -291,21 +328,22 @@
   <div class="runhead"><span class="label">Overview</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <div class="stack">
-    <p class="sub">Architecture of Excellence™ (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
+    <p class="sub">Architecture of Excellence (AOE) is a proprietary, psychology-based approach, informed by established psychological science and theory, designed to support the psychological, emotional, and relational conditions required to develop and sustain excellence and well-being in high-performance environments.</p>
     <p class="value"><span class="label">Institutional Value</span>For institutions, AOE offers a shared framework and a structured process for developing the people, relationships, leadership, and organizational conditions on which sustainable performance and well-being depend.</p>
     <div class="cols2 ov">
       <p>Integrating psychological, relational, and systemic perspectives with high-performance strategy, AOE addresses the human dimensions of performance across individuals, teams, leadership, and organizations.</p>
-      <p>The institutional framework translates AOE’s six foundational pillars — <strong>Truth, Connection, Being, Vision, Meaning, and Creation</strong> — into competencies and organizational practices that can be developed, implemented, and evaluated across diverse environments.</p>
+      <p>The institutional framework translates AOE’s six foundational pillars into competencies and organizational practices that can be developed, implemented, and evaluated across diverse environments.</p>
     </div>
     <div class="quote">
       <div class="label">Excellence</div>
       <p>Excellence represents the integration of the six primary dimensions: targeting not simply the achievement of exceptional outcomes, but the ongoing development of the people, relationships, and conditions that make those outcomes possible and sustainable.</p>
     </div>
+    <div class="label dims-h">Applications Across the High-Performance Ecosystem</div>
     <div class="dims">
       <div><span class="label">Individuals</span></div><div><span class="label">Teams</span></div><div><span class="label">Leadership</span></div><div><span class="label">Organizations</span></div>
     </div>
   </div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">02 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">02 / 18</span></footer>
 </section>
 <!-- ============ PAGE 03 ============ -->
 <section class="page systems">
@@ -314,10 +352,9 @@
   <h1 class="pt"><span class="dim">An Ecological, Systems-Based</span><br>Approach to Excellence.</h1>
   <div class="cols2 mt20">
     <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
-    <p>For example, leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These factors are constantly interacting and interconnected, often in unseen ways.</p>
+    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being. These dynamics are constantly interacting.</p>
   </div>
-  <div class="eco">
-    <figure class="eco-fig"><svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <figure class="eco-fig"><svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <marker id="ma" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path class="ah" d="M1,1.2 L9,5 L1,8.8"/>
@@ -348,26 +385,21 @@
 <line class="arw" x1="99.9" y1="293.7" x2="78.7" y2="314.9" marker-end="url(#ma)"/>
 <line class="arw" x1="85.1" y1="321.3" x2="106.3" y2="300.1" marker-end="url(#ma)"/>
 </svg>
-      <figcaption>Bidirectional influence across all four levels</figcaption>
-    </figure>
-    <div class="eco-note">
-      <p>Organizations are themselves systems, embedded within broader systems.</p>
-      <p>Individuals and groups also participate in multiple, overlapping systems at the same time. These influences are interconnected rather than strictly hierarchical.</p>
-    </div>
-  </div>
-  <p class="levels-intro">AOE therefore approaches transformation at four interconnected levels:</p>
+    <figcaption>Bidirectional influence across all four levels</figcaption>
+  </figure>
+  <p class="levels-intro">AOE targets transformation at four main interconnected levels:</p>
   <div class="levels-row"><div class="lvl"><div class="label">Level 01</div><h3>Individual</h3><p>Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills.</p></div><div class="lvl"><div class="label">Level 02</div><h3>Relational &amp; Team</h3><p>Strengthening relational patterns, communication, trust, collaboration, and collective functioning.</p></div><div class="lvl"><div class="label">Level 03</div><h3>Organizational</h3><p>Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions.</p></div><div class="lvl"><div class="label">Level 04</div><h3>Broader Systems</h3><p>Supporting alignment, shared practices, and development across the larger institutional and social environments in which organizations operate, including interconnected stakeholders, teams, and organizations.</p></div></div>
   <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
 
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 18</span></footer>
 </section>
 <!-- ============ PAGE 04 ============ -->
 <section class="page part1">
   <div class="runhead"><span class="label">Part I — The AOE Competency Framework</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <h1 class="pt"><span class="dim">The Architecture of</span> Excellence™ Model.</h1>
+  <h1 class="pt"><span class="dim">The</span> Framework.</h1>
   <div class="cols2 mt20 p1">
-    <p>The AOE Competency Framework translates six core psychological principles into capabilities that support individual development, effective team functioning, and organizational excellence.</p>
+    <p>The AOE philosophy translates six core psychological principles into capacities to support individual development, team functioning, and organizational excellence.</p>
     <p>The six pillars are interconnected developmental dimensions rather than sequential stages: each informs and depends on the others, and Excellence emerges from their integration.</p>
   </div>
   <figure class="pillar-fig"><svg class="dg temple" id="diagram-b-pillar-model" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg">
@@ -420,23 +452,23 @@
 <text class="t-cn" x="715" y="198" text-anchor="middle">06</text>
 <text class="t-vl" transform="translate(720,330) rotate(-90)" text-anchor="middle">CREATION</text>
 <rect class="t-band" x="20" y="460" width="780" height="44"/>
-<text class="t-base" x="410" y="487" text-anchor="middle">ARCHITECTURE OF EXCELLENCE™</text>
+<text class="t-base" x="410" y="487" text-anchor="middle">ARCHITECTURE OF EXCELLENCE</text>
 </svg></figure>
 
   <div class="excellence">
     <div class="ex-h"><div class="num">→</div><div><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div><div class="label tag soft">The Embodiment of Greatness</div></div></div>
     <div class="cols2">
-      <p>Within Architecture of Excellence™, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
+      <p>Within Architecture of Excellence, Excellence is not treated as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life.</p>
       <p>Excellence involves the continuous pursuit of development, integrity, meaningful achievement, and psychological sustainability. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
     </div>
   </div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">04 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">04 / 18</span></footer>
 </section>
 <!-- ============ PAGE 05 ============ -->
 <section class="page competencies">
   <div class="runhead"><span class="label">Part I — The AOE Competency Framework</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <h1 class="pt"><span class="dim">From Principles</span><br>to Competencies.</h1>
+  <h1 class="pt"><span class="dim">Core</span> Competencies.</h1>
   <p class="lead">Each pillar represents a core competency domain supported by specific developmental competencies.</p>
   <figure class="matrix"><svg class="dg" id="diagram-c-competency-framework" viewBox="0 0 678 700" xmlns="http://www.w3.org/2000/svg">
 <defs>
@@ -552,129 +584,147 @@
 </svg></figure>
   <p class="matrix-note">The AOE competencies are developed and expressed across individual, relational, team, and organizational contexts. Their application considers both the capabilities of people and the conditions that enable or constrain their expression.</p>
 
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">05 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">05 / 18</span></footer>
 </section>
 <!-- ============ PAGE 06 ============ -->
-<section class="page pillars">
-  <div class="runhead"><span class="label">The Six Pillars — 01 · 02</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 01</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">01</div>
-      <div><h2>Truth</h2><div class="label tag">The Foundation: Confronting Reality</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Self-Awareness, Integrity &amp; Accountability</span></div>
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 01</div>
+      <h1>Truth.</h1>
+      <div class="label tag">The Foundation: Confronting Reality</div>
     </div>
-    <div class="p-body">
-      <div class="p-def"><p>Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Self-Awareness</dt><dd>Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others.</dd></div><div class="sc"><dt>Psychological Insight</dt><dd>Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making.</dd></div><div class="sc"><dt>Integrity</dt><dd>Acting consistently with stated values and ethical principles.</dd></div><div class="sc"><dt>Accountability</dt><dd>Taking responsibility for decisions, actions, and their consequences.</dd></div><div class="sc"><dt>Openness to Feedback</dt><dd>Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Truth through transparent communication, ethical leadership, meaningful accountability, openness to feedback, and the willingness to identify and address organizational problems.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Leadership reflection and development processes.</li><li>Structured feedback and organizational assessment.</li><li>Transparent decision-making and accountability mechanisms.</li><li>Regular evaluation of alignment between organizational values and actual practices.</li><li>Accessible processes for raising concerns and addressing problems.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">02</div>
-      <div><h2>Connection</h2><div class="label tag">The Framework of Emotional and Relational Intelligence</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Emotional &amp; Relational Intelligence</span></div>
-    </div>
-    <div class="p-body">
-      <div class="p-def"><p>Connection involves the capacity to understand ourselves and others, establish meaningful relationships, communicate effectively, and create environments characterized by trust, respect, and constructive collaboration.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Emotional Intelligence</dt><dd>Recognizing and understanding emotions in oneself and others.</dd></div><div class="sc"><dt>Relational Intelligence</dt><dd>Understanding how personal behavior and interpersonal patterns influence relationships.</dd></div><div class="sc"><dt>Effective Communication</dt><dd>Communicating clearly, respectfully, and constructively.</dd></div><div class="sc"><dt>Conflict Navigation</dt><dd>Addressing disagreements and relational difficulties with openness, accountability, and appropriate repair processes.</dd></div><div class="sc"><dt>Trust &amp; Collaboration</dt><dd>Building relationships that support cooperation, mutual respect, and collective effectiveness.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Connection through relational leadership, effective communication practices, constructive conflict management, and cultures that support trust, collaboration, and belonging.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Leadership development.</li><li>Team-building and collaborative learning initiatives.</li><li>Conflict-resolution processes.</li><li>Regular opportunities for feedback and relationship development.</li><li>Practices that strengthen trust, inclusion, and psychological safety.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">06 / 14</span></footer>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Self-Awareness, Integrity &amp; Accountability</p></div>
+  </div>
+  <div class="pp-def"><p>Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Self-Awareness</dt><dd>Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others.</dd></div><div class="ps"><dt>Psychological Insight</dt><dd>Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making.</dd></div><div class="ps"><dt>Integrity</dt><dd>Acting consistently with stated values and ethical principles.</dd></div><div class="ps"><dt>Accountability</dt><dd>Taking responsibility for decisions, actions, and their consequences.</dd></div><div class="ps"><dt>Openness to Feedback</dt><dd>Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Truth through transparent communication, ethical leadership, meaningful accountability, openness to feedback, and the willingness to identify and address organizational problems.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Leadership reflection and development processes.</li><li>Structured feedback and organizational assessment.</li><li>Transparent decision-making and accountability mechanisms.</li><li>Regular evaluation of alignment between organizational values and actual practices.</li><li>Accessible processes for raising concerns and addressing problems.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">06 / 18</span></footer>
 </section>
 <!-- ============ PAGE 07 ============ -->
-<section class="page pillars">
-  <div class="runhead"><span class="label">The Six Pillars — 03 · 04</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 02</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">03</div>
-      <div><h2>Being</h2><div class="label tag">The Art of Embodiment</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Presence &amp; Self-Regulation</span></div>
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 02</div>
+      <h1>Connection.</h1>
+      <div class="label tag">The Framework of Emotional and Relational Intelligence</div>
     </div>
-    <div class="p-body">
-      <div class="p-def"><p>Being involves the capacity to remain present, aware, and responsive to internal and external experiences. It supports effective functioning under pressure, psychological flexibility, and the integration of mind and body.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Self-Regulation</dt><dd>Managing emotional, physiological, and behavioral responses effectively.</dd></div><div class="sc"><dt>Present-Moment Awareness</dt><dd>Maintaining attention and awareness in the here and now.</dd></div><div class="sc"><dt>Mind-Body Awareness</dt><dd>Recognizing the relationship between psychological and physical experiences.</dd></div><div class="sc"><dt>Psychological Flexibility</dt><dd>Responding adaptively to uncertainty, challenges, and changing circumstances.</dd></div><div class="sc"><dt>Stress Management</dt><dd>Dealing effectively with stress to preserve inner clarity, composure, and responsiveness in demanding situations.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Being by cultivating environments that support psychological well-being, healthy stress management, effective functioning under pressure, sustainable workplaces, and responsive leadership.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Psychological skills and stress-management education.</li><li>Leadership development focused on presence and self-regulation practices.</li><li>Organizational practices supporting recovery and sustainable performance.</li><li>Assessment of environmental stressors and workload demands.</li><li>Initiatives supporting psychological health and well-being.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">04</div>
-      <div><h2>Vision</h2><div class="label tag">The Blueprint of Excellence</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Purposeful Direction &amp; Strategic Alignment</span></div>
-    </div>
-    <div class="p-body">
-      <div class="p-def"><p>Vision involves the capacity to establish meaningful direction, identify desired outcomes, and align decisions and actions with long-term aspirations and values.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Vision Development</dt><dd>Establishing a clear and meaningful direction for future development.</dd></div><div class="sc"><dt>Strategic Thinking</dt><dd>Understanding priorities, opportunities, challenges, and long-term implications.</dd></div><div class="sc"><dt>Values Alignment</dt><dd>Ensuring that decisions and actions reflect core values and guiding principles.</dd></div><div class="sc"><dt>Intentional Decision-Making</dt><dd>Making thoughtful choices that consistently support desired outcomes.</dd></div><div class="sc"><dt>Shared Direction</dt><dd>Developing clarity, communication, and alignment around collective goals and priorities.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Vision through clear strategic direction, values-based leadership, coherent priorities, and alignment between organizational purpose, decisions, and actions.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Organizational vision and strategy development.</li><li>Leadership alignment and strategic planning sessions.</li><li>Values-based decision-making processes.</li><li>Individual and team development planning.</li><li>Regular review of strategic priorities and organizational direction.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">07 / 14</span></footer>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Emotional &amp; Relational Intelligence</p></div>
+  </div>
+  <div class="pp-def"><p>Connection involves the capacity to understand ourselves and others, establish meaningful relationships, communicate effectively, and create environments characterized by trust, respect, and constructive collaboration.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Emotional Intelligence</dt><dd>Recognizing and understanding emotions in oneself and others.</dd></div><div class="ps"><dt>Relational Intelligence</dt><dd>Understanding how personal behavior and interpersonal patterns influence relationships.</dd></div><div class="ps"><dt>Effective Communication</dt><dd>Communicating clearly, respectfully, and constructively.</dd></div><div class="ps"><dt>Conflict Navigation</dt><dd>Addressing disagreements and relational difficulties with openness, accountability, and appropriate repair processes.</dd></div><div class="ps"><dt>Trust &amp; Collaboration</dt><dd>Building relationships that support cooperation, mutual respect, and collective effectiveness.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Connection through relational leadership, effective communication practices, constructive conflict management, and cultures that support trust, collaboration, and belonging.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Leadership development.</li><li>Team-building and collaborative learning initiatives.</li><li>Conflict-resolution processes.</li><li>Regular opportunities for feedback and relationship development.</li><li>Practices that strengthen trust, inclusion, and psychological safety.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">07 / 18</span></footer>
 </section>
 <!-- ============ PAGE 08 ============ -->
-<section class="page pillars">
-  <div class="runhead"><span class="label">The Six Pillars — 05 · 06</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 03</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">05</div>
-      <div><h2>Meaning</h2><div class="label tag">The Core of Fulfillment</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Purpose, Fulfillment &amp; Meaningful Engagement</span></div>
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 03</div>
+      <h1>Being.</h1>
+      <div class="label tag">The Art of Embodiment</div>
     </div>
-    <div class="p-body">
-      <div class="p-def"><p>Meaning involves the capacity to connect achievement and external success with deeper sources of purpose, fulfillment, and personal significance.</p><p>It recognizes that sustained excellence depends not only on what individuals and organizations accomplish, but also on the meaning and value associated with those accomplishments.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Purpose Awareness</dt><dd>Understanding what gives one’s work, efforts, and achievements significance.</dd></div><div class="sc"><dt>Intrinsic Motivation</dt><dd>Developing engagement that extends beyond external rewards and recognition.</dd></div><div class="sc"><dt>Values-Based Engagement</dt><dd>Connecting daily activities with personally and collectively meaningful values.</dd></div><div class="sc"><dt>Identity &amp; Fulfillment</dt><dd>Developing a sense of identity and fulfillment that is not dependent exclusively on achievement.</dd></div><div class="sc"><dt>Belonging &amp; Contribution</dt><dd>Experiencing meaningful participation, connection, and contribution within a larger collective.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Meaning by connecting institutional objectives with shared purpose, recognizing individual contributions, supporting belonging, and creating environments in which people experience their work as valuable and meaningful.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Purpose-centered leadership development.</li><li>Organizational mission and values initiatives.</li><li>Programs supporting personal identity and development beyond professional achievement.</li><li>Integration of meaningful recognition and contribution practices.</li><li>Initiatives strengthening belonging and shared purpose.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <article class="pillar">
-    <div class="p-head">
-      <div class="num">06</div>
-      <div><h2>Creation</h2><div class="label tag">The Execution of Mastery</div></div>
-      <div class="core-c"><span class="label">Core Competency</span><span class="cc">Intentional Action &amp; Continuous Development</span></div>
-    </div>
-    <div class="p-body">
-      <div class="p-def"><p>Creation involves the capacity to translate awareness, knowledge, vision, and intention into purposeful action.</p><p>It represents the movement from understanding and possibility toward execution, adaptation, and tangible development.</p></div>
-      <div class="p-grid">
-        <div><div class="k">Core Subcompetencies</div><dl><div class="sc"><dt>Personal Agency</dt><dd>Recognizing one’s capacity and responsibility to influence outcomes.</dd></div><div class="sc"><dt>Intentional Action</dt><dd>Translating goals and insights into purposeful behavior.</dd></div><div class="sc"><dt>Discipline &amp; Follow-Through</dt><dd>Sustaining effort and commitment toward meaningful objectives.</dd></div><div class="sc"><dt>Adaptability</dt><dd>Adjusting approaches in response to changing circumstances and new information.</dd></div><div class="sc"><dt>Continuous Learning</dt><dd>Using experience, feedback, and reflection to support ongoing improvement.</dd></div></dl></div>
-        <div>
-          <div class="k">Institutional Application</div><p class="app">Organizations demonstrate Creation through effective implementation, adaptive leadership, organizational learning, innovation, and the continuous refinement of practices and processes.</p>
-          <div class="k mt">Examples of Institutional Practices</div><ul class="dash"><li>Strategic implementation and action planning.</li><li>Leadership and team accountability and feedback processes.</li><li>Structured organizational learning and reflection.</li><li>Continuous development and accountability initiatives.</li><li>Mechanisms for evaluating progress and adapting interventions.</li></ul>
-        </div>
-      </div>
-    </div>
-  </article>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">08 / 14</span></footer>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Presence &amp; Self-Regulation</p></div>
+  </div>
+  <div class="pp-def"><p>Being involves the capacity to remain present, aware, and responsive to internal and external experiences. It supports effective functioning under pressure, psychological flexibility, and the integration of mind and body.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Self-Regulation</dt><dd>Managing emotional, physiological, and behavioral responses effectively.</dd></div><div class="ps"><dt>Present-Moment Awareness</dt><dd>Maintaining attention and awareness in the here and now.</dd></div><div class="ps"><dt>Mind-Body Awareness</dt><dd>Recognizing the relationship between psychological and physical experiences.</dd></div><div class="ps"><dt>Psychological Flexibility</dt><dd>Responding adaptively to uncertainty, challenges, and changing circumstances.</dd></div><div class="ps"><dt>Stress Management</dt><dd>Dealing effectively with stress to preserve inner clarity, composure, and responsiveness in demanding situations.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Being by cultivating environments that support psychological well-being, healthy stress management, effective functioning under pressure, sustainable workplaces, and responsive leadership.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Psychological skills and stress-management education.</li><li>Leadership development focused on presence and self-regulation practices.</li><li>Organizational practices supporting recovery and sustainable performance.</li><li>Assessment of environmental stressors and workload demands.</li><li>Initiatives supporting psychological health and well-being.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">08 / 18</span></footer>
 </section>
 <!-- ============ PAGE 09 ============ -->
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 04</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 04</div>
+      <h1>Vision.</h1>
+      <div class="label tag">The Blueprint of Excellence</div>
+    </div>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Purposeful Direction &amp; Strategic Alignment</p></div>
+  </div>
+  <div class="pp-def"><p>Vision involves the capacity to establish meaningful direction, identify desired outcomes, and align decisions and actions with long-term aspirations and values.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Vision Development</dt><dd>Establishing a clear and meaningful direction for future development.</dd></div><div class="ps"><dt>Strategic Thinking</dt><dd>Understanding priorities, opportunities, challenges, and long-term implications.</dd></div><div class="ps"><dt>Values Alignment</dt><dd>Ensuring that decisions and actions reflect core values and guiding principles.</dd></div><div class="ps"><dt>Intentional Decision-Making</dt><dd>Making thoughtful choices that consistently support desired outcomes.</dd></div><div class="ps"><dt>Shared Direction</dt><dd>Developing clarity, communication, and alignment around collective goals and priorities.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Vision through clear strategic direction, values-based leadership, coherent priorities, and alignment between organizational purpose, decisions, and actions.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Organizational vision and strategy development.</li><li>Leadership alignment and strategic planning sessions.</li><li>Values-based decision-making processes.</li><li>Individual and team development planning.</li><li>Regular review of strategic priorities and organizational direction.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">09 / 18</span></footer>
+</section>
+<!-- ============ PAGE 10 ============ -->
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 05</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 05</div>
+      <h1>Meaning.</h1>
+      <div class="label tag">The Core of Fulfillment</div>
+    </div>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Purpose, Fulfillment &amp; Meaningful Engagement</p></div>
+  </div>
+  <div class="pp-def"><p>Meaning involves the capacity to connect achievement and external success with deeper sources of purpose, fulfillment, and personal significance.</p><p>It recognizes that sustained excellence depends not only on what individuals and organizations accomplish, but also on the meaning and value associated with those accomplishments.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Purpose Awareness</dt><dd>Understanding what gives one’s work, efforts, and achievements significance.</dd></div><div class="ps"><dt>Intrinsic Motivation</dt><dd>Developing engagement that extends beyond external rewards and recognition.</dd></div><div class="ps"><dt>Values-Based Engagement</dt><dd>Connecting daily activities with personally and collectively meaningful values.</dd></div><div class="ps"><dt>Identity &amp; Fulfillment</dt><dd>Developing a sense of identity and fulfillment that is not dependent exclusively on achievement.</dd></div><div class="ps"><dt>Belonging &amp; Contribution</dt><dd>Experiencing meaningful participation, connection, and contribution within a larger collective.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Meaning by connecting institutional objectives with shared purpose, recognizing individual contributions, supporting belonging, and creating environments in which people experience their work as valuable and meaningful.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Purpose-centered leadership development.</li><li>Organizational mission and values initiatives.</li><li>Programs supporting personal identity and development beyond professional achievement.</li><li>Integration of meaningful recognition and contribution practices.</li><li>Initiatives strengthening belonging and shared purpose.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">10 / 18</span></footer>
+</section>
+<!-- ============ PAGE 11 ============ -->
+<section class="page pillar-pg">
+  <div class="runhead"><span class="label">The Six Pillars — 06</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+
+  <div class="pp-head">
+    <div class="pp-title">
+      <div class="label">Pillar 06</div>
+      <h1>Creation.</h1>
+      <div class="label tag">The Execution of Mastery</div>
+    </div>
+    <div class="pp-core"><span class="label">Core Competency</span><p>Intentional Action &amp; Continuous Development</p></div>
+  </div>
+  <div class="pp-def"><p>Creation involves the capacity to translate awareness, knowledge, vision, and intention into purposeful action.</p><p>It represents the movement from understanding and possibility toward execution, adaptation, and tangible development.</p></div>
+  <div class="pp-sec">
+    <div class="k">Core Subcompetencies</div>
+    <dl class="pp-subs"><div class="ps"><dt>Personal Agency</dt><dd>Recognizing one’s capacity and responsibility to influence outcomes.</dd></div><div class="ps"><dt>Intentional Action</dt><dd>Translating goals and insights into purposeful behavior.</dd></div><div class="ps"><dt>Discipline &amp; Follow-Through</dt><dd>Sustaining effort and commitment toward meaningful objectives.</dd></div><div class="ps"><dt>Adaptability</dt><dd>Adjusting approaches in response to changing circumstances and new information.</dd></div><div class="ps"><dt>Continuous Learning</dt><dd>Using experience, feedback, and reflection to support ongoing improvement.</dd></div></dl>
+  </div>
+  <div class="pp-cols">
+    <div><div class="k">Institutional Application</div><p>Organizations demonstrate Creation through effective implementation, adaptive leadership, organizational learning, innovation, and the continuous refinement of practices and processes.</p></div>
+    <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Strategic implementation and action planning.</li><li>Leadership and team accountability and feedback processes.</li><li>Structured organizational learning and reflection.</li><li>Continuous development and accountability initiatives.</li><li>Mechanisms for evaluating progress and adapting interventions.</li></ul></div>
+  </div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">11 / 18</span></footer>
+</section>
+<!-- ============ PAGE 12 ============ -->
 <section class="page method">
   <div class="runhead"><span class="label">Part II — The AOE Institutional Methodology</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
@@ -683,7 +733,8 @@
     <p>The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development.</p>
     <p>The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
   </div>
-  <figure class="cycle"><svg class="dg" id="diagram-d-institutional-methodology" viewBox="0 0 678 420" xmlns="http://www.w3.org/2000/svg">
+  <div class="method-stage">
+    <figure class="cycle"><svg class="dg" id="diagram-d-institutional-methodology" viewBox="0 0 678 420" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <marker id="md" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path class="ah" d="M1,1.2 L9,5 L1,8.8"/>
@@ -724,13 +775,11 @@
 <text class="phl" x="156.1" y="150.9" text-anchor="end" dominant-baseline="central">PHASE 05</text>
 <text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="156.1" y="164.9">Integration &amp;</tspan><tspan x="156.1" y="180.9">Sustainability</tspan></text>
 </svg></figure>
-  <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
-  <div class="outcomes">
-    <div class="oc"><div class="label">Phase 01 · Outcome</div><p>A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement.</p></div><div class="oc"><div class="label">Phase 02 · Outcome</div><p>A tailored institutional development plan with defined priorities, interventions, and intended outcomes.</p></div><div class="oc"><div class="label">Phase 03 · Outcome</div><p>Active development of competencies and implementation of practices that support organizational effectiveness and sustainable performance.</p></div><div class="oc"><div class="label">Phase 04 · Outcome</div><p>Evidence-informed understanding of progress, challenges, and opportunities for further development.</p></div><div class="oc"><div class="label">Phase 05 · Outcome</div><p>A sustainable approach through which AOE principles and competencies become increasingly embedded in organizational functioning.</p></div>
+    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Evaluation and feedback are not confined to Phase 4. Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">09 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">12 / 18</span></footer>
 </section>
-<!-- ============ PAGE 10 ============ -->
+<!-- ============ PAGE 13 ============ -->
 <section class="page phases-pg">
   <div class="runhead"><span class="label">Part II — The Five Phases</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 <div class="phases">
@@ -754,19 +803,18 @@
       <div class="ph"><div class="label">Phase 05</div><h3>Integration &amp; Sustainability</h3><p class="sub2">Embedding development into organizational functioning</p></div>
       <div class="phb"><p>The final phase focuses on sustaining progress beyond individual programs or interventions. This may involve integrating competencies into leadership development, educational systems, organizational processes, professional development pathways, and institutional expectations. Ongoing review, internal capacity-building, and continued learning support long-term development.</p><p class="out"><span class="k">Outcome</span>A sustainable approach through which AOE principles and competencies become increasingly embedded in organizational functioning.</p></div>
     </div></div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">10 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">13 / 18</span></footer>
 </section>
-<!-- ============ PAGE 11 ============ -->
+<!-- ============ PAGE 14 ============ -->
 <section class="page apps-pg">
   <div class="runhead"><span class="label">Part III — Institutional Applications</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <div class="apps-top">
-    <div>
-      <h1 class="pt"><span class="dim">Institutional</span><br>Applications.</h1>
-      <p class="lead">AOE can be implemented through several interconnected developmental pathways.</p>
-      <p class="lead">The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
-    </div>
-    <figure class="apps-fig"><svg class="dg" id="diagram-e-institutional-applications" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+  <h1 class="pt"><span class="dim">Institutional</span> Applications.</h1>
+  <div class="cols2 mt20">
+    <p>AOE can be implemented through several interconnected developmental pathways.</p>
+    <p>The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
+  </div>
+  <figure class="apps-fig"><svg class="dg" id="diagram-e-institutional-applications" viewBox="-170 -46 680 420" xmlns="http://www.w3.org/2000/svg">
 <circle class="ring dash" cx="170" cy="170" r="160"/>
 <circle class="petal" cx="170" cy="88" r="62"/>
 <circle class="petal" cx="248" cy="144.7" r="62"/>
@@ -779,45 +827,54 @@
 <circle class="petal-line" cx="121.8" cy="236.3" r="62"/>
 <circle class="petal-line" cx="92" cy="144.7" r="62"/>
 <text class="numt big" x="170" y="58" text-anchor="middle" dominant-baseline="central">01</text>
+<text class="phn" text-anchor="middle" dominant-baseline="central"><tspan x="170" y="-26.5">Education &amp; Development</tspan><tspan x="170" y="-9.5">of Core Competencies</tspan></text>
 <text class="numt big" x="276.5" y="135.4" text-anchor="middle" dominant-baseline="central">02</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="343.1" y="105.3">Leadership &amp;</tspan><tspan x="343.1" y="122.3">Individual Development</tspan></text>
 <text class="numt big" x="235.8" y="260.6" text-anchor="middle" dominant-baseline="central">03</text>
+<text class="phn" text-anchor="start" dominant-baseline="central"><tspan x="277" y="316.7">Team &amp; Relational</tspan><tspan x="277" y="333.7">Development</tspan></text>
 <text class="numt big" x="104.2" y="260.6" text-anchor="middle" dominant-baseline="central">04</text>
+<text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="63" y="316.7">Organizational</tspan><tspan x="63" y="333.7">Development &amp; Culture</tspan></text>
 <text class="numt big" x="63.5" y="135.4" text-anchor="middle" dominant-baseline="central">05</text>
+<text class="phn" text-anchor="end" dominant-baseline="central"><tspan x="-3.1" y="105.3">System-Wide</tspan><tspan x="-3.1" y="122.3">Development &amp; Integration</tspan></text>
 <circle class="core-bg" cx="170" cy="170" r="46"/>
 <circle class="core" cx="170" cy="170" r="46"/>
 <text class="exm" text-anchor="middle" dominant-baseline="central"><tspan x="170" y="158">ASSESSMENT</tspan><tspan x="170" y="170">&amp; STRATEGIC</tspan><tspan x="170" y="182">DESIGN</tspan></text>
 </svg></figure>
-  </div>
-  <div class="apps">
-    <div class="appc">
-      <div class="ah2"><div class="num sm">01</div><h3>Education &amp; Development of Core Competencies</h3></div>
-      <p>Development of psychological, relational, and leadership competencies through:</p><ul class="dash"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p>
-    </div>
-    <div class="appc">
-      <div class="ah2"><div class="num sm">02</div><h3>Leadership &amp; Individual Development</h3></div>
-      <p>Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p>
-    </div>
-    <div class="appc">
-      <div class="ah2"><div class="num sm">03</div><h3>Team &amp; Relational Development</h3></div>
-      <p>Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul>
-    </div>
-    <div class="appc wide">
-      <div class="ah2"><div class="num sm">04</div><h3>Organizational Development &amp; Culture</h3></div>
-      <p>Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul>
-    </div>
-    <div class="appc">
-      <div class="ah2"><div class="num sm">05</div><h3>System-Wide Development &amp; Integration</h3></div>
-      <p>For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul>
-    </div></div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">11 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">14 / 18</span></footer>
 </section>
-<!-- ============ PAGE 12 ============ -->
+<!-- ============ PAGE 15 ============ -->
+<section class="page pathways-pg">
+  <div class="runhead"><span class="label">Part III — The Five Pathways</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
+<div class="pathways">
+    <div class="pw">
+      <div class="pw-h"><div class="label">Pathway 01</div><h3>Education &amp; Development of Core Competencies</h3></div>
+      <div class="pw-b"><p>Development of psychological, relational, and leadership competencies through:</p><ul class="dash two"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p></div>
+    </div>
+    <div class="pw">
+      <div class="pw-h"><div class="label">Pathway 02</div><h3>Leadership &amp; Individual Development</h3></div>
+      <div class="pw-b"><p>Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p></div>
+    </div>
+    <div class="pw">
+      <div class="pw-h"><div class="label">Pathway 03</div><h3>Team &amp; Relational Development</h3></div>
+      <div class="pw-b"><p>Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul></div>
+    </div>
+    <div class="pw">
+      <div class="pw-h"><div class="label">Pathway 04</div><h3>Organizational Development &amp; Culture</h3></div>
+      <div class="pw-b"><p>Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash two"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul></div>
+    </div>
+    <div class="pw">
+      <div class="pw-h"><div class="label">Pathway 05</div><h3>System-Wide Development &amp; Integration</h3></div>
+      <div class="pw-b"><p>For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash two"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul></div>
+    </div></div>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">15 / 18</span></footer>
+</section>
+<!-- ============ PAGE 16 ============ -->
 <section class="page standards">
   <div class="runhead"><span class="label">Part IV — Institutional Standards &amp; Future Development</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <h1 class="pt"><span class="dim">Institutional Standards</span><br>&amp; Future Development.</h1>
   <div class="cols2 mt20">
-    <p>Architecture of Excellence™ is designed to support the progressive development of shared competencies and institutional practices.</p>
+    <p>Architecture of Excellence is designed to support the progressive development of shared competencies and institutional practices.</p>
     <p>As the framework is implemented and evaluated, it may provide the foundation for more formal educational standards, professional development pathways, and institutional recognition.</p>
   </div>
   <figure class="steps"><svg class="dg" id="diagram-f-developmental-pathway" viewBox="0 0 678 236" xmlns="http://www.w3.org/2000/svg">
@@ -854,35 +911,35 @@
       <p class="rec"><span class="k">Status</span>Any certification or mandatory educational requirements would require further development, validation, governance arrangements, and appropriate institutional agreements.</p>
     </div></div>
   <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">12 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">16 / 18</span></footer>
 </section>
-<!-- ============ PAGE 13 ============ -->
+<!-- ============ PAGE 17 ============ -->
 <section class="page principles-pg">
   <div class="runhead"><span class="label">Foundational Implementation Principles</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
   <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
   <p class="lead">All applications of the AOE Institutional Framework should be guided by the following commitments.</p>
   <div class="principles"><div class="pr"><div class="num sm">01</div><div><h3>Ecological Responsibility</h3><p>Development addresses both individual capabilities and the environmental conditions influencing behavior, performance, and well-being.</p></div></div><div class="pr"><div class="num sm">02</div><div><h3>Contextual Adaptability</h3><p>The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities.</p></div></div><div class="pr"><div class="num sm">03</div><div><h3>Psychological Depth &amp; Practical Accessibility</h3><p>The methodology draws on psychoanalytic, relational, and systemic perspectives while translating complex psychological concepts into accessible, practical approaches.</p></div></div><div class="pr"><div class="num sm">04</div><div><h3>Integration Over Isolation</h3><p>Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence.</p></div></div><div class="pr"><div class="num sm">05</div><div><h3>Sustainable Excellence</h3><p>High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability.</p></div></div><div class="pr"><div class="num sm">06</div><div><h3>Continuous Development</h3><p>Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement.</p></div></div><div class="pr"><div class="num sm">07</div><div><h3>Ethical &amp; Professional Boundaries</h3><p>Education, coaching, consulting, organizational assessment, and clinical services remain appropriately differentiated. Participation, confidentiality, safeguarding, and professional responsibilities are addressed according to the nature of each engagement.</p></div></div></div>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">13 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">17 / 18</span></footer>
 </section>
 <!-- ============ CLOSING ============ -->
 <section class="page closing">
   <div class="close-stage">
-    <p class="cl">Architecture of Excellence™ provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and strengthening organizational environments.</p>
+    <p class="cl">Architecture of Excellence provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and strengthening organizational environments.</p>
     <p class="cl">By translating its six foundational pillars into competencies, developmental interventions, and institutional practices, AOE offers a structured and adaptable approach to cultivating excellence across high-performance ecosystems.</p>
     <div class="rule"></div>
     <p class="final">The objective is not merely to improve individual performance, but to develop the people, relationships, cultures, and institutional conditions through which excellence can be achieved and sustained.</p>
   </div>
 
   <div class="contact">
-    <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
+    <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE</span></div>
     <div class="ct">
       <div><span class="label">Founder</span><p>Dr. Alina K. Schulhofer</p></div>
       <div><span class="label">Contact</span><p>alina@architectureofexcellence.com</p></div>
     </div>
   </div>
   <p class="legal">Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards are developmental and subject to further refinement and validation. This document does not establish a clinical treatment protocol or an existing certification program.</p>
-  <footer><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">14 / 14</span></footer>
+  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">18 / 18</span></footer>
 </section>
 </body>
 </html>
