@@ -18,7 +18,7 @@
 <line x1="450" y1="45.5" x2="456" y2="45.5" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 <text x="464" y="45.5" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Self-Awareness</text>
 <line x1="450" y1="63" x2="456" y2="63" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
-<text x="464" y="63" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Psychological Insight</text>
+<text x="464" y="63" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Reflective Capacity</text>
 <line x1="450" y1="80.5" x2="456" y2="80.5" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 <text x="464" y="80.5" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Integrity</text>
 <line x1="450" y1="98" x2="456" y2="98" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
@@ -53,7 +53,7 @@
 <line x1="450" y1="265" x2="456" y2="265" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 <text x="464" y="265" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Present-Moment Awareness</text>
 <line x1="450" y1="282.5" x2="456" y2="282.5" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
-<text x="464" y="282.5" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Mind-Body Awareness</text>
+<text x="464" y="282.5" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Mind-Body Connection</text>
 <line x1="450" y1="300" x2="456" y2="300" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>
 <text x="464" y="300" dominant-baseline="central" fill="rgb(190, 184, 173)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" font-family="Manrope, sans-serif" font-size="12.2px" font-weight="400" opacity="1">Psychological Flexibility</text>
 <line x1="450" y1="317.5" x2="456" y2="317.5" fill="rgb(0, 0, 0)" stroke="rgb(90, 88, 83)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1"></line>

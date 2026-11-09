@@ -60,10 +60,10 @@
   /* Running head & footer */
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
   .runhead img { height: 17px; display: block; }
-  footer { margin-top: auto; flex: none; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center;
+  footer { position: relative; margin-top: auto; flex: none; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: center; align-items: center;
            font-size: 9.5px; font-weight: 400; color: var(--soft); letter-spacing: .02em; }
   footer .sep { margin: 0 9px; color: var(--rule-strong); }
-  footer .pg { color: var(--mid); letter-spacing: .08em; }
+  footer .pg { position: absolute; right: 0; color: var(--mid); letter-spacing: .08em; }
   .logo { width: 150px; text-align: center; flex: none; }
   .logo img { width: 150px; display: block; }
   .logo span { display: block; margin-top: 6px; font-size: 5.2px; font-weight: 600; letter-spacing: .02em; color: var(--hi); white-space: nowrap; }
@@ -328,7 +328,7 @@
     <div class="logo cover-logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE™</span></div>
     <h1><span class="dim">Institutional</span><br>Competency Framework.</h1>
   </div>
-  <footer class="center"><span>Architecture of Excellence™<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span></footer>
+  <footer class="center"><span>Architecture of Excellence™</span></footer>
 </section>
 <!-- ============ PAGE 02 ============ -->
 <section class="page overview">
@@ -351,7 +351,7 @@
       <div><span class="label">Individuals</span></div><div><span class="label">Teams</span></div><div><span class="label">Leadership</span></div><div><span class="label">Organizations</span></div>
     </div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">02 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">02 / 12</span></footer>
 </section>
 <!-- ============ PAGE 03 ============ -->
 <section class="page systems">
@@ -399,7 +399,7 @@
   <div class="levels-row"><div class="lvl"><div class="label">Level 01</div><h3>Individual</h3><p>Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills.</p></div><div class="lvl"><div class="label">Level 02</div><h3>Relational &amp; Team</h3><p>Strengthening relational patterns, communication, trust, collaboration, and collective functioning.</p></div><div class="lvl"><div class="label">Level 03</div><h3>Organizational</h3><p>Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions.</p></div><div class="lvl"><div class="label">Level 04</div><h3>Broader Systems</h3><p>Supporting alignment, shared practices, and the development of competencies across the institutional and social environments.</p></div></div>
   <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
 
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">03 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">03 / 12</span></footer>
 </section>
 <!-- ============ PAGE 04 ============ -->
 <section class="page part1">
@@ -469,7 +469,7 @@
       <p>AOE’s philosophy views excellence not as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
     </div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">04 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">04 / 12</span></footer>
 </section>
 <!-- ============ PAGE 05 ============ -->
 <section class="page competencies">
@@ -496,7 +496,7 @@
 <line class="rule" x1="450" y1="45.5" x2="456" y2="45.5"/>
 <text class="rsub" x="464" y="45.5" dominant-baseline="central">Self-Awareness</text>
 <line class="rule" x1="450" y1="63" x2="456" y2="63"/>
-<text class="rsub" x="464" y="63" dominant-baseline="central">Psychological Insight</text>
+<text class="rsub" x="464" y="63" dominant-baseline="central">Reflective Capacity</text>
 <line class="rule" x1="450" y1="80.5" x2="456" y2="80.5"/>
 <text class="rsub" x="464" y="80.5" dominant-baseline="central">Integrity</text>
 <line class="rule" x1="450" y1="98" x2="456" y2="98"/>
@@ -531,7 +531,7 @@
 <line class="rule" x1="450" y1="265" x2="456" y2="265"/>
 <text class="rsub" x="464" y="265" dominant-baseline="central">Present-Moment Awareness</text>
 <line class="rule" x1="450" y1="282.5" x2="456" y2="282.5"/>
-<text class="rsub" x="464" y="282.5" dominant-baseline="central">Mind-Body Awareness</text>
+<text class="rsub" x="464" y="282.5" dominant-baseline="central">Mind-Body Connection</text>
 <line class="rule" x1="450" y1="300" x2="456" y2="300"/>
 <text class="rsub" x="464" y="300" dominant-baseline="central">Psychological Flexibility</text>
 <line class="rule" x1="450" y1="317.5" x2="456" y2="317.5"/>
@@ -589,7 +589,7 @@
 </svg></figure>
   <p class="matrix-note">The AOE competencies are developed and expressed across individual, relational, team, and organizational contexts. Their application considers both the capabilities of people and the conditions that enable or constrain their expression.</p>
 
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">05 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">05 / 12</span></footer>
 </section>
 <!-- ============ PAGE 06 ============ -->
 <section class="page pillar-pg">
@@ -606,13 +606,13 @@
   <div class="pp-def"><p>Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge.</p></div>
   <div class="pp-sec">
     <div class="k">Core Subcompetencies</div>
-    <dl class="pp-subs"><div class="ps"><dt>Self-Awareness</dt><dd>Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others.</dd></div><div class="ps"><dt>Psychological Insight</dt><dd>Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making.</dd></div><div class="ps"><dt>Integrity</dt><dd>Acting consistently with stated values and ethical principles.</dd></div><div class="ps"><dt>Accountability</dt><dd>Taking responsibility for decisions, actions, and their consequences.</dd></div><div class="ps"><dt>Openness to Feedback</dt><dd>Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.</dd></div></dl>
+    <dl class="pp-subs"><div class="ps"><dt>Self-Awareness</dt><dd>Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others.</dd></div><div class="ps"><dt>Reflective Capacity</dt><dd>Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making.</dd></div><div class="ps"><dt>Integrity</dt><dd>Acting consistently with stated values and ethical principles.</dd></div><div class="ps"><dt>Accountability</dt><dd>Taking responsibility for decisions, actions, and their consequences.</dd></div><div class="ps"><dt>Openness to Feedback</dt><dd>Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.</dd></div></dl>
   </div>
   <div class="pp-cols">
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Truth through transparent communication, ethical leadership, meaningful accountability, openness to feedback, and the willingness to identify and address organizational problems.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Leadership reflection and development processes.</li><li>Structured feedback and organizational assessment.</li><li>Transparent decision-making and accountability mechanisms.</li><li>Regular evaluation of alignment between organizational values and actual practices.</li><li>Accessible processes for raising concerns and addressing problems.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">06 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">06 / 12</span></footer>
 </section>
 <!-- ============ PAGE 07 ============ -->
 <section class="page pillar-pg">
@@ -635,7 +635,7 @@
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Connection through relational leadership, effective communication practices, constructive conflict management, and cultures that support trust, collaboration, and belonging.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Leadership development.</li><li>Team-building and collaborative learning initiatives.</li><li>Conflict-resolution processes.</li><li>Regular opportunities for feedback and relationship development.</li><li>Practices that strengthen trust, inclusion, and psychological safety.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">07 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">07 / 12</span></footer>
 </section>
 <!-- ============ PAGE 08 ============ -->
 <section class="page pillar-pg">
@@ -652,13 +652,13 @@
   <div class="pp-def"><p>Being involves the capacity to remain present, aware, and responsive to internal and external experiences. It supports effective functioning under pressure, psychological flexibility, and the integration of mind and body.</p></div>
   <div class="pp-sec">
     <div class="k">Core Subcompetencies</div>
-    <dl class="pp-subs"><div class="ps"><dt>Self-Regulation</dt><dd>Managing emotional, physiological, and behavioral responses effectively.</dd></div><div class="ps"><dt>Present-Moment Awareness</dt><dd>Maintaining attention and awareness in the here and now.</dd></div><div class="ps"><dt>Mind-Body Awareness</dt><dd>Recognizing the relationship between psychological and physical experiences.</dd></div><div class="ps"><dt>Psychological Flexibility</dt><dd>Responding adaptively to uncertainty, challenges, and changing circumstances.</dd></div><div class="ps"><dt>Stress Management</dt><dd>Dealing effectively with stress to preserve inner clarity, composure, and responsiveness in demanding situations.</dd></div></dl>
+    <dl class="pp-subs"><div class="ps"><dt>Self-Regulation</dt><dd>Managing emotional, physiological, and behavioral responses effectively.</dd></div><div class="ps"><dt>Present-Moment Awareness</dt><dd>Maintaining attention and awareness in the here and now.</dd></div><div class="ps"><dt>Mind-Body Connection</dt><dd>Recognizing the relationship between psychological and physical experiences.</dd></div><div class="ps"><dt>Psychological Flexibility</dt><dd>Responding adaptively to uncertainty, challenges, and changing circumstances.</dd></div><div class="ps"><dt>Stress Management</dt><dd>Dealing effectively with stress to preserve inner clarity, composure, and responsiveness in demanding situations.</dd></div></dl>
   </div>
   <div class="pp-cols">
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Being by cultivating environments that support psychological well-being, healthy stress management, effective functioning under pressure, sustainable workplaces, and responsive leadership.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Psychological skills and stress-management education.</li><li>Leadership development focused on presence and self-regulation practices.</li><li>Organizational practices supporting recovery and sustainable performance.</li><li>Assessment of environmental stressors and workload demands.</li><li>Initiatives supporting psychological health and well-being.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">08 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">08 / 12</span></footer>
 </section>
 <!-- ============ PAGE 09 ============ -->
 <section class="page pillar-pg">
@@ -681,7 +681,7 @@
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Vision through clear strategic direction, values-based leadership, coherent priorities, and alignment between organizational purpose, decisions, and actions.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Organizational vision and strategy development.</li><li>Leadership alignment and strategic planning sessions.</li><li>Values-based decision-making processes.</li><li>Individual and team development planning.</li><li>Regular review of strategic priorities and organizational direction.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">09 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">09 / 12</span></footer>
 </section>
 <!-- ============ PAGE 10 ============ -->
 <section class="page pillar-pg">
@@ -704,7 +704,7 @@
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Meaning by connecting institutional objectives with shared purpose, recognizing individual contributions, supporting belonging, and creating environments in which people experience their work as valuable and meaningful.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Purpose-centered leadership development.</li><li>Organizational mission and values initiatives.</li><li>Programs supporting personal identity and development beyond professional achievement.</li><li>Integration of meaningful recognition and contribution practices.</li><li>Initiatives strengthening belonging and shared purpose.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">10 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">10 / 12</span></footer>
 </section>
 <!-- ============ PAGE 11 ============ -->
 <section class="page pillar-pg">
@@ -727,7 +727,7 @@
     <div><div class="k">Institutional Application</div><p>Organizations demonstrate Creation through effective implementation, adaptive leadership, organizational learning, innovation, and the continuous refinement of practices and processes.</p></div>
     <div><div class="k">Examples of Institutional Practices</div><ul class="dash"><li>Strategic implementation and action planning.</li><li>Leadership and team accountability and feedback processes.</li><li>Structured organizational learning and reflection.</li><li>Continuous development and accountability initiatives.</li><li>Mechanisms for evaluating progress and adapting interventions.</li></ul></div>
   </div>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">11 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">11 / 12</span></footer>
 </section>
 <!-- ============ CLOSING ============ -->
 <section class="page closing">
@@ -741,7 +741,7 @@
     <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE</span></div>
   </div>
   <p class="legal">Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards are developmental and subject to further refinement and validation. This document does not establish a clinical treatment protocol or an existing certification program.</p>
-  <footer><span>Architecture of Excellence<span class="sep">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</span><span class="pg">12 / 12</span></footer>
+  <footer><span>Architecture of Excellence™</span><span class="pg">12 / 12</span></footer>
 </section>
 </body>
 </html>

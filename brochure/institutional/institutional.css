@@ -51,10 +51,10 @@
   /* Running head & footer */
   .runhead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
   .runhead img { height: 17px; display: block; }
-  footer { margin-top: auto; flex: none; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center;
+  footer { position: relative; margin-top: auto; flex: none; height: 50px; border-top: 1px solid var(--rule); display: flex; justify-content: center; align-items: center;
            font-size: 9.5px; font-weight: 400; color: var(--soft); letter-spacing: .02em; }
   footer .sep { margin: 0 9px; color: var(--rule-strong); }
-  footer .pg { color: var(--mid); letter-spacing: .08em; }
+  footer .pg { position: absolute; right: 0; color: var(--mid); letter-spacing: .08em; }
   .logo { width: 150px; text-align: center; flex: none; }
   .logo img { width: 150px; display: block; }
   .logo span { display: block; margin-top: 6px; font-size: 5.2px; font-weight: 600; letter-spacing: .02em; color: var(--hi); white-space: nowrap; }

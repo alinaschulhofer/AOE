@@ -99,9 +99,9 @@ CORE2 = [["Self-Awareness, Integrity", "&amp; Accountability"], ["Emotional &amp
          ["Presence &amp; Self-Regulation"], ["Purposeful Direction", "&amp; Strategic Alignment"],
          ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
 SUB_NAMES = [
-    ["Self-Awareness", "Psychological Insight", "Integrity", "Accountability", "Openness to Feedback"],
+    ["Self-Awareness", "Reflective Capacity", "Integrity", "Accountability", "Openness to Feedback"],
     ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Navigation", "Trust &amp; Collaboration"],
-    ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Awareness", "Psychological Flexibility", "Stress Management"],
+    ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Connection", "Psychological Flexibility", "Stress Management"],
     ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
     ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity &amp; Fulfillment", "Belonging &amp; Contribution"],
     ["Personal Agency", "Intentional Action", "Discipline &amp; Follow-Through", "Adaptability", "Continuous Learning"],
@@ -233,7 +233,7 @@ PILLARS = [
     dict(n="01", name="Truth", core="Self-Awareness, Integrity &amp; Accountability", tag="The Foundation: Confronting Reality",
          intro=["Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge."],
          subs=[("Self-Awareness", "Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others."),
-               ("Psychological Insight", "Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making."),
+               ("Reflective Capacity", "Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making."),
                ("Integrity", "Acting consistently with stated values and ethical principles."),
                ("Accountability", "Taking responsibility for decisions, actions, and their consequences."),
                ("Openness to Feedback", "Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.")],
@@ -255,7 +255,7 @@ PILLARS = [
          intro=["Being involves the capacity to remain present, aware, and responsive to internal and external experiences. It supports effective functioning under pressure, psychological flexibility, and the integration of mind and body."],
          subs=[("Self-Regulation", "Managing emotional, physiological, and behavioral responses effectively."),
                ("Present-Moment Awareness", "Maintaining attention and awareness in the here and now."),
-               ("Mind-Body Awareness", "Recognizing the relationship between psychological and physical experiences."),
+               ("Mind-Body Connection", "Recognizing the relationship between psychological and physical experiences."),
                ("Psychological Flexibility", "Responding adaptively to uncertainty, challenges, and changing circumstances."),
                ("Stress Management", "Dealing effectively with stress to preserve inner clarity, composure, and responsiveness in demanding situations.")],
          app="Organizations demonstrate Being by cultivating environments that support psychological well-being, healthy stress management, effective functioning under pressure, sustainable workplaces, and responsive leadership.",
@@ -367,8 +367,8 @@ PRINCIPLES = [
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
 LOGO_BLOCK = '<div class="logo{cls}"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE{tm}</span></div>'
-COPY_TM = "Architecture of Excellence™<span class=\"sep\">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved."
-COPY = "Architecture of Excellence<span class=\"sep\">|</span>© 2026 Dr. Alina K. Schulhofer. All rights reserved."
+COPY_TM = "Architecture of Excellence™"
+COPY = "Architecture of Excellence™"
 LEGAL = ("Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards "
          "are developmental and subject to further refinement and validation. This document does not establish a clinical "
          "treatment protocol or an existing certification program.")
