@@ -100,10 +100,10 @@ CORE2 = [["Constructive Engagement", "with Reality"], ["Emotional &amp; Relation
          ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
 SUB_NAMES = [
     ["Self-Awareness", "Reflective Capacity", "Accountability", "Integrity", "Openness to Feedback"],
-    ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Navigation", "Trust &amp; Collaboration"],
+    ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Resolution", "Trust &amp; Collaboration"],
     ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Connection", "Psychological Flexibility", "Stress Management"],
     ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
-    ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity &amp; Fulfillment", "Belonging &amp; Contribution"],
+    ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity Integration", "Belonging &amp; Contribution"],
     ["Personal Agency", "Intentional Action", "Discipline &amp; Follow-Through", "Adaptability", "Continuous Learning"],
 ]
 
@@ -246,7 +246,7 @@ PILLARS = [
          subs=[("Emotional Intelligence", "Recognizing and understanding emotions in oneself and others."),
                ("Relational Intelligence", "Understanding how personal behavior and interpersonal patterns influence relationships."),
                ("Effective Communication", "Communicating clearly, respectfully, and constructively."),
-               ("Conflict Navigation", "Addressing disagreements and relational difficulties with openness, accountability, and appropriate repair processes."),
+               ("Conflict Resolution", "Addressing disagreements and relational difficulties with openness, accountability, and appropriate repair processes."),
                ("Trust &amp; Collaboration", "Building relationships that support cooperation, mutual respect, and collective effectiveness.")],
          app="Organizations demonstrate Connection through relational leadership, effective communication practices, constructive conflict management, and cultures that support trust, collaboration, and belonging.",
          ex=["Leadership development.", "Team-building and collaborative learning initiatives.", "Conflict-resolution processes.",
@@ -278,7 +278,7 @@ PILLARS = [
          subs=[("Purpose Awareness", "Understanding what gives one’s work, efforts, and achievements significance."),
                ("Intrinsic Motivation", "Developing engagement that extends beyond external rewards and recognition."),
                ("Values-Based Engagement", "Connecting daily activities with personally and collectively meaningful values."),
-               ("Identity &amp; Fulfillment", "Developing a sense of identity and fulfillment that is not dependent exclusively on achievement."),
+               ("Identity Integration", "Developing a sense of identity and fulfillment that is not dependent exclusively on achievement."),
                ("Belonging &amp; Contribution", "Experiencing meaningful participation, connection, and contribution within a larger collective.")],
          app="Organizations demonstrate Meaning by connecting institutional objectives with shared purpose, recognizing individual contributions, supporting belonging, and creating environments in which people experience their work as valuable and meaningful.",
          ex=["Purpose-centered leadership development.", "Organizational mission and values initiatives.",
