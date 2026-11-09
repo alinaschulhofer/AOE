@@ -180,8 +180,8 @@ def diagram_d():
 # ---------------------------------------------------------------- Diagram E
 def diagram_e():
     cx = cy = 170
-    names = [["Education"], ["Leadership &amp;", "Individual Development"],
-             ["Team Development"], ["Organizational", "Development &amp; Culture"],
+    names = [["Education &amp; Development", "of Core Competencies"], ["Leadership &amp;", "Individual Development"],
+             ["Team &amp; Relational", "Development"], ["Organizational", "Development &amp; Culture"],
              ["System-Wide", "Development &amp; Integration"]]
     o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-170 -46 680 420" xmlns="http://www.w3.org/2000/svg">']
     o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="160"/>')
@@ -327,14 +327,14 @@ PHASE_TEXT = [
 ]
 
 APPS = [
-    ("Education", "Development of core psychological, relational, and leadership competencies through:",
+    ("Education &amp; Development of Core Competencies", "Development of psychological, relational, and leadership competencies through:",
      ["Online courses and structured educational modules.", "Workshops, seminars, and webinars.", "Leadership and professional development programs.",
       "Conferences, events, and institutional learning initiatives.", "Educational resources and continuing development opportunities."],
      "Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups."),
     ("Leadership &amp; Individual Development", "Targeted development for individuals operating within organizational environments, including:",
      ["Executive coaching for leadership.", "Personal development opportunities for stakeholders.", "Individual professional development planning and ongoing advisory support."],
      "Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services."),
-    ("Team Development", "Interventions designed to strengthen relational skills and collective functioning, including:",
+    ("Team &amp; Relational Development", "Interventions designed to strengthen collective functioning, including:",
      ["Team development and collaboration.", "Communication and relational intelligence training.", "Leadership-team alignment.", "Mediation and conflict resolution."], None),
     ("Organizational Development &amp; Culture", "Institutional initiatives that address the broader conditions influencing performance and well-being, including:",
      ["Organizational culture assessment and development.", "Development of mental health and performance programs.", "Leadership and governance practices.",
