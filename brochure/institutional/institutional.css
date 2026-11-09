@@ -340,3 +340,6 @@
   .ocname { font-size: 16px; font-weight: 300; color: var(--hi); }
   .oc-note { margin-top: auto; margin-bottom: 22px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 11.6px; line-height: 1.55; color: var(--mid); text-align: center; }
   .eco-lead { margin-top: 20px; font-size: 13.4px; line-height: 1.7; }
+  /* Side-by-side paragraphs: justified, with hyphenation to keep spacing even */
+  .cols2 p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  .eco-cols { font-size: 13px; }

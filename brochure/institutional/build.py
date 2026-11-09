@@ -511,7 +511,10 @@ def p_systems():
     lv = "".join(f'<div class="lvl"><div class="label">Level 0{i + 1}</div><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(LEVELS4))
     return "An Ecological Approach", f"""
   <h1 class="pt"><span class="dim">An Ecological</span> Approach to Excellence.</h1>
-  <p class="eco-lead">Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways. Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being.</p>
+  <div class="cols2 mt20 eco-cols">
+    <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are ever-present, bidirectional and can manifest in a variety of ways.</p>
+    <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance, motivation, and well-being.</p>
+  </div>
   <figure class="eco-fig">{diagram_a()}
     <figcaption>Bidirectional influence across all four levels</figcaption>
   </figure>
