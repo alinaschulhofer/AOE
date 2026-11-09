@@ -571,8 +571,10 @@ OUTCOMES = [
 
 def p_architecture():
     return "Part I — The AOE Competency Framework", f"""
-  <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
-  <figure class="arch-fig">{diagram_g()}</figure>""", "arch-pg"
+  <div class="arch-stage">
+    <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
+    <figure class="arch-fig">{diagram_g()}</figure>
+  </div>""", "arch-pg"
 
 
 def p_outcomes():

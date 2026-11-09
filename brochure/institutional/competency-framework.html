@@ -318,7 +318,9 @@
   .pw-body ul.two li { break-inside: avoid; }
   .pw-body ul.dash li + li { margin-top: 3px; }
   /* Developmental architecture (diagram G) */
-  .arch-fig { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 0 18px; }
+  .arch-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 30px; }
+  .arch-stage h1.pt { margin-top: 0; }
+  .arch-fig { margin-top: 44px; }
   .arch-fig svg { width: 100%; }
   .dg .xframe { fill: none; stroke: var(--hi); stroke-width: 1; }
   .dg .xmask { fill: var(--bg); }
@@ -623,8 +625,9 @@
 <section class="page arch-pg">
   <div class="runhead"><span class="label">The AOE Competency Framework</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
-  <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
-  <figure class="arch-fig"><svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 678 590" xmlns="http://www.w3.org/2000/svg">
+  <div class="arch-stage">
+    <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
+    <figure class="arch-fig"><svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 678 590" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <marker id="mg" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path class="ah" d="M1,1.2 L9,5 L1,8.8"/>
@@ -683,6 +686,7 @@
 <text class="lp" transform="translate(13,368.0) rotate(-90)" text-anchor="middle" dominant-baseline="central">CONTINUOUS DEVELOPMENT</text>
 <text class="lp" transform="translate(665,368.0) rotate(90)" text-anchor="middle" dominant-baseline="central">CONTINUOUS DEVELOPMENT</text>
 </svg></figure>
+  </div>
   <footer><span>Architecture of Excellence™</span><span class="pg">06 / 14</span></footer>
 </section>
 <!-- ============ PAGE 07 ============ -->
