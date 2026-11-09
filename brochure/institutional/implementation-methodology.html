@@ -317,6 +317,34 @@
   .pw-body ul.two { columns: 2; column-gap: 28px; }
   .pw-body ul.two li { break-inside: avoid; }
   .pw-body ul.dash li + li { margin-top: 3px; }
+  /* Developmental architecture (diagram G) */
+  .arch-fig { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 0 18px; }
+  .arch-fig svg { width: 100%; }
+  .dg .xframe { fill: none; stroke: var(--hi); stroke-width: 1; }
+  .dg .xmask { fill: var(--bg); }
+  .dg .xs { fill: var(--mid); font-size: 11.4px; font-weight: 300; }
+  .dg .xlink { stroke: var(--circle); stroke-width: 1; }
+  .dg .xcell { fill: var(--bg); stroke: var(--circle); stroke-width: 1; }
+  .dg .xname { fill: var(--hi); font-size: 9.2px; font-weight: 500; letter-spacing: .12em; }
+  .dg .xbox { fill: var(--band); stroke: var(--rule-strong); stroke-width: 1; }
+  .dg .xhead { fill: var(--hi); font-size: 15px; font-weight: 400; }
+  .dg .xstate { fill: var(--hi); font-size: 12.6px; font-weight: 300; }
+  .dg .xitem { fill: var(--body); font-size: 12.2px; font-weight: 400; }
+  .dg .xdot { fill: var(--mid); }
+  /* Outcomes matrix */
+  .lead.wide { max-width: none; font-size: 13.4px; }
+  .oc-table { margin-top: 26px; }
+  .oc-hd, .oc-row { display: grid; grid-template-columns: 150px 1fr 1fr; column-gap: 26px; }
+  .oc-hd .label { letter-spacing: .16em; white-space: nowrap; }
+  .oc-hd { padding: 0 16px 10px; border-bottom: 1px solid var(--rule-strong); }
+  .oc-row { padding: 17px 16px; border-bottom: 1px solid var(--rule); align-items: center; font-size: 12.6px; line-height: 1.55; }
+  .oc-row:nth-child(even) { background: var(--band); }
+  .oc-row p { margin: 0; }
+  .oc-row p:last-child { color: var(--hi); }
+  .oc-p { display: flex; align-items: center; gap: 12px; }
+  .ocn { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--circle); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--mid); flex: none; }
+  .ocname { font-size: 16px; font-weight: 300; color: var(--hi); }
+  .oc-note { margin-top: auto; margin-bottom: 22px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 11.6px; line-height: 1.55; color: var(--mid); text-align: center; }
 
 </style>
 </head>
@@ -418,7 +446,7 @@
     </div>
     <div class="phase">
       <div class="ph"><div class="label">Phase 02</div><h3>Strategic Design</h3><p class="sub2">Translating assessment into a tailored development strategy</p></div>
-      <div class="phb"><p>Based on the findings, AOE competencies are mapped to organizational priorities. Relevant stakeholder groups, developmental objectives, interventions, resources, responsibilities, and evaluation methods are identified. The resulting strategy may involve individual leadership development, team interventions, organizational initiatives, educational programs, or a combination of approaches.</p></div>
+      <div class="phb"><p>Based on assessment findings, AOE competencies are mapped to institutional priorities and developmental needs. Intended individual and institutional outcomes, stakeholder groups, interventions, resources, responsibilities, and evaluation methods are identified. The resulting strategy may involve leadership development, team interventions, organizational initiatives, educational programs, or a combination of approaches.</p></div>
     </div>
     <div class="phase">
       <div class="ph"><div class="label">Phase 03</div><h3>Implementation &amp; Development</h3><p class="sub2">Translating the framework into practice</p></div>
@@ -426,7 +454,7 @@
     </div>
     <div class="phase">
       <div class="ph"><div class="label">Phase 04</div><h3>Evaluation &amp; Refinement</h3><p class="sub2">Assessing progress and identifying opportunities for improvement</p></div>
-      <div class="phb"><p>Progress is evaluated against the objectives established during strategic design. Evaluation may consider participation, learning, demonstrated competencies, behavioral changes, stakeholder experiences, organizational practices, and relevant performance or well-being indicators. Findings inform adjustments to the development strategy and ongoing interventions.</p></div>
+      <div class="phb"><p>Progress is evaluated against the objectives established during strategic design. Evaluation may consider competency development, demonstrated behavioral changes, relational and team functioning, organizational practices and conditions, stakeholder experiences, and relevant performance, engagement, and well-being indicators. Findings inform refinement of the developmental strategy and ongoing interventions.</p></div>
     </div>
     <div class="phase">
       <div class="ph"><div class="label">Phase 05</div><h3>Integration &amp; Sustainability</h3><p class="sub2">Embedding development into organizational functioning</p></div>

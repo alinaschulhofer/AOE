@@ -228,6 +228,81 @@ def diagram_f():
     return "\n".join(o)
 
 
+# ---------------------------------------------------------------- Diagram G (developmental architecture)
+IND_OUT = ["Awareness", "Judgment", "Self-Regulation", "Relationships", "Purpose", "Agency", "Development"]
+INST_OUT = ["Trust", "Alignment", "Culture", "Psychological Sustainability", "Adaptability", "Collective Effectiveness"]
+
+
+def diagram_g():
+    W, H = 678, 712
+    o = [f'<svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
+         MARKERS.format(id="mg")]
+    # Excellence: the frame that holds the whole architecture
+    o.append(f'<rect class="xframe" x="0.5" y="22" width="{W - 1}" height="{H - 23}"/>')
+    o.append(f'<rect class="xmask" x="{W / 2 - 92}" y="10" width="184" height="24"/>')
+    o.append(f'<text class="ex" x="{W / 2}" y="22" text-anchor="middle" dominant-baseline="central">EXCELLENCE</text>')
+    o.append(f'<text class="xs" x="{W / 2}" y="50" text-anchor="middle" dominant-baseline="central">The integrated and sustained expression of the six pillars across individual and institutional contexts.</text>')
+
+    def tier(y, t):
+        o.append(f'<text class="phl" x="{W / 2}" y="{y}" text-anchor="middle" dominant-baseline="central">{t}</text>')
+
+    def vpair(x, y1, y2):
+        for dx in (-5, 5):
+            o.append(f'<line class="arw" x1="{x + dx}" y1="{y1}" x2="{x + dx}" y2="{y2}" marker-{"end" if dx < 0 else "start"}="url(#mg)"/>')
+
+    # A — six competency domains
+    tier(92, "SIX FOUNDATIONAL COMPETENCY DOMAINS")
+    o.append(f'<text class="xs" x="{W / 2}" y="111" text-anchor="middle" dominant-baseline="central">Interconnected psychological, relational, and behavioral capacities</text>')
+    bw, gap, y0, bh = 86, 14, 132, 56
+    x0 = (W - (6 * bw + 5 * gap)) / 2
+    o.append(f'<line class="xlink" x1="{x0 + bw / 2}" y1="{y0 + bh / 2}" x2="{x0 + 5 * (bw + gap) + bw / 2}" y2="{y0 + bh / 2}"/>')
+    for k, n in enumerate(PILLAR_NAMES):
+        x = x0 + k * (bw + gap)
+        o.append(f'<rect class="xcell" x="{f(x)}" y="{y0}" width="{bw}" height="{bh}"/>')
+        o.append(f'<text class="numt" x="{f(x + bw / 2)}" y="{y0 + 17}" text-anchor="middle" dominant-baseline="central">0{k + 1}</text>')
+        o.append(f'<text class="xname" x="{f(x + bw / 2)}" y="{y0 + 37}" text-anchor="middle" dominant-baseline="central">{n.upper()}</text>')
+
+    # B — development & contextual application
+    vpair(200, 196, 244); vpair(478, 196, 244)
+    tier(262, "DEVELOPMENT &amp; CONTEXTUAL APPLICATION")
+    bx, bwid, by, bhh = 46, 254, 280, 62
+    for x, t in ((bx, "Individual Capabilities"), (W - bx - bwid, "Institutional Conditions")):
+        o.append(f'<rect class="xbox" x="{x}" y="{by}" width="{bwid}" height="{bhh}"/>')
+        o.append(f'<text class="xhead" x="{x + bwid / 2}" y="{by + bhh / 2}" text-anchor="middle" dominant-baseline="central">{t}</text>')
+    lx1, lx2 = bx + bwid + 10, W - bx - bwid - 10
+    o.append(f'<line class="arw" x1="{lx1}" y1="{by + bhh / 2 - 5}" x2="{lx2}" y2="{by + bhh / 2 - 5}" marker-end="url(#mg)"/>')
+    o.append(f'<line class="arw" x1="{lx2}" y1="{by + bhh / 2 + 5}" x2="{lx1}" y2="{by + bhh / 2 + 5}" marker-end="url(#mg)"/>')
+    o.append(tlines(W / 2, 374, ["Competencies are developed and expressed across individual, relational,",
+                                  "team, organizational, and broader systemic contexts."], "xstate", 18))
+
+    # C — intended outcomes
+    vpair(173, 402, 446); vpair(505, 402, 446)
+    tier(464, "INTENDED OUTCOMES")
+    py, ph, pw = 482, 196, 284
+    for x, head, items in ((46, "Individual Outcomes", IND_OUT), (W - 46 - pw, "Institutional Outcomes", INST_OUT)):
+        o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{pw}" height="{ph}"/>')
+        o.append(f'<text class="xhead" x="{x + 20}" y="{py + 24}" dominant-baseline="central">{head}</text>')
+        o.append(f'<line class="rule faint" x1="{x + 20}" y1="{py + 42}" x2="{x + pw - 20}" y2="{py + 42}"/>')
+        for j, it in enumerate(items):
+            yy = py + 60 + j * 19
+            o.append(f'<circle class="xdot" cx="{x + 23}" cy="{yy}" r="2"/>')
+            o.append(f'<text class="xitem" x="{x + 33}" y="{yy}" dominant-baseline="central">{it}</text>')
+
+    # iterative feedback: outcomes inform how competencies continue to develop
+    for side in (1, -1):
+        xe = 22 if side == 1 else W - 22
+        xa = 46 if side == 1 else W - 46
+        if side == 1:
+            d = f"M{xa},{py + ph / 2} C{xe},{py + ph / 2} {xe},{py + ph / 2 - 40} {xe},{py + ph / 2 - 80} L{xe},{y0 + bh / 2 + 30} C{xe},{y0 + bh / 2 + 6} {xe},{y0 + bh / 2} {x0 - 6},{y0 + bh / 2}"
+        else:
+            d = f"M{W - x0 + 6},{y0 + bh / 2} C{xe},{y0 + bh / 2} {xe},{y0 + bh / 2 + 6} {xe},{y0 + bh / 2 + 30} L{xe},{py + ph / 2 - 80} C{xe},{py + ph / 2 - 40} {xe},{py + ph / 2} {xa},{py + ph / 2}"
+        o.append(f'<path class="loop" d="{d}" marker-end="url(#mg)"/>')
+    o.append(f'<text class="lp" transform="translate(13,{(y0 + py + ph) / 2 + 30}) rotate(-90)" text-anchor="middle" dominant-baseline="central">CONTINUOUS DEVELOPMENT</text>')
+    o.append(f'<text class="lp" transform="translate({W - 13},{(y0 + py + ph) / 2 + 30}) rotate(90)" text-anchor="middle" dominant-baseline="central">CONTINUOUS DEVELOPMENT</text>')
+    o.append("</svg>")
+    return "\n".join(o)
+
+
 # ---------------------------------------------------------------- Content
 PILLARS = [
     dict(n="01", name="Truth", core="Constructive Engagement with Reality", tag="The Foundation: Confronting Reality",
@@ -305,9 +380,9 @@ PHASE_TEXT = [
       "Assessment considers both individual capabilities and environmental conditions."],
      "A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement."),
     ("Translating assessment into a tailored development strategy",
-     ["Based on the findings, AOE competencies are mapped to organizational priorities.",
-      "Relevant stakeholder groups, developmental objectives, interventions, resources, responsibilities, and evaluation methods are identified.",
-      "The resulting strategy may involve individual leadership development, team interventions, organizational initiatives, educational programs, or a combination of approaches."],
+     ["Based on assessment findings, AOE competencies are mapped to institutional priorities and developmental needs.",
+      "Intended individual and institutional outcomes, stakeholder groups, interventions, resources, responsibilities, and evaluation methods are identified.",
+      "The resulting strategy may involve leadership development, team interventions, organizational initiatives, educational programs, or a combination of approaches."],
      "A tailored institutional development plan with defined priorities, interventions, and intended outcomes."),
     ("Translating the framework into practice",
      ["AOE principles and competencies are translated into educational experiences, developmental interventions, and organizational practices.",
@@ -316,8 +391,8 @@ PHASE_TEXT = [
      "Active development of competencies and implementation of practices that support organizational effectiveness and sustainable performance."),
     ("Assessing progress and identifying opportunities for improvement",
      ["Progress is evaluated against the objectives established during strategic design.",
-      "Evaluation may consider participation, learning, demonstrated competencies, behavioral changes, stakeholder experiences, organizational practices, and relevant performance or well-being indicators.",
-      "Findings inform adjustments to the development strategy and ongoing interventions."],
+      "Evaluation may consider competency development, demonstrated behavioral changes, relational and team functioning, organizational practices and conditions, stakeholder experiences, and relevant performance, engagement, and well-being indicators.",
+      "Findings inform refinement of the developmental strategy and ongoing interventions."],
      "Evidence-informed understanding of progress, challenges, and opportunities for further development."),
     ("Embedding development into organizational functioning",
      ["The final phase focuses on sustaining progress beyond individual programs or interventions.",
@@ -483,6 +558,43 @@ def p_matrix():
 """, "competencies"
 
 
+OUTCOMES = [
+    ("Greater self-awareness, sound judgment, accountability, and constructive engagement with feedback.",
+     "Transparency, ethical leadership, accountability, and organizational learning."),
+    ("Emotional and relational intelligence, effective communication, healthier relationships, and constructive conflict resolution.",
+     "Trust, collaboration, psychological safety, team cohesion, and effective conflict management."),
+    ("Self-regulation, stress management, psychological flexibility, and sustainable functioning under pressure.",
+     "Healthier working conditions, responsive leadership, psychological sustainability, and resilience."),
+    ("Clearer direction, strategic thinking, and values-aligned decision-making.",
+     "Shared strategic direction, leadership alignment, coherent priorities, and coordinated action."),
+    ("Purpose, intrinsic motivation, identity integration, fulfillment, and belonging.",
+     "Meaningful engagement, shared purpose, belonging, commitment, and contribution."),
+    ("Personal agency, purposeful action, adaptability, and continuous development.",
+     "Effective implementation, adaptability, innovation, and continuous organizational improvement."),
+]
+
+
+def p_architecture():
+    return "Part I — The AOE Competency Framework", f"""
+  <h1 class="pt"><span class="dim">The Architecture of</span><br>Development &amp; Excellence.</h1>
+  <figure class="arch-fig">{diagram_g()}</figure>""", "arch-pg"
+
+
+def p_outcomes():
+    rows = "".join(f"""
+    <div class="oc-row">
+      <div class="oc-p"><span class="ocn">0{k + 1}</span><span class="ocname">{PILLAR_NAMES[k]}</span></div>
+      <p>{a}</p><p>{b}</p>
+    </div>""" for k, (a, b) in enumerate(OUTCOMES))
+    return "Part I — The AOE Competency Framework", f"""
+  <h1 class="pt"><span class="dim">From Competencies</span> to Outcomes.</h1>
+  <p class="lead wide">The six AOE competency domains provide a foundation for individual development and institutional functioning. Their application is intended to strengthen psychological, relational, and behavioral capacities while supporting the organizational conditions necessary for sustainable performance and well-being. The outcomes below illustrate how these competencies may be expressed at individual and institutional levels.</p>
+  <div class="oc-table">
+    <div class="oc-hd"><span class="label">Pillar</span><span class="label">Intended Individual Outcomes</span><span class="label">Intended Institutional Outcomes</span></div>{rows}
+  </div>
+  <p class="oc-note">These represent intended developmental and institutional outcomes. Their realization depends on contextual conditions, implementation, and ongoing evaluation.</p>""", "outcomes-pg"
+
+
 def p_pillar(i):
     p = PILLARS[i]
     subs = "".join(f'<div class="ps"><dt>{t}</dt><dd>{d}</dd></div>' for t, d in p["subs"])
@@ -613,13 +725,13 @@ DOCS = {
         title="Institutional Framework &amp; Methodology",
         cover='<span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.',
         parts=True,
-        pages=[p_overview, p_systems, p_model, p_matrix, *[lambda i=i: p_pillar(i) for i in range(6)],
+        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes, *[lambda i=i: p_pillar(i) for i in range(6)],
                p_method, p_phases, p_apps, p_pathways, p_standards, p_principles, "closing"]),
     "competency-framework": dict(
         title="Institutional Competency Framework",
         cover='<span class="dim">Institutional</span><br>Competency Framework.',
         parts=False,
-        pages=[p_overview, p_systems, p_model, p_matrix, *[lambda i=i: p_pillar(i) for i in range(6)],
+        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes, *[lambda i=i: p_pillar(i) for i in range(6)],
                "closing"]),
     "implementation-methodology": dict(
         title="Institutional Implementation Methodology",
