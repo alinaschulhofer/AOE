@@ -229,18 +229,16 @@ def diagram_f():
 
 
 # ---------------------------------------------------------------- Diagram G (developmental architecture)
-IND_OUT = ["Awareness", "Judgment", "Self-Regulation", "Relationships", "Purpose", "Agency", "Development"]
-INST_OUT = ["Trust", "Alignment", "Culture", "Psychological Sustainability", "Adaptability", "Collective Effectiveness"]
 
 
 def diagram_g():
-    W, H = 678, 712
+    W, H = 678, 590
     o = [f'<svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="mg")]
     # Excellence: the frame that holds the whole architecture
     o.append(f'<rect class="xframe" x="0.5" y="22" width="{W - 1}" height="{H - 23}"/>')
-    o.append(f'<rect class="xmask" x="{W / 2 - 92}" y="10" width="184" height="24"/>')
-    o.append(f'<text class="ex" x="{W / 2}" y="22" text-anchor="middle" dominant-baseline="central">EXCELLENCE</text>')
+    o.append(f'<rect class="xmask" x="{W / 2 - 150}" y="10" width="300" height="24"/>')
+    o.append(f'<text class="ex" x="{W / 2}" y="22" text-anchor="middle" dominant-baseline="central">SUSTAINABLE EXCELLENCE</text>')
     o.append(f'<text class="xs" x="{W / 2}" y="50" text-anchor="middle" dominant-baseline="central">The integrated and sustained expression of the six pillars across individual and institutional contexts.</text>')
 
     def tier(y, t):
@@ -278,15 +276,12 @@ def diagram_g():
     # C — intended outcomes
     vpair(173, 402, 446); vpair(505, 402, 446)
     tier(464, "INTENDED OUTCOMES")
-    py, ph, pw = 482, 196, 284
-    for x, head, items in ((46, "Individual Outcomes", IND_OUT), (W - 46 - pw, "Institutional Outcomes", INST_OUT)):
-        o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{pw}" height="{ph}"/>')
-        o.append(f'<text class="xhead" x="{x + 20}" y="{py + 24}" dominant-baseline="central">{head}</text>')
-        o.append(f'<line class="rule faint" x1="{x + 20}" y1="{py + 42}" x2="{x + pw - 20}" y2="{py + 42}"/>')
-        for j, it in enumerate(items):
-            yy = py + 60 + j * 19
-            o.append(f'<circle class="xdot" cx="{x + 23}" cy="{yy}" r="2"/>')
-            o.append(f'<text class="xitem" x="{x + 33}" y="{yy}" dominant-baseline="central">{it}</text>')
+    py, ph = 482, 62
+    for x, t in ((bx, "Individual Excellence"), (W - bx - bwid, "Institutional Excellence")):
+        o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{bwid}" height="{ph}"/>')
+        o.append(f'<text class="xhead" x="{x + bwid / 2}" y="{py + ph / 2}" text-anchor="middle" dominant-baseline="central">{t}</text>')
+    o.append(f'<line class="arw" x1="{lx1}" y1="{py + ph / 2 - 5}" x2="{lx2}" y2="{py + ph / 2 - 5}" marker-end="url(#mg)"/>')
+    o.append(f'<line class="arw" x1="{lx2}" y1="{py + ph / 2 + 5}" x2="{lx1}" y2="{py + ph / 2 + 5}" marker-end="url(#mg)"/>')
 
     # iterative feedback: outcomes inform how competencies continue to develop
     for side in (1, -1):
@@ -576,7 +571,7 @@ OUTCOMES = [
 
 def p_architecture():
     return "Part I — The AOE Competency Framework", f"""
-  <h1 class="pt"><span class="dim">The Architecture of</span><br>Development &amp; Excellence.</h1>
+  <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
   <figure class="arch-fig">{diagram_g()}</figure>""", "arch-pg"
 
 
