@@ -95,11 +95,11 @@ def diagram_b():
 
 
 # ---------------------------------------------------------------- Diagram C
-CORE2 = [["Self-Awareness, Integrity", "&amp; Accountability"], ["Emotional &amp; Relational", "Intelligence"],
+CORE2 = [["Dealing with Reality", "Constructively"], ["Emotional &amp; Relational", "Intelligence"],
          ["Presence &amp; Self-Regulation"], ["Purposeful Direction", "&amp; Strategic Alignment"],
          ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
 SUB_NAMES = [
-    ["Self-Awareness", "Reflective Capacity", "Integrity", "Accountability", "Openness to Feedback"],
+    ["Self-Awareness", "Reflective Capacity", "Accountability", "Integrity", "Openness to Feedback"],
     ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Navigation", "Trust &amp; Collaboration"],
     ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Connection", "Psychological Flexibility", "Stress Management"],
     ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
@@ -230,12 +230,12 @@ def diagram_f():
 
 # ---------------------------------------------------------------- Content
 PILLARS = [
-    dict(n="01", name="Truth", core="Self-Awareness, Integrity &amp; Accountability", tag="The Foundation: Confronting Reality",
+    dict(n="01", name="Truth", core="Dealing with Reality Constructively", tag="The Foundation: Confronting Reality",
          intro=["Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge."],
          subs=[("Self-Awareness", "Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others."),
-               ("Reflective Capacity", "Understanding patterns, assumptions, biases, and underlying influences that shape behavior and decision-making."),
-               ("Integrity", "Acting consistently with stated values and ethical principles."),
+               ("Reflective Capacity", "The ability to think about, understand, and respond to one’s own and others’ mental states, including assumptions and underlying influences."),
                ("Accountability", "Taking responsibility for decisions, actions, and their consequences."),
+               ("Integrity", "Acting consistently with stated values and ethical principles."),
                ("Openness to Feedback", "Demonstrating the willingness to question assumptions, receive feedback, and confront uncomfortable information.")],
          app="Organizations demonstrate Truth through transparent communication, ethical leadership, meaningful accountability, openness to feedback, and the willingness to identify and address organizational problems.",
          ex=["Leadership reflection and development processes.", "Structured feedback and organizational assessment.",
