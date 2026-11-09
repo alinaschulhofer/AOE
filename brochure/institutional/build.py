@@ -618,13 +618,10 @@ def p_pillar(i):
 
 def p_method():
     return "Part II — The AOE Institutional Methodology", f"""
-  <h1 class="pt"><span class="dim">The AOE Institutional</span><br>Methodology.</h1>
-  <div class="cols2 mt20">
-    <p>The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development.</p>
-    <p>The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
-  </div>
-  <div class="method-stage">
-    <figure class="cycle">{diagram_d()}</figure>
+  <div class="arch-stage">
+    <h1 class="pt"><span class="dim">The AOE Institutional</span><br>Methodology.</h1>
+    <p class="arch-sub">The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development. The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
+    <figure class="cycle method-cycle">{diagram_d()}</figure>
     <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>""", "method"
 
@@ -647,19 +644,21 @@ def p_apps():
   </div>""", "apps-pg"
 
 
-def p_pathways():
-    def tags(items):
-        return ul(items, "dash two" if len(items) > 4 else "dash two")
+def p_pathways(part):
+    # Two pages so each pathway has room: 01–03 with the heading, then 04–05.
+    idx = range(0, 3) if part == 0 else range(3, 5)
     rows = "".join(f"""
     <div class="pw-row">
       <div class="pw-n">0{k + 1}</div>
       <div class="pw-body">
-        <h3>{t}</h3>
-        <p class="pw-lead">{lead}</p>
-        {tags(items)}{f'<p class="note">{note}</p>' if note else ''}
+        <h3>{APPS[k][0]}</h3>
+        <p class="pw-lead">{APPS[k][1]}</p>
+        {ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}
       </div>
-    </div>""" for k, (t, lead, items, note) in enumerate(APPS))
-    return "Part III — Implementation Pathways", f'<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1><div class="pathways">{rows}</div>', "pathways-pg"
+    </div>""" for k in idx)
+    head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
+    cls = "pathways" if part == 0 else "pathways cont"
+    return "Part III — Implementation Pathways", f'{head}<div class="{cls}">{rows}</div>', "pathways-pg"
 
 
 def p_standards():
@@ -722,7 +721,7 @@ DOCS = {
         cover='<span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.',
         parts=True,
         pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes,
-               p_method, p_phases, p_apps, p_pathways, p_standards, p_principles, "closing"]),
+               p_method, p_phases, p_apps, lambda: p_pathways(0), lambda: p_pathways(1), p_standards, p_principles, "closing"]),
     "competency-framework": dict(
         title="Institutional Competency Framework",
         cover='<span class="dim">Institutional</span><br>Competency Framework.',
@@ -733,7 +732,7 @@ DOCS = {
         title="Institutional Implementation Methodology",
         cover='<span class="dim">Institutional</span><br>Implementation Methodology.',
         parts=False,
-        pages=[p_overview, p_method, p_phases, p_apps, p_pathways, p_standards, lambda: p_principles(with_contact=True)]),
+        pages=[p_overview, p_method, p_phases, p_apps, lambda: p_pathways(0), lambda: p_pathways(1), p_standards, lambda: p_principles(with_contact=True)]),
     # Internal reference only: full pillar definitions are kept out of the external documents.
     "pillar-reference-internal": dict(
         title="The Six Pillars — Internal Reference",
