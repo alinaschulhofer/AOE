@@ -255,7 +255,7 @@
   .eco-note p { font-size: 14px; line-height: 1.6; color: var(--hi); }
   .eco-note p + p { margin-top: 12px; color: var(--mid); font-size: 13px; }
   .levels-intro { margin-top: 20px; }
-  .matrix-note { margin-top: 18px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 13px; line-height: 1.6; color: var(--hi); }
+  .matrix-note { margin-top: 40px; padding-left: 18px; border-left: 1px solid var(--circle); font-size: 13px; line-height: 1.6; color: var(--hi); }
   .cycle { margin-top: 18px; }
   .cml { margin-top: 14px; padding: 14px 18px; border: 1px solid var(--rule-strong); font-size: 12.4px; line-height: 1.6; color: var(--hi); }
   .dg .spoke { stroke: var(--circle); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
@@ -310,7 +310,8 @@
   .pw-body ul.dash li + li { margin-top: 3px; }
   /* Developmental architecture (diagram G) */
   .arch-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 30px; }
-  .arch-stage h1.pt { margin-top: 0; }
+  .arch-stage h1.pt { margin-top: 0; text-align: center; }
+  .arch-sub { margin: 18px auto 0; max-width: 600px; text-align: center; font-size: 13.4px; line-height: 1.65; color: var(--mid); }
   .arch-fig { margin-top: 44px; }
   .arch-fig svg { width: 100%; }
   .dg .xframe { fill: none; stroke: var(--hi); stroke-width: 1; }
@@ -326,11 +327,11 @@
   .dg .xdot { fill: var(--mid); }
   /* Outcomes matrix */
   .lead.wide { max-width: none; font-size: 13.4px; }
-  .oc-table { margin-top: 26px; }
+  .oc-table { margin-top: 36px; }
   .oc-hd, .oc-row { display: grid; grid-template-columns: 150px 1fr 1fr; column-gap: 26px; }
   .oc-hd .label { letter-spacing: .16em; white-space: nowrap; }
   .oc-hd { padding: 0 16px 10px; border-bottom: 1px solid var(--rule-strong); }
-  .oc-row { padding: 17px 16px; border-bottom: 1px solid var(--rule); align-items: center; font-size: 12.6px; line-height: 1.55; }
+  .oc-row { padding: 25px 16px; border-bottom: 1px solid var(--rule); align-items: center; font-size: 12.6px; line-height: 1.55; }
   .oc-row:nth-child(even) { background: var(--band); }
   .oc-row p { margin: 0; }
   .oc-row p:last-child { color: var(--hi); }

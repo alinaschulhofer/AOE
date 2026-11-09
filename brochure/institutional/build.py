@@ -237,8 +237,8 @@ def diagram_g():
          MARKERS.format(id="mg")]
     # Excellence: the frame that holds the whole architecture
     o.append(f'<rect class="xframe" x="0.5" y="22" width="{W - 1}" height="{H - 23}"/>')
-    o.append(f'<rect class="xmask" x="{W / 2 - 150}" y="10" width="300" height="24"/>')
-    o.append(f'<text class="ex" x="{W / 2}" y="22" text-anchor="middle" dominant-baseline="central">SUSTAINABLE EXCELLENCE</text>')
+    o.append(f'<rect class="xmask" x="{W / 2 - 92}" y="10" width="184" height="24"/>')
+    o.append(f'<text class="ex" x="{W / 2}" y="22" text-anchor="middle" dominant-baseline="central">EXCELLENCE</text>')
     o.append(f'<text class="xs" x="{W / 2}" y="50" text-anchor="middle" dominant-baseline="central">The integrated and sustained expression of the six pillars across individual and institutional contexts.</text>')
 
     def tier(y, t):
@@ -275,7 +275,7 @@ def diagram_g():
 
     # C — intended outcomes
     vpair(173, 402, 446); vpair(505, 402, 446)
-    tier(464, "INTENDED OUTCOMES")
+    tier(464, "INTERACTION OF INDIVIDUAL &amp; INSTITUTIONAL EXCELLENCE")
     py, ph = 482, 62
     for x, t in ((bx, "Individual Excellence"), (W - bx - bwid, "Institutional Excellence")):
         o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{bwid}" height="{ph}"/>')
@@ -437,8 +437,8 @@ PRINCIPLES = [
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
 LOGO_BLOCK = '<div class="logo{cls}"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE{tm}</span></div>'
-COPY_TM = "Architecture of Excellence™"
-COPY = "Architecture of Excellence™"
+COPY_TM = "© 2026 Architecture of Excellence™. All rights reserved."
+COPY = COPY_TM
 LEGAL = ("Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards "
          "are developmental and subject to further refinement and validation. This document does not establish a clinical "
          "treatment protocol or an existing certification program.")
@@ -573,6 +573,7 @@ def p_architecture():
     return "Part I — The AOE Competency Framework", f"""
   <div class="arch-stage">
     <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
+    <p class="arch-sub">The six AOE competency domains provide a foundation for individual development and institutional functioning. Their application is intended to strengthen psychological, relational, and behavioral capacities while supporting the organizational conditions necessary for sustainable performance and well-being.</p>
     <figure class="arch-fig">{diagram_g()}</figure>
   </div>""", "arch-pg"
 
@@ -585,11 +586,10 @@ def p_outcomes():
     </div>""" for k, (a, b) in enumerate(OUTCOMES))
     return "Part I — The AOE Competency Framework", f"""
   <h1 class="pt"><span class="dim">From Competencies</span> to Outcomes.</h1>
-  <p class="lead wide">The six AOE competency domains provide a foundation for individual development and institutional functioning. Their application is intended to strengthen psychological, relational, and behavioral capacities while supporting the organizational conditions necessary for sustainable performance and well-being. The outcomes below illustrate how these competencies may be expressed at individual and institutional levels.</p>
+  <p class="lead wide">The targeted outcomes below illustrate how AOE’s core competencies may be expressed at individual and institutional levels.</p>
   <div class="oc-table">
     <div class="oc-hd"><span class="label">Pillar</span><span class="label">Intended Individual Outcomes</span><span class="label">Intended Institutional Outcomes</span></div>{rows}
-  </div>
-  <p class="oc-note">These represent intended developmental and institutional outcomes. Their realization depends on contextual conditions, implementation, and ongoing evaluation.</p>""", "outcomes-pg"
+  </div>""", "outcomes-pg"
 
 
 def p_pillar(i):
