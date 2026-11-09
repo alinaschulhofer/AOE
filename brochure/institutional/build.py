@@ -95,7 +95,7 @@ def diagram_b():
 
 
 # ---------------------------------------------------------------- Diagram C
-CORE2 = [["Dealing with Reality", "Constructively"], ["Emotional &amp; Relational", "Intelligence"],
+CORE2 = [["Constructive Engagement", "with Reality"], ["Emotional &amp; Relational", "Intelligence"],
          ["Presence &amp; Self-Regulation"], ["Purposeful Direction", "&amp; Strategic Alignment"],
          ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
 SUB_NAMES = [
@@ -230,7 +230,7 @@ def diagram_f():
 
 # ---------------------------------------------------------------- Content
 PILLARS = [
-    dict(n="01", name="Truth", core="Dealing with Reality Constructively", tag="The Foundation: Confronting Reality",
+    dict(n="01", name="Truth", core="Constructive Engagement with Reality", tag="The Foundation: Confronting Reality",
          intro=["Truth involves the capacity to recognize and engage with reality honestly, including aspects of ourselves, our relationships, and our organizations that may be uncomfortable or difficult to acknowledge."],
          subs=[("Self-Awareness", "Recognizing one’s thoughts, emotions, motivations, behaviors, and their impact on others."),
                ("Reflective Capacity", "The ability to think about, understand, and respond to one’s own and others’ mental states, including assumptions and underlying influences."),
