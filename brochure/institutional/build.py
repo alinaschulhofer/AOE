@@ -551,11 +551,11 @@ def p_matrix():
 
 
 OUTCOMES = [
-    ("Improved self-awareness and reality testing, better judgment, accountability, integrity, and constructive engagement with feedback.",
+    ("Self-awareness, good reality testing and judgment, accountability, and constructive engagement with feedback.",
      "Integrity, transparency, ethical leadership, and accountability."),
-    ("Emotional intelligence, interpersonal skills, relational awareness, effective communication, healthy relationships, and constructive conflict resolution.",
+    ("Emotional intelligence, relational awareness, effective communication, healthy relationships, and constructive conflict resolution.",
      "Trust, effective collaboration, psychological safety, team cohesion, and effective conflict management."),
-    ("Emotional regulation, stress management, psychological flexibility, the capacity for sustainable functioning under pressure, and acceptance of the present moment.",
+    ("Self-regulation, stress management, psychological flexibility, and the capacity for sustainable functioning under pressure.",
      "Healthier and more sustainable working conditions, psychological safety and sustainability, resilience, and relational leadership."),
     ("Clear direction, strategic thinking, values-based decision-making, and long-term planning.",
      "Shared strategic direction, leadership and team alignment, clearly defined priorities, and coordinated action."),
