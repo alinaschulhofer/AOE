@@ -331,7 +331,7 @@
   .oc-hd, .oc-row { display: grid; grid-template-columns: 150px 1fr 1fr; column-gap: 26px; }
   .oc-hd .label { letter-spacing: .16em; white-space: nowrap; }
   .oc-hd { padding: 0 16px 10px; border-bottom: 1px solid var(--rule-strong); }
-  .oc-row { padding: 25px 16px; border-bottom: 1px solid var(--rule); align-items: center; font-size: 12.6px; line-height: 1.55; }
+  .oc-row { padding: 21px 16px; border-bottom: 1px solid var(--rule); align-items: center; font-size: 12.6px; line-height: 1.55; }
   .oc-row:nth-child(even) { background: var(--band); }
   .oc-row p { margin: 0; }
   .oc-row p:last-child { color: var(--hi); }

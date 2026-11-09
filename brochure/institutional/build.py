@@ -554,18 +554,18 @@ def p_matrix():
 
 
 OUTCOMES = [
-    ("Greater self-awareness, sound judgment, accountability, and constructive engagement with feedback.",
-     "Transparency, ethical leadership, accountability, and organizational learning."),
-    ("Emotional and relational intelligence, effective communication, healthier relationships, and constructive conflict resolution.",
-     "Trust, collaboration, psychological safety, team cohesion, and effective conflict management."),
-    ("Self-regulation, stress management, psychological flexibility, and sustainable functioning under pressure.",
-     "Healthier working conditions, responsive leadership, psychological sustainability, and resilience."),
-    ("Clearer direction, strategic thinking, and values-aligned decision-making.",
-     "Shared strategic direction, leadership alignment, coherent priorities, and coordinated action."),
-    ("Purpose, intrinsic motivation, identity integration, fulfillment, and belonging.",
-     "Meaningful engagement, shared purpose, belonging, commitment, and contribution."),
-    ("Personal agency, purposeful action, adaptability, and continuous development.",
-     "Effective implementation, adaptability, innovation, and continuous organizational improvement."),
+    ("Improved self-awareness and reality testing, better judgment, accountability, integrity, and constructive engagement with feedback.",
+     "Integrity, transparency, ethical leadership, and accountability."),
+    ("Emotional intelligence, interpersonal skills, relational awareness, effective communication, healthy relationships, and constructive conflict resolution.",
+     "Trust, effective collaboration, psychological safety, team cohesion, and effective conflict management."),
+    ("Emotional regulation, stress management, psychological flexibility, the capacity for sustainable functioning under pressure, and acceptance of the present moment.",
+     "Healthier and more sustainable working conditions, psychological safety and sustainability, resilience, and relational leadership."),
+    ("Clear direction, strategic thinking, values-based decision-making, and long-term planning.",
+     "Shared strategic direction, leadership and team alignment, clearly defined priorities, and coordinated action."),
+    ("Purpose, intrinsic motivation, identity integration, personal and professional fulfillment, and belonging.",
+     "Legacy, meaningful collective engagement, shared purpose, belonging, commitment, and contribution."),
+    ("Autonomy, personal agency, purposeful action, adaptability, and continuous development.",
+     "Innovation, effective implementation, adaptability, and organizational improvement."),
 ]
 
 
