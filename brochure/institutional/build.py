@@ -640,12 +640,11 @@ def p_phases():
 
 def p_apps():
     return "Part III — Institutional Applications", f"""
-  <h1 class="pt"><span class="dim">Institutional</span> Applications.</h1>
-  <div class="cols2 mt20">
-    <p>AOE can be implemented through several interconnected developmental pathways.</p>
-    <p>The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
-  </div>
-  <figure class="apps-fig">{diagram_e()}</figure>""", "apps-pg"
+  <div class="apps-stage">
+    <h1 class="pt"><span class="dim">Institutional</span> Applications.</h1>
+    <p class="apps-lead">AOE can be implemented through several interconnected developmental pathways. The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
+    <figure class="apps-fig">{diagram_e()}</figure>
+  </div>""", "apps-pg"
 
 
 def p_pathways():
@@ -660,7 +659,7 @@ def p_pathways():
         {tags(items)}{f'<p class="note">{note}</p>' if note else ''}
       </div>
     </div>""" for k, (t, lead, items, note) in enumerate(APPS))
-    return "Part III — The Five Pathways", f'<div class="pathways">{rows}</div>', "pathways-pg"
+    return "Part III — Implementation Pathways", f'<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1><div class="pathways">{rows}</div>', "pathways-pg"
 
 
 def p_standards():

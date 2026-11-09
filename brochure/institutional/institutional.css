@@ -208,7 +208,10 @@
 
   /* 11 Applications */
   .apps-top { display: grid; grid-template-columns: 1fr 250px; column-gap: 30px; align-items: center; }
-  .apps-fig { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .apps-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 26px; }
+  .apps-stage h1.pt { margin-top: 0; }
+  .apps-lead { margin-top: 16px; font-size: 13.4px; line-height: 1.65; max-width: 640px; }
+  .apps-fig { margin-top: 40px; display: flex; justify-content: center; }
   .apps-fig svg { width: 640px; }
   .apps { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
   .appc { padding: 12px 0 12px; border-top: 1px solid var(--rule); }
@@ -294,8 +297,9 @@
   .method-stage .cml { margin-top: 26px; }
 
   /* Pathways detail page: rows with service tags */
-  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 4px 0 8px; }
-  .pw-row { display: grid; grid-template-columns: 64px 1fr; column-gap: 18px; padding: 10px 0; }
+  .pw-title { margin-top: 26px; font-size: 32px; }
+  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 6px 0 6px; }
+  .pw-row { display: grid; grid-template-columns: 64px 1fr; column-gap: 18px; padding: 8px 0; }
   .pw-row + .pw-row { border-top: 1px solid var(--rule); }
   .pw-n { font-size: 34px; font-weight: 300; line-height: 1; color: var(--mid); letter-spacing: -.02em; }
   .pw-body h3 { font-size: 18px; font-weight: 400; line-height: 1.25; }
@@ -304,7 +308,7 @@
   .tags span { border: 1px solid var(--rule-strong); border-radius: 999px; padding: 3px 11px; font-size: 11.3px; line-height: 1.35; color: var(--hi); }
   .pw-body .note { margin-top: 7px; font-size: 11.4px; line-height: 1.5; color: var(--soft); }
   .about-h { font-size: 44px; margin-bottom: 30px; }
-  .pw-body ul.dash { margin-top: 8px; font-size: 12.2px; line-height: 1.5; }
+  .pw-body ul.dash { margin-top: 6px; font-size: 12px; line-height: 1.45; }
   .pw-body ul.two { columns: 2; column-gap: 28px; }
   .pw-body ul.two li { break-inside: avoid; }
   .pw-body ul.dash li + li { margin-top: 3px; }
