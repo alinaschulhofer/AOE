@@ -688,7 +688,7 @@ def p_principles(with_contact=False):
 
 
 # ------------------------------------------------------------------ documents
-def cover(title_html):
+def cover(title_html, foot=COPY_TM):
     return f"""
 <!-- ============ COVER ============ -->
 <section class="page cover">
@@ -696,7 +696,7 @@ def cover(title_html):
     {LOGO_BLOCK.format(cls=" cover-logo", tm="™")}
     <h1>{title_html}</h1>
   </div>
-  <footer class="center"><span>{COPY_TM}</span></footer>
+  <footer class="center"><span>{foot}</span></footer>
 </section>"""
 
 
@@ -719,26 +719,34 @@ DOCS = {
         title="Institutional Framework &amp; Methodology",
         cover='<span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.',
         parts=True,
-        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes, *[lambda i=i: p_pillar(i) for i in range(6)],
+        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes,
                p_method, p_phases, p_apps, p_pathways, p_standards, p_principles, "closing"]),
     "competency-framework": dict(
         title="Institutional Competency Framework",
         cover='<span class="dim">Institutional</span><br>Competency Framework.',
         parts=False,
-        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes, *[lambda i=i: p_pillar(i) for i in range(6)],
+        pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes,
                "closing"]),
     "implementation-methodology": dict(
         title="Institutional Implementation Methodology",
         cover='<span class="dim">Institutional</span><br>Implementation Methodology.',
         parts=False,
         pages=[p_overview, p_method, p_phases, p_apps, p_pathways, p_standards, lambda: p_principles(with_contact=True)]),
+    # Internal reference only: full pillar definitions are kept out of the external documents.
+    "pillar-reference-internal": dict(
+        title="The Six Pillars — Internal Reference",
+        cover='<span class="dim">The Six Pillars.</span><br>Internal Reference.',
+        parts=False,
+        footer="Internal — Not for Distribution<span class=\"sep\">|</span>© 2026 Architecture of Excellence™. All rights reserved.",
+        pages=[p_matrix, *[lambda i=i: p_pillar(i) for i in range(6)]]),
 }
 
 
 def assemble(key):
     d = DOCS[key]
     total = len(d["pages"]) + 1
-    out = [cover(d["cover"])]
+    foot = d.get("footer", COPY)
+    out = [cover(d["cover"], foot)]
     for n, fn in enumerate(d["pages"], start=2):
         if fn == "closing":
             out.append(closing(n, total))
@@ -751,7 +759,7 @@ def assemble(key):
 <section class="page {cls}">
   <div class="runhead"><span class="label">{label}</span>{LOGO_SMALL}</div>
 {body}
-  <footer><span>{COPY}</span><span class="pg">{n:02d} / {total}</span></footer>
+  <footer><span>{foot}</span><span class="pg">{n:02d} / {total}</span></footer>
 </section>""")
     css = (HERE / "institutional.css").read_text()
     html = f"""<!doctype html>

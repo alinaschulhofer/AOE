@@ -10,6 +10,7 @@ const DOCS = [
   { src: 'institutional.html', pdf: 'AOE_Institutional_Framework', tag: 'A', diagrams: true },
   { src: 'competency-framework.html', pdf: 'AOE_Competency_Framework', tag: 'B' },
   { src: 'implementation-methodology.html', pdf: 'AOE_Implementation_Methodology', tag: 'C' },
+  { src: 'pillar-reference-internal.html', pdf: 'AOE_Pillar_Reference_INTERNAL', tag: 'D' },
 ];
 
 (async () => {
