@@ -100,7 +100,7 @@ CORE2 = [["Constructive Engagement", "with Reality"], ["Emotional &amp; Relation
          ["Purpose, Fulfillment", "&amp; Meaningful Engagement"], ["Intentional Action", "&amp; Continuous Development"]]
 SUB_NAMES = [
     ["Self-Awareness", "Reflective Capacity", "Accountability", "Integrity", "Openness to Feedback"],
-    ["Emotional Intelligence", "Relational Intelligence", "Effective Communication", "Conflict Resolution", "Trust &amp; Collaboration"],
+    ["Emotional Intelligence", "Interpersonal Awareness", "Effective Communication", "Conflict Resolution", "Trust &amp; Collaboration"],
     ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Connection", "Psychological Flexibility", "Stress Management"],
     ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
     ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity Integration", "Belonging &amp; Contribution"],
@@ -314,7 +314,7 @@ PILLARS = [
     dict(n="02", name="Connection", core="Emotional &amp; Relational Intelligence", tag="The Framework of Emotional and Relational Intelligence",
          intro=["Connection involves the capacity to understand ourselves and others, establish meaningful relationships, communicate effectively, and create environments characterized by trust, respect, and constructive collaboration."],
          subs=[("Emotional Intelligence", "Recognizing and understanding emotions in oneself and others."),
-               ("Relational Intelligence", "Understanding how personal behavior and interpersonal patterns influence relationships."),
+               ("Interpersonal Awareness", "Understanding how personal behavior and interpersonal patterns influence relationships."),
                ("Effective Communication", "Communicating clearly, respectfully, and constructively."),
                ("Conflict Resolution", "Addressing disagreements and relational difficulties with openness, accountability, and appropriate repair processes."),
                ("Trust &amp; Collaboration", "Building relationships that support cooperation, mutual respect, and collective effectiveness.")],
