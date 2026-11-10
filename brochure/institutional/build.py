@@ -556,7 +556,7 @@ def p_model():
 def p_matrix():
     return "Part I — The AOE Competency Framework", f"""
   <h1 class="pt"><span class="dim">Core</span> Competencies.</h1>
-  <p class="lead">Each pillar represents a core competency domain supported by specific developmental competencies.</p>
+  <p class="lead">Each pillar represents a core competency domain informed by psychological science and theory.</p>
   <figure class="matrix">{diagram_c()}</figure>
   <p class="matrix-note">The AOE competencies are developed and expressed across individual, relational, team, and organizational contexts. Their application considers both the capabilities of people and the conditions that enable or constrain their expression.</p>
 """, "competencies"
