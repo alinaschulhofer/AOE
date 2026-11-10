@@ -410,7 +410,7 @@ APPS = [
     ("Organizational Development &amp; Culture", "Institutional initiatives that address the broader conditions influencing performance and well-being, including:",
      ["Organizational culture assessment and development.", "Development of mental health and performance programs.", "Leadership and governance practices.",
       "Values and strategic alignment.", "Communication and accountability structures.", "Psychological sustainability and organizational well-being.",
-      "Change management and organizational learning."], None),
+      "Change management.", "Diversity, equity, and inclusion initiatives."], None),
     ("System-Wide Development &amp; Integration", "For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:",
      ["Shared educational frameworks.", "Organization-wide competency development.", "Development pathways for affiliated organizations.",
       "Leadership education across institutional levels.", "Institutional resource libraries."], None),
