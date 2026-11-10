@@ -211,8 +211,8 @@
   .apps-stage { flex: 1; display: flex; flex-direction: column; }
   .apps-stage h1.pt { text-align: center; margin-top: 64px; }
   .apps-lead { margin: 16px auto 0; font-size: 13.4px; line-height: 1.65; max-width: 560px; text-align: center; }
-  .apps-fig { flex: 1; display: flex; align-items: center; justify-content: center; padding-bottom: 20px; }
-  .apps-fig svg { width: 640px; }
+  .apps-fig { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 70px 0 20px; }
+  .apps-fig svg { width: 678px; }
   .apps { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; font-size: 11.9px; line-height: 1.5; }
   .appc { padding: 12px 0 12px; border-top: 1px solid var(--rule); }
   .ah2 { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
@@ -298,7 +298,9 @@
 
   /* Pathways detail page: rows with service tags */
   .pw-title { margin-top: 34px; }
-  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: space-around; padding: 0 0 10px; }
+  .pathways { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding: 30px 0 10px; }
+  .pathways .pw-row { padding: 40px 0; }
+  .pathways .pw-row:first-child { padding-top: 22px; }
   .pw-row { display: grid; grid-template-columns: 70px 1fr; column-gap: 20px; padding: 30px 0; }
   .pw-row + .pw-row { border-top: 1px solid var(--rule); }
   .pw-n { font-size: 40px; font-weight: 300; line-height: 1; color: var(--mid); letter-spacing: -.02em; }
@@ -342,6 +344,4 @@
   .cols2 p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   .eco-cols { font-size: 12.8px; }
   .method-cycle { margin-top: 36px; }
-  .pathways.cont { flex: none; justify-content: flex-start; padding-top: 86px; }
-  .pathways.cont .pw-row { padding: 44px 0; }
-  .pathways.cont .pw-row:first-child { padding-top: 22px; }
+  

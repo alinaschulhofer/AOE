@@ -183,7 +183,7 @@ def diagram_e():
     names = [["Education &amp; Development", "of Core Competencies"], ["Leadership &amp;", "Individual Development"],
              ["Team &amp; Relational", "Development"], ["Organizational", "Development &amp; Culture"],
              ["System-Wide", "Development &amp; Integration"]]
-    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-170 -46 680 420" xmlns="http://www.w3.org/2000/svg">']
+    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-158 -40 656 404" xmlns="http://www.w3.org/2000/svg">']
     o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="160"/>')
     for k in range(5):
         x, y = pol(cx, cy, 82, -90 + k * 72)
@@ -656,7 +656,7 @@ def p_pathways(part):
         {ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}
       </div>
     </div>""" for k in idx)
-    head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
+    head = ""
     cls = "pathways" if part == 0 else "pathways cont"
     return "Part III — Implementation Pathways", f'{head}<div class="{cls}">{rows}</div>', "pathways-pg"
 
