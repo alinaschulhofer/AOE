@@ -183,7 +183,7 @@ def diagram_e():
     names = [["Education &amp; Development", "of Core Competencies"], ["Leadership &amp;", "Individual Development"],
              ["Team &amp; Relational", "Development"], ["Organizational", "Development &amp; Culture"],
              ["System-Wide", "Development &amp; Integration"]]
-    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-158 -40 656 404" xmlns="http://www.w3.org/2000/svg">']
+    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-170 -46 680 420" xmlns="http://www.w3.org/2000/svg">']
     o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="160"/>')
     for k in range(5):
         x, y = pol(cx, cy, 82, -90 + k * 72)
@@ -619,7 +619,7 @@ def p_pillar(i):
 def p_method():
     return "Part II — The AOE Institutional Methodology", f"""
   <div class="arch-stage">
-    <h1 class="pt"><span class="dim">The AOE Institutional</span><br>Methodology.</h1>
+    <h1 class="pt one-line"><span class="dim">The AOE Institutional</span> Methodology.</h1>
     <p class="arch-sub">The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development. The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
     <figure class="cycle method-cycle">{diagram_d()}</figure>
     <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
