@@ -388,3 +388,6 @@
   .pw-list .ph h3 { font-size: 16.5px; }
   .principles-wrap .commit { margin-bottom: 58px; }
   .principles-pg.compact .principles-wrap .commit { margin-bottom: 30px; }
+  .pw-list { padding: 18px 0 10px; }
+  .pw-list .phase { padding: 18px 0; }
+  .pw-list .phase + .phase { padding-top: 20px; }

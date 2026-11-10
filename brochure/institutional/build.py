@@ -659,7 +659,7 @@ def p_pathways(part):
       <div class="ph"><div class="label">Pathway 0{k + 1}</div><h3>{APPS[k][0]}</h3></div>
       <div class="phb"><p class="pw-lead">{APPS[k][1]}</p>{ul(APPS[k][2], "dash two")}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}</div>
     </div>""" for k in idx)
-    head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
+    head = ""
     cls = "phases pw-list" if part == 0 else "phases pw-list cont"
     return "Part III — Implementation Pathways", f'{head}<div class="{cls}">{rows}</div>', "pathways-pg"
 
