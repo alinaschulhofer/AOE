@@ -406,3 +406,7 @@
   .legal strong { color: var(--hi); font-weight: 500; }
   .legal-h { font-size: 8.4px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--hi); margin-bottom: 7px; }
   .contact { padding: 22px 0 16px; }
+  .legal-h { text-align: center; }
+  .principles-pg.compact .principles-wrap { padding-top: 18px; }
+  .principles-pg.compact .principles-wrap .commit { margin-bottom: 18px; }
+  .principles-pg.compact .pr { padding: 12px 0; }
