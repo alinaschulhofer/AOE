@@ -372,7 +372,7 @@ PILLARS = [
 PHASE_TEXT = [
     ("Understanding the organization and its environment",
      ["The process begins with understanding the organization’s current functioning, strategic priorities, leadership structures, relationships, culture, and developmental needs.",
-      "Potential methods include stakeholder consultations, interviews, surveys, organizational assessments, and reviews of existing structures and practices.",
+      "Potential methods include stakeholder consultations, interviews, surveys, 360-degree feedback assessments, organizational assessments, and reviews of existing structures and practices.",
       "Assessment considers both individual capabilities and environmental conditions."],
      "A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement."),
     ("Translating assessment into a tailored development strategy",
@@ -403,7 +403,7 @@ APPS = [
       "Conferences, events, and institutional learning initiatives.", "Educational resources and continuing development opportunities."],
      None),
     ("Leadership &amp; Individual Development", "Targeted development for individuals operating within organizational environments, including:",
-     ["Executive coaching for leadership.", "Personal development opportunities for stakeholders.", "Individual professional development planning and ongoing advisory support."],
+     ["Executive coaching for leadership.", "360-degree feedback and leadership assessments.", "Personal development opportunities for stakeholders.", "Individual professional development planning and ongoing advisory support."],
      None),
     ("Team &amp; Relational Development", "Interventions designed to strengthen collective functioning, including:",
      ["Team development and collaboration.", "Communication and relational intelligence training.", "Leadership-team alignment.", "Mediation and conflict resolution."], None),
