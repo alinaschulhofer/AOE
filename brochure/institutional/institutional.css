@@ -309,10 +309,10 @@
   .pw-body ul.dash { margin-top: 12px; font-size: 13px; line-height: 1.5; }
   .pw-body ul.dash li + li { margin-top: 6px; }
   .pw-body .note { margin-top: 12px; font-size: 12px; line-height: 1.55; color: var(--soft); }
-  .arch-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 30px; }
+  .arch-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 22px 0 18px; }
   .arch-stage h1.pt { margin-top: 0; text-align: center; }
-  .arch-sub { margin: 18px auto 0; max-width: 600px; text-align: center; font-size: 13.4px; line-height: 1.65; color: var(--mid); }
-  .arch-fig { margin-top: 44px; }
+  .arch-sub { margin: 14px auto 0; max-width: 600px; text-align: center; font-size: 13.4px; line-height: 1.65; color: var(--mid); }
+  .arch-fig { margin: 26px auto 0; width: 92%; }
   .arch-fig svg { width: 100%; }
   .dg .xframe { fill: none; stroke: var(--hi); stroke-width: 1; }
   .dg .xmask { fill: var(--bg); }
@@ -345,5 +345,7 @@
   .eco-cols { font-size: 12.8px; }
   .method-cycle { margin-top: 36px; }
     .arch-stage h1.one-line { white-space: nowrap; font-size: 36px; }
-  .dg .xfinal { fill: var(--band2); stroke: var(--hi); stroke-width: 1; }
-  .dg .xfinal-t { fill: var(--hi); font-size: 10.4px; font-weight: 500; letter-spacing: .18em; }
+  /* Underlying purpose: sits beneath the architecture, outside its flow */
+  .purpose { margin: 20px auto 0; width: 92%; padding: 16px 32px 18px; border: 1px solid var(--rule-strong); border-radius: 14px; text-align: center; }
+  .purpose h3 { margin-top: 8px; font-size: 20px; font-weight: 400; color: var(--hi); letter-spacing: -.01em; }
+  .purpose p { margin: 8px auto 0; max-width: 560px; font-size: 12.8px; line-height: 1.6; color: var(--mid); }

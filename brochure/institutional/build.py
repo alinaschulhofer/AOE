@@ -232,7 +232,7 @@ def diagram_f():
 
 
 def diagram_g():
-    W, H = 678, 686
+    W, H = 678, 590
     o = [f'<svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="mg")]
     # Excellence: the frame that holds the whole architecture
@@ -282,11 +282,6 @@ def diagram_g():
         o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{bwid}" height="{ph}"/>')
         o.append(f'<text class="phl" x="{x + bwid / 2}" y="{py + 24}" text-anchor="middle" dominant-baseline="central">{head}</text>')
         o.append(f'<text class="xhead" x="{x + bwid / 2}" y="{py + 49}" text-anchor="middle" dominant-baseline="central">{phrase}</text>')
-        vpair(x + bwid / 2, py + ph + 8, py + ph + 44)
-    # shared outcome across both levels
-    fy, fh, fw = py + ph + 52, 46, 470
-    o.append(f'<rect class="xfinal" x="{(W - fw) / 2}" y="{fy}" width="{fw}" height="{fh}"/>')
-    o.append(f'<text class="xfinal-t" x="{W / 2}" y="{fy + fh / 2}" text-anchor="middle" dominant-baseline="central">ACTUALIZATION OF INDIVIDUAL &amp; COLLECTIVE HUMAN POTENTIAL</text>')
     o.append(f'<line class="arw" x1="{lx1}" y1="{py + ph / 2 - 5}" x2="{lx2}" y2="{py + ph / 2 - 5}" marker-end="url(#mg)"/>')
     o.append(f'<line class="arw" x1="{lx2}" y1="{py + ph / 2 + 5}" x2="{lx1}" y2="{py + ph / 2 + 5}" marker-end="url(#mg)"/>')
 
@@ -580,8 +575,13 @@ def p_architecture():
     return "Part I — The AOE Competency Framework", f"""
   <div class="arch-stage">
     <h1 class="pt"><span class="dim">The Architecture of</span><br>Sustainable Excellence.</h1>
-    <p class="arch-sub">The six AOE competency domains provide a foundation for individual development and institutional functioning. Their application is intended to strengthen psychological, relational, and behavioral capacities while supporting the organizational conditions necessary for sustainable performance and well-being.</p>
+    <p class="arch-sub">The six AOE competency domains provide an interconnected foundation for individual and institutional development. Their expression is shaped by the reciprocal relationship between human capabilities and institutional conditions, supporting sustainable high performance, well-being, and collective effectiveness.</p>
     <figure class="arch-fig">{diagram_g()}</figure>
+    <div class="purpose">
+      <div class="label">The Underlying Purpose</div>
+      <h3>Actualization of Individual &amp; Collective Human Potential</h3>
+      <p>Through the ongoing integration of psychological development, meaningful performance, well-being, and supportive institutional conditions.</p>
+    </div>
   </div>""", "arch-pg"
 
 
@@ -664,7 +664,7 @@ def p_pathways(part):
         {ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}
       </div>
     </div>""" for k in idx)
-    head = ""
+    head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
     cls = "pathways" if part == 0 else "pathways cont"
     return "Part III — Implementation Pathways", f'{head}<div class="{cls}">{rows}</div>', "pathways-pg"
 
