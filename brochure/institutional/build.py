@@ -372,7 +372,7 @@ PILLARS = [
 PHASE_TEXT = [
     ("Understanding the organization and its environment",
      ["The process begins with understanding the organization’s current functioning, strategic priorities, leadership structures, relationships, culture, and developmental needs.",
-      "Potential methods include stakeholder consultations, interviews, surveys, organizational assessments, facilitated discussions, and reviews of existing structures and practices.",
+      "Potential methods include stakeholder consultations, interviews, surveys, organizational assessments, and reviews of existing structures and practices.",
       "Assessment considers both individual capabilities and environmental conditions."],
      "A clear understanding of organizational strengths, developmental priorities, and opportunities for improvement."),
     ("Translating assessment into a tailored development strategy",
