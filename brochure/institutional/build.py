@@ -382,7 +382,7 @@ PHASE_TEXT = [
      "A tailored institutional development plan with defined priorities, interventions, and intended outcomes."),
     ("Translating the framework into practice",
      ["AOE principles and competencies are translated into educational experiences, developmental interventions, and organizational practices.",
-      "Implementation may include leadership consulting, coaching, training, facilitated dialogue, team development, and organizational change initiatives.",
+      "Implementation may include leadership consulting, coaching, training, team development, and organizational change initiatives.",
       "Activities are adapted to the organization’s size, structure, resources, and objectives."],
      "Active development of competencies and implementation of practices that support organizational effectiveness and sustainable performance."),
     ("Assessing progress and identifying opportunities for improvement",
