@@ -182,7 +182,7 @@ def diagram_e():
     names = [["Education &amp; Development", "of Core Competencies"], ["Leadership &amp;", "Individual Development"],
              ["Team &amp; Relational", "Development"], ["Organizational", "Development &amp; Culture"],
              ["System-Wide", "Development &amp; Integration"]]
-    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-170 -46 680 420" xmlns="http://www.w3.org/2000/svg">']
+    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-160 -40 660 404" xmlns="http://www.w3.org/2000/svg">']
     o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="160"/>')
     for k in range(5):
         x, y = pol(cx, cy, 82, -90 + k * 72)
@@ -625,10 +625,10 @@ def p_pillar(i):
 
 def p_method():
     return "Part II — The AOE Institutional Methodology", f"""
-  <div class="arch-stage">
+  <div class="arch-stage feature">
     <h1 class="pt one-line"><span class="dim">The AOE Institutional</span> Methodology.</h1>
     <p class="arch-sub">The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development. The methodology is designed for application across organizations, teams, and high-performance environments, with interventions tailored to the needs, priorities, and context of each institution.</p>
-    <figure class="cycle method-cycle">{diagram_d()}</figure>
+    <figure class="feature-fig method-diagram">{diagram_d()}</figure>
     <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>""", "method"
 
@@ -644,10 +644,10 @@ def p_phases():
 
 def p_apps():
     return "Part III — Institutional Applications", f"""
-  <div class="apps-stage">
-    <h1 class="pt"><span class="dim">Institutional</span> Applications.</h1>
-    <p class="apps-lead">AOE can be implemented through several interconnected developmental pathways. The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
-    <figure class="apps-fig">{diagram_e()}</figure>
+  <div class="arch-stage feature">
+    <h1 class="pt one-line"><span class="dim">Institutional</span> Applications.</h1>
+    <p class="arch-sub">AOE can be implemented through several interconnected developmental pathways. The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
+    <figure class="feature-fig apps-diagram">{diagram_e()}</figure>
   </div>""", "apps-pg"
 
 

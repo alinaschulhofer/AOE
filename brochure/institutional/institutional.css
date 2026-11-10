@@ -391,3 +391,9 @@
   .pw-list { padding: 18px 0 10px; }
   .pw-list .phase { padding: 18px 0; }
   .pw-list .phase + .phase { padding-top: 20px; }
+  /* Methodology and Applications: one shared, centred feature layout */
+  .arch-stage.feature { padding: 10px 0 24px; }
+  .feature-fig { margin: 44px auto 0; width: 100%; }
+  .feature-fig svg { width: 100%; display: block; }
+  .apps-diagram { width: 96%; }
+  .arch-stage.feature .cml { margin-top: 44px; }
