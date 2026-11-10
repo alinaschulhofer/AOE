@@ -232,7 +232,7 @@ def diagram_f():
 
 
 def diagram_g():
-    W, H = 678, 590
+    W, H = 678, 700
     o = [f'<svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="mg")]
     # Excellence: the frame that holds the whole architecture
@@ -275,11 +275,18 @@ def diagram_g():
 
     # C — intended outcomes
     vpair(173, 402, 446); vpair(505, 402, 446)
-    tier(464, "INTERACTION OF INDIVIDUAL &amp; INSTITUTIONAL EXCELLENCE")
-    py, ph = 482, 62
-    for x, t in ((bx, "Individual Excellence"), (W - bx - bwid, "Institutional Excellence")):
+    tier(464, "INTENDED INDIVIDUAL &amp; INSTITUTIONAL OUTCOMES")
+    py, ph = 482, 186
+    ind_out = ["Awareness", "Self-Regulation", "Relationships", "Purpose", "Agency", "Development"]
+    inst_out = ["Trust", "Alignment", "Culture", "Psychological Sustainability", "Adaptability", "Collective Effectiveness"]
+    for x, head, items in ((bx, "Individual Outcomes", ind_out), (W - bx - bwid, "Institutional Outcomes", inst_out)):
         o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{bwid}" height="{ph}"/>')
-        o.append(f'<text class="xhead" x="{x + bwid / 2}" y="{py + ph / 2}" text-anchor="middle" dominant-baseline="central">{t}</text>')
+        o.append(f'<text class="xhead" x="{x + 22}" y="{py + 26}" dominant-baseline="central">{head}</text>')
+        o.append(f'<line class="rule faint" x1="{x + 22}" y1="{py + 46}" x2="{x + bwid - 22}" y2="{py + 46}"/>')
+        for j, it in enumerate(items):
+            yy = py + 66 + j * 19.5
+            o.append(f'<circle class="xdot" cx="{x + 25}" cy="{yy}" r="2"/>')
+            o.append(f'<text class="xitem" x="{x + 35}" y="{yy}" dominant-baseline="central">{it}</text>')
     o.append(f'<line class="arw" x1="{lx1}" y1="{py + ph / 2 - 5}" x2="{lx2}" y2="{py + ph / 2 - 5}" marker-end="url(#mg)"/>')
     o.append(f'<line class="arw" x1="{lx2}" y1="{py + ph / 2 + 5}" x2="{lx1}" y2="{py + ph / 2 + 5}" marker-end="url(#mg)"/>')
 
@@ -554,18 +561,18 @@ def p_matrix():
 
 
 OUTCOMES = [
-    ("Self-awareness, good reality testing and judgment, accountability, and constructive engagement with feedback.",
-     "Integrity, transparency, ethical leadership, and accountability."),
-    ("Emotional intelligence, relational awareness, effective communication, healthy relationships, and constructive conflict resolution.",
-     "Trust, effective collaboration, psychological safety, team cohesion, and effective conflict management."),
-    ("Self-regulation, stress management, psychological flexibility, and the capacity for sustainable functioning under pressure.",
-     "Healthier and more sustainable working conditions, psychological safety and sustainability, resilience, and relational leadership."),
-    ("Clear direction, strategic thinking, values-based decision-making, and long-term planning.",
+    ("More accurate self-perception and reality testing, sounder judgment, greater ownership of decisions and their consequences, and constructive use of feedback.",
+     "Closer alignment between stated values and actual practice, transparent communication, ethical leadership, and consistent accountability."),
+    ("More effective emotional and relational functioning, clearer and more constructive communication, healthier relationships, and the ability to work through conflict.",
+     "Higher levels of trust, more effective collaboration, greater psychological safety, stronger team cohesion, and constructive conflict management."),
+    ("Steadier self-regulation under pressure, more effective stress management, greater psychological flexibility, and functioning that remains sustainable over time.",
+     "Healthier and more sustainable working conditions, psychological sustainability, greater resilience, and responsive leadership."),
+    ("A clearer sense of direction, more strategic thinking, decisions grounded in values, and stronger long-term planning.",
      "Shared strategic direction, leadership and team alignment, clearly defined priorities, and coordinated action."),
-    ("Purpose, intrinsic motivation, identity integration, personal and professional fulfillment, and belonging.",
-     "Legacy, meaningful collective engagement, shared purpose, belonging, commitment, and contribution."),
-    ("Autonomy, personal agency, purposeful action, adaptability, and continuous development.",
-     "Innovation, effective implementation, adaptability, and organizational improvement."),
+    ("A stronger sense of purpose, sustained intrinsic motivation, a more integrated identity, greater personal and professional fulfillment, and belonging.",
+     "Meaningful collective engagement, shared purpose, belonging, sustained commitment, and contributions that endure beyond immediate results."),
+    ("Greater autonomy and personal agency, purposeful and consistent action, adaptability to change, and continuous development.",
+     "Innovation, effective implementation, organizational adaptability, and continuous improvement of practices and processes."),
 ]
 
 
@@ -589,7 +596,8 @@ def p_outcomes():
   <p class="lead wide">The targeted outcomes below illustrate how AOE’s core competencies may be expressed at individual and institutional levels.</p>
   <div class="oc-table">
     <div class="oc-hd"><span class="label">Pillar</span><span class="label">Intended Individual Outcomes</span><span class="label">Intended Institutional Outcomes</span></div>{rows}
-  </div>""", "outcomes-pg"
+  </div>
+  <p class="oc-note">These represent intended developmental and institutional outcomes, subject to contextual conditions, implementation, and ongoing evaluation.</p>""", "outcomes-pg"
 
 
 def p_pillar(i):
