@@ -652,13 +652,12 @@ def p_apps():
 
 
 def p_pathways(part):
-    # Two pages so each pathway has room: 01–03 with the heading, then 04–05.
-    idx = range(0, 3) if part == 0 else range(3, 5)
+    idx = range(0, 5)
     # Same two-column layout as the five phases: label and title on the left, detail on the right.
     rows = "".join(f"""
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 0{k + 1}</div><h3>{APPS[k][0]}</h3></div>
-      <div class="phb"><p class="pw-lead">{APPS[k][1]}</p>{ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}</div>
+      <div class="phb"><p class="pw-lead">{APPS[k][1]}</p>{ul(APPS[k][2], "dash two")}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}</div>
     </div>""" for k in idx)
     head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
     cls = "phases pw-list" if part == 0 else "phases pw-list cont"
@@ -725,7 +724,7 @@ DOCS = {
         cover='<span class="dim">Institutional Competency Framework</span><br>&amp; Implementation Methodology.',
         parts=True,
         pages=[p_overview, p_systems, p_model, p_matrix, p_architecture, p_outcomes,
-               p_method, p_phases, p_apps, lambda: p_pathways(0), lambda: p_pathways(1), p_standards, p_principles, "closing"]),
+               p_method, p_phases, p_apps, lambda: p_pathways(0), p_standards, p_principles, "closing"]),
     "competency-framework": dict(
         title="Institutional Competency Framework",
         cover='<span class="dim">Institutional</span><br>Competency Framework.',
@@ -736,7 +735,7 @@ DOCS = {
         title="Institutional Implementation Methodology",
         cover='<span class="dim">Institutional</span><br>Implementation Methodology.',
         parts=False,
-        pages=[p_overview, p_method, p_phases, p_apps, lambda: p_pathways(0), lambda: p_pathways(1), p_standards, lambda: p_principles(with_contact=True)]),
+        pages=[p_overview, p_method, p_phases, p_apps, lambda: p_pathways(0), p_standards, lambda: p_principles(with_contact=True)]),
     # Internal reference only: full pillar definitions are kept out of the external documents.
     "pillar-reference-internal": dict(
         title="The Six Pillars — Internal Reference",

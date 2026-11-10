@@ -383,6 +383,20 @@
   .principles-wrap .commit { margin: 16px auto 34px; text-align: center; max-width: 560px; }
   .principles-pg.compact .principles-wrap .commit { margin: 12px auto 20px; }
   .dg .xnode { fill: var(--hi); }
+  /* One-page pathways: two-column bullet lists, tighter rhythm */
+  .pw-list { flex: 1; justify-content: space-evenly; padding-top: 4px; }
+  .pw-list .phase { padding: 12px 0; }
+  .pw-list .phase + .phase { padding-top: 14px; }
+  .pw-list .phb { font-size: 12px; line-height: 1.5; }
+  .pw-list .phb ul.two { columns: 2; column-gap: 22px; }
+  .pw-list .phb ul.two li { break-inside: avoid; }
+  .pw-list .phb ul.dash li + li { margin-top: 3px; }
+  .pw-list .phb .note { font-size: 11.2px; margin-top: 6px; }
+  .pw-title { margin-top: 24px; }
+  .pw-list .phase { grid-template-columns: 158px 1fr; column-gap: 26px; }
+  .pw-list .ph h3 { font-size: 16.5px; }
+  .principles-wrap .commit { margin-bottom: 58px; }
+  .principles-pg.compact .principles-wrap .commit { margin-bottom: 30px; }
 
 </style>
 </head>
@@ -417,7 +431,7 @@
       <div><span class="label">Individuals</span></div><div><span class="label">Teams</span></div><div><span class="label">Leadership</span></div><div><span class="label">Organizations</span></div>
     </div>
   </div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">02 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">02 / 8</span></footer>
 </section>
 <!-- ============ PAGE 03 ============ -->
 <section class="page method">
@@ -469,7 +483,7 @@
 </svg></figure>
     <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
   </div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">03 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">03 / 8</span></footer>
 </section>
 <!-- ============ PAGE 04 ============ -->
 <section class="page phases-pg">
@@ -495,7 +509,7 @@
       <div class="ph"><div class="label">Phase 05</div><h3>Integration &amp; Sustainability</h3><p class="sub2">Embedding development into organizational functioning</p></div>
       <div class="phb"><p>The final phase focuses on sustaining progress beyond individual programs or interventions. This may involve integrating competencies into leadership development, educational systems, organizational processes, professional development pathways, and institutional expectations. Ongoing review, internal capacity-building, and continued learning support long-term development.</p></div>
     </div></div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">04 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">04 / 8</span></footer>
 </section>
 <!-- ============ PAGE 05 ============ -->
 <section class="page apps-pg">
@@ -531,7 +545,7 @@
 <text class="exm" text-anchor="middle" dominant-baseline="central"><tspan x="170" y="158">ASSESSMENT</tspan><tspan x="170" y="170">&amp; STRATEGIC</tspan><tspan x="170" y="182">DESIGN</tspan></text>
 </svg></figure>
   </div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">05 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">05 / 8</span></footer>
 </section>
 <!-- ============ PAGE 06 ============ -->
 <section class="page pathways-pg">
@@ -539,33 +553,27 @@
 <h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1><div class="phases pw-list">
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 01</div><h3>Education &amp; Development of Core Competencies</h3></div>
-      <div class="phb"><p class="pw-lead">Development of psychological, relational, and leadership competencies through:</p><ul class="dash"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p></div>
+      <div class="phb"><p class="pw-lead">Development of psychological, relational, and leadership competencies through:</p><ul class="dash two"><li>Online courses and structured educational modules.</li><li>Workshops, seminars, and webinars.</li><li>Leadership and professional development programs.</li><li>Conferences, events, and institutional learning initiatives.</li><li>Educational resources and continuing development opportunities.</li></ul><p class="note">Programs may be tailored to executives, administrators, coaches, athletes, teams, and other stakeholder groups.</p></div>
     </div>
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 02</div><h3>Leadership &amp; Individual Development</h3></div>
-      <div class="phb"><p class="pw-lead">Targeted development for individuals operating within organizational environments, including:</p><ul class="dash"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p></div>
+      <div class="phb"><p class="pw-lead">Targeted development for individuals operating within organizational environments, including:</p><ul class="dash two"><li>Executive coaching for leadership.</li><li>Personal development opportunities for stakeholders.</li><li>Individual professional development planning and ongoing advisory support.</li></ul><p class="note">Individual work supports broader institutional objectives while respecting professional boundaries, confidentiality, and the distinction between consulting and clinical services.</p></div>
     </div>
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 03</div><h3>Team &amp; Relational Development</h3></div>
-      <div class="phb"><p class="pw-lead">Interventions designed to strengthen collective functioning, including:</p><ul class="dash"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul></div>
-    </div></div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">06 / 9</span></footer>
-</section>
-<!-- ============ PAGE 07 ============ -->
-<section class="page pathways-pg">
-  <div class="runhead"><span class="label">Implementation Pathways</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
-<div class="phases pw-list cont">
+      <div class="phb"><p class="pw-lead">Interventions designed to strengthen collective functioning, including:</p><ul class="dash two"><li>Team development and collaboration.</li><li>Communication and relational intelligence training.</li><li>Leadership-team alignment.</li><li>Mediation and conflict resolution.</li></ul></div>
+    </div>
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 04</div><h3>Organizational Development &amp; Culture</h3></div>
-      <div class="phb"><p class="pw-lead">Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul></div>
+      <div class="phb"><p class="pw-lead">Institutional initiatives that address the broader conditions influencing performance and well-being, including:</p><ul class="dash two"><li>Organizational culture assessment and development.</li><li>Development of mental health and performance programs.</li><li>Leadership and governance practices.</li><li>Values and strategic alignment.</li><li>Communication and accountability structures.</li><li>Psychological sustainability and organizational well-being.</li><li>Change management and organizational learning.</li></ul></div>
     </div>
     <div class="phase pw">
       <div class="ph"><div class="label">Pathway 05</div><h3>System-Wide Development &amp; Integration</h3></div>
-      <div class="phb"><p class="pw-lead">For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul></div>
+      <div class="phb"><p class="pw-lead">For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:</p><ul class="dash two"><li>Shared educational frameworks.</li><li>Organization-wide competency development.</li><li>Development pathways for affiliated organizations.</li><li>Leadership education across institutional levels.</li><li>Institutional resource libraries.</li></ul></div>
     </div></div>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">07 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">06 / 8</span></footer>
 </section>
-<!-- ============ PAGE 08 ============ -->
+<!-- ============ PAGE 07 ============ -->
 <section class="page standards">
   <div class="runhead"><span class="label">Institutional Standards &amp; Future Development</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
@@ -608,9 +616,9 @@
       <p class="rec"><span class="k">Status</span>Any certification or mandatory educational requirements would require further development, validation, governance arrangements, and appropriate institutional agreements.</p>
     </div></div>
   <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">08 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">07 / 8</span></footer>
 </section>
-<!-- ============ PAGE 09 ============ -->
+<!-- ============ PAGE 08 ============ -->
 <section class="page principles-pg compact">
   <div class="runhead"><span class="label">Foundational Implementation Principles</span><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"></div>
 
@@ -623,7 +631,7 @@
     <div class="logo"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE</span></div>
   </div>
   <p class="legal">Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards are developmental and subject to further refinement and validation. This document does not establish a clinical treatment protocol or an existing certification program.</p>
-  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">09 / 9</span></footer>
+  <footer><span>© 2026 Architecture of Excellence™. All rights reserved.</span><span class="pg">08 / 8</span></footer>
 </section>
 </body>
 </html>
