@@ -232,7 +232,7 @@ def diagram_f():
 
 
 def diagram_g():
-    W, H = 678, 700
+    W, H = 678, 686
     o = [f'<svg class="dg" id="diagram-g-developmental-architecture" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
          MARKERS.format(id="mg")]
     # Excellence: the frame that holds the whole architecture
@@ -276,17 +276,17 @@ def diagram_g():
     # C — intended outcomes
     vpair(173, 402, 446); vpair(505, 402, 446)
     tier(464, "INTENDED INDIVIDUAL &amp; INSTITUTIONAL OUTCOMES")
-    py, ph = 482, 186
-    ind_out = ["Awareness", "Self-Regulation", "Relationships", "Purpose", "Agency", "Development"]
-    inst_out = ["Trust", "Alignment", "Culture", "Psychological Sustainability", "Adaptability", "Collective Effectiveness"]
-    for x, head, items in ((bx, "Individual Outcomes", ind_out), (W - bx - bwid, "Institutional Outcomes", inst_out)):
+    py, ph = 482, 76
+    for x, head, phrase in ((bx, "INDIVIDUAL OUTCOMES", "High Performance &amp; Well-Being"),
+                            (W - bx - bwid, "INSTITUTIONAL OUTCOMES", "Cultures of Sustainable Excellence")):
         o.append(f'<rect class="xbox" x="{x}" y="{py}" width="{bwid}" height="{ph}"/>')
-        o.append(f'<text class="xhead" x="{x + 22}" y="{py + 26}" dominant-baseline="central">{head}</text>')
-        o.append(f'<line class="rule faint" x1="{x + 22}" y1="{py + 46}" x2="{x + bwid - 22}" y2="{py + 46}"/>')
-        for j, it in enumerate(items):
-            yy = py + 66 + j * 19.5
-            o.append(f'<circle class="xdot" cx="{x + 25}" cy="{yy}" r="2"/>')
-            o.append(f'<text class="xitem" x="{x + 35}" y="{yy}" dominant-baseline="central">{it}</text>')
+        o.append(f'<text class="phl" x="{x + bwid / 2}" y="{py + 24}" text-anchor="middle" dominant-baseline="central">{head}</text>')
+        o.append(f'<text class="xhead" x="{x + bwid / 2}" y="{py + 49}" text-anchor="middle" dominant-baseline="central">{phrase}</text>')
+        vpair(x + bwid / 2, py + ph + 8, py + ph + 44)
+    # shared outcome across both levels
+    fy, fh, fw = py + ph + 52, 46, 470
+    o.append(f'<rect class="xfinal" x="{(W - fw) / 2}" y="{fy}" width="{fw}" height="{fh}"/>')
+    o.append(f'<text class="xfinal-t" x="{W / 2}" y="{fy + fh / 2}" text-anchor="middle" dominant-baseline="central">ACTUALIZATION OF INDIVIDUAL &amp; COLLECTIVE HUMAN POTENTIAL</text>')
     o.append(f'<line class="arw" x1="{lx1}" y1="{py + ph / 2 - 5}" x2="{lx2}" y2="{py + ph / 2 - 5}" marker-end="url(#mg)"/>')
     o.append(f'<line class="arw" x1="{lx2}" y1="{py + ph / 2 + 5}" x2="{lx1}" y2="{py + ph / 2 + 5}" marker-end="url(#mg)"/>')
 
