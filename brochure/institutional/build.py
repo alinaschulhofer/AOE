@@ -742,7 +742,7 @@ DOCS = {
         title="Institutional Implementation Methodology",
         cover='<span class="dim">Institutional</span><br>Implementation Methodology.',
         parts=False,
-        pages=[p_overview, p_method, p_phases, p_apps, lambda: p_pathways(0), p_standards, lambda: p_principles(with_contact=True)]),
+        pages=[p_overview, p_method, p_phases, p_apps, lambda: p_pathways(0), p_standards, p_principles, "closing"]),
     # Internal reference only: full pillar definitions are kept out of the external documents.
     "pillar-reference-internal": dict(
         title="The Six Pillars — Internal Reference",

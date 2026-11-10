@@ -6,7 +6,7 @@ There are three coordinated documents, all built from the same source. They shar
 |---|---|---|
 | A: Comprehensive Institutional Framework & Methodology | `AOE_Institutional_Framework_dark.pdf` | 14 |
 | B: Institutional Competency Framework | `AOE_Competency_Framework_dark.pdf` | 8 |
-| C: Institutional Implementation Methodology | `AOE_Implementation_Methodology_dark.pdf` | 8 |
+| C: Institutional Implementation Methodology | `AOE_Implementation_Methodology_dark.pdf` | 9 |
 
 - `diagrams/`: each diagram as a standalone vector SVG (dark).
 - Editable source:
