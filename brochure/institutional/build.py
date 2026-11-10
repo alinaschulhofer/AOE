@@ -48,15 +48,14 @@ def diagram_a():
         m = (radii[k] + radii[k + 1]) / 2
         o.append(f'<text class="lv" x="{cx}" y="{f(cy - m)}" text-anchor="middle" dominant-baseline="central">{n}</text>')
     o.append(f'<text class="lv core" x="{cx}" y="{cy}" text-anchor="middle" dominant-baseline="central">INDIVIDUAL</text>')
-    # a reciprocal pair of arrows across each of the three boundaries, on the two lower diagonals
-    for th in (45, 135):
-        u = (cos(radians(th)), sin(radians(th)))
-        n = (-u[1], u[0])
-        for r in radii[:3]:
-            for s, (r1, r2) in ((4.5, (r - 15, r + 15)), (-4.5, (r + 15, r - 15))):
-                x1, y1 = cx + u[0] * r1 + n[0] * s, cy + u[1] * r1 + n[1] * s
-                x2, y2 = cx + u[0] * r2 + n[0] * s, cy + u[1] * r2 + n[1] * s
-                o.append(f'<line class="arw" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}" marker-end="url(#ma)"/>')
+    # symmetrical reciprocal arrows on the horizontal axis: influence runs outward and inward across all four levels
+    r1, r2 = radii[0] + 8, radii[-1] - 6
+    for side in (1, -1):
+        a, b = cx + side * r1, cx + side * r2
+        o.append(f'<line class="arw" x1="{a}" y1="{cy - 5}" x2="{b}" y2="{cy - 5}" marker-end="url(#ma)"/>')
+        o.append(f'<line class="arw" x1="{b}" y1="{cy + 5}" x2="{a}" y2="{cy + 5}" marker-end="url(#ma)"/>')
+        for r in radii[1:3]:
+            o.append(f'<circle class="xnode" cx="{cx + side * r}" cy="{cy}" r="2.6"/>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -686,8 +685,8 @@ def p_standards():
 def p_principles(with_contact=False):
     pr = "".join(f'<div class="pr"><div class="num sm">0{i + 1}</div><div><h3>{t}</h3><p>{d}</p></div></div>' for i, (t, d) in enumerate(PRINCIPLES))
     return "Foundational Implementation Principles", f"""
-  <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
   <div class="principles-wrap">
+    <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
     <p class="commit">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
     <div class="principles">{pr}</div>
   </div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
