@@ -655,17 +655,14 @@ def p_apps():
 def p_pathways(part):
     # Two pages so each pathway has room: 01–03 with the heading, then 04–05.
     idx = range(0, 3) if part == 0 else range(3, 5)
+    # Same two-column layout as the five phases: label and title on the left, detail on the right.
     rows = "".join(f"""
-    <div class="pw-row">
-      <div class="pw-n">0{k + 1}</div>
-      <div class="pw-body">
-        <h3>{APPS[k][0]}</h3>
-        <p class="pw-lead">{APPS[k][1]}</p>
-        {ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}
-      </div>
+    <div class="phase pw">
+      <div class="ph"><div class="label">Pathway 0{k + 1}</div><h3>{APPS[k][0]}</h3></div>
+      <div class="phb"><p class="pw-lead">{APPS[k][1]}</p>{ul(APPS[k][2])}{f'<p class="note">{APPS[k][3]}</p>' if APPS[k][3] else ''}</div>
     </div>""" for k in idx)
     head = '<h1 class="pt pw-title"><span class="dim">Implementation</span> Pathways.</h1>' if part == 0 else ""
-    cls = "pathways" if part == 0 else "pathways cont"
+    cls = "phases pw-list" if part == 0 else "phases pw-list cont"
     return "Part III — Implementation Pathways", f'{head}<div class="{cls}">{rows}</div>', "pathways-pg"
 
 
