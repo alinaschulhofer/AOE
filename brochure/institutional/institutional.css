@@ -349,3 +349,9 @@
   .purpose { margin: 20px auto 0; width: 92%; padding: 16px 32px 18px; border: 1px solid var(--rule-strong); border-radius: 14px; text-align: center; }
   .purpose h3 { margin-top: 8px; font-size: 20px; font-weight: 400; color: var(--hi); letter-spacing: -.01em; }
   .purpose p { margin: 8px auto 0; max-width: 560px; font-size: 12.8px; line-height: 1.6; color: var(--mid); }
+  /* Spacing refinements */
+  .about-h { font-size: 44px; margin-bottom: 44px; }
+  .eco-fig { margin-top: 40px; }
+  .levels-intro { margin-top: 38px; }
+  .method-cycle { margin-top: 62px; }
+  .method-stage .cml, .arch-stage .cml { margin-top: 46px; }
