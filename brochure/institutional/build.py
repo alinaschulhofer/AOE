@@ -438,16 +438,21 @@ PRINCIPLES = [
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
 LOGO_BLOCK = '<div class="logo{cls}"><img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe"><span>ARCHITECTURE OF EXCELLENCE{tm}</span></div>'
-COPY_TM = "© 2026 Architecture of Excellence™. All rights reserved."
+COPY_TM = "© 2026 Architecture of Excellence™. All rights reserved.<span class=\"sep\">|</span>Confidential &amp; Proprietary"
 COPY = COPY_TM
-LEGAL = ("Proprietary working framework. Institutional competency definitions, implementation pathways, and proposed standards "
-         "are developmental and subject to further refinement and validation. This document does not establish a clinical "
-         "treatment protocol or an existing certification program.")
+# Proprietary notice: draft wording for review by a qualified IP attorney before external use.
+LEGAL = """
+  <div class="legal">
+    <div class="legal-h">Proprietary &amp; Confidential Notice</div>
+    <p><strong>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</strong> Architecture of Excellence™, AOE™, and the associated names, logos, and marks are trademarks of Dr. Alina K. Schulhofer.</p>
+    <p>This document and its contents, including the Architecture of Excellence framework, methodology, competency structure, diagrams, terminology, text, and design, are the proprietary and confidential intellectual property of Dr. Alina K. Schulhofer and are protected by copyright, trademark, and other applicable laws. It is provided solely to the recipient for the purpose of evaluating a potential engagement. No license or other right is granted, expressly or by implication, by its disclosure.</p>
+    <p>Without prior written permission, no part of this document may be reproduced, distributed, published, translated, adapted, or used to create derivative works, training programs, assessments, or competing products or services, nor disclosed to anyone other than members of the recipient’s organization who need to know for that evaluation.</p>
+    <p>This document describes a non-clinical developmental framework. It does not constitute psychological diagnosis or treatment, establish a clinical treatment protocol, or represent an existing certification or accreditation program. Outcomes described are intended, not guaranteed. Competency definitions, implementation pathways, and proposed standards remain subject to further refinement and validation.</p>
+  </div>"""
 CONTACT = """
   <div class="contact">
     """ + LOGO_BLOCK.format(cls="", tm="") + """
-  </div>
-  <p class="legal">""" + LEGAL + "</p>"
+  </div>""" + LEGAL
 
 
 def ul(items, cls="dash"):
