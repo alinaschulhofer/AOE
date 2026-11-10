@@ -578,7 +578,7 @@ def p_architecture():
     <p class="arch-sub">The six AOE competency domains provide an interconnected foundation for individual and institutional development. Their expression is shaped by the reciprocal relationship between human capabilities and institutional conditions, supporting sustainable high performance, well-being, and collective effectiveness.</p>
     <figure class="arch-fig">{diagram_g()}</figure>
     <div class="purpose">
-      <div class="label">The Underlying Purpose</div>
+      <div class="label">Foundational Purpose</div>
       <h3>Actualization of Individual &amp; Collective Human Potential</h3>
       <p>Through the ongoing integration of psychological development, meaningful performance, well-being, and supportive institutional conditions.</p>
     </div>
