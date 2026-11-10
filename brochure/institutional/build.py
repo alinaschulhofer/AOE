@@ -668,7 +668,6 @@ def p_standards():
     lv = "".join(f"""
     <div class="lv-c{' future' if i == 3 else ''}">
       <div class="label">Level {i + 1}</div><h3>{t}</h3><p>{d}</p>
-      {f'<p class="rec"><span class="k">Potential recognition</span>{r}</p>' if r else '<p class="rec"><span class="k">Status</span>Any certification or mandatory educational requirements would require further development, validation, governance arrangements, and appropriate institutional agreements.</p>'}
     </div>""" for i, (t, d, r) in enumerate(LEVELS))
     return "Part IV — Institutional Standards &amp; Future Development", f"""
   <h1 class="pt"><span class="dim">Institutional Standards</span><br>&amp; Future Development.</h1>
@@ -678,7 +677,7 @@ def p_standards():
   </div>
   <figure class="steps">{diagram_f()}</figure>
   <div class="levels4">{lv}</div>
-  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system.</p>""", "standards"
+  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system. Any institutional integration or certification pathways would require joint design, development, and formal agreements with participating institutions.</p>""", "standards"
 
 
 def p_principles(with_contact=False):
