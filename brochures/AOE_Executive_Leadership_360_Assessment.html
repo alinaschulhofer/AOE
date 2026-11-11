@@ -47,7 +47,7 @@ p{text-wrap:pretty}
 strong{font-weight:500;color:var(--ink)}
 .logo path{fill:var(--ink)}
 .footer{margin-top:auto;border-top:1px solid var(--rule);height:52px;display:flex;align-items:center;
-  justify-content:space-between;font-size:10px;color:var(--body);letter-spacing:.01em;flex:none}
+  justify-content:center;text-align:center;font-size:9.5px;color:var(--dim);letter-spacing:.01em;flex:none}
 .footer a{color:inherit;text-decoration:none}
 
 /* ---------- page 1 ---------- */
@@ -84,12 +84,12 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 /* ---------- page 2 ---------- */
 .runhead{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--rule);margin-top:-6px}
 .runhead .logo{width:50px;height:auto;display:block}
-.p2 h1{margin-top:30px;font-size:31px;letter-spacing:-.02em}
+.p2 h1{margin-top:46px;font-size:31px;letter-spacing:-.02em}
 .p2 h1 b{display:inline}
 
-.invest{margin-top:22px;border:1px solid var(--line);display:grid;grid-template-columns:232px 1fr}
-.invest .fee{padding:22px 24px 20px;border-right:1px solid var(--rule);display:flex;flex-direction:column}
-.invest .incl{padding:22px 26px 20px 28px}
+.invest{margin-top:30px;border:1px solid var(--line);display:grid;grid-template-columns:232px 1fr}
+.invest .fee{padding:30px 26px 28px;border-right:1px solid var(--rule);display:flex;flex-direction:column}
+.invest .incl{padding:30px 28px 28px 30px}
 .fee .label+.label{margin-top:26px;color:var(--dim)}
 .fee .label.first{line-height:1.7}
 .price{font-size:44px;font-weight:300;line-height:1.1;letter-spacing:-.025em;color:var(--ink);margin-top:6px}
@@ -100,12 +100,13 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .fee .timing p{font-size:11px;line-height:1.5;margin-top:6px;color:var(--body)}
 .incl ul{list-style:none;margin-top:16px}
 .incl li{position:relative;padding-left:20px;font-size:12.8px;line-height:1.45;color:var(--text)}
-.incl li+li{margin-top:11px}
-.incl li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--ink)}
+.incl li+li{margin-top:14px}
+.incl li::before{content:"";position:absolute;left:1px;top:.6em;width:3.5px;height:3.5px;border-radius:50%;background:var(--ink)}
 
-.paths-head{margin-top:30px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.paths-head{margin-top:58px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 .paths{display:grid;grid-template-columns:5fr 7fr}
-.path{padding:18px 0 0}
+.path{padding:24px 0 6px}
+.path p{font-size:12.6px;line-height:1.6}
 .path:first-child{padding-right:30px;border-right:1px solid var(--rule)}
 .path:last-child{padding-left:30px}
 .path .top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
@@ -118,6 +119,9 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .scope .cols{margin-top:11px;display:grid;grid-template-columns:1fr 1fr;column-gap:44px}
 .scope p{font-size:10.6px;line-height:1.6;color:var(--dim)}
 .scope p+p{margin-top:8px}
+.scope.centered{text-align:center}
+.p2 .scope.centered{margin-top:auto;margin-bottom:40px;padding-top:28px}
+.scope.centered p{max-width:560px;margin:11px auto 0}
 </style>
 </head>
 <body>
@@ -152,7 +156,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <div class="num">02</div>
       <div>
         <h2>Stakeholder Interviews</h2>
-        <p>Confidential interviews are scheduled and conducted with 8–10 employees or other stakeholders, such as direct reports, peers, supervisors, or board members. Each interview lasts approximately one hour.</p>
+        <p>Confidential interviews are scheduled and conducted with 8–10 employees or other stakeholders, such as direct reports, peers, supervisors, or board members. Each interview lasts approximately one hour, and all individual responses are kept anonymous.</p>
       </div>
     </article>
 
@@ -160,9 +164,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <div class="num">03</div>
       <div>
         <h2>Analysis Through the AOE Framework</h2>
-        <p>Interview findings are examined through the seven pillars of the Architecture of Excellence™ framework, which serve as the leadership competencies for the assessment:</p>
-        <div class="pillars"><span>TRUTH</span><span>CONNECTION</span><span>BEING</span><span>VISION</span><span>MEANING</span><span>CREATION</span><span>EXCELLENCE</span></div>
-        <p>The analysis identifies recurring themes, strengths, potential blind spots, and differences between self-perception and stakeholder experiences.</p>
+        <p>Interview findings are examined through the six pillars of the AOE framework, which serve as the core competencies for the assessment. The analysis identifies recurring themes, strengths, potential blind spots, and differences between self-perception and stakeholder experiences.</p>
       </div>
     </article>
 
@@ -170,7 +172,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <div class="num">04</div>
       <div>
         <h2>Written Report</h2>
-        <p>A written assessment, organized around the seven AOE competencies, presents key strengths, developmental opportunities, and individualized recommendations. The report is yours to keep.</p>
+        <p>A written assessment, organized around the six AOE core competencies, presents key strengths, developmental opportunities, and individualized recommendations. The report is yours to keep.</p>
       </div>
     </article>
 
@@ -183,7 +185,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
     </article>
   </div>
 
-  <footer class="footer"><a href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a><span>01 / 02</span></footer>
+  <footer class="footer"><span>© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework.</span></footer>
 </section>
 
 <!-- ============================= PAGE 2 ============================= -->
@@ -210,10 +212,10 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <div class="label">Assessment Includes</div>
       <ul>
         <li>Initial meeting to establish process, procedure, and objectives</li>
-        <li>Scheduling and confidential interviews of 8–10 employees or other stakeholders (approximately one hour each)</li>
+        <li>Scheduling and confidential interviews of 8–10 employees or other stakeholders (approximately one hour each), with all individual responses kept anonymous</li>
         <li>Any correspondence necessary during the process</li>
-        <li>Analysis of findings through the seven-pillar AOE competency framework</li>
-        <li>Written assessment report organized around the AOE competencies, with individualized recommendations (yours to keep)</li>
+        <li>Analysis of findings through the six AOE core competencies</li>
+        <li>Written assessment report organized around the six AOE core competencies, with individualized recommendations (yours to keep)</li>
         <li>One-hour review meeting of assessment outcomes</li>
       </ul>
     </div>
@@ -226,27 +228,17 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <p>The assessment may be undertaken as an independent engagement, providing a comprehensive evaluation of leadership effectiveness and a written roadmap for continued professional development.</p>
     </article>
     <article class="path">
-      <div class="top"><div class="num">02</div><h2>Assessment Followed by Private Consulting</h2></div>
-      <p>The assessment may alternatively serve as the foundation for an individualized leadership development engagement through AOE’s 1:1 Private Consulting services.</p>
-      <p>Where continued consulting is elected, assessment findings inform a tailored developmental strategy focused on strengthening leadership competencies, addressing identified challenges, and translating insight into sustained behavioral and professional development.</p>
+      <div class="top"><div class="num">02</div><h2>Assessment + Private Consulting</h2></div>
+      <p>The assessment may also serve as a foundation for an individualized leadership development engagement through AOE’s 1:1 Private Consulting services. Assessment findings inform a tailored developmental strategy focused on strengthening leadership competencies, addressing identified challenges, and translating insight into sustained behavioral and professional development.</p>
     </article>
   </div>
-  <p class="paths-note">Continued private consulting is optional and contracted separately.</p>
 
-  <div class="scope">
+  <div class="scope centered">
     <div class="label">Professional Scope &amp; Confidentiality</div>
-    <div class="cols">
-      <div>
-        <p>The Executive Leadership 360° Assessment is a nonclinical leadership development and consulting service. Although informed by Dr. Schulhofer’s training and professional experience as a licensed psychologist, it does not constitute psychotherapy, psychological diagnosis, mental health treatment, or crisis services.</p>
-      </div>
-      <div>
-        <p>Stakeholder feedback is treated confidentially and synthesized to reduce individual identifiability. Complete anonymity cannot be guaranteed. The intended recipients and permitted uses of assessment findings are established before the engagement begins.</p>
-        <p>The assessment is intended for professional development and is not designed to serve as a standalone basis for high-stakes employment decisions.</p>
-      </div>
-    </div>
+    <p>The Executive Leadership 360° Assessment is a nonclinical leadership development consulting service. Although informed by Dr. Schulhofer’s training and professional experience as a licensed psychologist, it does not constitute psychotherapy, psychological diagnosis, mental health treatment, or crisis services. The assessment is intended for professional development. All individual responses are kept anonymous.</p>
   </div>
 
-  <footer class="footer"><a href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a><span>02 / 02</span></footer>
+  <footer class="footer"><span>© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework.</span></footer>
 </section>
 
 </body>

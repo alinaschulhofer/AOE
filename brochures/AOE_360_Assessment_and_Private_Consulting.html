@@ -47,7 +47,7 @@ p{text-wrap:pretty}
 strong{font-weight:500;color:var(--ink)}
 .logo path{fill:var(--ink)}
 .footer{margin-top:auto;border-top:1px solid var(--rule);height:52px;display:flex;align-items:center;
-  justify-content:space-between;font-size:10px;color:var(--body);letter-spacing:.01em;flex:none}
+  justify-content:center;text-align:center;font-size:9.5px;color:var(--dim);letter-spacing:.01em;flex:none}
 .footer a{color:inherit;text-decoration:none}
 
 /* ---------- page 1 ---------- */
@@ -84,7 +84,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 /* ---------- page 2 ---------- */
 .runhead{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--rule);margin-top:-6px}
 .runhead .logo{width:50px;height:auto;display:block}
-.p2 h1{margin-top:26px;font-size:31px;letter-spacing:-.02em}
+.p2 h1{margin-top:38px;font-size:31px;letter-spacing:-.02em}
 .p2 h1 b{display:inline}
 
 .invest{margin-top:22px;border:1px solid var(--line);display:grid;grid-template-columns:232px 1fr}
@@ -101,7 +101,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .incl ul{list-style:none;margin-top:13px}
 .incl li{position:relative;padding-left:20px;font-size:12.3px;line-height:1.45;color:var(--text)}
 .incl li+li{margin-top:7px}
-.incl li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--ink)}
+.incl li::before{content:"";position:absolute;left:1px;top:.6em;width:3.5px;height:3.5px;border-radius:50%;background:var(--ink)}
 
 .paths-head{margin-top:30px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 .paths{display:grid;grid-template-columns:5fr 7fr}
@@ -118,6 +118,9 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .scope .cols{margin-top:11px;display:grid;grid-template-columns:1fr 1fr;column-gap:44px}
 .scope p{font-size:10.6px;line-height:1.6;color:var(--dim)}
 .scope p+p{margin-top:8px}
+.scope.centered{text-align:center}
+.p2 .scope.centered{margin-top:auto;margin-bottom:34px;padding-top:20px}
+.scope.centered p{max-width:560px;margin:11px auto 0}
 
 /* ---------- combined brochure additions ---------- */
 .c1 .lead{margin-top:34px;max-width:610px;font-size:15.5px;line-height:1.5;color:var(--text);letter-spacing:-.005em}
@@ -133,7 +136,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .c1 .tag{border:1px solid var(--line);padding:5px 9px 4px;display:inline-block;margin-top:8px;font-size:8px}
 .c1 .gap{flex:1}
 
-.summary{margin-top:18px;display:grid;grid-template-columns:232px 1fr;border:1px solid var(--line)}
+.summary{margin-top:26px;display:grid;grid-template-columns:232px 1fr;border:1px solid var(--line)}
 .summary .total{padding:20px 24px 18px;border-right:1px solid var(--rule)}
 .summary .price{font-size:44px}
 .summary .seq{display:grid;grid-template-columns:1fr 1fr}
@@ -142,7 +145,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .seq .label{color:var(--dim)}
 .seq h3{font-weight:400;font-size:14.5px;line-height:1.3;color:var(--ink);letter-spacing:-.01em;margin-top:8px}
 .seq p{font-size:11.5px;color:var(--text);margin-top:4px;line-height:1.45}
-.duo{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+.duo{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
 .duo .box{border:1px solid var(--rule);padding:18px 20px 16px;display:flex;flex-direction:column}
 .duo .note{margin-top:auto;padding-top:12px;font-size:10.6px;line-height:1.5;color:var(--body)}
 .duo .box .label+.label{margin-top:0}
@@ -151,8 +154,8 @@ h1 b{font-weight:300;color:var(--ink);display:block}
 .duo ul{list-style:none;margin-top:12px}
 .duo li{position:relative;padding-left:17px;font-size:11.4px;line-height:1.42;color:var(--text)}
 .duo li+li{margin-top:5px}
-.duo li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--ink)}
-.cont{margin-top:14px;display:grid;grid-template-columns:232px 1fr;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0}
+.duo li::before{content:"";position:absolute;left:1px;top:.6em;width:3.5px;height:3.5px;border-radius:50%;background:var(--ink)}
+.cont{margin-top:22px;display:grid;grid-template-columns:232px 1fr;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:20px 0}
 .cont .amt{font-size:24px;color:var(--ink);letter-spacing:-.02em;line-height:1.1;margin-top:5px}
 .cont .amt small{font-size:12px;color:var(--text);letter-spacing:0}
 .cont p{font-size:11.5px;color:var(--body);line-height:1.5}
@@ -183,16 +186,15 @@ h1 b{font-weight:300;color:var(--ink);display:block}
     </div></article>
     <article class="stage"><div class="num">02</div><div>
       <h2>Stakeholder Interviews</h2>
-      <p>Confidential interviews with 8–10 employees or other stakeholders, approximately one hour each.</p>
+      <p>Confidential interviews with 8–10 employees or other stakeholders, approximately one hour each. All individual responses are kept anonymous.</p>
     </div></article>
     <article class="stage"><div class="num">03</div><div>
       <h2>Analysis Through the AOE Framework</h2>
-      <p>Findings are examined through the seven AOE pillars, which serve as the leadership competencies:</p>
-      <div class="pillars"><span>TRUTH</span><span>CONNECTION</span><span>BEING</span><span>VISION</span><span>MEANING</span><span>CREATION</span><span>EXCELLENCE</span></div>
+      <p>Findings are examined through the six pillars of the AOE framework, which serve as the core competencies for the assessment.</p>
     </div></article>
     <article class="stage"><div class="num">04</div><div>
       <h2>Written Report</h2>
-      <p>Key strengths, developmental opportunities, and recommendations, organized by AOE competency. Yours to keep.</p>
+      <p>Key strengths, developmental opportunities, and recommendations, organized around the six AOE core competencies. Yours to keep.</p>
     </div></article>
     <article class="stage"><div class="num">05</div><div>
       <h2>Review Meeting</h2>
@@ -217,7 +219,7 @@ h1 b{font-weight:300;color:var(--ink);display:block}
   </div>
   <div class="gap"></div>
 
-  <footer class="footer"><a href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a><span>01 / 02</span></footer>
+  <footer class="footer"><span>© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework.</span></footer>
 </section>
 
 <!-- ============================= PAGE 2 ============================= -->
@@ -253,10 +255,10 @@ h1 b{font-weight:300;color:var(--ink);display:block}
       <div class="hd"><span class="label">Phase I Includes</span></div>
       <ul>
         <li>Initial meeting to establish process, procedure, and objectives</li>
-        <li>Scheduling and confidential interviews of 8–10 employees or other stakeholders (approximately one hour each)</li>
+        <li>Scheduling and confidential interviews of 8–10 employees or other stakeholders (approximately one hour each), with all individual responses kept anonymous</li>
         <li>Any correspondence necessary during the process</li>
-        <li>Analysis of findings through the seven-pillar AOE competency framework</li>
-        <li>Written assessment report organized around the AOE competencies, with individualized recommendations (yours to keep)</li>
+        <li>Analysis of findings through the six AOE core competencies</li>
+        <li>Written assessment report organized around the six AOE core competencies, with individualized recommendations (yours to keep)</li>
         <li>One-hour review meeting of assessment outcomes</li>
       </ul>
       <p class="note">Estimated completion: 4–6 weeks, subject to stakeholder availability and assessment scope.</p>
@@ -286,20 +288,12 @@ h1 b{font-weight:300;color:var(--ink);display:block}
     <p>Following the initial three-month consulting engagement, clients may elect to continue on a month-to-month basis, subject to mutual agreement. Continuation is optional and allows for sustained developmental work without requiring a further three-month commitment.</p>
   </div>
 
-  <div class="scope">
+  <div class="scope centered">
     <div class="label">Professional Scope &amp; Confidentiality</div>
-    <div class="cols">
-      <div>
-        <p>The Executive Leadership 360° Assessment and 1:1 Private Consulting are nonclinical leadership development and consulting services. Although informed by Dr. Schulhofer’s training and professional experience as a licensed psychologist, they do not constitute psychotherapy, psychoanalysis, psychological diagnosis, mental health treatment, or crisis services. The consulting relationship does not establish a psychologist-patient relationship.</p>
-      </div>
-      <div>
-        <p>Stakeholder feedback is treated confidentially and synthesized to reduce individual identifiability. Complete anonymity cannot be guaranteed. The intended recipients and permitted uses of assessment findings are established before the engagement begins.</p>
-        <p>The assessment is intended for professional development and is not designed to serve as a standalone basis for high-stakes employment decisions.</p>
-      </div>
-    </div>
+    <p>The Executive Leadership 360° Assessment and 1:1 Private Consulting are nonclinical leadership development consulting services. Although informed by Dr. Schulhofer’s training and professional experience as a licensed psychologist, they do not constitute psychotherapy, psychological diagnosis, mental health treatment, or crisis services. The assessment is intended for professional development. All individual responses are kept anonymous.</p>
   </div>
 
-  <footer class="footer"><a href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a><span>02 / 02</span></footer>
+  <footer class="footer"><span>© 2026 Dr. Alina Schulhofer. All rights reserved. Architecture of Excellence™ is a proprietary framework.</span></footer>
 </section>
 
 </body>
