@@ -396,14 +396,10 @@ APPS = [
 ]
 
 LEVELS = [
-    ("Foundational Education", "Introduction to AOE principles, competencies, and their application through structured educational programs.",
-     "Completion of foundational education."),
-    ("Competency Development", "More advanced development of relevant competencies through applied learning, reflection, and demonstrated understanding.",
-     "Completion of defined competency-development requirements, with assessment appropriate to the role and learning objectives."),
-    ("Institutional Integration", "Organizations adopt and demonstrate AOE-informed practices across relevant leadership, team, and organizational functions.",
-     "Institutional participation or recognition based on documented implementation criteria."),
-    ("Institutional Standards &amp; Certification", "A potential future pathway involving formalized standards, competency requirements, evaluation procedures, and periodic review. Such a model could support recognition of institutions or qualified participants demonstrating alignment with defined AOE standards.",
-     None),
+    ('Foundational Education', 'Introduction to AOE principles, developmental dimensions, and their practical application through structured educational programs and learning experiences.', None),
+    ('Competency Development', 'Applied development of relevant psychological, relational, leadership, and organizational competencies through structured learning, reflection, practice, and feedback.', None),
+    ('Institutional Integration', 'Integration of AOE-informed competencies and practices into relevant leadership, team, educational, and organizational processes, supporting their ongoing application and development.', None),
+    ('Institutional Standards &amp; Certification', 'A proposed future pathway involving the development of defined competency standards, assessment criteria, evaluation procedures, and periodic review. Subject to further development and validation, such a model could support formal recognition or certification of participating individuals or institutions.', None),
 ]
 
 PRINCIPLES = [
@@ -659,12 +655,13 @@ def p_standards():
     return "Part IV — Institutional Standards &amp; Future Development", f"""
   <h1 class="pt"><span class="dim">Institutional Standards</span><br>&amp; Future Development.</h1>
   <div class="cols2 mt20">
-    <p>Architecture of Excellence is designed to support the progressive development of shared competencies and institutional practices.</p>
-    <p>As the framework is implemented and evaluated, it may provide the foundation for more formal educational standards, professional development pathways, and institutional recognition.</p>
+    <p>Architecture of Excellence™ is designed to support the progressive development, application, and integration of psychological, relational, leadership, and organizational competencies across institutional environments.</p>
+    <p>As the framework evolves through implementation, evaluation, and refinement, it may provide the foundation for structured educational pathways, institutional competency standards, and future recognition or certification models.</p>
   </div>
+  <div class="label steps-label">Proposed Developmental Progression</div>
   <figure class="steps">{diagram_f()}</figure>
   <div class="levels4">{lv}</div>
-  <p class="caveat">These levels represent a proposed developmental pathway, not an existing certification or accreditation system. Any institutional integration or certification pathways would require joint design, development, and formal agreements with participating institutions.</p>""", "standards"
+  <p class="caveat">These levels illustrate a proposed developmental progression rather than mandatory sequential stages or an existing certification or accreditation system. Any future standards, recognition, or certification pathways would require further development, appropriate validation, and clearly defined implementation and evaluation criteria.</p>""", "standards"
 
 
 def p_principles(with_contact=False):
