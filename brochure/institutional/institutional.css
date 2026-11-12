@@ -431,3 +431,4 @@
   .pw-list .phb ul.dash li + li { margin-top: 2px; }
   .steps-label { margin-top: 26px; text-align: center; }
   .steps-label + .steps { margin-top: 12px; }
+  .principles-wrap .commit { margin-bottom: 40px; max-width: 600px; }

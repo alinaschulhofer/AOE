@@ -403,12 +403,12 @@ LEVELS = [
 ]
 
 PRINCIPLES = [
-    ("Ecological Responsibility", "Development addresses both individual capabilities and the environmental conditions influencing behavior, performance, and well-being."),
-    ("Contextual Adaptability", "The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities."),
-    ("Psychological Depth &amp; Practical Accessibility", "The methodology draws on psychoanalytic, relational, and systemic perspectives while translating complex psychological concepts into accessible, practical approaches."),
-    ("Integration Over Isolation", "Competencies are interconnected and should not be treated as entirely independent skills. Institutional development considers their relationships and combined influence."),
-    ("Sustainable Excellence", "High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability."),
-    ("Continuous Development", "Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement."),
+    ('Individual &amp; Systems Responsibility', 'Development considers both individual capabilities and the relational, organizational, and broader environmental conditions influencing behavior, performance, and well-being.'),
+    ('Contextual Adaptability', 'The framework provides a consistent conceptual foundation while allowing implementation to reflect each organization’s needs, culture, resources, and priorities.'),
+    ('Psychological Depth &amp; Practical Accessibility', 'The methodology integrates insights from psychoanalytic, relational, systemic, and performance psychology to translate complex psychological concepts into accessible, practical applications.'),
+    ('Integration Over Isolation', 'Competencies are interconnected rather than isolated. Institutional development considers their relationships, interactions, and combined influence on individual and collective functioning.'),
+    ('Sustainable Excellence', 'High performance is pursued alongside psychological health, meaningful development, ethical responsibility, and organizational sustainability.'),
+    ('Continuous Development', 'Excellence is understood as an ongoing process of reflection, learning, refinement, and adaptation rather than a fixed achievement.'),
 ]
 
 LOGO_SMALL = '<img class="on-dark" src="aoe-logo.svg" alt="aoe"><img class="on-light" src="aoe-logo-dark.svg" alt="aoe">'
@@ -669,7 +669,7 @@ def p_principles(with_contact=False):
     return "Foundational Implementation Principles", f"""
   <div class="principles-wrap">
     <h1 class="pt"><span class="dim">Foundational Implementation</span><br>Principles.</h1>
-    <p class="commit">All applications of the AOE Institutional Framework are guided by the following commitments.</p>
+    <p class="commit">The AOE Institutional Framework is guided by six foundational principles that inform its application across individuals, teams, organizations, and broader institutional systems.</p>
     <div class="principles">{pr}</div>
   </div>{CONTACT if with_contact else ""}""", "principles-pg" + (" compact" if with_contact else "")
 
