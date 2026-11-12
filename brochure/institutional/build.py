@@ -501,7 +501,7 @@ def p_overview():
     </div>
     <div class="quote">
       <div class="label">Excellence</div>
-      <p>Excellence represents the integration of the six primary dimensions: targeting not simply the achievement of exceptional outcomes, but the ongoing development of the people, relationships, and conditions that make those outcomes possible and sustainable.</p>
+      <p>Excellence represents the integration of the six primary dimensions, emphasizing not simply the achievement of exceptional outcomes, but the ongoing development of the individual, relational, and organizational conditions that make excellence both possible and psychologically sustainable.</p>
     </div>
     <div class="label dims-h">Applications Across the High-Performance Ecosystem</div>
     <div class="dims">
