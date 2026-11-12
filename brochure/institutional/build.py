@@ -537,7 +537,7 @@ EXCELLENCE_BLOCK = """
   <div class="excellence">
     <div class="ex-h"><h2>Excellence</h2><div class="label tag">The Integration of the Six Pillars</div></div>
     <div class="ex-body">
-      <p>AOE’s philosophy views excellence not as an isolated competency or a final destination. It represents the integration and ongoing expression of the six pillars across individual functioning, relationships, leadership, and organizational life. At an institutional level, this means pursuing exceptional outcomes while cultivating the human and organizational conditions necessary to achieve and sustain them.</p>
+      <p>Within the AOE Framework, Excellence is neither an isolated competency nor a final destination. It represents the ongoing integration and expression of the six pillars across individual, relational, leadership, and organizational functioning. At an institutional level, Excellence involves pursuing exceptional outcomes while cultivating the human, relational, and organizational conditions necessary to achieve and sustain them.</p>
     </div>
   </div>"""
 
@@ -546,8 +546,8 @@ def p_model():
     return "Part I — The AOE Competency Framework", f"""
   <h1 class="pt"><span class="dim">The</span> Framework.</h1>
   <div class="cols2 mt20 p1">
-    <p>The AOE philosophy translates six core psychological principles into capacities to support individual development, team functioning, and organizational excellence.</p>
-    <p>The six pillars are interconnected developmental dimensions rather than sequential stages: each informs and depends on the others, and Excellence emerges from their integration.</p>
+    <p>The AOE Framework organizes six interconnected developmental dimensions into a comprehensive approach to strengthening individual capacities, relational and team functioning, and organizational effectiveness.</p>
+    <p>The six pillars represent interconnected developmental dimensions rather than sequential stages. Each informs and reinforces the others, while Excellence emerges through their ongoing integration.</p>
   </div>
   <figure class="pillar-fig">{diagram_b()}</figure>
 {EXCELLENCE_BLOCK}""", "part1"
