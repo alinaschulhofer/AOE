@@ -414,3 +414,6 @@
   .legal { text-align: center; }
   /* Plain letters instead of "tt"/"ff" ligatures so copied or searched PDF text stays intact */
   body { font-variant-ligatures: no-common-ligatures; font-feature-settings: "liga" 0; }
+  /* Ecological intro: wider first column so both paragraphs end on the same line */
+  .eco-cols { column-count: auto; display: grid; grid-template-columns: 1.35fr 1fr; column-gap: 34px; }
+  .eco-cols p { margin: 0; }

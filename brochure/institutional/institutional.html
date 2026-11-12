@@ -423,6 +423,9 @@
   .legal { text-align: center; }
   /* Plain letters instead of "tt"/"ff" ligatures so copied or searched PDF text stays intact */
   body { font-variant-ligatures: no-common-ligatures; font-feature-settings: "liga" 0; }
+  /* Ecological intro: wider first column so both paragraphs end on the same line */
+  .eco-cols { column-count: auto; display: grid; grid-template-columns: 1.35fr 1fr; column-gap: 34px; }
+  .eco-cols p { margin: 0; }
 
 </style>
 </head>
@@ -465,7 +468,7 @@
 
   <h1 class="pt"><span class="dim">An Ecological</span> Approach to Excellence.</h1>
   <div class="cols2 mt20 eco-cols">
-    <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are bidirectional and can manifest in a variety of ways.</p>
+    <p>Individual performance, team effectiveness, and organizational functioning emerge from the dynamic interplay between people and the environments in which they operate. These relationships are reciprocal, with individuals both shaping and being shaped by the systems of which they are part.</p>
     <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance and well-being.</p>
   </div>
   <figure class="eco-fig"><svg class="dg" id="diagram-a-ecological-systems" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">

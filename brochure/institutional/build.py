@@ -521,7 +521,7 @@ def p_systems():
     return "An Ecological Approach", f"""
   <h1 class="pt"><span class="dim">An Ecological</span> Approach to Excellence.</h1>
   <div class="cols2 mt20 eco-cols">
-    <p>Individual performance, team effectiveness, and organizational functioning are shaped by the environments in which people operate. These dynamics are bidirectional and can manifest in a variety of ways.</p>
+    <p>Individual performance, team effectiveness, and organizational functioning emerge from the dynamic interplay between people and the environments in which they operate. These relationships are reciprocal, with individuals both shaping and being shaped by the systems of which they are part.</p>
     <p>Leadership influences organizational culture and individual behavior. Organizational structures shape relationships and decision-making processes, while team dynamics affect individual performance and well-being.</p>
   </div>
   <figure class="eco-fig">{diagram_a()}
