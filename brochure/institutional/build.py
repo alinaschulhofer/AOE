@@ -388,22 +388,11 @@ PHASE_TEXT = [
 ]
 
 APPS = [
-    ("Education &amp; Development of Core Competencies", "Development of psychological, relational, and leadership competencies through:",
-     ["Online courses and structured educational modules.", "Workshops, seminars, and webinars.", "Leadership and professional development programs.",
-      "Conferences, events, and institutional learning initiatives.", "Educational resources and continuing development opportunities."],
-     None),
-    ("Leadership &amp; Individual Development", "Targeted development for individuals operating within organizational environments, including:",
-     ["Executive coaching for leadership.", "360-degree feedback and leadership assessments.", "Personal development opportunities for stakeholders.", "Individual professional development planning and ongoing advisory support."],
-     None),
-    ("Team &amp; Relational Development", "Interventions designed to strengthen collective functioning, including:",
-     ["Team development and collaboration.", "Communication and relational intelligence training.", "Leadership-team alignment.", "Mediation and conflict resolution.", "Team 360 and team effectiveness assessments."], None),
-    ("Organizational Development &amp; Culture", "Institutional initiatives that address the broader conditions influencing performance and well-being, including:",
-     ["Organizational culture and climate assessments, including multi-stakeholder feedback.", "Development of mental health and performance programs.", "Leadership and governance practices.",
-      "Values and strategic alignment.", "Communication and accountability structures.", "Psychological sustainability and organizational well-being.",
-      "Change management.", "Diversity, equity, and inclusion initiatives."], None),
-    ("System-Wide Development &amp; Integration", "For institutions overseeing multiple organizations, departments, or affiliated bodies, AOE may support broader initiatives such as:",
-     ["Shared educational frameworks.", "Organization-wide competency development.", "Development pathways for affiliated organizations.",
-      "Leadership education across institutional levels.", "Institutional resource libraries."], None),
+    ('Education &amp; Development of Core Competencies', 'Development of psychological, relational, and leadership competencies through:', ['Structured educational programs and online learning modules.', 'Workshops, seminars, and webinars.', 'Leadership and professional development programs.', 'Conferences, institutional events, and facilitated learning experiences.', 'Educational resources and continuing professional development.'], None),
+    ('Leadership &amp; Individual Development', 'Targeted psychological, leadership, and professional development for individuals operating within institutional and high-performance environments, including:', ['Executive coaching and leadership advisory.', 'Individual 360-degree feedback and leadership assessments.', 'Psychological and relational competency development.', 'Individualized development planning and ongoing strategic support.'], None),
+    ('Team &amp; Relational Development', 'Interventions designed to strengthen relational dynamics, collaboration, and collective effectiveness, including:', ['Team development and collaborative effectiveness.', 'Communication, emotional intelligence, and relational intelligence training.', 'Leadership-team alignment and development.', 'Mediation and conflict resolution.', 'Team 360-degree feedback and effectiveness assessments.'], None),
+    ('Organizational Development &amp; Culture', 'Institutional initiatives designed to strengthen organizational culture, leadership practices, and the conditions influencing performance, collaboration, and psychological well-being, including:', ['Organizational culture assessments, including multi-stakeholder feedback.', 'Development of mental health, well-being, and performance programs.', 'Leadership, governance, and accountability practices.', 'Organizational values and strategic alignment.', 'Psychological sustainability and healthy high-performance environments.', 'Organizational change and transformation initiatives.', 'Diversity, equity, inclusion, and belonging initiatives.'], None),
+    ('Institutional &amp; Systems-Level Development', 'For institutions, governing bodies, and networks overseeing or coordinating multiple organizations, departments, or affiliated entities, AOE supports coordinated development and alignment across interconnected systems, including:', ['Shared educational and competency development frameworks.', 'Cross-organizational leadership and professional development.', 'Institutional alignment and collaborative initiatives.', 'Development pathways for affiliated organizations and stakeholder groups.', 'Institutional educational resources and knowledge-sharing systems.'], None),
 ]
 
 LEVELS = [

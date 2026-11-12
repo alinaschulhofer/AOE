@@ -421,3 +421,11 @@
   .dg .phn.app-l { font-size: 14.6px; }
   .dg .exm.core-t { font-size: 7.6px; letter-spacing: .1em; }
   .apps-diagram { width: 100%; margin-top: 70px; }
+  .pw-list .phb ul.dash { color: var(--hi); }
+  /* Fit revised pathway content on one page */
+  .pw-list { padding: 4px 0 4px; }
+  .pw-list .phase { padding: 12px 0; }
+  .pw-list .phase + .phase { padding-top: 13px; }
+  .pw-list .phb { font-size: 11.8px; line-height: 1.46; }
+  .pw-list .phb ul.dash { margin-top: 6px; }
+  .pw-list .phb ul.dash li + li { margin-top: 2px; }
