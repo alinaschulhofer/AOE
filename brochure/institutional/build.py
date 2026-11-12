@@ -510,10 +510,10 @@ def p_overview():
   </div>""", "overview"
 
 
-LEVELS4 = [("Individual", "Developing core psychological, emotional, and relational capacities, including self-awareness, emotional intelligence, and interpersonal skills."),
-           ("Relational &amp; Team", "Strengthening relational patterns, communication, trust, collaboration, and collective functioning."),
-           ("Organizational", "Improving the internal functioning of the organization: its leadership practices, culture, structures, processes, and working conditions."),
-           ("Broader Systems", "Supporting alignment, shared practices, and the development of competencies across the institutional and social environments.")]
+LEVELS4 = [("Individual", "Developing core psychological, emotional, behavioral, and relational capacities, including self-awareness, emotional intelligence, self-regulation, and interpersonal effectiveness."),
+           ("Relational &amp; Team", "Strengthening relational dynamics, communication, trust, collaboration, conflict resolution, and collective effectiveness."),
+           ("Organizational", "Strengthening organizational functioning through leadership practices, culture, structures, processes, and working conditions."),
+           ("Broader Systems", "Supporting alignment, collaboration, and shared standards across institutions, stakeholder networks, and broader professional and societal contexts.")]
 
 
 def p_systems():
@@ -527,9 +527,9 @@ def p_systems():
   <figure class="eco-fig">{diagram_a()}
     <figcaption>Bidirectional influence across all four levels</figcaption>
   </figure>
-  <p class="levels-intro">AOE targets transformation at four main interconnected levels:</p>
+  <p class="levels-intro">AOE approaches development and transformation across four interconnected levels:</p>
   <div class="levels-row">{lv}</div>
-  <p class="closing-line">The framework recognizes that sustainable excellence requires attention to both <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
+  <p class="closing-line">The framework recognizes that sustainable excellence requires attention to <strong>personal capacities, collective functioning, and environmental conditions</strong>. Individuals alone cannot compensate for ineffective organizational structures, just as structural improvements cannot replace individual responsibility and development.</p>
 """, "systems"
 
 
