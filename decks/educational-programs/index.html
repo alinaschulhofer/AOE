@@ -120,17 +120,13 @@
   .framework p:not(.lead) { font-size: 15.5px; }
 
   /* 9 — pathways */
-  .svc-list { margin-top: 30px; border-top: 1px solid var(--accent-strong); }
-  .svc { display: grid; grid-template-columns: 44px 178px 1fr; gap: 0 4px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
-  .svc > div:nth-child(2) { padding-right: 20px; }
-  .svc .n { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; margin-top: 54px; }
+  .item { display: grid; grid-template-columns: 44px 1fr; border-top: 1px solid var(--rule); padding: 30px 0 48px; }
+  .item .n { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-size: 9px; font-weight: 500; letter-spacing: .04em; color: var(--accent); }
-  .svc h3 { margin: 3px 0 9px; }
-  .svc p { font-size: 14px; line-height: 1.62; }
-  .svc p + p { margin-top: 10px; }
-  .areas { list-style: none; margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
-  .areas li { font-size: 12.5px; line-height: 1.5; color: var(--ink); padding: 9px 0; border-top: 1px solid var(--rule); }
-  .fine { margin-top: 22px; font-size: 11.5px; line-height: 1.65; color: var(--ink3); }
+  .item h3 { margin: 3px 0 10px; font-size: 18px; min-height: 47px; }
+  .item p { font-size: 15px; }
+  .fine { border-top: 1px solid var(--rule); padding-top: 18px; font-size: 11.5px; line-height: 1.65; color: var(--ink3); }
 
   /* 10 — inquiries */
   .partner { text-align: center; padding-top: 250px; }
@@ -333,42 +329,28 @@
 </section>
 
 <!-- 9 -->
-<section class="page" data-label="Other Pathways for Engagement">
-  <h1 style="font-size:38px"><em>Other Pathways</em> for Engagement.</h1>
-  <p class="lead" style="margin-top:24px;font-size:16.5px">Beyond its educational programs, the <span class="tm">Architecture of Excellence™</span> framework informs Dr. Alina Schulhofer’s work with individuals and organizations through private coaching, organizational consulting, and concierge psychotherapy.</p>
-  <div class="svc-list">
-    <div class="svc">
-      <div class="n">01</div>
-      <div><h3>Executive Coaching</h3><span class="label">1:1 · High Performance</span></div>
-      <div>
-        <p>Private, one-on-one coaching for executives, founders, athletes, creatives, and other ambitious professionals. Grounded in the <span class="tm">Architecture of Excellence™</span> framework, the work addresses the psychological patterns, relational dynamics, and unconscious forces that shape what a person is able to achieve and sustain.</p>
-        <p>Engagements are individualized, retainer-based, and structured over a minimum of three months.</p>
-      </div>
-    </div>
-    <div class="svc">
-      <div class="n">02</div>
-      <div><h3>Organizational Consulting</h3><span class="label">Teams &amp; Organizations</span></div>
-      <div>
-        <p>Partnership with organizations, businesses, teams, and mission-driven ventures seeking to strengthen leadership, improve alignment, resolve conflict, and cultivate environments that support both high performance and psychological well-being.</p>
-        <ul class="areas">
-          <li>Strategic guidance through transformation, restructuring, and organizational change</li>
-          <li>Executive advisory and leadership development</li>
-          <li>Mediation and conflict resolution in high-stakes environments</li>
-          <li>Mental health and performance program design and advisory</li>
-          <li>Team alignment, cohesion, and relational well-being</li>
-          <li>Organizational culture, psychological safety, and sustainable performance</li>
-        </ul>
-      </div>
-    </div>
-    <div class="svc">
-      <div class="n">03</div>
-      <div><h3>Concierge Therapy</h3><span class="label">Virtual · Private</span></div>
-      <div>
-        <p>As a licensed psychologist in Florida and New York, Dr. Schulhofer offers concierge-style psychotherapy, grounded in a relational psychoanalytic approach, for individuals, couples, and families across both states.</p>
-      </div>
-    </div>
+<section class="page" data-label="Other Pathways for Engagement" style="padding-top:210px">
+  <h1><em>Other Pathways</em><br>for Engagement.</h1>
+  <p class="lead" style="margin-top:26px;font-size:17px">Beyond its educational programs, <span class="tm">Architecture of Excellence™</span> designs highly individualized engagements that may integrate executive and high-performance coaching, leadership development, team interventions, and educational components.</p>
+  <div class="grid4">
+    <div class="item"><div class="n">01</div><div>
+      <h3>Organizational Consulting</h3>
+      <p>Partnership with teams, businesses, and organizations, customized following an initial organizational assessment.</p>
+    </div></div>
+    <div class="item"><div class="n">02</div><div>
+      <h3>Executive &amp; High-Performance Coaching</h3>
+      <p>1:1 coaching for executives, founders, elite athletes, and other ambitious professionals.</p>
+    </div></div>
+    <div class="item"><div class="n">03</div><div>
+      <h3>Leadership Development</h3>
+      <p>Psychologically informed leadership development, including the Leadership 360° Assessment.</p>
+    </div></div>
+    <div class="item"><div class="n">04</div><div>
+      <h3>Mental Health &amp; Performance Program Design</h3>
+      <p>Advisory and design of mental health and performance programs for teams and organizations.</p>
+    </div></div>
   </div>
-  <p class="fine">Coaching, consulting, and educational programs are non-clinical services focused on growth, leadership, and performance. They do not constitute psychotherapy, mental health treatment, or crisis services.</p>
+  <p class="fine">Coaching and consulting are non-clinical services focused on personal growth and leadership development.</p>
 </section>
 
 <!-- 10 -->
