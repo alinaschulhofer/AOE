@@ -437,3 +437,4 @@
   .legal p + p { margin-top: 7px; }
   .legal-h, .legal-c { text-align: center; }
   .legal-c { margin-bottom: 4px; }
+  .legal { text-align: center; }
