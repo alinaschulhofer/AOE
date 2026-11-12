@@ -73,7 +73,6 @@
   .cover .wordmark { font-size: 8.6px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 12px; }
   .cover h1 { font-size: 32px; line-height: 1.3; letter-spacing: -.02em; margin-top: 88px; }
 
-  /* 2 — framework */
   .band { height: 150px; background: var(--img-wide) center 62%/cover; margin: 34px 0 30px; }
 
   /* 3 — overview */
@@ -117,20 +116,30 @@
   .frow .when { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--ink); }
   .frow p { font-size: 14px; line-height: 1.6; }
 
-  /* 9 — pathways */
-  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; margin-top: 44px; }
-  .item { display: grid; grid-template-columns: 44px 1fr; border-top: 1px solid var(--rule); padding: 26px 0 30px; }
-  .item .n { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 9px; font-weight: 500; letter-spacing: .04em; color: var(--accent); }
-  .item h3 { margin: 3px 0 10px; }
-  .item p { font-size: 14.5px; }
+  /* 2 — framework */
+  .framework p:not(.lead) { font-size: 15.5px; }
 
-  /* 10 — founder & inquiries */
-  .contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-  .contact { display: block; padding: 15px 0; text-align: center; border: 1px solid var(--accent-strong); color: var(--ink); text-decoration: none; font-size: 14px; letter-spacing: .01em; }
-  .founder p { font-size: 15.5px; }
-  .founder .lead { font-size: 18.5px !important; }
-  .notice { position: absolute; left: 58px; right: 58px; bottom: 76px; border: 1px solid var(--rule); padding: 16px 26px; text-align: center; }
+  /* 9 — pathways */
+  .svc-list { margin-top: 30px; border-top: 1px solid var(--accent-strong); }
+  .svc { display: grid; grid-template-columns: 44px 178px 1fr; gap: 0 4px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+  .svc > div:nth-child(2) { padding-right: 20px; }
+  .svc .n { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 500; letter-spacing: .04em; color: var(--accent); }
+  .svc h3 { margin: 3px 0 9px; }
+  .svc p { font-size: 14px; line-height: 1.62; }
+  .svc p + p { margin-top: 10px; }
+  .areas { list-style: none; margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  .areas li { font-size: 12.5px; line-height: 1.5; color: var(--ink); padding: 9px 0; border-top: 1px solid var(--rule); }
+  .fine { margin-top: 22px; font-size: 11.5px; line-height: 1.65; color: var(--ink3); }
+
+  /* 10 — inquiries */
+  .partner { text-align: center; padding-top: 250px; }
+  .partner .lead { max-width: 540px; margin: 28px auto 0; font-size: 17px; }
+  .partner .lead + .lead { margin-top: 18px; }
+  .contact { display: block; width: 400px; margin: 40px auto 0; padding: 16px 0; text-align: center; border: 1px solid var(--accent-strong); color: var(--ink); text-decoration: none; font-size: 15px; letter-spacing: .01em; }
+  .closing { position: absolute; left: 58px; right: 58px; bottom: 76px; border-top: 1px solid var(--rule); padding-top: 34px; }
+  .closing svg { width: 106px; height: 40px; color: var(--ink); }
+  .notice { border: 1px solid var(--rule); margin-top: 26px; padding: 16px 26px; }
   .notice p { font-size: 10.5px; line-height: 1.7; color: var(--ink3); }
 </style>
 </head>
@@ -145,18 +154,14 @@
 </section>
 
 <!-- 2 -->
-<section class="page" data-label="The Framework">
+<section class="page framework" data-label="The Framework">
   <h1><em>The</em> Framework.</h1>
-  <p class="lead" style="margin-top:26px">Developed by Dr. Alina Schulhofer, <span class="tm">Architecture of Excellence™</span> is a proprietary psychology-based framework that examines the individual, relational, and systemic conditions influencing human development, performance, and organizational functioning.</p>
-  <div class="band"></div>
-  <p>Grounded in six interconnected foundational pillars—Truth, Connection, Being, Vision, Meaning, and Creation—the framework provides an integrated approach to understanding and developing the capacities and conditions that support excellence, well-being, and long-term sustainability.</p>
+  <div class="band" style="margin:30px 0 32px;height:190px"></div>
+  <p class="lead">Developed by Dr. Alina Schulhofer, <span class="tm">Architecture of Excellence™</span> is a proprietary psychology-based framework that examines the individual, relational, and systemic conditions influencing human development, performance, and organizational functioning.</p>
+  <p style="margin-top:22px">Grounded in six interconnected foundational pillars—Truth, Connection, Being, Vision, Meaning, and Creation—the framework provides an integrated approach to understanding and developing the capacities and conditions that support excellence, well-being, and long-term sustainability.</p>
   <p>Excellence is understood not as an isolated achievement, but as an evolving outcome of how these dimensions interact over time.</p>
-  <div class="strip" style="grid-template-columns:repeat(6,1fr);margin-top:28px">
-    <div><small>01</small>Truth</div><div><small>02</small>Connection</div><div><small>03</small>Being</div>
-    <div><small>04</small>Vision</div><div><small>05</small>Meaning</div><div><small>06</small>Creation</div>
-  </div>
-  <h2 style="margin-top:46px">From Framework to Educational Application</h2>
-  <p style="margin-top:16px">The <span class="tm">Architecture of Excellence™</span> educational programs translate this integrated framework into structured learning experiences addressing individual development, leadership, and organizational culture.</p>
+  <h2 style="margin-top:50px;padding-top:44px;border-top:1px solid var(--rule)">From Framework to Educational Application</h2>
+  <p style="margin-top:18px">The <span class="tm">Architecture of Excellence™</span> educational programs translate this integrated framework into structured learning experiences addressing individual development, leadership, and organizational culture.</p>
   <p>Through applied teaching, reflection, discussion, and experiential learning, participants explore the psychological and relational dynamics influencing performance and identify opportunities for meaningful development within their respective contexts.</p>
 </section>
 
@@ -329,48 +334,54 @@
 
 <!-- 9 -->
 <section class="page" data-label="Other Pathways for Engagement">
-  <h1><em>Other Pathways</em><br>for Engagement.</h1>
-  <p class="lead" style="margin-top:26px;font-size:17px">Beyond its educational programs, <span class="tm">Architecture of Excellence™</span> provides psychology-based consulting and advisory services addressing individual leadership, organizational functioning, relational dynamics, and the human dimensions of performance.</p>
-  <div class="band" style="margin:32px 0 0;height:124px"></div>
-  <div class="grid4" style="margin-top:34px">
-    <div class="item"><div class="n">01</div><div>
-      <h3>Executive &amp; Leadership Advisory</h3>
-      <p>Individual executive consulting, leadership development, and strategic advisory support for leaders navigating complex professional responsibilities, interpersonal dynamics, and organizational demands.</p>
-    </div></div>
-    <div class="item"><div class="n">02</div><div>
-      <h3>Organizational Culture &amp; Performance Consulting</h3>
-      <p>Assessment, consultation, and advisory services addressing organizational culture, relational dynamics, leadership alignment, organizational change, and the conditions supporting sustainable performance.</p>
-    </div></div>
-    <div class="item"><div class="n">03</div><div>
-      <h3>Conflict Resolution &amp; Relational Consulting</h3>
-      <p>Mediation, conflict resolution, and consultation addressing interpersonal, team, organizational, and cross-cultural challenges, including communication breakdowns, relational tensions, and complex group dynamics.</p>
-    </div></div>
-    <div class="item"><div class="n">04</div><div>
-      <h3>Mental Health, Well-Being &amp; Performance Program Development</h3>
-      <p>Strategic consultation and development of programs supporting mental health, psychological well-being, leadership, and performance within organizations, institutions, and high-performance environments.</p>
-    </div></div>
+  <h1 style="font-size:38px"><em>Other Pathways</em> for Engagement.</h1>
+  <p class="lead" style="margin-top:24px;font-size:16.5px">Beyond its educational programs, the <span class="tm">Architecture of Excellence™</span> framework informs Dr. Alina Schulhofer’s work with individuals and organizations through private coaching, organizational consulting, and concierge psychotherapy.</p>
+  <div class="svc-list">
+    <div class="svc">
+      <div class="n">01</div>
+      <div><h3>Executive Coaching</h3><span class="label">1:1 · High Performance</span></div>
+      <div>
+        <p>Private, one-on-one coaching for executives, founders, athletes, creatives, and other ambitious professionals. Grounded in the <span class="tm">Architecture of Excellence™</span> framework, the work addresses the psychological patterns, relational dynamics, and unconscious forces that shape what a person is able to achieve and sustain.</p>
+        <p>Engagements are individualized, retainer-based, and structured over a minimum of three months.</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="n">02</div>
+      <div><h3>Organizational Consulting</h3><span class="label">Teams &amp; Organizations</span></div>
+      <div>
+        <p>Partnership with organizations, businesses, teams, and mission-driven ventures seeking to strengthen leadership, improve alignment, resolve conflict, and cultivate environments that support both high performance and psychological well-being.</p>
+        <ul class="areas">
+          <li>Strategic guidance through transformation, restructuring, and organizational change</li>
+          <li>Executive advisory and leadership development</li>
+          <li>Mediation and conflict resolution in high-stakes environments</li>
+          <li>Mental health and performance program design and advisory</li>
+          <li>Team alignment, cohesion, and relational well-being</li>
+          <li>Organizational culture, psychological safety, and sustainable performance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="n">03</div>
+      <div><h3>Concierge Therapy</h3><span class="label">Virtual · Private</span></div>
+      <div>
+        <p>As a licensed psychologist in Florida and New York, Dr. Schulhofer offers concierge-style psychotherapy, grounded in a relational psychoanalytic approach, for individuals, couples, and families across both states.</p>
+      </div>
+    </div>
   </div>
+  <p class="fine">Coaching, consulting, and educational programs are non-clinical services focused on growth, leadership, and performance. They do not constitute psychotherapy, mental health treatment, or crisis services.</p>
 </section>
 
 <!-- 10 -->
-<section class="page founder" data-label="About the Founder &amp; Inquiries">
-  <h1><em>About</em> the Founder.</h1>
-  <p class="lead" style="margin-top:26px;font-size:17px">Dr. Alina Schulhofer is a licensed psychologist, executive coach, and organizational consultant whose work focuses on the psychological and relational dimensions of human performance, leadership, and organizational functioning.</p>
-  <p style="margin-top:18px">She is the founder and developer of <span class="tm">Architecture of Excellence™</span>, a proprietary psychology-based framework integrating psychoanalytic perspectives, high-performance psychology, and a holistic understanding of human development.</p>
-  <p>Her professional experience includes working with high-performing individuals, professional athletes, executives, and organizational leaders across diverse contexts.</p>
-
-  <div style="border-top:1px solid var(--rule);margin-top:44px;padding-top:40px">
-    <h2>Explore a Partnership.</h2>
-    <p style="margin-top:16px"><span class="tm">Architecture of Excellence™</span> collaborates with organizations, institutions, and leadership teams seeking to strengthen the human foundations of performance, development, and organizational excellence.</p>
-    <p>To discuss educational programs, speaking engagements, or customized institutional initiatives, please contact:</p>
-    <div class="contacts">
-      <a class="contact" href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a>
-      <a class="contact" href="https://www.architectureofexcellence.com">www.architectureofexcellence.com</a>
+<section class="page partner" data-label="Inquiries">
+  <h1><em>Explore</em> a Partnership.</h1>
+  <p class="lead"><span class="tm">Architecture of Excellence™</span> collaborates with organizations, institutions, and leadership teams seeking to strengthen the human foundations of performance, development, and organizational excellence.</p>
+  <p class="lead">To discuss educational programs, speaking engagements, or customized institutional initiatives, please contact:</p>
+  <a class="contact" href="https://www.architectureofexcellence.com">www.architectureofexcellence.com</a>
+  <div class="closing">
+    <svg><use href="#aoe"/></svg>
+    <div class="notice">
+      <p>This material contains proprietary educational concepts, frameworks, and methodologies associated with Architecture of Excellence™. It is provided for informational purposes only. Unauthorized reproduction, distribution, or use is prohibited.</p>
     </div>
-  </div>
-
-  <div class="notice">
-    <p>This material contains proprietary educational concepts, frameworks, and methodologies associated with Architecture of Excellence™. It is provided for informational purposes only. Unauthorized reproduction, distribution, or use is prohibited.</p>
   </div>
 </section>
 
