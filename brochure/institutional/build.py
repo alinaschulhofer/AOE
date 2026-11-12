@@ -635,9 +635,9 @@ def p_method():
     return "Part II — The AOE Institutional Methodology", f"""
   <div class="arch-stage feature">
     <h1 class="pt one-line"><span class="dim">The AOE Institutional</span> Methodology.</h1>
-    <p class="arch-sub">The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological principles and competencies into meaningful organizational development. The framework is designed for application across teams, businesses, organizations, and other high-performance environments, with interventions tailored to needs, priorities, and the context of each institution.</p>
+    <p class="arch-sub">The AOE Institutional Methodology provides a structured yet adaptable process for translating psychological science and the AOE competency framework into meaningful individual, team, and organizational development. Designed for diverse institutional and high-performance environments, the methodology integrates assessment, strategic design, implementation, and ongoing evaluation, with interventions tailored to each institution’s needs, priorities, and context.</p>
     <figure class="feature-fig method-diagram">{diagram_d()}</figure>
-    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is observed and reviewed throughout implementation, and what is learned at each phase informs ongoing development. The process is therefore iterative rather than strictly linear.</p>
+    <p class="cml"><span class="label">Continuous Monitoring &amp; Learning</span>Progress is monitored throughout the engagement, with insights from each phase informing ongoing learning, adaptation, and refinement. The methodology is iterative rather than strictly linear, allowing strategies and interventions to evolve in response to emerging needs and evidence.</p>
   </div>""", "method"
 
 
