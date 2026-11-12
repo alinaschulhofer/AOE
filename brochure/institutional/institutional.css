@@ -438,3 +438,5 @@
   .legal-h, .legal-c { text-align: center; }
   .legal-c { margin-bottom: 4px; }
   .legal { text-align: center; }
+  .principles-wrap .commit { font-size: 14.5px; line-height: 1.6; max-width: 560px; color: var(--mid); }
+  .principles-wrap .commit { max-width: 640px; }
