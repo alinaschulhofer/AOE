@@ -417,3 +417,7 @@
   /* Ecological intro: wider first column so both paragraphs end on the same line */
   .eco-cols { column-count: auto; display: grid; grid-template-columns: 1.35fr 1fr; column-gap: 34px; }
   .eco-cols p { margin: 0; }
+  /* Applications diagram refinements */
+  .dg .phn.app-l { font-size: 14.6px; }
+  .dg .exm.core-t { font-size: 7.6px; letter-spacing: .1em; }
+  .apps-diagram { width: 100%; margin-top: 70px; }

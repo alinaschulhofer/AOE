@@ -181,8 +181,8 @@ def diagram_e():
     cx = cy = 170
     names = [["Education &amp; Development", "of Core Competencies"], ["Leadership &amp;", "Individual Development"],
              ["Team &amp; Relational", "Development"], ["Organizational", "Development &amp; Culture"],
-             ["System-Wide", "Development &amp; Integration"]]
-    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-160 -40 660 404" xmlns="http://www.w3.org/2000/svg">']
+             ["Institutional &amp;", "Systems-Level Development"]]
+    o = ['<svg class="dg" id="diagram-e-institutional-applications" viewBox="-200 -46 740 410" xmlns="http://www.w3.org/2000/svg">']
     o.append(f'<circle class="ring dash" cx="{cx}" cy="{cy}" r="160"/>')
     for k in range(5):
         x, y = pol(cx, cy, 82, -90 + k * 72)
@@ -200,10 +200,10 @@ def diagram_e():
             ly -= 6
         if k in (2, 3):
             ly += 8
-        o.append(tlines(lx, ly, names[k], "phn", 17, anchor))
+        o.append(tlines(lx, ly, names[k], "phn app-l", 18.5, anchor))
     o.append(f'<circle class="core-bg" cx="{cx}" cy="{cy}" r="46"/>')
     o.append(f'<circle class="core" cx="{cx}" cy="{cy}" r="46"/>')
-    o.append(tlines(cx, cy, ["ASSESSMENT", "&amp; STRATEGIC", "DESIGN"], "exm", 12))
+    o.append(tlines(cx, cy, ["AOE", "INSTITUTIONAL", "METHODOLOGY"], "exm core-t", 12))
     o.append("</svg>")
     return "\n".join(o)
 
@@ -644,7 +644,7 @@ def p_apps():
     return "Part III — Institutional Applications", f"""
   <div class="arch-stage feature">
     <h1 class="pt one-line"><span class="dim">Institutional</span> Applications.</h1>
-    <p class="arch-sub">AOE can be implemented through several interconnected developmental pathways. The appropriate combination of services and initiatives is determined through institutional assessment and strategic design.</p>
+    <p class="arch-sub">The AOE Framework can be applied through five interconnected areas of institutional development. The scope and combination of services, interventions, and initiatives are tailored to each institution’s objectives, developmental needs, and organizational context, informed by assessment and strategic design.</p>
     <figure class="feature-fig apps-diagram">{diagram_e()}</figure>
   </div>""", "apps-pg"
 
