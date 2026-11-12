@@ -419,13 +419,9 @@ COPY = COPY_TM
 LEGAL = """
   <div class="legal">
     <div class="legal-h">Proprietary &amp; Confidential Notice</div>
-    <p class="legal-c"><strong>© 2026 Dr. Alina K. Schulhofer. All rights reserved.</strong></p>
-    <p>Architecture of Excellence™ (AOE) is a proprietary psychology-based framework and methodology developed by Dr. Alina K. Schulhofer. The Architecture of Excellence™ name, associated branding, and original materials are used in connection with AOE’s professional, educational, and institutional services.</p>
-    <p>This document contains proprietary and confidential information, including original descriptions of the AOE framework, competency architecture, implementation methodology, diagrams, educational concepts, and institutional applications. Its original written and visual content is protected by applicable copyright laws, and associated branding may be protected by applicable trademark laws.</p>
-    <p>This document is provided solely for the recipient’s confidential evaluation of a potential professional or institutional engagement. No license or other intellectual property rights are granted by its disclosure.</p>
-    <p>The recipient is requested not to reproduce, distribute, publish, disclose, or use the document or its contents to develop derivative materials, training programs, assessments, or competing services without prior written authorization, except as otherwise permitted by applicable law or written agreement.</p>
-    <p>The Architecture of Excellence™ framework is intended for non-clinical educational, developmental, and institutional applications. It does not constitute psychological diagnosis or treatment, establish a clinical treatment protocol, or represent an existing certification or accreditation program.</p>
-    <p>The competencies, implementation pathways, and proposed institutional standards described herein remain subject to ongoing development, evaluation, and refinement. Intended outcomes are not guaranteed.</p>
+    <p class="legal-c"><strong>© 2026 Architecture of Excellence™. All rights reserved.</strong></p>
+    <p>Architecture of Excellence™ (AOE) is a proprietary psychology-based framework and methodology developed by Dr. Alina K. Schulhofer. This document contains original intellectual and creative materials, including the AOE competency architecture, methodology, diagrams, and institutional applications.</p>
+    <p>This document is provided for the recipient’s confidential evaluation of a potential engagement. No license or intellectual property rights are granted by its disclosure. Reproduction, distribution, disclosure, adaptation, or commercial use of its contents without prior written authorization is not permitted except as allowed by applicable law or agreement.</p>
   </div>"""
 CONTACT = """
   <div class="contact">
@@ -692,9 +688,9 @@ def closing(n, total):
 <!-- ============ CLOSING ============ -->
 <section class="page closing">
   <div class="close-stage">
-    <p class="cl">Architecture of Excellence provides a unified psychological and strategic foundation for developing individuals, strengthening relationships, advancing leadership, and strengthening organizational environments.</p>
-    <p class="cl">By translating its six foundational pillars into competencies, developmental interventions, and institutional practices, AOE offers a structured and adaptable approach to cultivating excellence across high-performance ecosystems.</p>
-    <p class="cl">The objective is not merely to improve individual performance, but to develop the people, relationships, cultures, and institutional conditions through which excellence can be achieved and sustained.</p>
+    <p class="cl">Architecture of Excellence™ provides an integrated psychological and strategic foundation for developing human capabilities, strengthening relationships, advancing leadership, and cultivating organizational environments that support sustainable high performance and well-being.</p>
+    <p class="cl">By translating its six foundational pillars into developmental competencies, interventions, and institutional practices, AOE offers a structured yet adaptable approach to cultivating excellence across high-performance environments and institutions.</p>
+    <p class="cl">The objective extends beyond improving individual performance to developing the capabilities, relationships, cultures, and institutional conditions through which excellence can be continuously expressed and sustained.</p>
   </div>
 {CONTACT}
   <footer><span>{COPY}</span><span class="pg">{n:02d} / {total}</span></footer>

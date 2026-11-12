@@ -432,3 +432,8 @@
   .steps-label { margin-top: 26px; text-align: center; }
   .steps-label + .steps { margin-top: 12px; }
   .principles-wrap .commit { margin-bottom: 40px; max-width: 600px; }
+  /* Shorter notice: left-aligned body, larger readable text */
+  .legal { text-align: left; font-size: 10.4px; line-height: 1.6; padding: 16px 22px 18px; }
+  .legal p + p { margin-top: 7px; }
+  .legal-h, .legal-c { text-align: center; }
+  .legal-c { margin-bottom: 4px; }
