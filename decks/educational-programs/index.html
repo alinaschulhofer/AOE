@@ -12,10 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root[data-theme="dark"] {
-    --bg: #1C1B19; --panel: #252421;
-    --ink: #F1EDE5; --ink2: #C2BCB0; --ink3: #9A948A;
-    --rule: #3E3D3A; --line: #8A867F;
-    --accent: #9A948A;        /* labels, numerals */
+    --bg: #1C1B19; --panel: #232220;
+    --ink: #F1EDE5; --ink2: #D3CDC1; --ink3: #A8A297;
+    --rule: #413F3B; --line: #8A867F;
+    --accent: #ADA79C;        /* labels, numerals */
     --accent-strong: #F1EDE5; /* box borders */
     --dim: #BEB8AD;           /* light half of two-tone headings */
     --img-wide: url(img/colonnade-wide-dark.jpg); --img-chess: url(img/chess-dark.jpg);
@@ -23,9 +23,9 @@
   }
   :root[data-theme="light"] {
     --bg: #F4F0E8; --panel: #ECE6DA;
-    --ink: #1C1B19; --ink2: #4B4741; --ink3: #7D766B;
+    --ink: #1C1B19; --ink2: #3F3B36; --ink3: #6F685E;
     --rule: #DCD4C5; --line: #B08A52;
-    --accent: #A8824E;
+    --accent: #9A7440;
     --accent-strong: #A8824E;
     --dim: #A8824E;
     --img-wide: url(img/colonnade-wide.jpg); --img-chess: url(img/chess.jpg);
@@ -38,94 +38,100 @@
   body { font-family: 'Manrope', sans-serif; font-weight: 300; color: var(--ink); -webkit-font-smoothing: antialiased; }
 
   .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: var(--bg);
-    padding: 112px 58px 96px; page-break-after: always; break-after: page; }
+    padding: 116px 58px 80px; page-break-after: always; break-after: page; }
   @media screen { .page { margin: 0 auto 20px; } }
 
   /* running header / footer */
   .hdr { position: absolute; top: 0; left: 58px; right: 58px; height: 77px; border-bottom: 1px solid var(--rule);
     display: flex; align-items: center; justify-content: space-between; padding-top: 30px; }
-  .hdr span { font-size: 9.5px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .hdr span { font-size: 9.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
   .hdr svg { width: 47px; height: 18px; color: var(--ink); }
   .ftr { position: absolute; bottom: 0; left: 58px; right: 58px; height: 49px; border-top: 1px solid var(--rule);
-    display: flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 400; letter-spacing: .02em; color: var(--ink3); }
-  .ftr b { position: absolute; right: 0; font-weight: 400; letter-spacing: .08em; }
+    display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 400; letter-spacing: .02em; color: var(--ink3); }
+  .ftr b { position: absolute; right: 0; font-weight: 400; letter-spacing: .06em; }
 
   /* type */
-  h1 { font-weight: 300; font-size: 42px; line-height: 1.12; letter-spacing: -.025em; color: var(--ink); }
+  h1 { font-weight: 300; font-size: 40px; line-height: 1.14; letter-spacing: -.025em; color: var(--ink); }
   h1 em { font-style: normal; color: var(--dim); }
-  h1 sup, h3 sup, .lead sup { font-size: .32em; vertical-align: top; position: relative; top: .55em; letter-spacing: 0; }
-  .lead { font-size: 19.5px; line-height: 1.6; font-weight: 300; letter-spacing: -.01em; color: var(--ink); }
-  .label { font-size: 9.5px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
-  p { font-size: 13.3px; line-height: 1.65; color: var(--ink2); }
-  p.just { text-align: justify; hyphens: auto; }
-  p i { font-style: normal; font-weight: 500; color: var(--ink); }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
-  .box { border: 1px solid var(--accent-strong); padding: 30px 44px; text-align: center; }
-  .box p { font-size: 15.5px; line-height: 1.65; color: var(--ink); }
+  h2 { font-weight: 300; font-size: 26px; line-height: 1.2; letter-spacing: -.02em; color: var(--ink); }
+  h3 { font-weight: 400; font-size: 17px; line-height: 1.3; letter-spacing: -.01em; color: var(--ink); }
+  .tm { white-space: nowrap; }
+  h1 sup, h2 sup, h3 sup { font-size: .5em; line-height: 0; vertical-align: baseline; position: relative; top: -.62em; margin-left: .04em; letter-spacing: 0; }
+  .lead { font-size: 18.5px; line-height: 1.58; font-weight: 300; letter-spacing: -.01em; color: var(--ink); }
+  .label { display: block; font-size: 9.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  p { font-size: 14.5px; line-height: 1.65; color: var(--ink2); }
+  p + p { margin-top: 14px; }
+  .sec { margin-top: 38px; padding-bottom: 11px; border-bottom: 1px solid var(--rule); }
+  .strip { display: grid; border-top: 1px solid var(--rule); }
+  .strip div { padding: 15px 0 2px 16px; border-left: 1px solid var(--rule); font-size: 12.5px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+  .strip div:first-child { border-left: 0; padding-left: 0; }
+  .strip small { display: block; font-size: 9px; letter-spacing: .08em; color: var(--accent); margin-bottom: 5px; }
 
   /* 1 — cover */
-  .cover { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 372px; }
+  .cover { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 392px; }
   .cover svg { width: 300px; height: 111px; color: var(--ink); }
   .cover .wordmark { font-size: 8.6px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 12px; }
-  .cover h1 { font-size: 31px; line-height: 1.3; letter-spacing: -.02em; margin-top: 84px; }
-  .cover .tag { font-size: 16px; color: var(--ink2); margin-top: 22px; }
-  .cover .by { margin-top: 16px; }
-  :root[data-theme="light"] .cover .tag { color: var(--accent); }
+  .cover h1 { font-size: 32px; line-height: 1.3; letter-spacing: -.02em; margin-top: 88px; }
 
   /* 2 — framework */
-  .band { height: 168px; background: var(--img-wide) center 62%/cover; margin: 38px 0 34px; }
+  .band { height: 150px; background: var(--img-wide) center 62%/cover; margin: 34px 0 30px; }
 
-  /* 3 — temple */
-  .temple { margin: 190px 54px 0; }
-  .temple svg.ped { display: block; width: 100%; height: 80px; overflow: visible; }
-  .temple .ped-wrap { position: relative; }
-  .temple .ped-wrap span { position: absolute; left: 0; right: 0; bottom: 17px; text-align: center; font-size: 12.5px; font-weight: 400; letter-spacing: .42em; padding-left: .42em; color: var(--ink); }
-  .temple .arch { height: 1px; background: var(--line); margin: 13px 30px 26px; }
-  .pillars { display: grid; grid-template-columns: repeat(6, 1fr); gap: 26px; margin: 0 31px; }
-  .pillar { height: 300px; border: 1px solid var(--line); background: var(--panel); position: relative; display: flex; align-items: center; justify-content: center; }
-  .pillar::before { content: ''; position: absolute; top: -13px; left: 50%; width: 1px; height: 13px; background: var(--line); }
-  .pillar::after { content: ''; position: absolute; top: -16px; left: 50%; margin-left: -2px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-strong); }
-  .pillar small { position: absolute; top: 12px; left: 0; right: 0; text-align: center; font-size: 8px; letter-spacing: .08em; color: var(--accent); }
-  .pillar span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11.5px; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--ink); }
-  .temple .base { margin-top: 11px; height: 33px; border: 1px solid var(--line); background: var(--panel); display: flex; align-items: center; justify-content: center;
-    font-size: 8.5px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--ink); }
+  /* 3 — overview */
+  .feature { display: grid; grid-template-columns: 1fr 1.25fr; gap: 34px; align-items: center; border: 1px solid var(--accent-strong); padding: 26px 30px; margin-top: 34px; }
+  .feature h2 { margin-top: 10px; font-size: 24px; }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 14px; }
+  .trio .ph { height: 112px; background-size: cover; background-position: center; margin-bottom: 18px; }
+  .trio h3 { margin: 8px 0 6px; min-height: 44px; }
+  .trio .kind { font-size: 12.5px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+  .trio p { font-size: 14px; line-height: 1.6; }
 
-  /* detail pages (4, 6–8) */
-  .detail h1 { margin-top: 10px; }
-  .detail .label.sec { display: block; margin-top: 54px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
-  .detail .lead { margin-top: 32px; font-size: 19px; }
+  /* 4–7 — program pages */
+  .program h1 { margin-top: 12px; font-size: 36px; }
+  .program .focus { margin-top: 22px; }
+  .program .focus p { font-size: 15px; line-height: 1.65; color: var(--ink); }
   .rows { list-style: none; }
-  .rows li { display: grid; grid-template-columns: 44px 1fr; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--rule);
-    font-size: 15.5px; line-height: 1.5; color: var(--ink); }
-  .rows li small { font-size: 9.5px; letter-spacing: .1em; color: var(--accent); }
+  .rows li { display: grid; grid-template-columns: 40px 1fr; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+  .rows li small { font-size: 10px; font-weight: 500; letter-spacing: .08em; color: var(--accent); }
+  .meta { display: grid; grid-template-columns: 1.5fr 1fr; gap: 34px; margin-top: 30px; }
+  .meta.one { grid-template-columns: 1fr; }
+  .meta .label { margin-bottom: 9px; }
+  .meta p { color: var(--ink); }
+  .roomy .sec { margin-top: 46px; }
+  .roomy .focus p { font-size: 16px; }
+  .roomy .rows li { padding: 14px 0; font-size: 15px; }
+  .roomy .meta { margin-top: 38px; }
+  .tight .sec { margin-top: 26px; }
+  .tight .focus { margin-top: 18px; }
+  .tight .focus p { font-size: 14.5px; line-height: 1.6; }
+  .tight .rows li { padding: 10px 0; font-size: 14px; }
+  .tight .meta { margin-top: 22px; }
+  .tight .dims { margin-top: 20px; }
+  .dims { grid-template-columns: repeat(4, 1fr); margin-top: 24px; border-bottom: 1px solid var(--rule); }
+  .dims div { padding-bottom: 14px; }
 
-  /* 5 — series overview */
-  .series .intro { margin-top: 20px; max-width: 560px; font-size: 14px; }
-  .srow { display: grid; grid-template-columns: 250px 1fr; gap: 34px; align-items: center; padding: 32px 0; border-top: 1px solid var(--rule); }
-  .srow:first-of-type { margin-top: 36px; }
-  .srow:last-of-type { border-bottom: 1px solid var(--rule); }
-  .srow .ph { height: 172px; background-size: cover; background-position: center; }
-  .srow h3 { font-weight: 400; font-size: 20px; letter-spacing: -.015em; margin: 9px 0 11px; color: var(--ink); }
+  /* 8 — formats */
+  .formats { margin-top: 36px; border-top: 1px solid var(--accent-strong); }
+  .frow { display: grid; grid-template-columns: 190px 170px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .frow.head { padding: 12px 0; }
+  .frow .when { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .frow p { font-size: 14px; line-height: 1.6; }
 
-  /* numbered grids (9, 10) */
-  .grid4 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column; gap: 0 34px; margin-top: 54px; }
-  .item { display: grid; grid-template-columns: 44px 1fr; border-top: 1px solid var(--rule); padding: 30px 0 46px; }
+  /* 9 — pathways */
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; margin-top: 44px; }
+  .item { display: grid; grid-template-columns: 44px 1fr; border-top: 1px solid var(--rule); padding: 26px 0 30px; }
   .item .n { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 8.5px; letter-spacing: .04em; color: var(--accent); }
-  .item h3 { font-weight: 400; font-size: 16.5px; line-height: 1.3; letter-spacing: -.01em; margin: 3px 0 10px; color: var(--ink); }
-  .item p { font-size: 13px; }
-  .centered { text-align: center; }
-  .centered .sub { font-size: 16.5px; line-height: 1.55; color: var(--ink); max-width: 520px; margin: 22px auto 0; }
+    font-size: 9px; font-weight: 500; letter-spacing: .04em; color: var(--accent); }
+  .item h3 { margin: 3px 0 10px; }
+  .item p { font-size: 14.5px; }
 
-  /* 11 — inquiries */
-  .inq { text-align: center; padding-top: 210px; }
-  .inq .lead { max-width: 500px; margin: 30px auto 0; font-size: 17.5px; }
-  .contact { display: block; width: 400px; margin: 14px auto 0; padding: 15px 0; border: 1px solid var(--accent-strong); color: var(--ink); text-decoration: none; font-size: 14px; letter-spacing: .02em; }
-  .inq .closing { position: absolute; left: 58px; right: 58px; bottom: 96px; border-top: 1px solid var(--rule); padding-top: 34px; }
-  .inq .closing svg { width: 106px; height: 40px; color: var(--ink); }
-  .legal { border: 1px solid var(--rule); margin-top: 26px; padding: 20px 30px; }
-  .legal p { font-size: 9.5px; line-height: 1.8; color: var(--ink3); }
-  .legal p:first-child { color: var(--ink2); font-weight: 500; }
+  /* 10 — founder & inquiries */
+  .contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .contact { display: block; padding: 15px 0; text-align: center; border: 1px solid var(--accent-strong); color: var(--ink); text-decoration: none; font-size: 14px; letter-spacing: .01em; }
+  .founder p { font-size: 15.5px; }
+  .founder .lead { font-size: 18.5px !important; }
+  .notice { position: absolute; left: 58px; right: 58px; bottom: 76px; border: 1px solid var(--rule); padding: 16px 26px; text-align: center; }
+  .notice p { font-size: 10.5px; line-height: 1.7; color: var(--ink3); }
 </style>
 </head>
 <body>
@@ -141,185 +147,230 @@
 <!-- 2 -->
 <section class="page" data-label="The Framework">
   <h1><em>The</em> Framework.</h1>
-  <p class="lead" style="margin-top:30px">Developed by Dr. Alina Schulhofer, Architecture of Excellence™ is a proprietary framework designed for individuals, leaders, teams, and organizations operating in high-performance environments.</p>
+  <p class="lead" style="margin-top:26px">Developed by Dr. Alina Schulhofer, <span class="tm">Architecture of Excellence™</span> is a proprietary psychology-based framework that examines the individual, relational, and systemic conditions influencing human development, performance, and organizational functioning.</p>
   <div class="band"></div>
-  <div class="cols">
-    <div>
-      <p class="just">The framework is built upon six interconnected pillars—<i>Truth, Connection, Being, Vision, Meaning, and Creation</i>—which together create the psychological, relational, and systemic conditions that support sustained excellence and well-being.</p>
-      <p class="just" style="margin-top:14px">Rather than functioning as independent concepts, the pillars form an integrated architecture in which excellence emerges through their interaction.</p>
-    </div>
-    <div>
-      <p class="just">The complete framework is introduced through the Architecture of Excellence™ Intensive, and is also expressed through three Signature Educational Series, each applying the same methodology through a different lens.</p>
-      <p class="just" style="margin-top:14px">Through applied teaching and reflective engagement, these programs translate the framework into practical tools for lasting individual and organizational change.</p>
-    </div>
+  <p>Grounded in six interconnected foundational pillars—Truth, Connection, Being, Vision, Meaning, and Creation—the framework provides an integrated approach to understanding and developing the capacities and conditions that support excellence, well-being, and long-term sustainability.</p>
+  <p>Excellence is understood not as an isolated achievement, but as an evolving outcome of how these dimensions interact over time.</p>
+  <div class="strip" style="grid-template-columns:repeat(6,1fr);margin-top:28px">
+    <div><small>01</small>Truth</div><div><small>02</small>Connection</div><div><small>03</small>Being</div>
+    <div><small>04</small>Vision</div><div><small>05</small>Meaning</div><div><small>06</small>Creation</div>
   </div>
-  <div class="box" style="margin-top:40px">
-    <p>Programs may be delivered as keynote presentations, workshops, or multi-session educational series, either virtually or in person, depending on organizational needs and context.</p>
+  <h2 style="margin-top:46px">From Framework to Educational Application</h2>
+  <p style="margin-top:16px">The <span class="tm">Architecture of Excellence™</span> educational programs translate this integrated framework into structured learning experiences addressing individual development, leadership, and organizational culture.</p>
+  <p>Through applied teaching, reflection, discussion, and experiential learning, participants explore the psychological and relational dynamics influencing performance and identify opportunities for meaningful development within their respective contexts.</p>
+</section>
+
+<!-- 3 -->
+<section class="page" data-label="Educational Programs">
+  <h1><em>Educational</em> Programs.</h1>
+  <p style="margin-top:22px"><span class="tm">Architecture of Excellence™</span> offers an integrated portfolio of educational programs designed to explore the psychological, relational, and systemic foundations of sustained excellence.</p>
+  <p>The portfolio includes a comprehensive Intensive introducing the complete framework and three Signature Educational Series, each applying its foundational principles through a distinct developmental lens.</p>
+
+  <div class="feature">
+    <div>
+      <span class="label">Comprehensive Framework Education</span>
+      <h2>The Architecture of <span class="tm">Excellence<sup>™</sup></span> Intensive</h2>
+    </div>
+    <p>An immersive exploration of the complete <span class="tm">Architecture of Excellence™</span> framework, integrating its six foundational pillars across individual, leadership, and organizational contexts.</p>
+  </div>
+
+  <span class="label sec" style="margin-top:34px">Signature Educational Series</span>
+  <div class="trio">
+    <div>
+      <div class="ph" style="background-image:var(--img-chess)"></div>
+      <span class="label">Series 01</span>
+      <h3>Inner Architecture of High <span class="tm">Performance<sup>™</sup></span></h3>
+      <div class="kind">Individual Development</div>
+      <p>Developing the psychological, emotional, and relational capacities that support individual performance, well-being, and personal development.</p>
+    </div>
+    <div>
+      <div class="ph" style="background-image:var(--img-thinker)"></div>
+      <span class="label">Series 02</span>
+      <h3>Architecture of <span class="tm">Leadership<sup>™</sup></span></h3>
+      <div class="kind">Leadership Development</div>
+      <p>Exploring the psychological and relational dimensions of leadership, authority, responsibility, decision-making, and interpersonal influence.</p>
+    </div>
+    <div>
+      <div class="ph" style="background-image:var(--img-colonnade)"></div>
+      <span class="label">Series 03</span>
+      <h3>High-Performance Culture <span class="tm">Series<sup>™</sup></span></h3>
+      <div class="kind">Organizational Culture &amp; Performance</div>
+      <p>Examining the cultural, relational, and systemic conditions influencing collective performance, organizational health, and long-term sustainability.</p>
+    </div>
   </div>
 </section>
 
 <!-- 4 -->
-<section class="page detail" data-label="The Intensive">
-  <h1><em>The Architecture of Excellence<sup>™</sup></em><br>Intensive.</h1>
-  <span class="label sec">Focus of the Program</span>
-  <p class="lead">The Intensive is the complete expression of the Architecture of Excellence™ method — delivered as a standalone, in-depth program rather than a single applied series. It teaches the full framework in its entirety and serves as the foundation from which the three Signature Educational Series are drawn.</p>
-  <span class="label sec">What It Includes</span>
-  <ul class="rows">
-    <li><small>01</small><span>Comprehensive introduction to the complete Architecture of Excellence™ framework</span></li>
-    <li><small>02</small><span>Exploration of the six foundational pillars and their integration into sustainable excellence</span></li>
-    <li><small>03</small><span>Applied reflection, discussion, and experiential learning throughout</span></li>
-    <li><small>04</small><span>Practical application across performance, leadership, organizational culture, and personal development</span></li>
-    <li><small>05</small><span>Foundation for future advanced education and licensing opportunities</span></li>
-  </ul>
-  <span class="label sec">Format</span>
-  <ul class="rows">
-    <li><small>—</small><span>Two-day immersive workshop (virtual delivery available upon request)</span></li>
-  </ul>
+<section class="page program roomy" data-label="The Intensive">
+  <span class="label">Comprehensive Framework Education</span>
+  <h1><em>The Architecture of <span class="tm">Excellence<sup>™</sup></span></em><br>Intensive.</h1>
+  <span class="label sec">Program Focus</span>
+  <div class="focus">
+    <p>The <span class="tm">Architecture of Excellence™</span> Intensive is a comprehensive, immersive educational experience introducing the complete framework and the integration of its six foundational pillars.</p>
+    <p>Through applied teaching, reflection, discussion, and experiential engagement, participants examine the psychological, relational, and systemic dimensions of excellence and their relevance across individual, leadership, and organizational contexts.</p>
+  </div>
+  <span class="label sec">Primary Areas of Exploration</span>
+  <ol class="rows">
+    <li><small>01</small><span>The complete <span class="tm">Architecture of Excellence™</span> framework and its foundational principles.</span></li>
+    <li><small>02</small><span>The six interconnected pillars: Truth, Connection, Being, Vision, Meaning, and Creation.</span></li>
+    <li><small>03</small><span>Psychological and relational patterns influencing human behavior, development, and performance.</span></li>
+    <li><small>04</small><span>The relationship between individual capacities, leadership dynamics, organizational conditions, and sustainable excellence.</span></li>
+    <li><small>05</small><span>Translating conceptual understanding and reflective insight into practical application.</span></li>
+  </ol>
+  <div class="meta">
+    <div><span class="label">Intended Audience</span><p>Leaders, professionals, high performers, teams, and organizations seeking an integrated understanding of the human foundations of excellence.</p></div>
+    <div><span class="label">Format</span><p>Two-day immersive educational workshop.<br>Virtual delivery available upon request.</p></div>
+  </div>
 </section>
 
 <!-- 5 -->
-<section class="page series" data-label="Signature Educational Series">
-  <h1><em>Signature</em> Educational Series.</h1>
-  <p class="intro">The Architecture of Excellence™ framework is applied through three Signature Educational Series, each addressing a different level of the high-performance ecosystem while drawing upon the same six foundational pillars.</p>
-  <div class="srow">
-    <div class="ph" style="background-image:var(--img-chess)"></div>
-    <div>
-      <span class="label">Series 01</span>
-      <h3>Inner Architecture of High Performance<sup>™</sup></h3>
-      <p>Focuses on the internal foundations of high performance, supporting individuals in developing core psychological capacities such as emotional intelligence, self-regulation, accountability, and resilience.</p>
-    </div>
+<section class="page program roomy" data-label="Signature Educational Series — 01">
+  <span class="label">Series 01 · Individual Development</span>
+  <h1><em>Inner Architecture of</em><br>High <span class="tm">Performance<sup>™</sup>.</span></h1>
+  <span class="label sec">Program Focus</span>
+  <div class="focus">
+    <p>Inner Architecture of High <span class="tm">Performance™</span> explores the internal psychological and relational capacities that support sustained performance, personal development, and well-being.</p>
+    <p>The series emphasizes self-awareness, emotional intelligence, self-regulation, and the relationship between internal experience and outward behavior. Through reflection and applied learning, participants examine how psychological patterns, values, relationships, and intentional action influence their capacity to navigate challenges and pursue meaningful development.</p>
   </div>
-  <div class="srow">
-    <div class="ph" style="background-image:var(--img-thinker)"></div>
-    <div>
-      <span class="label">Series 02</span>
-      <h3>Architecture of Leadership<sup>™</sup></h3>
-      <p>Examines the psychological demands of leadership and responsibility, supporting leaders in navigating authority, decision-making, and relational complexity in high-performance environments.</p>
-    </div>
-  </div>
-  <div class="srow">
-    <div class="ph" style="background-image:var(--img-colonnade)"></div>
-    <div>
-      <span class="label">Series 03</span>
-      <h3>High-Performance Culture Series<sup>™</sup></h3>
-      <p>Explores the relational and systemic dynamics that shape team and organizational culture, addressing communication patterns, alignment, and the invisible forces that influence collective performance over time.</p>
-    </div>
+  <span class="label sec">Primary Areas of Development</span>
+  <ol class="rows">
+    <li><small>01</small><span>Emotional intelligence, self-awareness, and reflective capacity.</span></li>
+    <li><small>02</small><span>Relational intelligence, communication, and interpersonal awareness.</span></li>
+    <li><small>03</small><span>Authenticity, accountability, and the capacity to engage effectively with reality.</span></li>
+    <li><small>04</small><span>Identity, personal values, meaning, and motivation.</span></li>
+    <li><small>05</small><span>Stress management, emotional and nervous system regulation, resilience, and mind-body awareness.</span></li>
+    <li><small>06</small><span>Translating insight into intentional behavior, personal development, and long-term direction.</span></li>
+  </ol>
+  <div class="meta one">
+    <div><span class="label">Intended Audience</span><p>Individuals, professionals, high performers, and teams seeking to strengthen the internal foundations of sustainable performance and well-being.</p></div>
   </div>
 </section>
 
 <!-- 6 -->
-<section class="page detail" data-label="Signature Educational Series — 01">
-  <span class="label">Series 01</span>
-  <h1><em>Inner Architecture of</em><br>High Performance<sup>™</sup>.</h1>
-  <span class="label sec">Focus of the Series</span>
-  <p class="lead">Inner Architecture of High Performance focuses on creating the internal conditions that support sustained high performance and well-being across domains and roles. Its aim is to help develop psychological and relational capacities as foundations, emphasizing preventative inner change, alignment, and long-term sustainability.</p>
+<section class="page program" data-label="Signature Educational Series — 02">
+  <span class="label">Series 02 · Leadership Development</span>
+  <h1><em>Architecture of</em><br><span class="tm">Leadership<sup>™</sup>.</span></h1>
+  <span class="label sec">Program Focus</span>
+  <div class="focus">
+    <p>Architecture of <span class="tm">Leadership™</span> examines the psychological and relational dimensions of effective leadership, with particular attention to self-awareness, authority, responsibility, and the influence of individual patterns within complex organizational systems.</p>
+    <p>The series supports leaders in examining how identity, personal history, emotional responses, and relational dynamics shape leadership behavior, decision-making, and the capacity to cultivate trust, alignment, and collective development.</p>
+  </div>
   <span class="label sec">Primary Areas of Development</span>
-  <ul class="rows">
-    <li><small>01</small><span>Emotional intelligence, self-awareness, reflective capacity</span></li>
-    <li><small>02</small><span>Relational dynamics, communication, presence in the here-and-now</span></li>
-    <li><small>03</small><span>Authenticity, accountability, dealing with reality effectively</span></li>
-    <li><small>04</small><span>Identity, meaning, values, and motivation</span></li>
-    <li><small>05</small><span>Nervous system regulation and mind-body integration</span></li>
-    <li><small>06</small><span>Translating insight into action and intentional long-term direction</span></li>
-  </ul>
+  <ol class="rows">
+    <li><small>01</small><span>Leadership identity, self-awareness, role consciousness, and responsibility.</span></li>
+    <li><small>02</small><span>Unconscious relational patterns, defensive responses, attachment dynamics, and leadership blind spots.</span></li>
+    <li><small>03</small><span>Emotional and relational intelligence, including the influence of emotions on behavior and decision-making.</span></li>
+    <li><small>04</small><span>Authority, power, decision-making under pressure, and the psychodynamics of leadership within complex systems.</span></li>
+    <li><small>05</small><span>Trust-building, relational safety, communication, conflict navigation, and conditions for collective development.</span></li>
+    <li><small>06</small><span>Meaning, integrity, accountability, and the existential dimensions of leadership.</span></li>
+  </ol>
+  <div class="meta one">
+    <div><span class="label">Intended Audience</span><p>Executives, senior leaders, managers, emerging leaders, and professionals holding positions of influence or responsibility.</p></div>
+  </div>
 </section>
 
 <!-- 7 -->
-<section class="page detail" data-label="Signature Educational Series — 02">
-  <span class="label">Series 02</span>
-  <h1><em>Architecture of</em><br>Leadership<sup>™</sup>.</h1>
-  <span class="label sec">Focus of the Series</span>
-  <p class="lead">Architecture of Leadership focuses on developing the inner and relational architecture required to lead more effectively and consciously. This series supports leaders in seeing themselves <i style="font-style:italic">within the system,</i> understanding how personal history shapes leadership behavior, and cultivating the capacity to inspire performance, coherence, and trust across diverse teams.</p>
+<section class="page program tight" data-label="Signature Educational Series — 03">
+  <span class="label">Series 03 · Organizational Culture &amp; Performance</span>
+  <h1><em>High-Performance</em> Culture <span class="tm">Series<sup>™</sup>.</span></h1>
+  <span class="label sec">Program Focus</span>
+  <div class="focus">
+    <p>The High-Performance Culture <span class="tm">Series™</span> examines the relational, psychological, and systemic conditions that shape organizational culture and influence collective performance over time.</p>
+    <p>The series explores how leadership, values, communication, organizational practices, and lived experience interact to create the conditions in which individuals and teams operate. Particular attention is given to the relationship between meaning, integrity, adaptability, and sustainability as interconnected dimensions of high-performance culture.</p>
+  </div>
+  <div class="strip dims">
+    <div>Meaning</div><div>Integrity</div><div>Adaptability</div><div>Sustainability</div>
+  </div>
   <span class="label sec">Primary Areas of Development</span>
-  <ul class="rows">
-    <li><small>01</small><span>Self-awareness, identity, role consciousness</span></li>
-    <li><small>02</small><span>Attachment dynamics, defense mechanisms, and blind spots in leadership</span></li>
-    <li><small>03</small><span>Emotional intelligence, emotions as signals guiding behaviors and decision-making</span></li>
-    <li><small>04</small><span>The psychodynamics of leadership within complex systems</span></li>
-    <li><small>05</small><span>Trust-building, creating relational safety, and conditions for collective growth</span></li>
-    <li><small>06</small><span>Meaning, responsibility, and existential issues inherent in leadership</span></li>
-  </ul>
+  <ol class="rows">
+    <li><small>01</small><span>Organizational culture as a strategic dimension of performance, well-being, and long-term sustainability.</span></li>
+    <li><small>02</small><span>Shared meaning, organizational purpose, values, and alignment between stated principles and lived experience.</span></li>
+    <li><small>03</small><span>Integrity, leadership accountability, and consistency between organizational commitments and behavior.</span></li>
+    <li><small>04</small><span>Adaptability, resistance to change, and the psychological and relational dynamics of organizational transformation.</span></li>
+    <li><small>05</small><span>Communication, trust, psychological safety, belonging, and the everyday experience of working within an organization.</span></li>
+    <li><small>06</small><span>Sustainable performance, organizational health, and the psychological and relational dimensions of inclusion and collective responsibility.</span></li>
+  </ol>
+  <div class="meta one">
+    <div><span class="label">Intended Audience</span><p>Leadership teams, organizations, institutions, and groups seeking to understand and strengthen the conditions shaping collective performance and organizational culture.</p></div>
+  </div>
 </section>
 
 <!-- 8 -->
-<section class="page detail" data-label="Signature Educational Series — 03">
-  <span class="label">Series 03</span>
-  <h1><em>High-Performance</em><br>Culture Series<sup>™</sup>.</h1>
-  <span class="label sec">Focus of the Series</span>
-  <p class="lead">The High-Performance Culture Series focuses on the organizational and relational conditions that sustain excellence over time. The series examines how leadership, values, communication, and lived experience shape culture, and how individuals at all levels can act as instruments of transformation – consciously or unconsciously influencing the system they are part of.</p>
-  <span class="label sec">Primary Areas of Development</span>
-  <ul class="rows">
-    <li><small>01</small><span>Culture as a strategic and sustainability factor, not a byproduct of performance</span></li>
-    <li><small>02</small><span>Organizational values, purpose, and degree of shared understanding across the system</span></li>
-    <li><small>03</small><span>Leadership clarity in articulating values, goals and direction</span></li>
-    <li><small>04</small><span>Creating the lived experience of work: how it <i style="font-style:italic">feels</i> to operate within the organization</span></li>
-    <li><small>05</small><span>Cultural transformation, resistance to change, and long-term organizational health</span></li>
-    <li><small>06</small><span>Psychological and relational dimensions of diversity, equity, and inclusion</span></li>
-  </ul>
+<section class="page" data-label="Program Formats &amp; Delivery">
+  <h1><em>Program Formats</em><br>&amp; Delivery.</h1>
+  <p class="lead" style="margin-top:26px;font-size:17px"><span class="tm">Architecture of Excellence™</span> educational programs are available through a range of formats, allowing organizations to select an approach aligned with their audience, developmental priorities, and operational context.</p>
+  <div class="formats">
+    <div class="frow head"><span class="label">Format</span><span class="label">Structure</span><span class="label">Purpose</span></div>
+    <div class="frow">
+      <h3>Keynote Presentations</h3>
+      <div class="when">Customized duration.</div>
+      <p>Introduce foundational concepts, stimulate reflection, and engage audiences around selected psychological, leadership, or organizational themes.</p>
+    </div>
+    <div class="frow">
+      <h3>Interactive Workshops</h3>
+      <div class="when">Half-day or full-day.</div>
+      <p>Facilitate focused exploration, discussion, experiential learning, and practical application of selected concepts.</p>
+    </div>
+    <div class="frow">
+      <h3>Signature Educational Series</h3>
+      <div class="when">Typically four live sessions of 60–90 minutes each.</div>
+      <p>Provide structured, progressive learning within one of the three Signature Educational Series.</p>
+    </div>
+    <div class="frow">
+      <h3>Architecture of <span class="tm">Excellence<sup>™</sup></span> Intensive</h3>
+      <div class="when">Two-day immersive program.</div>
+      <p>Introduce and explore the complete framework through comprehensive, applied educational engagement.</p>
+    </div>
+  </div>
+  <h2 style="margin-top:38px">Delivery &amp; Customization</h2>
+  <p style="margin-top:16px">Programs may be delivered virtually or in person, depending on the format and organizational context.</p>
+  <p>Content, emphasis, and delivery are adapted to the audience and institutional priorities while preserving the conceptual integrity of the <span class="tm">Architecture of Excellence™</span> framework.</p>
 </section>
 
 <!-- 9 -->
-<section class="page centered" data-label="Working Together" style="padding-top:230px">
-  <h1><em>Working</em> Together.</h1>
-  <p class="sub">Formats and delivery are adapted to organizational needs and context.</p>
-  <div class="grid4" style="text-align:left">
+<section class="page" data-label="Other Pathways for Engagement">
+  <h1><em>Other Pathways</em><br>for Engagement.</h1>
+  <p class="lead" style="margin-top:26px;font-size:17px">Beyond its educational programs, <span class="tm">Architecture of Excellence™</span> provides psychology-based consulting and advisory services addressing individual leadership, organizational functioning, relational dynamics, and the human dimensions of performance.</p>
+  <div class="band" style="margin:32px 0 0;height:124px"></div>
+  <div class="grid4" style="margin-top:34px">
     <div class="item"><div class="n">01</div><div>
-      <h3>Proprietary and Adaptable</h3>
-      <p>The Architecture of Excellence™ Signature Educational Series are proprietary, adaptable educational offerings. Each engagement is grounded in the six foundational pillars of the Architecture of Excellence™ framework.</p>
+      <h3>Executive &amp; Leadership Advisory</h3>
+      <p>Individual executive consulting, leadership development, and strategic advisory support for leaders navigating complex professional responsibilities, interpersonal dynamics, and organizational demands.</p>
     </div></div>
     <div class="item"><div class="n">02</div><div>
-      <h3>Flexible Delivery</h3>
-      <p>The series may be delivered through speaking engagements, workshops, or structured multi-session programs. Delivery may take place virtually or in person and is adapted to audience and context.</p>
+      <h3>Organizational Culture &amp; Performance Consulting</h3>
+      <p>Assessment, consultation, and advisory services addressing organizational culture, relational dynamics, leadership alignment, organizational change, and the conditions supporting sustainable performance.</p>
     </div></div>
     <div class="item"><div class="n">03</div><div>
-      <h3>Typical Program Structure</h3>
-      <p>Each series is typically structured as four live sessions of 60–90 minutes each. Alternative formats are also available, including standalone presentations, full-day workshops, and two-day intensives.</p>
+      <h3>Conflict Resolution &amp; Relational Consulting</h3>
+      <p>Mediation, conflict resolution, and consultation addressing interpersonal, team, organizational, and cross-cultural challenges, including communication breakdowns, relational tensions, and complex group dynamics.</p>
     </div></div>
     <div class="item"><div class="n">04</div><div>
-      <h3>Customized Application</h3>
-      <p>Content, emphasis, and format are tailored to organizational priorities while preserving the integrity of the Architecture of Excellence™ framework.</p>
+      <h3>Mental Health, Well-Being &amp; Performance Program Development</h3>
+      <p>Strategic consultation and development of programs supporting mental health, psychological well-being, leadership, and performance within organizations, institutions, and high-performance environments.</p>
     </div></div>
   </div>
 </section>
 
 <!-- 10 -->
-<section class="page centered" data-label="Other Pathways for Engagement" style="padding-top:170px">
-  <h1><em>Other Pathways</em><br>for Engagement.</h1>
-  <p class="sub">Depending on priorities and context, organizations may choose to engage Dr. Schulhofer through the Architecture of Excellence™ method in additional ways, including:</p>
-  <div class="grid4" style="text-align:left">
-    <div class="item"><div class="n">01</div><div>
-      <h3>Executive Advisory &amp; Leadership Development</h3>
-      <p>Ongoing strategic advisement and confidential 1:1 work with key leaders, including institutional guidance on mental health strategy and program development.</p>
-    </div></div>
-    <div class="item"><div class="n">02</div><div>
-      <h3>Organizational Change &amp; Culture Advisory</h3>
-      <p>Cultural and relational diagnostics, systems-level consultation, and advisory support during periods of growth or transition, with a focus on sustainability and organizational integrity.</p>
-    </div></div>
-    <div class="item"><div class="n">03</div><div>
-      <h3>Conflict Resolution &amp; Cross-Cultural Management</h3>
-      <p>Mediation and advisory support addressing interpersonal, organizational, and cross-cultural dynamics, including the psychological dimensions of diversity, equity, and inclusion.</p>
-    </div></div>
-    <div class="item"><div class="n">04</div><div>
-      <h3>Mental Performance, Leadership &amp; Executive Consulting</h3>
-      <p>Advisory and consultative work designed for athletes, coaches, and other key stakeholders, including individual consultations and on-site presence during major competitions.</p>
-    </div></div>
-  </div>
-</section>
+<section class="page founder" data-label="About the Founder &amp; Inquiries">
+  <h1><em>About</em> the Founder.</h1>
+  <p class="lead" style="margin-top:26px;font-size:17px">Dr. Alina Schulhofer is a licensed psychologist, executive coach, and organizational consultant whose work focuses on the psychological and relational dimensions of human performance, leadership, and organizational functioning.</p>
+  <p style="margin-top:18px">She is the founder and developer of <span class="tm">Architecture of Excellence™</span>, a proprietary psychology-based framework integrating psychoanalytic perspectives, high-performance psychology, and a holistic understanding of human development.</p>
+  <p>Her professional experience includes working with high-performing individuals, professional athletes, executives, and organizational leaders across diverse contexts.</p>
 
-<!-- 11 -->
-<section class="page inq" data-label="Inquiries">
-  <h1>Inquiries.</h1>
-  <p class="lead">To work with Dr. Alina Schulhofer and implement the Architecture of Excellence<sup>™</sup> method within your team or organization, contact:</p>
-  <div style="margin-top:44px">
-    <a class="contact" href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a>
-    <a class="contact" href="https://www.architectureofexcellence.com">www.architectureofexcellence.com</a>
-  </div>
-  <div class="closing">
-    <svg><use href="#aoe"/></svg>
-    <div class="legal">
-      <p>Architecture of Excellence™ © 2026 Dr. Alina K. Schulhofer. | All rights reserved.</p>
-      <p>This material is proprietary and intended for informational purposes only. Unauthorized reproduction or distribution is not permitted.</p>
+  <div style="border-top:1px solid var(--rule);margin-top:44px;padding-top:40px">
+    <h2>Explore a Partnership.</h2>
+    <p style="margin-top:16px"><span class="tm">Architecture of Excellence™</span> collaborates with organizations, institutions, and leadership teams seeking to strengthen the human foundations of performance, development, and organizational excellence.</p>
+    <p>To discuss educational programs, speaking engagements, or customized institutional initiatives, please contact:</p>
+    <div class="contacts">
+      <a class="contact" href="mailto:alina@architectureofexcellence.com">alina@architectureofexcellence.com</a>
+      <a class="contact" href="https://www.architectureofexcellence.com">www.architectureofexcellence.com</a>
     </div>
+  </div>
+
+  <div class="notice">
+    <p>This material contains proprietary educational concepts, frameworks, and methodologies associated with Architecture of Excellence™. It is provided for informational purposes only. Unauthorized reproduction, distribution, or use is prohibited.</p>
   </div>
 </section>
 
