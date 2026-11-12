@@ -103,7 +103,7 @@ SUB_NAMES = [
     ["Self-Regulation", "Present-Moment Awareness", "Mind-Body Connection", "Psychological Flexibility", "Stress Management"],
     ["Vision Development", "Strategic Thinking", "Values Alignment", "Intentional Decision-Making", "Shared Direction"],
     ["Purpose Awareness", "Intrinsic Motivation", "Values-Based Engagement", "Identity Integration", "Belonging &amp; Contribution"],
-    ["Personal Agency", "Intentional Action", "Discipline &amp; Follow-Through", "Adaptability", "Continuous Learning"],
+    ["Personal Agency", "Effective Execution", "Discipline &amp; Follow-Through", "Adaptability", "Continuous Learning"],
 ]
 
 
@@ -359,7 +359,7 @@ PILLARS = [
          intro=["Creation involves the capacity to translate awareness, knowledge, vision, and intention into purposeful action.",
                 "It represents the movement from understanding and possibility toward execution, adaptation, and tangible development."],
          subs=[("Personal Agency", "Recognizing one’s capacity and responsibility to influence outcomes."),
-               ("Intentional Action", "Translating goals and insights into purposeful behavior."),
+               ("Effective Execution", "Translating goals and insights into purposeful behavior."),
                ("Discipline &amp; Follow-Through", "Sustaining effort and commitment toward meaningful objectives."),
                ("Adaptability", "Adjusting approaches in response to changing circumstances and new information."),
                ("Continuous Learning", "Using experience, feedback, and reflection to support ongoing improvement.")],
