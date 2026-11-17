@@ -2631,6 +2631,10 @@ ul { list-style: none; }
   .founder-portrait-col { flex: 1 1 auto; order: 1; padding: clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 2.5rem) 0; }
   .founder-portrait-circle { width: 240px; }
 }
+@media (min-width: 901px) {
+  #founder-story .founder-portrait-col { padding-right: clamp(1rem, 2vw, 2rem); }
+  #founder-story .founder-hero-text { padding-left: clamp(1rem, 2vw, 2rem); }
+}
 
 .founder-note {
   padding-block: var(--section);
