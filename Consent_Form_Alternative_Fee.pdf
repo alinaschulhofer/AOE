@@ -450,7 +450,7 @@ endstream
 endobj
 20 0 obj
 <<
-/Length 815
+/Length 867
 >>
 stream
 q
@@ -473,11 +473,11 @@ BT
 T*
 ET
 q
-1 0 0 1 60 75 cm
+1 0 0 1 60 60 cm
 q
 0.101961 0.101961 0.101961 rg
 BT
-1 0 0 1 0 50 Tm
+1 0 0 1 0 65 Tm
 /F1-0 10 Tf
 15 TL
 1.08125 Tw
@@ -488,11 +488,15 @@ T*
 (process\054 an alternative fee arrangement applies in your case\056 In place of the standard fees listed above\054 your) Tj
 T*
 0 Tw
-1.303333 Tw
-(fee will be \044300 for each 50\055minute individual psychotherapy session and \044300 for each 50\055minute couples) Tj
+0.562941 Tw
+(fee will be \044300 for each 50\055minute couples therapy session\054 as well as for each 60\055minute individual session) Tj
 T*
 0 Tw
-(therapy session\056 All other fees\054 policies\054 and terms described in this Agreement remain unchanged\056) Tj
+1.642353 Tw
+(as part of the initial intake process\056 All other fees\054 policies\054 and terms described in this Agreement remain) Tj
+T*
+0 Tw
+(unchanged\056) Tj
 T*
 ET
 Q
@@ -532,5 +536,5 @@ trailer
 /ID [ <c08415dcdd0a49df843709a5401da14c> <c08415dcdd0a49df843709a5401da14c> ]
 >>
 startxref
-22947
+22999
 %%EOF
