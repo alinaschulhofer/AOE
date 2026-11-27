@@ -2605,7 +2605,7 @@ ul { list-style: none; }
   padding: var(--section) clamp(2rem, 5vw, 5rem);
 }
 .founder-portrait-circle {
-  width: min(400px, 100%);
+  width: min(340px, 100%);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 1px solid rgba(90,82,72,.35);
